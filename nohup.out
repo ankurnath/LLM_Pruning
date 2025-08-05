@@ -1,0 +1,1990 @@
+Data has been loaded from ../snap_dataset/train/Facebook
+Feature Space Search Iteration 1 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s]Extracting features:  10%|█         | 1/10 [00:01<00:16,  1.81s/feature]Extracting features:  20%|██        | 2/10 [00:03<00:13,  1.74s/feature]Extracting features:  30%|███       | 3/10 [00:05<00:12,  1.80s/feature]Extracting features:  40%|████      | 4/10 [00:06<00:09,  1.56s/feature]Extracting features:  50%|█████     | 5/10 [00:13<00:17,  3.41s/feature]Extracting features:  60%|██████    | 6/10 [00:15<00:12,  3.13s/feature]Extracting features:  70%|███████   | 7/10 [00:21<00:11,  3.93s/feature]Extracting features:  80%|████████  | 8/10 [00:22<00:06,  3.10s/feature]Extracting features:  90%|█████████ | 9/10 [00:25<00:02,  3.00s/feature]Extracting features: 100%|██████████| 10/10 [00:28<00:00,  3.13s/feature]Extracting features: 100%|██████████| 10/10 [00:28<00:00,  2.89s/feature]
+Code for feature 'node_weight' generated in 1.81 seconds
+Extracting feature 'node_weight'
+Code for feature 'degree' generated in 1.68 seconds
+Extracting feature 'degree'
+Code for feature 'degree_centrality' generated in 1.86 seconds
+Extracting feature 'degree_centrality'
+Code for feature 'budget_weight_ratio' generated in 1.21 seconds
+Extracting feature 'budget_weight_ratio'
+Code for feature 'coverage_gain' generated in 6.66 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'neighbor_weight_sum' generated in 2.57 seconds
+Extracting feature 'neighbor_weight_sum'
+Code for feature 'neighbor_coverage_potential' generated in 5.56 seconds
+Extracting feature 'neighbor_coverage_potential'
+Code for feature 'is_articulation_point' generated in 1.32 seconds
+Extracting feature 'is_articulation_point'
+Code for feature 'clustering_coefficient' generated in 2.52 seconds
+Extracting feature 'clustering_coefficient'
+Code for feature 'core_number' generated in 3.41 seconds
+Extracting feature 'core_number'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 1392
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.4779341035696542
+node_weight: 0.2130, degree: 0.2143, degree_centrality: 0.0282, budget_weight_ratio: 0.0409, coverage_gain: 0.0921, neighbor_weight_sum: 0.1053, neighbor_coverage_potential: 0.0490, is_articulation_point: 0.0315, clustering_coefficient: 0.0103, core_number: 0.2153
+Feature Space Search Iteration 2 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/12 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/12 [00:01<00:15,  1.42s/feature]Extracting features:  17%|█▋        | 2/12 [00:02<00:11,  1.15s/feature]Extracting features:  25%|██▌       | 3/12 [00:04<00:12,  1.38s/feature]Extracting features:  33%|███▎      | 4/12 [00:05<00:12,  1.57s/feature]Extracting features:  42%|████▏     | 5/12 [00:09<00:17,  2.45s/feature]Extracting features:  50%|█████     | 6/12 [00:11<00:13,  2.18s/feature]Extracting features:  58%|█████▊    | 7/12 [00:15<00:13,  2.79s/feature]Extracting features:  67%|██████▋   | 8/12 [00:19<00:11,  2.99s/feature]Extracting features:  75%|███████▌  | 9/12 [00:21<00:08,  2.84s/feature]Extracting features:  83%|████████▎ | 10/12 [00:23<00:04,  2.44s/feature]Extracting features:  92%|█████████▏| 11/12 [00:27<00:02,  3.00s/feature]Extracting features: 100%|██████████| 12/12 [00:30<00:00,  3.15s/feature]Extracting features: 100%|██████████| 12/12 [00:30<00:00,  2.57s/feature]
+Code for feature 'node_weight' generated in 1.42 seconds
+Extracting feature 'node_weight'
+Code for feature 'degree' generated in 0.96 seconds
+Extracting feature 'degree'
+Code for feature 'core_number' generated in 1.64 seconds
+Extracting feature 'core_number'
+Code for feature 'normalized_coverage_gain' generated in 1.86 seconds
+Extracting feature 'normalized_coverage_gain'
+Code for feature 'normalized_neighbor_weight_sum' generated in 3.99 seconds
+Extracting feature 'normalized_neighbor_weight_sum'
+Code for feature 'budget_weight_ratio_zscore' generated in 1.67 seconds
+Extracting feature 'budget_weight_ratio_zscore'
+Code for feature 'weighted_neighbor_degree_mean' generated in 4.03 seconds
+Extracting feature 'weighted_neighbor_degree_mean'
+Code for feature 'neighbor_core_diversity' generated in 3.36 seconds
+Extracting feature 'neighbor_core_diversity'
+Code for feature 'two_hop_coverage_potential' generated in 2.36 seconds
+Extracting feature 'two_hop_coverage_potential'
+Code for feature 'relative_articulation_score' generated in 1.54 seconds
+Extracting feature 'relative_articulation_score'
+Code for feature 'personalized_pagerank_score' generated in 4.18 seconds
+Extracting feature 'personalized_pagerank_score'
+Code for feature 'local_redundancy' generated in 3.43 seconds
+Extracting feature 'local_redundancy'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 1493
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.5138772907131205
+node_weight: 0.0433, degree: 0.2036, core_number: 0.1038, normalized_coverage_gain: 0.1044, normalized_neighbor_weight_sum: 0.0374, budget_weight_ratio_zscore: 0.1230, weighted_neighbor_degree_mean: 0.0641, neighbor_core_diversity: 0.1556, two_hop_coverage_potential: 0.1135, relative_articulation_score: 0.0244, personalized_pagerank_score: 0.0243, local_redundancy: 0.0026
+Feature Space Search Iteration 3 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/13 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/13 [00:01<00:20,  1.70s/feature]Extracting features:  15%|█▌        | 2/13 [00:03<00:22,  2.03s/feature]Extracting features:  23%|██▎       | 3/13 [00:08<00:31,  3.11s/feature]Extracting features:  31%|███       | 4/13 [00:14<00:39,  4.35s/feature]Extracting features:  38%|███▊      | 5/13 [00:17<00:31,  3.99s/feature]Extracting features:  46%|████▌     | 6/13 [00:22<00:29,  4.14s/feature]Extracting features:  54%|█████▍    | 7/13 [00:24<00:21,  3.52s/feature]Extracting features:  62%|██████▏   | 8/13 [00:28<00:18,  3.74s/feature]Extracting features:  69%|██████▉   | 9/13 [00:38<00:22,  5.51s/feature]Extracting features:  77%|███████▋  | 10/13 [00:46<00:18,  6.24s/feature]Extracting features:  85%|████████▍ | 11/13 [00:49<00:10,  5.48s/feature]Extracting features:  92%|█████████▏| 12/13 [00:53<00:04,  4.99s/feature]Extracting features: 100%|██████████| 13/13 [00:55<00:00,  4.11s/feature]Extracting features: 100%|██████████| 13/13 [00:55<00:00,  4.30s/feature]
+Code for feature 'degree' generated in 1.70 seconds
+Extracting feature 'degree'
+Code for feature 'core_number' generated in 2.25 seconds
+Extracting feature 'core_number'
+Code for feature 'normalized_neighbor_core_diversity' generated in 4.37 seconds
+Extracting feature 'normalized_neighbor_core_diversity'
+Code for feature 'normalized_coverage_gain' generated in 6.24 seconds
+Extracting feature 'normalized_coverage_gain'
+Code for feature 'budget_weight_ratio_zscore' generated in 3.34 seconds
+Extracting feature 'budget_weight_ratio_zscore'
+Code for feature 'two_hop_coverage_potential' generated in 4.31 seconds
+Extracting feature 'two_hop_coverage_potential'
+Code for feature 'weighted_neighbor_degree_mean' generated in 2.23 seconds
+Extracting feature 'weighted_neighbor_degree_mean'
+Code for feature 'neighbor_core_number_mean_ratio' generated in 4.18 seconds
+Extracting feature 'neighbor_core_number_mean_ratio'
+Code for feature 'relative_articulation_score' generated in 4.40 seconds
+Extracting feature 'relative_articulation_score'
+⚠️ Skipping feature 'relative_articulation_score' due to error: 
+Code for feature 'betweenness_centrality_zscore' generated in 2.86 seconds
+Extracting feature 'betweenness_centrality_zscore'
+⚠️ Skipping feature 'betweenness_centrality_zscore' due to error: 
+Code for feature 'coverage_efficiency' generated in 3.75 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'neighborhood_overlap_mean' generated in 3.79 seconds
+Extracting feature 'neighborhood_overlap_mean'
+Code for feature 'normalized_pagerank_score' generated in 2.07 seconds
+Extracting feature 'normalized_pagerank_score'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 1790
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.6195716133033131
+degree: 0.1687, core_number: 0.2299, normalized_neighbor_core_diversity: 0.0118, normalized_coverage_gain: 0.0257, budget_weight_ratio_zscore: 0.1290, two_hop_coverage_potential: 0.0780, weighted_neighbor_degree_mean: 0.0760, neighbor_core_number_mean_ratio: 0.0768, coverage_efficiency: 0.1514, neighborhood_overlap_mean: 0.0269, normalized_pagerank_score: 0.0257
+Feature Space Search Iteration 4 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/13 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/13 [00:01<00:18,  1.56s/feature]Extracting features:  15%|█▌        | 2/13 [00:03<00:22,  2.06s/feature]Extracting features:  23%|██▎       | 3/13 [00:06<00:22,  2.27s/feature]Extracting features:  31%|███       | 4/13 [00:09<00:21,  2.44s/feature]Extracting features:  38%|███▊      | 5/13 [00:12<00:23,  2.88s/feature]Extracting features:  46%|████▌     | 6/13 [00:16<00:20,  2.99s/feature]Extracting features:  54%|█████▍    | 7/13 [00:21<00:22,  3.71s/feature]Extracting features:  62%|██████▏   | 8/13 [00:29<00:25,  5.01s/feature]Extracting features:  69%|██████▉   | 9/13 [00:32<00:17,  4.40s/feature]Extracting features:  77%|███████▋  | 10/13 [00:47<00:23,  7.67s/feature]Extracting features:  85%|████████▍ | 11/13 [00:51<00:13,  6.64s/feature]Extracting features:  92%|█████████▏| 12/13 [00:57<00:06,  6.62s/feature]Extracting features: 100%|██████████| 13/13 [01:05<00:00,  6.91s/feature]Extracting features: 100%|██████████| 13/13 [01:05<00:00,  5.04s/feature]
+Code for feature 'core_number' generated in 1.54 seconds
+Extracting feature 'core_number'
+Code for feature 'degree' generated in 2.41 seconds
+Extracting feature 'degree'
+Code for feature 'budget_weight_ratio_zscore' generated in 2.52 seconds
+Extracting feature 'budget_weight_ratio_zscore'
+Code for feature 'coverage_efficiency' generated in 2.68 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'two_hop_coverage_potential' generated in 3.48 seconds
+Extracting feature 'two_hop_coverage_potential'
+Code for feature 'neighbor_core_number_mean_ratio' generated in 3.20 seconds
+Extracting feature 'neighbor_core_number_mean_ratio'
+Code for feature 'normalized_coverage_gain' generated in 5.16 seconds
+Extracting feature 'normalized_coverage_gain'
+Code for feature 'weighted_neighbor_degree_mean' generated in 7.81 seconds
+Extracting feature 'weighted_neighbor_degree_mean'
+Code for feature 'max_neighbor_core_gap' generated in 3.03 seconds
+Extracting feature 'max_neighbor_core_gap'
+Code for feature 'exclusive_coverage_fraction' generated in 10.01 seconds
+Extracting feature 'exclusive_coverage_fraction'
+⚠️ Skipping feature 'exclusive_coverage_fraction' due to error: 
+Code for feature 'coverage_overlap_mean' generated in 3.55 seconds
+Extracting feature 'coverage_overlap_mean'
+Code for feature 'local_weighted_core_density' generated in 6.28 seconds
+Extracting feature 'local_weighted_core_density'
+Code for feature 'inverse_closeness_centrality' generated in 2.55 seconds
+Extracting feature 'inverse_closeness_centrality'
+⚠️ Skipping feature 'inverse_closeness_centrality' due to error: 
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 1786
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.6181481207431758
+core_number: 0.1712, degree: 0.0317, budget_weight_ratio_zscore: 0.0932, coverage_efficiency: 0.1803, two_hop_coverage_potential: 0.0543, neighbor_core_number_mean_ratio: 0.0640, normalized_coverage_gain: 0.0555, weighted_neighbor_degree_mean: 0.0436, max_neighbor_core_gap: 0.0837, coverage_overlap_mean: 0.1721, local_weighted_core_density: 0.0504
+Feature Space Search Iteration 5 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/14 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/14 [00:01<00:17,  1.38s/feature]Extracting features:  14%|█▍        | 2/14 [00:03<00:22,  1.90s/feature]Extracting features:  21%|██▏       | 3/14 [00:06<00:26,  2.39s/feature]Extracting features:  29%|██▊       | 4/14 [00:09<00:26,  2.69s/feature]Extracting features:  36%|███▌      | 5/14 [00:13<00:27,  3.03s/feature]Extracting features:  43%|████▎     | 6/14 [00:18<00:30,  3.85s/feature]Extracting features:  50%|█████     | 7/14 [00:22<00:26,  3.82s/feature]Extracting features:  57%|█████▋    | 8/14 [00:26<00:22,  3.78s/feature]Extracting features:  64%|██████▍   | 9/14 [00:33<00:25,  5.00s/feature]Extracting features:  71%|███████▏  | 10/14 [00:40<00:21,  5.33s/feature]Extracting features:  79%|███████▊  | 11/14 [00:45<00:16,  5.45s/feature]Extracting features:  86%|████████▌ | 12/14 [00:49<00:09,  4.94s/feature]Extracting features:  93%|█████████▎| 13/14 [00:54<00:04,  4.88s/feature]Extracting features: 100%|██████████| 14/14 [00:56<00:00,  4.08s/feature]Extracting features: 100%|██████████| 14/14 [00:56<00:00,  4.04s/feature]
+Code for feature 'core_number' generated in 1.37 seconds
+Extracting feature 'core_number'
+Code for feature 'coverage_efficiency' generated in 2.25 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'coverage_overlap_mean' generated in 2.85 seconds
+Extracting feature 'coverage_overlap_mean'
+Code for feature 'max_neighbor_core_gap' generated in 3.13 seconds
+Extracting feature 'max_neighbor_core_gap'
+Code for feature 'budget_weight_ratio_zscore' generated in 3.63 seconds
+Extracting feature 'budget_weight_ratio_zscore'
+Code for feature 'two_hop_coverage_potential' generated in 5.34 seconds
+Extracting feature 'two_hop_coverage_potential'
+Code for feature 'neighbor_core_number_mean_ratio' generated in 3.75 seconds
+Extracting feature 'neighbor_core_number_mean_ratio'
+Code for feature 'normalized_coverage_gain' generated in 3.68 seconds
+Extracting feature 'normalized_coverage_gain'
+Code for feature 'local_weighted_core_density' generated in 7.28 seconds
+Extracting feature 'local_weighted_core_density'
+Code for feature 'weighted_neighbor_degree_variance' generated in 6.03 seconds
+Extracting feature 'weighted_neighbor_degree_variance'
+Code for feature 'relative_core_boundary_score' generated in 5.66 seconds
+Extracting feature 'relative_core_boundary_score'
+Code for feature 'projected_coverage_gain_if_selected_with_best_neighbor' generated in 3.78 seconds
+Extracting feature 'projected_coverage_gain_if_selected_with_best_neighbor'
+Code for feature 'neighborhood_node_weight_entropy' generated in 4.70 seconds
+Extracting feature 'neighborhood_node_weight_entropy'
+Code for feature 'distance_to_highest_core_node' generated in 2.21 seconds
+Extracting feature 'distance_to_highest_core_node'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 0
+Objective value pruned: 0
+Ratio 0.0
+queries ratio 0.0
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 205, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 85, in main
+    model, ratio, size_reduction, explainer_feedback_new = train_test_evaluate_gnn(
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~^
+        train_features = train_features,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        budget = budget
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/grads/a/anath/LLM_Pruning/utils.py", line 423, in train_test_evaluate_gnn
+    feature_importances = torch.stack(feature_importances)
+RuntimeError: stack expects a non-empty TensorList
+Data has been loaded from ../snap_dataset/train/Wiki
+Feature Space Search Iteration 1 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s]Extracting features:  10%|█         | 1/10 [00:01<00:10,  1.21s/feature]Extracting features:  20%|██        | 2/10 [00:02<00:09,  1.21s/feature]Extracting features:  30%|███       | 3/10 [00:06<00:16,  2.35s/feature]Extracting features:  40%|████      | 4/10 [00:08<00:13,  2.25s/feature]Extracting features:  50%|█████     | 5/10 [00:09<00:10,  2.05s/feature]Extracting features:  60%|██████    | 6/10 [00:15<00:12,  3.24s/feature]Extracting features:  70%|███████   | 7/10 [00:20<00:11,  3.72s/feature]Extracting features:  80%|████████  | 8/10 [00:53<00:26, 13.15s/feature]Extracting features:  90%|█████████ | 9/10 [00:55<00:09,  9.59s/feature]Extracting features: 100%|██████████| 10/10 [01:02<00:00,  8.80s/feature]Extracting features: 100%|██████████| 10/10 [01:02<00:00,  6.23s/feature]
+Code for feature 'node_weight' generated in 1.21 seconds
+Extracting feature 'node_weight'
+Code for feature 'degree' generated in 1.21 seconds
+Extracting feature 'degree'
+Code for feature 'weight_to_degree_ratio' generated in 3.70 seconds
+Extracting feature 'weight_to_degree_ratio'
+Code for feature 'fraction_of_budget' generated in 2.08 seconds
+Extracting feature 'fraction_of_budget'
+Code for feature 'covered_neighbors_count' generated in 1.69 seconds
+Extracting feature 'covered_neighbors_count'
+Code for feature 'clustering_coefficient' generated in 5.28 seconds
+Extracting feature 'clustering_coefficient'
+Code for feature 'centrality_score' generated in 4.70 seconds
+Extracting feature 'centrality_score'
+Code for feature 'unique_coverage_count' generated in 33.30 seconds
+Extracting feature 'unique_coverage_count'
+Code for feature 'neighbor_avg_weight' generated in 1.75 seconds
+Extracting feature 'neighbor_avg_weight'
+Code for feature 'edge_density_local' generated in 6.54 seconds
+Extracting feature 'edge_density_local'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 577
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.17983374643802585
+node_weight: 0.0921, degree: 0.1903, weight_to_degree_ratio: 0.1245, fraction_of_budget: 0.0378, covered_neighbors_count: 0.0425, clustering_coefficient: 0.0000, centrality_score: 0.2062, unique_coverage_count: 0.0155, neighbor_avg_weight: 0.1941, edge_density_local: 0.0970
+Feature Space Search Iteration 2 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/12 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/12 [00:02<00:29,  2.72s/feature]Extracting features:  17%|█▋        | 2/12 [00:05<00:28,  2.88s/feature]Extracting features:  25%|██▌       | 3/12 [00:07<00:23,  2.57s/feature]Extracting features:  33%|███▎      | 4/12 [01:09<03:27, 25.91s/feature]Extracting features:  42%|████▏     | 5/12 [01:12<02:02, 17.52s/feature]Extracting features:  50%|█████     | 6/12 [01:18<01:21, 13.59s/feature]Extracting features:  58%|█████▊    | 7/12 [01:19<00:47,  9.59s/feature]Extracting features:  67%|██████▋   | 8/12 [01:29<00:38,  9.75s/feature]Extracting features:  75%|███████▌  | 9/12 [01:34<00:24,  8.24s/feature]Extracting features:  83%|████████▎ | 10/12 [01:37<00:13,  6.67s/feature]Extracting features:  92%|█████████▏| 11/12 [01:49<00:08,  8.11s/feature]Extracting features: 100%|██████████| 12/12 [01:55<00:00,  7.49s/feature]Extracting features: 100%|██████████| 12/12 [01:55<00:00,  9.60s/feature]
+Code for feature 'centrality_score' generated in 2.70 seconds
+Extracting feature 'centrality_score'
+Code for feature 'neighbor_avg_weight' generated in 2.97 seconds
+Extracting feature 'neighbor_avg_weight'
+Code for feature 'degree' generated in 2.20 seconds
+Extracting feature 'degree'
+Code for feature 'weight_to_degree_ratio' generated in 61.68 seconds
+Extracting feature 'weight_to_degree_ratio'
+Code for feature 'normalized_node_weight' generated in 2.65 seconds
+Extracting feature 'normalized_node_weight'
+Code for feature 'normalized_degree' generated in 5.95 seconds
+Extracting feature 'normalized_degree'
+Code for feature 'fraction_of_budget' generated in 1.34 seconds
+Extracting feature 'fraction_of_budget'
+Code for feature 'neighbor_coverage_gain' generated in 9.89 seconds
+Extracting feature 'neighbor_coverage_gain'
+Code for feature 'second_order_neighbor_count' generated in 4.05 seconds
+Extracting feature 'second_order_neighbor_count'
+Code for feature 'degree_diversity_among_neighbors' generated in 3.10 seconds
+Extracting feature 'degree_diversity_among_neighbors'
+Code for feature 'budget_normalized_unique_coverage' generated in 11.36 seconds
+Extracting feature 'budget_normalized_unique_coverage'
+Code for feature 'harmonic_neighbor_weight_sum' generated in 6.05 seconds
+Extracting feature 'harmonic_neighbor_weight_sum'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 1737
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.5749304466589105
+centrality_score: 0.1780, neighbor_avg_weight: 0.0736, degree: 0.1689, weight_to_degree_ratio: 0.0760, normalized_node_weight: 0.0266, normalized_degree: 0.0237, fraction_of_budget: 0.0393, neighbor_coverage_gain: 0.1776, second_order_neighbor_count: 0.0712, degree_diversity_among_neighbors: 0.1069, budget_normalized_unique_coverage: 0.0237, harmonic_neighbor_weight_sum: 0.0345
+Feature Space Search Iteration 3 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:02<00:39,  2.84s/feature]Extracting features:  13%|█▎        | 2/15 [00:07<00:49,  3.80s/feature]Extracting features:  20%|██        | 3/15 [00:12<00:53,  4.43s/feature]Extracting features:  27%|██▋       | 4/15 [00:15<00:43,  3.99s/feature]Extracting features:  33%|███▎      | 5/15 [00:19<00:38,  3.80s/feature]Extracting features:  40%|████      | 6/15 [00:21<00:28,  3.15s/feature]Extracting features:  47%|████▋     | 7/15 [00:26<00:31,  3.90s/feature]Extracting features:  53%|█████▎    | 8/15 [00:35<00:39,  5.58s/feature]Extracting features:  60%|██████    | 9/15 [00:38<00:27,  4.66s/feature]Extracting features:  67%|██████▋   | 10/15 [00:44<00:25,  5.08s/feature]Extracting features:  73%|███████▎  | 11/15 [00:47<00:17,  4.38s/feature]Extracting features:  80%|████████  | 12/15 [00:48<00:10,  3.38s/feature]Extracting features:  87%|████████▋ | 13/15 [00:58<00:11,  5.59s/feature]Extracting features:  93%|█████████▎| 14/15 [01:01<00:04,  4.72s/feature]Extracting features: 100%|██████████| 15/15 [01:04<00:00,  4.23s/feature]Extracting features: 100%|██████████| 15/15 [01:04<00:00,  4.32s/feature]
+Code for feature 'centrality_score' generated in 2.83 seconds
+Extracting feature 'centrality_score'
+Code for feature 'neighbor_coverage_gain' generated in 4.46 seconds
+Extracting feature 'neighbor_coverage_gain'
+Code for feature 'degree' generated in 5.18 seconds
+Extracting feature 'degree'
+Code for feature 'neighbor_avg_weight' generated in 3.27 seconds
+Extracting feature 'neighbor_avg_weight'
+Code for feature 'weight_to_degree_ratio' generated in 3.47 seconds
+Extracting feature 'weight_to_degree_ratio'
+Code for feature 'normalized_degree' generated in 1.88 seconds
+Extracting feature 'normalized_degree'
+Code for feature 'neighbor_degree_variance' generated in 5.40 seconds
+Extracting feature 'neighbor_degree_variance'
+Code for feature 'second_order_coverage_gain' generated in 8.90 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'estimated_marginal_gain_per_weight' generated in 2.62 seconds
+Extracting feature 'estimated_marginal_gain_per_weight'
+Code for feature 'normalized_centrality_score' generated in 6.02 seconds
+Extracting feature 'normalized_centrality_score'
+Code for feature 'neighbor_high_degree_fraction' generated in 2.77 seconds
+Extracting feature 'neighbor_high_degree_fraction'
+Code for feature 'weight_fraction_of_budget' generated in 1.10 seconds
+Extracting feature 'weight_fraction_of_budget'
+Code for feature 'exclusive_coverage_count' generated in 5.66 seconds
+Extracting feature 'exclusive_coverage_count'
+⚠️ Skipping feature 'exclusive_coverage_count' due to error: 
+Code for feature 'neighbor_marginal_gain_sum' generated in 2.69 seconds
+Extracting feature 'neighbor_marginal_gain_sum'
+Code for feature 'closeness_to_low_degree_nodes' generated in 3.10 seconds
+Extracting feature 'closeness_to_low_degree_nodes'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 1474
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.485352487901934
+centrality_score: 0.0380, neighbor_coverage_gain: 0.1768, degree: 0.0892, neighbor_avg_weight: 0.1543, weight_to_degree_ratio: 0.0600, normalized_degree: 0.0282, neighbor_degree_variance: 0.0941, second_order_coverage_gain: 0.0909, estimated_marginal_gain_per_weight: 0.1218, normalized_centrality_score: 0.0256, neighbor_high_degree_fraction: 0.0000, weight_fraction_of_budget: 0.0259, neighbor_marginal_gain_sum: 0.0952, closeness_to_low_degree_nodes: 0.0000
+Feature Space Search Iteration 4 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:02<00:37,  2.69s/feature]Extracting features:  13%|█▎        | 2/15 [00:06<00:39,  3.06s/feature]Extracting features:  20%|██        | 3/15 [00:08<00:31,  2.66s/feature]Extracting features:  27%|██▋       | 4/15 [00:15<00:50,  4.55s/feature]Extracting features:  33%|███▎      | 5/15 [00:17<00:36,  3.65s/feature]Extracting features:  40%|████      | 6/15 [00:25<00:46,  5.14s/feature]Extracting features:  47%|████▋     | 7/15 [00:34<00:50,  6.35s/feature]Extracting features:  53%|█████▎    | 8/15 [00:36<00:34,  4.99s/feature]Extracting features:  60%|██████    | 9/15 [00:39<00:26,  4.34s/feature]Extracting features:  67%|██████▋   | 10/15 [00:42<00:19,  3.84s/feature]Extracting features:  73%|███████▎  | 11/15 [00:52<00:22,  5.70s/feature]Extracting features:  80%|████████  | 12/15 [00:56<00:15,  5.20s/feature]Extracting features:  87%|████████▋ | 13/15 [00:58<00:08,  4.26s/feature]Extracting features:  93%|█████████▎| 14/15 [01:03<00:04,  4.66s/feature]Extracting features: 100%|██████████| 15/15 [01:08<00:00,  4.52s/feature]Extracting features: 100%|██████████| 15/15 [01:08<00:00,  4.54s/feature]
+Code for feature 'neighbor_coverage_gain' generated in 2.67 seconds
+Extracting feature 'neighbor_coverage_gain'
+Code for feature 'neighbor_avg_weight' generated in 3.30 seconds
+Extracting feature 'neighbor_avg_weight'
+Code for feature 'degree' generated in 2.17 seconds
+Extracting feature 'degree'
+Code for feature 'second_order_coverage_gain' generated in 7.31 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'estimated_marginal_gain_per_weight' generated in 2.04 seconds
+Extracting feature 'estimated_marginal_gain_per_weight'
+Code for feature 'neighbor_degree_variance' generated in 8.00 seconds
+Extracting feature 'neighbor_degree_variance'
+Code for feature 'neighbor_marginal_gain_sum' generated in 8.82 seconds
+Extracting feature 'neighbor_marginal_gain_sum'
+Code for feature 'weight_to_degree_ratio' generated in 2.08 seconds
+Extracting feature 'weight_to_degree_ratio'
+Code for feature 'normalized_degree' generated in 2.91 seconds
+Extracting feature 'normalized_degree'
+Code for feature 'centrality_score' generated in 2.70 seconds
+Extracting feature 'centrality_score'
+Code for feature 'unique_coverage_fraction' generated in 4.92 seconds
+Extracting feature 'unique_coverage_fraction'
+⚠️ Skipping feature 'unique_coverage_fraction' due to error: 
+Code for feature 'second_order_neighbor_degree_max' generated in 3.94 seconds
+Extracting feature 'second_order_neighbor_degree_max'
+Code for feature 'edge_boundary_ratio' generated in 2.10 seconds
+Extracting feature 'edge_boundary_ratio'
+⚠️ Skipping feature 'edge_boundary_ratio' due to error: 'weight'
+Code for feature 'inverse_neighbor_weight_sum' generated in 5.55 seconds
+Extracting feature 'inverse_neighbor_weight_sum'
+Code for feature 'relative_coverage_overlap' generated in 4.19 seconds
+Extracting feature 'relative_coverage_overlap'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 2914
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.9758173571416527
+neighbor_coverage_gain: 0.1057, neighbor_avg_weight: 0.0985, degree: 0.1042, second_order_coverage_gain: 0.0600, estimated_marginal_gain_per_weight: 0.0452, neighbor_degree_variance: 0.0801, neighbor_marginal_gain_sum: 0.0741, weight_to_degree_ratio: 0.0770, normalized_degree: 0.0160, centrality_score: 0.1045, second_order_neighbor_degree_max: 0.0982, inverse_neighbor_weight_sum: 0.0864, relative_coverage_overlap: 0.0501
+Feature Space Search Iteration 5 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/18 [00:00<?, ?feature/s]Extracting features:   6%|▌         | 1/18 [00:02<00:40,  2.39s/feature]Extracting features:  11%|█         | 2/18 [00:05<00:46,  2.93s/feature]Extracting features:  17%|█▋        | 3/18 [00:06<00:31,  2.12s/feature]Extracting features:  22%|██▏       | 4/18 [00:09<00:35,  2.51s/feature]Extracting features:  28%|██▊       | 5/18 [00:12<00:33,  2.58s/feature]Extracting features:  33%|███▎      | 6/18 [00:17<00:38,  3.19s/feature]Extracting features:  39%|███▉      | 7/18 [00:19<00:31,  2.90s/feature]Extracting features:  44%|████▍     | 8/18 [00:27<00:44,  4.45s/feature]Extracting features:  50%|█████     | 9/18 [00:31<00:38,  4.31s/feature]Extracting features:  56%|█████▌    | 10/18 [00:34<00:31,  3.93s/feature]Extracting features:  61%|██████    | 11/18 [00:39<00:30,  4.41s/feature]Extracting features:  67%|██████▋   | 12/18 [00:43<00:25,  4.29s/feature]Extracting features:  72%|███████▏  | 13/18 [00:52<00:27,  5.60s/feature]Extracting features:  78%|███████▊  | 14/18 [00:56<00:20,  5.05s/feature]Extracting features:  83%|████████▎ | 15/18 [01:01<00:15,  5.06s/feature]Extracting features:  89%|████████▉ | 16/18 [01:03<00:08,  4.20s/feature]Extracting features:  94%|█████████▍| 17/18 [01:07<00:04,  4.21s/feature]Extracting features: 100%|██████████| 18/18 [01:10<00:00,  3.86s/feature]Extracting features: 100%|██████████| 18/18 [01:10<00:00,  3.93s/feature]
+Code for feature 'neighbor_coverage_gain' generated in 2.38 seconds
+Extracting feature 'neighbor_coverage_gain'
+Code for feature 'neighbor_avg_weight' generated in 3.29 seconds
+Extracting feature 'neighbor_avg_weight'
+Code for feature 'degree' generated in 1.15 seconds
+Extracting feature 'degree'
+Code for feature 'second_order_coverage_gain' generated in 2.87 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'estimated_marginal_gain_per_weight' generated in 2.69 seconds
+Extracting feature 'estimated_marginal_gain_per_weight'
+Code for feature 'neighbor_degree_variance' generated in 4.33 seconds
+Extracting feature 'neighbor_degree_variance'
+Code for feature 'neighbor_marginal_gain_sum' generated in 2.31 seconds
+Extracting feature 'neighbor_marginal_gain_sum'
+Code for feature 'weight_to_degree_ratio_normalized' generated in 7.75 seconds
+Extracting feature 'weight_to_degree_ratio_normalized'
+Code for feature 'centrality_score_normalized' generated in 4.02 seconds
+Extracting feature 'centrality_score_normalized'
+⚠️ Skipping feature 'centrality_score_normalized' due to error: name 'nx' is not defined
+Code for feature 'second_order_neighbor_degree_max' generated in 2.97 seconds
+Extracting feature 'second_order_neighbor_degree_max'
+Code for feature 'inverse_neighbor_weight_sum' generated in 5.48 seconds
+Extracting feature 'inverse_neighbor_weight_sum'
+Code for feature 'relative_coverage_overlap' generated in 3.98 seconds
+Extracting feature 'relative_coverage_overlap'
+Code for feature 'unique_coverage_fraction' generated in 8.06 seconds
+Extracting feature 'unique_coverage_fraction'
+Code for feature 'edge_boundary_fraction' generated in 3.77 seconds
+Extracting feature 'edge_boundary_fraction'
+Code for feature 'average_neighbor_marginal_gain_per_weight' generated in 5.06 seconds
+Extracting feature 'average_neighbor_marginal_gain_per_weight'
+Code for feature 'neighborhood_budget_density' generated in 2.20 seconds
+Extracting feature 'neighborhood_budget_density'
+Code for feature 'second_order_unique_contribution' generated in 3.38 seconds
+Extracting feature 'second_order_unique_contribution'
+Code for feature 'closeness_to_central_nodes' generated in 3.05 seconds
+Extracting feature 'closeness_to_central_nodes'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 0
+Objective value pruned: 0
+Ratio 0.0
+queries ratio 0.0
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 205, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 85, in main
+    model, ratio, size_reduction, explainer_feedback_new = train_test_evaluate_gnn(
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~^
+        train_features = train_features,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        budget = budget
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/grads/a/anath/LLM_Pruning/utils.py", line 423, in train_test_evaluate_gnn
+    feature_importances = torch.stack(feature_importances)
+RuntimeError: stack expects a non-empty TensorList
+Data has been loaded from ../snap_dataset/train/Deezer
+Feature Space Search Iteration 1 for problem: Maximum Coverage Weighted
+Error parsing cleaned response: Invalid \escape: line 34 column 39 (char 1753)
+Extracting features: 0feature [00:00, ?feature/s]Extracting features: 0feature [00:00, ?feature/s]
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 205, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 85, in main
+    model, ratio, size_reduction, explainer_feedback_new = train_test_evaluate_gnn(
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~^
+        train_features = train_features,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        budget = budget
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/grads/a/anath/LLM_Pruning/utils.py", line 342, in train_test_evaluate_gnn
+    model     = GCN(input_channels=train_data.x.shape[1] ,hidden_channels=16, out_channels=num_classes).to(device)
+                                   ~~~~~~~~~~~~~~~~~~^^^
+IndexError: tuple index out of range
+Data has been loaded from ../snap_dataset/train/Slashdot
+Feature Space Search Iteration 1 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s]Extracting features:  10%|█         | 1/10 [00:01<00:09,  1.03s/feature]Extracting features:  20%|██        | 2/10 [00:02<00:09,  1.14s/feature]Extracting features:  30%|███       | 3/10 [00:04<00:11,  1.64s/feature]Extracting features:  40%|████      | 4/10 [00:09<00:18,  3.13s/feature]Extracting features:  50%|█████     | 5/10 [00:16<00:21,  4.35s/feature]Extracting features:  60%|██████    | 6/10 [00:24<00:22,  5.54s/feature]Extracting features:  70%|███████   | 7/10 [00:27<00:14,  4.85s/feature]Extracting features:  80%|████████  | 8/10 [00:32<00:09,  4.86s/feature]Extracting features:  90%|█████████ | 9/10 [00:34<00:04,  4.07s/feature]Extracting features: 100%|██████████| 10/10 [00:38<00:00,  3.83s/feature]Extracting features: 100%|██████████| 10/10 [00:38<00:00,  3.82s/feature]
+Code for feature 'node_weight' generated in 1.03 seconds
+Extracting feature 'node_weight'
+Code for feature 'degree' generated in 1.20 seconds
+Extracting feature 'degree'
+Code for feature 'weight_to_degree_ratio' generated in 2.19 seconds
+Extracting feature 'weight_to_degree_ratio'
+Code for feature 'clustering_coefficient' generated in 4.16 seconds
+Extracting feature 'clustering_coefficient'
+Code for feature 'betweenness_centrality' generated in 1.50 seconds
+Extracting feature 'betweenness_centrality'
+⚠️ Skipping feature 'betweenness_centrality' due to error: 
+Code for feature 'local_coverage' generated in 7.69 seconds
+Extracting feature 'local_coverage'
+Code for feature 'average_neighbor_weight' generated in 3.20 seconds
+Extracting feature 'average_neighbor_weight'
+Code for feature 'neighbor_influence_sum' generated in 4.76 seconds
+Extracting feature 'neighbor_influence_sum'
+Code for feature 'k_core_number' generated in 2.17 seconds
+Extracting feature 'k_core_number'
+Code for feature 'egonet_edge_count' generated in 1.88 seconds
+Extracting feature 'egonet_edge_count'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 3170
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.14960891521433725
+node_weight: 0.0429, degree: 0.3336, weight_to_degree_ratio: 0.0501, clustering_coefficient: 0.0000, local_coverage: 0.3366, average_neighbor_weight: 0.0479, neighbor_influence_sum: 0.0588, k_core_number: 0.0888, egonet_edge_count: 0.0414
+Feature Space Search Iteration 2 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/12 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/12 [00:00<00:10,  1.07feature/s]Extracting features:  17%|█▋        | 2/12 [00:02<00:15,  1.58s/feature]Extracting features:  25%|██▌       | 3/12 [00:04<00:14,  1.66s/feature]Extracting features:  33%|███▎      | 4/12 [00:06<00:12,  1.59s/feature]Extracting features:  42%|████▏     | 5/12 [00:09<00:14,  2.05s/feature]Extracting features:  50%|█████     | 6/12 [00:11<00:12,  2.13s/feature]Extracting features:  58%|█████▊    | 7/12 [00:13<00:11,  2.29s/feature]Extracting features:  67%|██████▋   | 8/12 [00:15<00:08,  2.14s/feature]Extracting features:  75%|███████▌  | 9/12 [00:21<00:09,  3.16s/feature]Extracting features:  83%|████████▎ | 10/12 [00:28<00:08,  4.43s/feature]Extracting features:  92%|█████████▏| 11/12 [00:32<00:04,  4.27s/feature]Extracting features: 100%|██████████| 12/12 [00:35<00:00,  3.90s/feature]Extracting features: 100%|██████████| 12/12 [00:35<00:00,  2.95s/feature]
+Code for feature 'degree' generated in 0.91 seconds
+Extracting feature 'degree'
+Code for feature 'local_coverage' generated in 1.88 seconds
+Extracting feature 'local_coverage'
+Code for feature 'degree_centrality_norm' generated in 1.71 seconds
+Extracting feature 'degree_centrality_norm'
+Code for feature 'weight_to_degree_ratio_log' generated in 1.46 seconds
+Extracting feature 'weight_to_degree_ratio_log'
+Code for feature 'average_neighbor_weight_norm' generated in 2.62 seconds
+Extracting feature 'average_neighbor_weight_norm'
+Code for feature 'neighbor_coverage_gain' generated in 2.28 seconds
+Extracting feature 'neighbor_coverage_gain'
+⚠️ Skipping feature 'neighbor_coverage_gain' due to error: name 'nx' is not defined
+Code for feature 'weighted_neighbor_influence' generated in 2.47 seconds
+Extracting feature 'weighted_neighbor_influence'
+Code for feature 'k_core_number' generated in 1.35 seconds
+Extracting feature 'k_core_number'
+Code for feature 'egonet_density' generated in 3.50 seconds
+Extracting feature 'egonet_density'
+Code for feature 'two_hop_coverage' generated in 4.80 seconds
+Extracting feature 'two_hop_coverage'
+Code for feature 'redundancy_score' generated in 3.77 seconds
+Extracting feature 'redundancy_score'
+Code for feature 'isolated_coverage_fraction' generated in 2.86 seconds
+Extracting feature 'isolated_coverage_fraction'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 3641
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.17218694232448647
+degree: 0.2943, local_coverage: 0.0578, degree_centrality_norm: 0.0322, weight_to_degree_ratio_log: 0.0445, average_neighbor_weight_norm: 0.0458, weighted_neighbor_influence: 0.0530, k_core_number: 0.2926, egonet_density: 0.0569, two_hop_coverage: 0.0633, redundancy_score: 0.0596, isolated_coverage_fraction: 0.0000
+Feature Space Search Iteration 3 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/13 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/13 [00:01<00:20,  1.68s/feature]Extracting features:  15%|█▌        | 2/13 [00:03<00:16,  1.48s/feature]Extracting features:  23%|██▎       | 3/13 [00:14<01:01,  6.17s/feature]Extracting features:  31%|███       | 4/13 [00:16<00:41,  4.59s/feature]Extracting features:  38%|███▊      | 5/13 [00:21<00:37,  4.66s/feature]Extracting features:  46%|████▌     | 6/13 [00:30<00:43,  6.20s/feature]Extracting features:  54%|█████▍    | 7/13 [00:33<00:29,  4.99s/feature]Extracting features:  62%|██████▏   | 8/13 [00:36<00:22,  4.48s/feature]Extracting features:  69%|██████▉   | 9/13 [00:40<00:17,  4.33s/feature]Extracting features:  77%|███████▋  | 10/13 [00:46<00:14,  4.69s/feature]Extracting features:  85%|████████▍ | 11/13 [00:48<00:07,  3.83s/feature]Extracting features:  92%|█████████▏| 12/13 [00:51<00:03,  3.52s/feature]Extracting features: 100%|██████████| 13/13 [00:55<00:00,  3.89s/feature]Extracting features: 100%|██████████| 13/13 [00:55<00:00,  4.29s/feature]
+Code for feature 'degree' generated in 1.66 seconds
+Extracting feature 'degree'
+Code for feature 'k_core_number' generated in 1.20 seconds
+Extracting feature 'k_core_number'
+Code for feature 'local_coverage' generated in 11.62 seconds
+Extracting feature 'local_coverage'
+Code for feature 'weighted_neighbor_influence' generated in 2.03 seconds
+Extracting feature 'weighted_neighbor_influence'
+Code for feature 'egonet_density' generated in 4.02 seconds
+Extracting feature 'egonet_density'
+Code for feature 'two_hop_coverage_norm' generated in 6.40 seconds
+Extracting feature 'two_hop_coverage_norm'
+Code for feature 'redundancy_score' generated in 2.40 seconds
+Extracting feature 'redundancy_score'
+Code for feature 'degree_weight_ratio_zscore' generated in 3.33 seconds
+Extracting feature 'degree_weight_ratio_zscore'
+Code for feature 'neighbor_k_core_fraction' generated in 3.82 seconds
+Extracting feature 'neighbor_k_core_fraction'
+Code for feature 'unique_coverage_gain' generated in 4.72 seconds
+Extracting feature 'unique_coverage_gain'
+Code for feature 'budget_coverage_efficiency' generated in 1.87 seconds
+Extracting feature 'budget_coverage_efficiency'
+Code for feature 'neighborhood_budget_fraction' generated in 2.72 seconds
+Extracting feature 'neighborhood_budget_fraction'
+Code for feature 'majority_neighbor_overlap' generated in 4.32 seconds
+Extracting feature 'majority_neighbor_overlap'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 4370
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.207132551163762
+degree: 0.0566, k_core_number: 0.1975, local_coverage: 0.1980, weighted_neighbor_influence: 0.0907, egonet_density: 0.0051, two_hop_coverage_norm: 0.0624, redundancy_score: 0.0179, degree_weight_ratio_zscore: 0.1019, neighbor_k_core_fraction: 0.0000, unique_coverage_gain: 0.1952, budget_coverage_efficiency: 0.0265, neighborhood_budget_fraction: 0.0482, majority_neighbor_overlap: 0.0000
+Feature Space Search Iteration 4 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:14,  1.06s/feature]Extracting features:  13%|█▎        | 2/15 [00:03<00:22,  1.71s/feature]Extracting features:  20%|██        | 3/15 [00:05<00:26,  2.19s/feature]Extracting features:  27%|██▋       | 4/15 [00:20<01:16,  6.98s/feature]Extracting features:  33%|███▎      | 5/15 [00:26<01:08,  6.80s/feature]Extracting features:  40%|████      | 6/15 [00:29<00:47,  5.31s/feature]Extracting features:  47%|████▋     | 7/15 [00:36<00:47,  5.99s/feature]Extracting features:  53%|█████▎    | 8/15 [00:39<00:34,  4.94s/feature]Extracting features:  60%|██████    | 9/15 [00:43<00:28,  4.83s/feature]Extracting features:  67%|██████▋   | 10/15 [00:57<00:37,  7.52s/feature]Extracting features:  73%|███████▎  | 11/15 [00:59<00:23,  5.95s/feature]Extracting features:  80%|████████  | 12/15 [01:10<00:22,  7.40s/feature]Extracting features:  87%|████████▋ | 13/15 [01:12<00:11,  5.63s/feature]Extracting features:  93%|█████████▎| 14/15 [01:14<00:04,  4.79s/feature]Extracting features: 100%|██████████| 15/15 [01:59<00:00, 16.75s/feature]Extracting features: 100%|██████████| 15/15 [01:59<00:00,  7.96s/feature]
+Code for feature 'degree' generated in 1.04 seconds
+Extracting feature 'degree'
+Code for feature 'k_core_number' generated in 1.53 seconds
+Extracting feature 'k_core_number'
+Code for feature 'local_coverage' generated in 2.62 seconds
+Extracting feature 'local_coverage'
+Code for feature 'unique_coverage_gain' generated in 9.33 seconds
+Extracting feature 'unique_coverage_gain'
+⚠️ Skipping feature 'unique_coverage_gain' due to error: 
+Code for feature 'weighted_neighbor_influence' generated in 6.32 seconds
+Extracting feature 'weighted_neighbor_influence'
+Code for feature 'degree_weight_ratio_zscore' generated in 2.30 seconds
+Extracting feature 'degree_weight_ratio_zscore'
+Code for feature 'two_hop_coverage_norm' generated in 4.66 seconds
+Extracting feature 'two_hop_coverage_norm'
+Code for feature 'budget_coverage_efficiency' generated in 2.58 seconds
+Extracting feature 'budget_coverage_efficiency'
+Code for feature 'redundancy_score' generated in 4.15 seconds
+Extracting feature 'redundancy_score'
+Code for feature 'core_neighbor_fraction' generated in 13.48 seconds
+Extracting feature 'core_neighbor_fraction'
+Code for feature 'weighted_local_coverage' generated in 2.23 seconds
+Extracting feature 'weighted_local_coverage'
+Code for feature 'neighbor_coverage_uniqueness' generated in 5.74 seconds
+Extracting feature 'neighbor_coverage_uniqueness'
+⚠️ Skipping feature 'neighbor_coverage_uniqueness' due to error: 
+Code for feature 'relative_budget_fraction' generated in 1.55 seconds
+Extracting feature 'relative_budget_fraction'
+Code for feature 'average_two_hop_neighbor_weight' generated in 2.82 seconds
+Extracting feature 'average_two_hop_neighbor_weight'
+⚠️ Skipping feature 'average_two_hop_neighbor_weight' due to error: name 'nx' is not defined
+Code for feature 'interior_vs_boundary_score' generated in 44.30 seconds
+Extracting feature 'interior_vs_boundary_score'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 3881
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.1836916695143714
+degree: 0.0865, k_core_number: 0.1752, local_coverage: 0.0428, weighted_neighbor_influence: 0.2016, degree_weight_ratio_zscore: 0.0921, two_hop_coverage_norm: 0.0395, budget_coverage_efficiency: 0.0299, redundancy_score: 0.0000, core_neighbor_fraction: 0.0078, weighted_local_coverage: 0.0918, relative_budget_fraction: 0.0255, interior_vs_boundary_score: 0.2072
+Feature Space Search Iteration 5 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/16 [00:00<?, ?feature/s]Extracting features:   6%|▋         | 1/16 [00:01<00:20,  1.40s/feature]Extracting features:  12%|█▎        | 2/16 [00:04<00:34,  2.46s/feature]Extracting features:  19%|█▉        | 3/16 [00:08<00:39,  3.05s/feature]Extracting features:  25%|██▌       | 4/16 [00:10<00:31,  2.65s/feature]Extracting features:  31%|███▏      | 5/16 [00:18<00:49,  4.47s/feature]Extracting features:  38%|███▊      | 6/16 [00:21<00:41,  4.18s/feature]Extracting features:  44%|████▍     | 7/16 [00:23<00:32,  3.56s/feature]Extracting features:  50%|█████     | 8/16 [00:26<00:26,  3.36s/feature]Extracting features:  56%|█████▋    | 9/16 [00:35<00:34,  4.98s/feature]Extracting features:  62%|██████▎   | 10/16 [00:38<00:25,  4.25s/feature]Extracting features:  69%|██████▉   | 11/16 [00:41<00:20,  4.11s/feature]Extracting features:  75%|███████▌  | 12/16 [00:44<00:14,  3.60s/feature]Extracting features:  81%|████████▏ | 13/16 [00:45<00:08,  2.94s/feature]Extracting features:  88%|████████▊ | 14/16 [00:47<00:05,  2.69s/feature]Extracting features:  94%|█████████▍| 15/16 [00:49<00:02,  2.52s/feature]Extracting features: 100%|██████████| 16/16 [01:03<00:00,  5.72s/feature]Extracting features: 100%|██████████| 16/16 [01:03<00:00,  3.94s/feature]
+Code for feature 'k_core_number' generated in 1.30 seconds
+Extracting feature 'k_core_number'
+Code for feature 'local_coverage' generated in 3.06 seconds
+Extracting feature 'local_coverage'
+Code for feature 'weighted_neighbor_influence' generated in 3.55 seconds
+Extracting feature 'weighted_neighbor_influence'
+Code for feature 'interior_vs_boundary_score' generated in 1.89 seconds
+Extracting feature 'interior_vs_boundary_score'
+Code for feature 'unique_coverage_gain' generated in 2.69 seconds
+Extracting feature 'unique_coverage_gain'
+⚠️ Skipping feature 'unique_coverage_gain' due to error: 
+Code for feature 'degree_weight_ratio_zscore' generated in 3.59 seconds
+Extracting feature 'degree_weight_ratio_zscore'
+Code for feature 'weighted_local_coverage' generated in 2.16 seconds
+Extracting feature 'weighted_local_coverage'
+Code for feature 'budget_coverage_efficiency' generated in 2.78 seconds
+Extracting feature 'budget_coverage_efficiency'
+Code for feature 'two_hop_coverage_norm' generated in 7.33 seconds
+Extracting feature 'two_hop_coverage_norm'
+Code for feature 'majority_neighbor_in_core' generated in 2.56 seconds
+Extracting feature 'majority_neighbor_in_core'
+Code for feature 'exclusive_coverage_fraction' generated in 3.78 seconds
+Extracting feature 'exclusive_coverage_fraction'
+⚠️ Skipping feature 'exclusive_coverage_fraction' due to error: unsupported operand type(s) for -: 'int' and 'set'
+Code for feature 'neighbor_weight_inequality' generated in 2.26 seconds
+Extracting feature 'neighbor_weight_inequality'
+Code for feature 'normalized_degree' generated in 1.40 seconds
+Extracting feature 'normalized_degree'
+Code for feature 'redundant_coverage_fraction' generated in 1.99 seconds
+Extracting feature 'redundant_coverage_fraction'
+Code for feature 'budget_fraction' generated in 2.11 seconds
+Extracting feature 'budget_fraction'
+Code for feature 'multi_hop_betweenness_norm' generated in 8.16 seconds
+Extracting feature 'multi_hop_betweenness_norm'
+⚠️ Skipping feature 'multi_hop_betweenness_norm' due to error: 
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 2713
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.12770199719026465
+k_core_number: 0.2178, local_coverage: 0.0810, weighted_neighbor_influence: 0.0969, interior_vs_boundary_score: 0.0000, degree_weight_ratio_zscore: 0.0994, weighted_local_coverage: 0.3260, budget_coverage_efficiency: 0.0448, two_hop_coverage_norm: 0.0445, majority_neighbor_in_core: 0.0000, neighbor_weight_inequality: 0.0000, normalized_degree: 0.0448, redundant_coverage_fraction: 0.0000, budget_fraction: 0.0450
+Feature Space Search Iteration 6 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/13 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/13 [00:01<00:19,  1.58s/feature]Extracting features:  15%|█▌        | 2/13 [00:04<00:23,  2.12s/feature]Extracting features:  23%|██▎       | 3/13 [00:06<00:23,  2.36s/feature]Extracting features:  31%|███       | 4/13 [00:08<00:20,  2.26s/feature]Extracting features:  38%|███▊      | 5/13 [00:10<00:16,  2.12s/feature]Extracting features:  46%|████▌     | 6/13 [00:23<00:40,  5.85s/feature]Extracting features:  54%|█████▍    | 7/13 [00:28<00:31,  5.32s/feature]Extracting features:  62%|██████▏   | 8/13 [00:31<00:23,  4.73s/feature]Extracting features:  69%|██████▉   | 9/13 [00:34<00:16,  4.08s/feature]Extracting features:  77%|███████▋  | 10/13 [00:42<00:15,  5.32s/feature]Extracting features:  85%|████████▍ | 11/13 [00:43<00:08,  4.21s/feature]Extracting features:  92%|█████████▏| 12/13 [00:47<00:03,  3.90s/feature]Extracting features: 100%|██████████| 13/13 [00:48<00:00,  3.19s/feature]Extracting features: 100%|██████████| 13/13 [00:48<00:00,  3.74s/feature]
+Code for feature 'k_core_number' generated in 1.08 seconds
+Extracting feature 'k_core_number'
+Code for feature 'local_coverage' generated in 2.28 seconds
+Extracting feature 'local_coverage'
+Code for feature 'weighted_local_coverage' generated in 2.49 seconds
+Extracting feature 'weighted_local_coverage'
+Code for feature 'degree_weight_ratio_zscore' generated in 2.06 seconds
+Extracting feature 'degree_weight_ratio_zscore'
+Code for feature 'weighted_neighbor_influence' generated in 1.68 seconds
+Extracting feature 'weighted_neighbor_influence'
+Code for feature 'unique_coverage_gain' generated in 12.26 seconds
+Extracting feature 'unique_coverage_gain'
+Code for feature 'two_hop_coverage_norm' generated in 1.65 seconds
+Extracting feature 'two_hop_coverage_norm'
+Code for feature 'budget_coverage_efficiency' generated in 3.33 seconds
+Extracting feature 'budget_coverage_efficiency'
+Code for feature 'majority_core_neighbor_fraction' generated in 2.54 seconds
+Extracting feature 'majority_core_neighbor_fraction'
+Code for feature 'coverage_redundancy_avoided' generated in 3.09 seconds
+Extracting feature 'coverage_redundancy_avoided'
+⚠️ Skipping feature 'coverage_redundancy_avoided' due to error: 
+Code for feature 'neighbor_weight_variance' generated in 1.32 seconds
+Extracting feature 'neighbor_weight_variance'
+Code for feature 'inverse_neighbor_overlap_score' generated in 2.76 seconds
+Extracting feature 'inverse_neighbor_overlap_score'
+Code for feature 'budget_fraction_zscore' generated in 1.52 seconds
+Extracting feature 'budget_fraction_zscore'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 5087
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.2415029236435433
+k_core_number: 0.1540, local_coverage: 0.1237, weighted_local_coverage: 0.1984, degree_weight_ratio_zscore: 0.1290, weighted_neighbor_influence: 0.0708, unique_coverage_gain: 0.0597, two_hop_coverage_norm: 0.0552, budget_coverage_efficiency: 0.1214, majority_core_neighbor_fraction: 0.0124, neighbor_weight_variance: 0.0248, inverse_neighbor_overlap_score: 0.0036, budget_fraction_zscore: 0.0472
+Feature Space Search Iteration 7 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:24,  1.74s/feature]Extracting features:  13%|█▎        | 2/15 [00:03<00:25,  1.95s/feature]Extracting features:  20%|██        | 3/15 [00:07<00:34,  2.89s/feature]Extracting features:  27%|██▋       | 4/15 [00:33<02:12, 12.06s/feature]Extracting features:  33%|███▎      | 5/15 [00:36<01:26,  8.64s/feature]Extracting features:  40%|████      | 6/15 [00:39<00:58,  6.55s/feature]Extracting features:  47%|████▋     | 7/15 [00:42<00:43,  5.41s/feature]Extracting features:  53%|█████▎    | 8/15 [00:45<00:32,  4.68s/feature]Extracting features:  60%|██████    | 9/15 [00:49<00:27,  4.51s/feature]Extracting features:  67%|██████▋   | 10/15 [00:50<00:17,  3.58s/feature]Extracting features:  73%|███████▎  | 11/15 [00:53<00:13,  3.32s/feature]Extracting features:  80%|████████  | 12/15 [00:55<00:09,  3.00s/feature]Extracting features:  87%|████████▋ | 13/15 [00:58<00:05,  2.80s/feature]Extracting features:  93%|█████████▎| 14/15 [01:01<00:03,  3.08s/feature]Extracting features: 100%|██████████| 15/15 [01:06<00:00,  3.48s/feature]Extracting features: 100%|██████████| 15/15 [01:06<00:00,  4.42s/feature]
+Code for feature 'k_core_number' generated in 1.11 seconds
+Extracting feature 'k_core_number'
+Code for feature 'local_coverage_norm' generated in 2.01 seconds
+Extracting feature 'local_coverage_norm'
+Code for feature 'weighted_local_coverage' generated in 3.88 seconds
+Extracting feature 'weighted_local_coverage'
+Code for feature 'degree_weight_ratio_zscore' generated in 26.08 seconds
+Extracting feature 'degree_weight_ratio_zscore'
+Code for feature 'weighted_neighbor_influence_norm' generated in 2.42 seconds
+Extracting feature 'weighted_neighbor_influence_norm'
+Code for feature 'unique_coverage_gain_norm' generated in 2.39 seconds
+Extracting feature 'unique_coverage_gain_norm'
+Code for feature 'budget_coverage_efficiency_log' generated in 3.04 seconds
+Extracting feature 'budget_coverage_efficiency_log'
+Code for feature 'two_hop_coverage_norm' generated in 3.12 seconds
+Extracting feature 'two_hop_coverage_norm'
+⚠️ Skipping feature 'two_hop_coverage_norm' due to error: name 'nx' is not defined
+Code for feature 'weighted_k_core_density' generated in 3.21 seconds
+Extracting feature 'weighted_k_core_density'
+Code for feature 'budget_fraction_zscore' generated in 1.49 seconds
+Extracting feature 'budget_fraction_zscore'
+Code for feature 'neighbor_coverage_asymmetry' generated in 2.57 seconds
+Extracting feature 'neighbor_coverage_asymmetry'
+Code for feature 'core_redundancy_score' generated in 2.27 seconds
+Extracting feature 'core_redundancy_score'
+⚠️ Skipping feature 'core_redundancy_score' due to error: 'weight'
+Code for feature 'neighbor_weight_entropy' generated in 2.03 seconds
+Extracting feature 'neighbor_weight_entropy'
+Code for feature 'inverse_neighbor_overlap_score' generated in 2.79 seconds
+Extracting feature 'inverse_neighbor_overlap_score'
+Code for feature 'two_hop_unique_gain' generated in 1.79 seconds
+Extracting feature 'two_hop_unique_gain'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 10843
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.5174246307476175
+k_core_number: 0.0777, local_coverage_norm: 0.0486, weighted_local_coverage: 0.1323, degree_weight_ratio_zscore: 0.1619, weighted_neighbor_influence_norm: 0.0262, unique_coverage_gain_norm: 0.0184, budget_coverage_efficiency_log: 0.0325, weighted_k_core_density: 0.1213, budget_fraction_zscore: 0.0603, neighbor_coverage_asymmetry: 0.0712, neighbor_weight_entropy: 0.0389, inverse_neighbor_overlap_score: 0.1110, two_hop_unique_gain: 0.0997
+Feature Space Search Iteration 8 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:25,  1.85s/feature]Extracting features:  13%|█▎        | 2/15 [00:03<00:26,  2.01s/feature]Extracting features:  20%|██        | 3/15 [00:06<00:26,  2.19s/feature]Extracting features:  27%|██▋       | 4/15 [00:15<00:53,  4.87s/feature]Extracting features:  33%|███▎      | 5/15 [01:29<04:57, 29.71s/feature]Extracting features:  40%|████      | 6/15 [01:30<03:01, 20.18s/feature]Extracting features:  47%|████▋     | 7/15 [01:32<01:52, 14.10s/feature]Extracting features:  53%|█████▎    | 8/15 [01:39<01:24, 12.02s/feature]Extracting features:  60%|██████    | 9/15 [01:43<00:56,  9.48s/feature]Extracting features:  67%|██████▋   | 10/15 [01:50<00:42,  8.46s/feature]Extracting features:  73%|███████▎  | 11/15 [01:56<00:31,  7.97s/feature]Extracting features:  80%|████████  | 12/15 [01:59<00:19,  6.49s/feature]Extracting features:  87%|████████▋ | 13/15 [02:08<00:14,  7.11s/feature]Extracting features:  93%|█████████▎| 14/15 [02:10<00:05,  5.50s/feature]Extracting features: 100%|██████████| 15/15 [02:12<00:00,  4.39s/feature]Extracting features: 100%|██████████| 15/15 [02:12<00:00,  8.81s/feature]
+Code for feature 'k_core_number' generated in 1.71 seconds
+Extracting feature 'k_core_number'
+Code for feature 'degree_weight_ratio_zscore' generated in 2.09 seconds
+Extracting feature 'degree_weight_ratio_zscore'
+Code for feature 'weighted_local_coverage' generated in 2.21 seconds
+Extracting feature 'weighted_local_coverage'
+Code for feature 'weighted_k_core_density' generated in 3.88 seconds
+Extracting feature 'weighted_k_core_density'
+⚠️ Skipping feature 'weighted_k_core_density' due to error: 
+Code for feature 'inverse_neighbor_overlap_score' generated in 73.12 seconds
+Extracting feature 'inverse_neighbor_overlap_score'
+Code for feature 'budget_coverage_efficiency_log' generated in 1.67 seconds
+Extracting feature 'budget_coverage_efficiency_log'
+Code for feature 'budget_fraction_zscore' generated in 1.57 seconds
+Extracting feature 'budget_fraction_zscore'
+Code for feature 'two_hop_unique_gain' generated in 4.04 seconds
+Extracting feature 'two_hop_unique_gain'
+Code for feature 'neighbor_coverage_asymmetry' generated in 3.76 seconds
+Extracting feature 'neighbor_coverage_asymmetry'
+Code for feature 'neighbor_weight_entropy' generated in 1.81 seconds
+Extracting feature 'neighbor_weight_entropy'
+Code for feature 'normalized_weighted_neighbor_influence' generated in 6.65 seconds
+Extracting feature 'normalized_weighted_neighbor_influence'
+Code for feature 'core_boundary_ratio' generated in 2.94 seconds
+Extracting feature 'core_boundary_ratio'
+Code for feature 'relative_two_hop_gain' generated in 5.67 seconds
+Extracting feature 'relative_two_hop_gain'
+Code for feature 'minimum_neighbor_weight_fraction' generated in 1.66 seconds
+Extracting feature 'minimum_neighbor_weight_fraction'
+Code for feature 'local_coverage_norm' generated in 1.69 seconds
+Extracting feature 'local_coverage_norm'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 7070
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.3365607320499677
+k_core_number: 0.0907, degree_weight_ratio_zscore: 0.1985, weighted_local_coverage: 0.1783, inverse_neighbor_overlap_score: 0.0000, budget_coverage_efficiency_log: 0.1390, budget_fraction_zscore: 0.0422, two_hop_unique_gain: 0.0577, neighbor_coverage_asymmetry: 0.0923, neighbor_weight_entropy: 0.0245, normalized_weighted_neighbor_influence: 0.0297, core_boundary_ratio: 0.0000, relative_two_hop_gain: 0.0558, minimum_neighbor_weight_fraction: 0.0329, local_coverage_norm: 0.0586
+Feature Space Search Iteration 9 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:16,  1.16s/feature]Extracting features:  13%|█▎        | 2/15 [00:02<00:20,  1.55s/feature]Extracting features:  20%|██        | 3/15 [00:05<00:22,  1.86s/feature]Extracting features:  27%|██▋       | 4/15 [00:06<00:19,  1.82s/feature]Extracting features:  33%|███▎      | 5/15 [00:12<00:31,  3.18s/feature]Extracting features:  40%|████      | 6/15 [00:15<00:27,  3.01s/feature]Extracting features:  47%|████▋     | 7/15 [00:21<00:33,  4.21s/feature]Extracting features:  53%|█████▎    | 8/15 [00:23<00:24,  3.46s/feature]Extracting features:  60%|██████    | 9/15 [00:25<00:17,  2.98s/feature]Extracting features:  67%|██████▋   | 10/15 [00:30<00:17,  3.57s/feature]Extracting features:  73%|███████▎  | 11/15 [00:34<00:14,  3.59s/feature]Extracting features:  80%|████████  | 12/15 [00:39<00:12,  4.21s/feature]Extracting features:  87%|████████▋ | 13/15 [00:43<00:08,  4.03s/feature]Extracting features:  93%|█████████▎| 14/15 [00:46<00:03,  3.66s/feature]Extracting features: 100%|██████████| 15/15 [00:53<00:00,  4.62s/feature]Extracting features: 100%|██████████| 15/15 [00:53<00:00,  3.54s/feature]
+Code for feature 'k_core_number' generated in 1.01 seconds
+Extracting feature 'k_core_number'
+Code for feature 'degree_weight_ratio_zscore' generated in 1.79 seconds
+Extracting feature 'degree_weight_ratio_zscore'
+Code for feature 'weighted_local_coverage' generated in 2.06 seconds
+Extracting feature 'weighted_local_coverage'
+Code for feature 'budget_coverage_efficiency_log' generated in 1.74 seconds
+Extracting feature 'budget_coverage_efficiency_log'
+Code for feature 'two_hop_unique_gain' generated in 2.83 seconds
+Extracting feature 'two_hop_unique_gain'
+Code for feature 'neighbor_coverage_asymmetry' generated in 2.56 seconds
+Extracting feature 'neighbor_coverage_asymmetry'
+Code for feature 'normalized_weighted_neighbor_influence' generated in 6.57 seconds
+Extracting feature 'normalized_weighted_neighbor_influence'
+Code for feature 'minimum_neighbor_weight_fraction' generated in 1.73 seconds
+Extracting feature 'minimum_neighbor_weight_fraction'
+Code for feature 'local_coverage_norm' generated in 1.79 seconds
+Extracting feature 'local_coverage_norm'
+Code for feature 'relative_two_hop_gain' generated in 3.12 seconds
+Extracting feature 'relative_two_hop_gain'
+Code for feature 'neighbor_weight_entropy' generated in 3.30 seconds
+Extracting feature 'neighbor_weight_entropy'
+Code for feature 'weighted_k_core_density' generated in 5.38 seconds
+Extracting feature 'weighted_k_core_density'
+⚠️ Skipping feature 'weighted_k_core_density' due to error: 'weight'
+Code for feature 'exclusive_coverage_gain' generated in 3.49 seconds
+Extracting feature 'exclusive_coverage_gain'
+Code for feature 'coverage_overlap_score' generated in 2.65 seconds
+Extracting feature 'coverage_overlap_score'
+Code for feature 'core_bridge_score' generated in 5.86 seconds
+Extracting feature 'core_bridge_score'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 2704
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.12727056992064395
+k_core_number: 0.2779, degree_weight_ratio_zscore: 0.0638, weighted_local_coverage: 0.0330, budget_coverage_efficiency_log: 0.2694, two_hop_unique_gain: 0.1745, neighbor_coverage_asymmetry: 0.0000, normalized_weighted_neighbor_influence: 0.0285, minimum_neighbor_weight_fraction: 0.0283, local_coverage_norm: 0.0284, relative_two_hop_gain: 0.0000, neighbor_weight_entropy: 0.0283, exclusive_coverage_gain: 0.0000, coverage_overlap_score: 0.0397, core_bridge_score: 0.0283
+Feature Space Search Iteration 10 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/13 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/13 [00:01<00:14,  1.22s/feature]Extracting features:  15%|█▌        | 2/13 [00:03<00:20,  1.82s/feature]Extracting features:  23%|██▎       | 3/13 [00:06<00:22,  2.24s/feature]Extracting features:  31%|███       | 4/13 [00:09<00:22,  2.47s/feature]Extracting features:  38%|███▊      | 5/13 [00:13<00:24,  3.09s/feature]Extracting features:  46%|████▌     | 6/13 [00:15<00:20,  2.94s/feature]Extracting features:  54%|█████▍    | 7/13 [00:19<00:18,  3.12s/feature]Extracting features:  62%|██████▏   | 8/13 [00:21<00:14,  2.86s/feature]Extracting features:  69%|██████▉   | 9/13 [00:25<00:12,  3.22s/feature]Extracting features:  77%|███████▋  | 10/13 [00:30<00:11,  3.70s/feature]Extracting features:  85%|████████▍ | 11/13 [00:34<00:07,  3.70s/feature]Extracting features:  92%|█████████▏| 12/13 [00:38<00:04,  4.03s/feature]Extracting features: 100%|██████████| 13/13 [00:41<00:00,  3.56s/feature]Extracting features: 100%|██████████| 13/13 [00:41<00:00,  3.19s/feature]
+Code for feature 'k_core_number' generated in 1.08 seconds
+Extracting feature 'k_core_number'
+Code for feature 'degree_weight_ratio_zscore' generated in 2.21 seconds
+Extracting feature 'degree_weight_ratio_zscore'
+Code for feature 'weighted_local_coverage' generated in 2.51 seconds
+Extracting feature 'weighted_local_coverage'
+Code for feature 'budget_coverage_efficiency_log' generated in 2.80 seconds
+Extracting feature 'budget_coverage_efficiency_log'
+Code for feature 'two_hop_unique_gain' generated in 2.71 seconds
+Extracting feature 'two_hop_unique_gain'
+Code for feature 'neighbor_weight_entropy' generated in 2.32 seconds
+Extracting feature 'neighbor_weight_entropy'
+Code for feature 'normalized_weighted_neighbor_influence' generated in 3.16 seconds
+Extracting feature 'normalized_weighted_neighbor_influence'
+Code for feature 'minimum_neighbor_weight_fraction' generated in 2.19 seconds
+Extracting feature 'minimum_neighbor_weight_fraction'
+Code for feature 'coverage_overlap_score' generated in 3.49 seconds
+Extracting feature 'coverage_overlap_score'
+Code for feature 'weighted_k_core_density' generated in 3.82 seconds
+Extracting feature 'weighted_k_core_density'
+Code for feature 'neighbor_coverage_balance' generated in 3.47 seconds
+Extracting feature 'neighbor_coverage_balance'
+Code for feature 'core_to_boundary_weight_ratio' generated in 4.67 seconds
+Extracting feature 'core_to_boundary_weight_ratio'
+Code for feature 'coverage_gain_per_normalized_budget' generated in 2.33 seconds
+Extracting feature 'coverage_gain_per_normalized_budget'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 3721
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.17602185138778145
+k_core_number: 0.1445, degree_weight_ratio_zscore: 0.0754, weighted_local_coverage: 0.0866, budget_coverage_efficiency_log: 0.1468, two_hop_unique_gain: 0.0225, neighbor_weight_entropy: 0.0431, normalized_weighted_neighbor_influence: 0.0296, minimum_neighbor_weight_fraction: 0.0219, coverage_overlap_score: 0.0000, weighted_k_core_density: 0.1772, neighbor_coverage_balance: 0.0485, core_to_boundary_weight_ratio: 0.1815, coverage_gain_per_normalized_budget: 0.0225
+Best model, data, and history saved in 'Maximum Coverage Weighted/Slashdot'.
+Data has been loaded from ../snap_dataset/test/Slashdot
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 205, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 147, in main
+    model.load_state_dict(torch.load(model_save_path))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/a/anath/anaconda3/envs/eoh/lib/python3.13/site-packages/torch/nn/modules/module.py", line 2593, in load_state_dict
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: Error(s) in loading state_dict for GCN:
+	size mismatch for conv1.lin.weight: copying a param with shape torch.Size([16, 14]) from checkpoint, the shape in current model is torch.Size([16, 13]).
+Data has been loaded from ../snap_dataset/train/Twitter
+Feature Space Search Iteration 1 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s]Extracting features:  10%|█         | 1/10 [00:01<00:10,  1.19s/feature]Extracting features:  20%|██        | 2/10 [00:02<00:08,  1.08s/feature]Extracting features:  30%|███       | 3/10 [00:05<00:15,  2.19s/feature]Extracting features:  40%|████      | 4/10 [00:07<00:11,  1.86s/feature]Extracting features:  50%|█████     | 5/10 [00:10<00:12,  2.45s/feature]Extracting features:  60%|██████    | 6/10 [00:17<00:15,  3.81s/feature]Extracting features:  70%|███████   | 7/10 [00:18<00:09,  3.11s/feature]Extracting features:  80%|████████  | 8/10 [00:21<00:05,  2.86s/feature]Extracting features:  90%|█████████ | 9/10 [00:24<00:03,  3.02s/feature]Extracting features: 100%|██████████| 10/10 [00:32<00:00,  4.61s/feature]Extracting features: 100%|██████████| 10/10 [00:32<00:00,  3.25s/feature]
+Code for feature 'node_weight' generated in 1.18 seconds
+Extracting feature 'node_weight'
+Code for feature 'degree' generated in 0.98 seconds
+Extracting feature 'degree'
+Code for feature 'coverage_gain' generated in 3.30 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'weight_to_degree_ratio' generated in 1.33 seconds
+Extracting feature 'weight_to_degree_ratio'
+Code for feature 'clustering_coefficient' generated in 2.57 seconds
+Extracting feature 'clustering_coefficient'
+Code for feature 'betweenness_centrality' generated in 1.30 seconds
+Extracting feature 'betweenness_centrality'
+⚠️ Skipping feature 'betweenness_centrality' due to error: 
+Code for feature 'core_number' generated in 1.52 seconds
+Extracting feature 'core_number'
+Code for feature 'min_neighbor_weight' generated in 2.24 seconds
+Extracting feature 'min_neighbor_weight'
+Code for feature 'neighbor_covered_fraction' generated in 3.19 seconds
+Extracting feature 'neighbor_covered_fraction'
+Code for feature 'ego_density' generated in 8.18 seconds
+Extracting feature 'ego_density'
+⚠️ Skipping feature 'ego_density' due to error: name 'nx' is not defined
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 0
+Objective value pruned: 0
+Ratio 0.0
+queries ratio 0.0
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 205, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 85, in main
+    model, ratio, size_reduction, explainer_feedback_new = train_test_evaluate_gnn(
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~^
+        train_features = train_features,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        budget = budget
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/grads/a/anath/LLM_Pruning/utils.py", line 423, in train_test_evaluate_gnn
+    feature_importances = torch.stack(feature_importances)
+RuntimeError: stack expects a non-empty TensorList
+Data has been loaded from ../snap_dataset/train/DBLP
+Feature Space Search Iteration 1 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s]Extracting features:  10%|█         | 1/10 [00:01<00:16,  1.86s/feature]Extracting features:  20%|██        | 2/10 [00:03<00:11,  1.45s/feature]Extracting features:  30%|███       | 3/10 [00:04<00:10,  1.54s/feature]Extracting features:  40%|████      | 4/10 [00:06<00:08,  1.50s/feature]Extracting features:  50%|█████     | 5/10 [00:08<00:08,  1.76s/feature]Extracting features:  60%|██████    | 6/10 [00:11<00:08,  2.21s/feature]Extracting features:  70%|███████   | 7/10 [00:13<00:06,  2.18s/feature]Extracting features:  80%|████████  | 8/10 [00:15<00:04,  2.14s/feature]Extracting features:  90%|█████████ | 9/10 [00:22<00:03,  3.65s/feature]Extracting features: 100%|██████████| 10/10 [00:24<00:00,  2.98s/feature]Extracting features: 100%|██████████| 10/10 [00:24<00:00,  2.40s/feature]
+Code for feature 'node_weight' generated in 1.85 seconds
+Extracting feature 'node_weight'
+Code for feature 'degree' generated in 1.15 seconds
+Extracting feature 'degree'
+Code for feature 'coverage_gain' generated in 1.58 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'degree_centrality' generated in 1.41 seconds
+Extracting feature 'degree_centrality'
+Code for feature 'clustering_coefficient' generated in 2.00 seconds
+Extracting feature 'clustering_coefficient'
+Code for feature 'weighted_coverage_ratio' generated in 3.03 seconds
+Extracting feature 'weighted_coverage_ratio'
+Code for feature 'avg_neighbor_degree' generated in 1.89 seconds
+Extracting feature 'avg_neighbor_degree'
+Code for feature 'budget_fraction' generated in 2.04 seconds
+Extracting feature 'budget_fraction'
+Code for feature 'neighbor_overlap' generated in 6.66 seconds
+Extracting feature 'neighbor_overlap'
+Code for feature 'egonet_size' generated in 1.45 seconds
+Extracting feature 'egonet_size'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 1707
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.10663008262610414
+node_weight: 0.2301, degree: 0.1824, coverage_gain: 0.1555, degree_centrality: 0.0304, clustering_coefficient: 0.0000, weighted_coverage_ratio: 0.0301, avg_neighbor_degree: 0.1125, budget_fraction: 0.0303, neighbor_overlap: 0.0000, egonet_size: 0.2287
+Feature Space Search Iteration 2 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/13 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/13 [00:02<00:32,  2.71s/feature]Extracting features:  15%|█▌        | 2/13 [00:05<00:27,  2.48s/feature]Extracting features:  23%|██▎       | 3/13 [00:06<00:19,  1.96s/feature]Extracting features:  31%|███       | 4/13 [00:08<00:17,  1.89s/feature]Extracting features:  38%|███▊      | 5/13 [00:10<00:15,  1.94s/feature]Extracting features:  46%|████▌     | 6/13 [00:13<00:16,  2.34s/feature]Extracting features:  54%|█████▍    | 7/13 [00:16<00:16,  2.69s/feature]Extracting features:  62%|██████▏   | 8/13 [00:19<00:12,  2.56s/feature]Extracting features:  69%|██████▉   | 9/13 [00:20<00:08,  2.20s/feature]Extracting features:  77%|███████▋  | 10/13 [00:21<00:06,  2.00s/feature]Extracting features:  85%|████████▍ | 11/13 [00:27<00:06,  3.14s/feature]Extracting features:  92%|█████████▏| 12/13 [00:30<00:03,  3.15s/feature]Extracting features: 100%|██████████| 13/13 [00:52<00:00,  8.67s/feature]Extracting features: 100%|██████████| 13/13 [00:52<00:00,  4.02s/feature]
+Code for feature 'node_weight' generated in 2.70 seconds
+Extracting feature 'node_weight'
+Code for feature 'egonet_size' generated in 2.25 seconds
+Extracting feature 'egonet_size'
+Code for feature 'degree' generated in 1.33 seconds
+Extracting feature 'degree'
+Code for feature 'normalized_degree' generated in 1.76 seconds
+Extracting feature 'normalized_degree'
+Code for feature 'coverage_gain' generated in 1.95 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'coverage_efficiency' generated in 3.07 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'avg_neighbor_egonet_size' generated in 3.33 seconds
+Extracting feature 'avg_neighbor_egonet_size'
+Code for feature 'log_weight' generated in 2.28 seconds
+Extracting feature 'log_weight'
+Code for feature 'inverse_weight' generated in 1.37 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'budget_fraction' generated in 1.56 seconds
+Extracting feature 'budget_fraction'
+Code for feature 'neighbor_coverage_overlap' generated in 5.64 seconds
+Extracting feature 'neighbor_coverage_overlap'
+Code for feature 'self_coverage_indicator' generated in 3.16 seconds
+Extracting feature 'self_coverage_indicator'
+Code for feature 'potential_k_core_level' generated in 16.39 seconds
+Extracting feature 'potential_k_core_level'
+⚠️ Skipping feature 'potential_k_core_level' due to error: 
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 271
+Objective value pruned: 195
+Ratio 0.975
+queries ratio 0.014276817825232036
+node_weight: 0.0370, egonet_size: 0.0760, degree: 0.0436, normalized_degree: 0.0280, coverage_gain: 0.2539, coverage_efficiency: 0.0259, avg_neighbor_egonet_size: 0.0643, log_weight: 0.0015, inverse_weight: 0.2270, budget_fraction: 0.0254, neighbor_coverage_overlap: 0.0000, self_coverage_indicator: 0.2175
+Feature Space Search Iteration 3 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/13 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/13 [00:01<00:16,  1.38s/feature]Extracting features:  15%|█▌        | 2/13 [00:05<00:35,  3.22s/feature]Extracting features:  23%|██▎       | 3/13 [00:07<00:23,  2.31s/feature]Extracting features:  31%|███       | 4/13 [00:09<00:22,  2.48s/feature]Extracting features:  38%|███▊      | 5/13 [00:16<00:31,  3.94s/feature]Extracting features:  46%|████▌     | 6/13 [00:20<00:27,  3.88s/feature]Extracting features:  54%|█████▍    | 7/13 [00:23<00:22,  3.77s/feature]Extracting features:  62%|██████▏   | 8/13 [00:26<00:16,  3.37s/feature]Extracting features:  69%|██████▉   | 9/13 [00:28<00:11,  2.94s/feature]Extracting features:  77%|███████▋  | 10/13 [00:36<00:13,  4.47s/feature]Extracting features:  85%|████████▍ | 11/13 [00:37<00:07,  3.54s/feature]Extracting features:  92%|█████████▏| 12/13 [00:45<00:04,  4.96s/feature]Extracting features: 100%|██████████| 13/13 [00:53<00:00,  5.71s/feature]Extracting features: 100%|██████████| 13/13 [00:53<00:00,  4.09s/feature]
+Code for feature 'node_weight' generated in 1.37 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 4.51 seconds
+Extracting feature 'coverage_gain'
+⚠️ Skipping feature 'coverage_gain' due to error: 'weight'
+Code for feature 'inverse_weight' generated in 1.21 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'egonet_size' generated in 2.73 seconds
+Extracting feature 'egonet_size'
+Code for feature 'normalized_degree' generated in 6.51 seconds
+Extracting feature 'normalized_degree'
+Code for feature 'coverage_efficiency' generated in 3.70 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'avg_neighbor_egonet_size' generated in 3.42 seconds
+Extracting feature 'avg_neighbor_egonet_size'
+Code for feature 'self_coverage_indicator' generated in 2.50 seconds
+Extracting feature 'self_coverage_indicator'
+Code for feature 'weighted_coverage_gain' generated in 1.92 seconds
+Extracting feature 'weighted_coverage_gain'
+Code for feature 'second_order_coverage_gain' generated in 7.79 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'budget_utilization_ratio' generated in 1.42 seconds
+Extracting feature 'budget_utilization_ratio'
+Code for feature 'centralized_coverage_rank' generated in 5.38 seconds
+Extracting feature 'centralized_coverage_rank'
+Code for feature 'exclusive_coverage_count' generated in 2.43 seconds
+Extracting feature 'exclusive_coverage_count'
+⚠️ Skipping feature 'exclusive_coverage_count' due to error: 
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 55
+Objective value pruned: 57
+Ratio 0.285
+queries ratio 0.0009869795115788615
+node_weight: 0.1724, inverse_weight: 0.1094, egonet_size: 0.1380, normalized_degree: 0.0260, coverage_efficiency: 0.0255, avg_neighbor_egonet_size: 0.0675, self_coverage_indicator: 0.1287, weighted_coverage_gain: 0.0219, second_order_coverage_gain: 0.2468, budget_utilization_ratio: 0.0245, centralized_coverage_rank: 0.0393
+Feature Space Search Iteration 4 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:19,  1.38s/feature]Extracting features:  13%|█▎        | 2/15 [00:02<00:15,  1.22s/feature]Extracting features:  20%|██        | 3/15 [00:04<00:16,  1.41s/feature]Extracting features:  27%|██▋       | 4/15 [00:11<00:40,  3.68s/feature]Extracting features:  33%|███▎      | 5/15 [00:13<00:29,  2.99s/feature]Extracting features:  40%|████      | 6/15 [00:16<00:28,  3.22s/feature]Extracting features:  47%|████▋     | 7/15 [00:19<00:25,  3.23s/feature]Extracting features:  53%|█████▎    | 8/15 [00:22<00:21,  3.11s/feature]Extracting features:  60%|██████    | 9/15 [00:26<00:20,  3.41s/feature]Extracting features:  67%|██████▋   | 10/15 [00:33<00:22,  4.53s/feature]Extracting features:  73%|███████▎  | 11/15 [00:36<00:15,  3.80s/feature]Extracting features:  80%|████████  | 12/15 [00:56<00:26,  8.86s/feature]Extracting features:  87%|████████▋ | 13/15 [00:59<00:14,  7.16s/feature]Extracting features:  93%|█████████▎| 14/15 [01:02<00:05,  5.97s/feature]Extracting features: 100%|██████████| 15/15 [01:06<00:00,  5.10s/feature]Extracting features: 100%|██████████| 15/15 [01:06<00:00,  4.40s/feature]
+Code for feature 'node_weight' generated in 1.37 seconds
+Extracting feature 'node_weight'
+Code for feature 'inverse_weight' generated in 1.10 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'egonet_size' generated in 1.55 seconds
+Extracting feature 'egonet_size'
+Code for feature 'coverage_gain' generated in 7.11 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'self_coverage_indicator' generated in 1.75 seconds
+Extracting feature 'self_coverage_indicator'
+Code for feature 'second_order_coverage_gain' generated in 3.58 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'centralized_coverage_rank' generated in 3.19 seconds
+Extracting feature 'centralized_coverage_rank'
+Code for feature 'coverage_efficiency' generated in 2.78 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'normalized_egonet_size' generated in 3.83 seconds
+Extracting feature 'normalized_egonet_size'
+Code for feature 'neighbor_coverage_uniqueness' generated in 6.31 seconds
+Extracting feature 'neighbor_coverage_uniqueness'
+Code for feature 'budget_utilization_ratio' generated in 2.14 seconds
+Extracting feature 'budget_utilization_ratio'
+Code for feature 'relative_second_order_gain' generated in 20.34 seconds
+Extracting feature 'relative_second_order_gain'
+Code for feature 'egonet_coverage_efficiency' generated in 3.19 seconds
+Extracting feature 'egonet_coverage_efficiency'
+Code for feature 'neighbor_weight_skewness' generated in 2.96 seconds
+Extracting feature 'neighbor_weight_skewness'
+Code for feature 'pruned_coverage_gain' generated in 2.98 seconds
+Extracting feature 'pruned_coverage_gain'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 2413
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.15203496072458306
+node_weight: 0.1503, inverse_weight: 0.0824, egonet_size: 0.1624, coverage_gain: 0.1969, self_coverage_indicator: 0.0391, second_order_coverage_gain: 0.0691, centralized_coverage_rank: 0.1026, coverage_efficiency: 0.0219, normalized_egonet_size: 0.0225, neighbor_coverage_uniqueness: 0.0235, budget_utilization_ratio: 0.0226, relative_second_order_gain: 0.0145, egonet_coverage_efficiency: 0.0226, neighbor_weight_skewness: 0.0000, pruned_coverage_gain: 0.0697
+Feature Space Search Iteration 5 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/18 [00:00<?, ?feature/s]Extracting features:   6%|▌         | 1/18 [00:01<00:29,  1.72s/feature]Extracting features:  11%|█         | 2/18 [00:03<00:28,  1.80s/feature]Extracting features:  17%|█▋        | 3/18 [00:06<00:35,  2.35s/feature]Extracting features:  22%|██▏       | 4/18 [00:08<00:31,  2.24s/feature]Extracting features:  28%|██▊       | 5/18 [00:10<00:26,  2.00s/feature]Extracting features:  33%|███▎      | 6/18 [00:14<00:33,  2.76s/feature]Extracting features:  39%|███▉      | 7/18 [00:18<00:33,  3.03s/feature]Extracting features:  44%|████▍     | 8/18 [00:22<00:35,  3.54s/feature]Extracting features:  50%|█████     | 9/18 [00:28<00:38,  4.32s/feature]Extracting features:  56%|█████▌    | 10/18 [00:36<00:42,  5.33s/feature]Extracting features:  61%|██████    | 11/18 [00:38<00:30,  4.38s/feature]Extracting features:  67%|██████▋   | 12/18 [00:43<00:28,  4.70s/feature]Extracting features:  72%|███████▏  | 13/18 [00:46<00:20,  4.06s/feature]Extracting features:  78%|███████▊  | 14/18 [00:47<00:12,  3.25s/feature]Extracting features:  83%|████████▎ | 15/18 [00:56<00:14,  4.85s/feature]Extracting features:  89%|████████▉ | 16/18 [01:08<00:14,  7.12s/feature]Extracting features:  94%|█████████▍| 17/18 [01:13<00:06,  6.43s/feature]Extracting features: 100%|██████████| 18/18 [01:14<00:00,  4.87s/feature]Extracting features: 100%|██████████| 18/18 [01:14<00:00,  4.16s/feature]
+Code for feature 'node_weight' generated in 1.71 seconds
+Extracting feature 'node_weight'
+Code for feature 'inverse_weight' generated in 1.83 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'egonet_size' generated in 3.00 seconds
+Extracting feature 'egonet_size'
+Code for feature 'coverage_gain' generated in 1.99 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'self_coverage_indicator' generated in 1.58 seconds
+Extracting feature 'self_coverage_indicator'
+Code for feature 'second_order_coverage_gain' generated in 4.10 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'coverage_efficiency' generated in 3.52 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'normalized_egonet_size' generated in 3.77 seconds
+Extracting feature 'normalized_egonet_size'
+Code for feature 'centralized_coverage_rank' generated in 5.60 seconds
+Extracting feature 'centralized_coverage_rank'
+Code for feature 'relative_second_order_gain' generated in 7.45 seconds
+Extracting feature 'relative_second_order_gain'
+Code for feature 'pruned_coverage_gain' generated in 2.17 seconds
+Extracting feature 'pruned_coverage_gain'
+Code for feature 'local_weighted_coverage' generated in 5.35 seconds
+Extracting feature 'local_weighted_coverage'
+Code for feature 'neighbor_egonet_overlap_ratio' generated in 2.36 seconds
+Extracting feature 'neighbor_egonet_overlap_ratio'
+Code for feature 'weighted_coverage_per_budget_unit' generated in 1.37 seconds
+Extracting feature 'weighted_coverage_per_budget_unit'
+Code for feature 'betweenness_centrality' generated in 3.56 seconds
+Extracting feature 'betweenness_centrality'
+⚠️ Skipping feature 'betweenness_centrality' due to error: 
+Code for feature 'exclusive_coverage_ratio' generated in 12.27 seconds
+Extracting feature 'exclusive_coverage_ratio'
+Code for feature 'neighbor_weight_variance' generated in 4.42 seconds
+Extracting feature 'neighbor_weight_variance'
+Code for feature 'historical_selection_frequency' generated in 1.24 seconds
+Extracting feature 'historical_selection_frequency'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 10480
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.6708467902152762
+node_weight: 0.1488, inverse_weight: 0.0231, egonet_size: 0.1544, coverage_gain: 0.0235, self_coverage_indicator: 0.1251, second_order_coverage_gain: 0.0276, coverage_efficiency: 0.0266, normalized_egonet_size: 0.0268, centralized_coverage_rank: 0.1516, relative_second_order_gain: 0.0000, pruned_coverage_gain: 0.0308, local_weighted_coverage: 0.0299, neighbor_egonet_overlap_ratio: 0.0505, weighted_coverage_per_budget_unit: 0.0264, exclusive_coverage_ratio: 0.1549, neighbor_weight_variance: 0.0000, historical_selection_frequency: 0.0000
+Feature Space Search Iteration 6 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/18 [00:00<?, ?feature/s]Extracting features:   6%|▌         | 1/18 [00:06<01:45,  6.22s/feature]Extracting features:  11%|█         | 2/18 [00:09<01:07,  4.20s/feature]Extracting features:  17%|█▋        | 3/18 [00:11<00:49,  3.33s/feature]Extracting features:  22%|██▏       | 4/18 [00:12<00:34,  2.49s/feature]Extracting features:  28%|██▊       | 5/18 [00:16<00:37,  2.87s/feature]Extracting features:  33%|███▎      | 6/18 [00:18<00:31,  2.60s/feature]Extracting features:  39%|███▉      | 7/18 [00:22<00:33,  3.07s/feature]Extracting features:  44%|████▍     | 8/18 [00:24<00:27,  2.71s/feature]Extracting features:  50%|█████     | 9/18 [00:27<00:27,  3.04s/feature]Extracting features:  56%|█████▌    | 10/18 [00:30<00:22,  2.82s/feature]Extracting features:  61%|██████    | 11/18 [00:34<00:22,  3.20s/feature]Extracting features:  67%|██████▋   | 12/18 [00:36<00:17,  2.90s/feature]Extracting features:  72%|███████▏  | 13/18 [00:39<00:14,  2.91s/feature]Extracting features:  78%|███████▊  | 14/18 [00:43<00:13,  3.29s/feature]Extracting features:  83%|████████▎ | 15/18 [00:47<00:10,  3.50s/feature]Extracting features:  89%|████████▉ | 16/18 [00:49<00:06,  3.12s/feature]Extracting features:  94%|█████████▍| 17/18 [00:51<00:02,  2.67s/feature]Extracting features: 100%|██████████| 18/18 [00:52<00:00,  2.20s/feature]Extracting features: 100%|██████████| 18/18 [00:52<00:00,  2.92s/feature]
+Code for feature 'node_weight' generated in 6.22 seconds
+Extracting feature 'node_weight'
+Code for feature 'egonet_size' generated in 2.75 seconds
+Extracting feature 'egonet_size'
+Code for feature 'coverage_gain' generated in 2.23 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'self_coverage_indicator' generated in 1.21 seconds
+Extracting feature 'self_coverage_indicator'
+Code for feature 'second_order_coverage_gain' generated in 3.39 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'centralized_coverage_rank' generated in 2.00 seconds
+Extracting feature 'centralized_coverage_rank'
+Code for feature 'exclusive_coverage_ratio' generated in 3.90 seconds
+Extracting feature 'exclusive_coverage_ratio'
+Code for feature 'normalized_egonet_size' generated in 1.91 seconds
+Extracting feature 'normalized_egonet_size'
+Code for feature 'pruned_coverage_gain' generated in 3.67 seconds
+Extracting feature 'pruned_coverage_gain'
+Code for feature 'weighted_coverage_per_budget_unit' generated in 2.27 seconds
+Extracting feature 'weighted_coverage_per_budget_unit'
+Code for feature 'neighbor_egonet_overlap_ratio' generated in 4.00 seconds
+Extracting feature 'neighbor_egonet_overlap_ratio'
+Code for feature 'inverse_weight' generated in 2.20 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'normalized_coverage_gain' generated in 2.83 seconds
+Extracting feature 'normalized_coverage_gain'
+Code for feature 'local_coverage_density' generated in 4.09 seconds
+Extracting feature 'local_coverage_density'
+Code for feature 'uncovered_neighbor_fraction' generated in 3.95 seconds
+Extracting feature 'uncovered_neighbor_fraction'
+Code for feature 'neighbor_weight_mean' generated in 2.01 seconds
+Extracting feature 'neighbor_weight_mean'
+Code for feature 'historical_selection_ratio' generated in 1.62 seconds
+Extracting feature 'historical_selection_ratio'
+Code for feature 'budget_fraction' generated in 1.08 seconds
+Extracting feature 'budget_fraction'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 1768
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.11055316699438632
+node_weight: 0.1060, egonet_size: 0.1044, coverage_gain: 0.0530, self_coverage_indicator: 0.0423, second_order_coverage_gain: 0.0881, centralized_coverage_rank: 0.1108, exclusive_coverage_ratio: 0.0000, normalized_egonet_size: 0.0173, pruned_coverage_gain: 0.1084, weighted_coverage_per_budget_unit: 0.0174, neighbor_egonet_overlap_ratio: 0.0259, inverse_weight: 0.0651, normalized_coverage_gain: 0.0175, local_coverage_density: 0.0806, uncovered_neighbor_fraction: 0.0393, neighbor_weight_mean: 0.0892, historical_selection_ratio: 0.0173, budget_fraction: 0.0174
+Feature Space Search Iteration 7 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/20 [00:00<?, ?feature/s]Extracting features:   5%|▌         | 1/20 [00:01<00:28,  1.52s/feature]Extracting features:  10%|█         | 2/20 [00:03<00:28,  1.56s/feature]Extracting features:  15%|█▌        | 3/20 [00:07<00:45,  2.70s/feature]Extracting features:  20%|██        | 4/20 [00:11<00:51,  3.20s/feature]Extracting features:  25%|██▌       | 5/20 [00:19<01:17,  5.18s/feature]Extracting features:  30%|███       | 6/20 [00:25<01:12,  5.19s/feature]Extracting features:  35%|███▌      | 7/20 [00:27<00:56,  4.38s/feature]Extracting features:  40%|████      | 8/20 [00:30<00:45,  3.81s/feature]Extracting features:  45%|████▌     | 9/20 [00:32<00:35,  3.25s/feature]Extracting features:  50%|█████     | 10/20 [00:37<00:38,  3.89s/feature]Extracting features:  55%|█████▌    | 11/20 [00:58<01:20,  8.97s/feature]Extracting features:  60%|██████    | 12/20 [01:00<00:54,  6.80s/feature]Extracting features:  65%|██████▌   | 13/20 [01:03<00:41,  5.91s/feature]Extracting features:  70%|███████   | 14/20 [01:05<00:28,  4.70s/feature]Extracting features:  75%|███████▌  | 15/20 [01:07<00:18,  3.80s/feature]Extracting features:  80%|████████  | 16/20 [01:11<00:15,  3.78s/feature]Extracting features:  85%|████████▌ | 17/20 [01:17<00:13,  4.39s/feature]Extracting features:  90%|█████████ | 18/20 [01:38<00:18,  9.40s/feature]Extracting features:  95%|█████████▌| 19/20 [01:39<00:07,  7.12s/feature]Extracting features: 100%|██████████| 20/20 [01:42<00:00,  5.72s/feature]Extracting features: 100%|██████████| 20/20 [01:42<00:00,  5.12s/feature]
+Code for feature 'node_weight' generated in 1.51 seconds
+Extracting feature 'node_weight'
+Code for feature 'inverse_weight' generated in 1.58 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'egonet_size' generated in 3.79 seconds
+Extracting feature 'egonet_size'
+Code for feature 'coverage_gain' generated in 3.88 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'pruned_coverage_gain' generated in 8.58 seconds
+Extracting feature 'pruned_coverage_gain'
+Code for feature 'second_order_coverage_gain' generated in 5.11 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'centralized_coverage_rank' generated in 2.26 seconds
+Extracting feature 'centralized_coverage_rank'
+Code for feature 'local_coverage_density' generated in 2.49 seconds
+Extracting feature 'local_coverage_density'
+Code for feature 'neighbor_weight_mean' generated in 1.82 seconds
+Extracting feature 'neighbor_weight_mean'
+Code for feature 'neighbor_egonet_overlap_ratio' generated in 5.22 seconds
+Extracting feature 'neighbor_egonet_overlap_ratio'
+Code for feature 'self_coverage_indicator' generated in 20.46 seconds
+Extracting feature 'self_coverage_indicator'
+Code for feature 'budget_utilization_ratio' generated in 1.82 seconds
+Extracting feature 'budget_utilization_ratio'
+Code for feature 'normalized_egonet_size' generated in 3.81 seconds
+Extracting feature 'normalized_egonet_size'
+Code for feature 'uncovered_neighbor_fraction' generated in 1.86 seconds
+Extracting feature 'uncovered_neighbor_fraction'
+Code for feature 'weighted_coverage_per_budget_unit' generated in 1.66 seconds
+Extracting feature 'weighted_coverage_per_budget_unit'
+Code for feature 'coverage_gain_entropy' generated in 3.44 seconds
+Extracting feature 'coverage_gain_entropy'
+Code for feature 'degree_overlap_ratio' generated in 5.74 seconds
+Extracting feature 'degree_overlap_ratio'
+Code for feature 'neighbor_weight_entropy' generated in 20.73 seconds
+Extracting feature 'neighbor_weight_entropy'
+Code for feature 'second_order_cost_efficiency' generated in 1.73 seconds
+Extracting feature 'second_order_cost_efficiency'
+Code for feature 'historical_selection_ratio' generated in 2.44 seconds
+Extracting feature 'historical_selection_ratio'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 0
+Objective value pruned: 0
+Ratio 0.0
+queries ratio 0.0
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 205, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 85, in main
+    model, ratio, size_reduction, explainer_feedback_new = train_test_evaluate_gnn(
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~^
+        train_features = train_features,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        budget = budget
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/grads/a/anath/LLM_Pruning/utils.py", line 423, in train_test_evaluate_gnn
+    feature_importances = torch.stack(feature_importances)
+RuntimeError: stack expects a non-empty TensorList
+Data has been loaded from ../snap_dataset/train/YouTube
+Feature Space Search Iteration 1 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s]Extracting features:  10%|█         | 1/10 [00:01<00:11,  1.24s/feature]Extracting features:  20%|██        | 2/10 [00:02<00:09,  1.15s/feature]Extracting features:  30%|███       | 3/10 [00:04<00:10,  1.51s/feature]Extracting features:  40%|████      | 4/10 [00:06<00:10,  1.82s/feature]Extracting features:  50%|█████     | 5/10 [00:08<00:08,  1.74s/feature]Extracting features:  60%|██████    | 6/10 [00:11<00:09,  2.30s/feature]Extracting features:  70%|███████   | 7/10 [00:14<00:07,  2.49s/feature]Extracting features:  80%|████████  | 8/10 [00:22<00:08,  4.39s/feature]Extracting features:  90%|█████████ | 9/10 [00:31<00:05,  5.77s/feature]Extracting features: 100%|██████████| 10/10 [00:33<00:00,  4.56s/feature]Extracting features: 100%|██████████| 10/10 [00:33<00:00,  3.35s/feature]
+Code for feature 'node_weight' generated in 1.21 seconds
+Extracting feature 'node_weight'
+Code for feature 'degree' generated in 1.02 seconds
+Extracting feature 'degree'
+Code for feature 'weighted_degree' generated in 1.75 seconds
+Extracting feature 'weighted_degree'
+Code for feature 'coverage_gain' generated in 2.00 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'inverse_weight' generated in 1.56 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'clustering_coefficient' generated in 1.96 seconds
+Extracting feature 'clustering_coefficient'
+Code for feature 'neighbor_covered_fraction' generated in 2.57 seconds
+Extracting feature 'neighbor_covered_fraction'
+Code for feature 'betweenness_centrality' generated in 3.30 seconds
+Extracting feature 'betweenness_centrality'
+⚠️ Skipping feature 'betweenness_centrality' due to error: 
+Code for feature 'eccentricity' generated in 3.77 seconds
+Extracting feature 'eccentricity'
+⚠️ Skipping feature 'eccentricity' due to error: 
+Code for feature 'budget_ratio' generated in 1.80 seconds
+Extracting feature 'budget_ratio'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 3349
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.06499371218560684
+node_weight: 0.3939, degree: 0.1157, weighted_degree: 0.0743, coverage_gain: 0.2168, inverse_weight: 0.1344, clustering_coefficient: 0.0000, neighbor_covered_fraction: 0.0172, budget_ratio: 0.0477
+Feature Space Search Iteration 2 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/12 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/12 [00:01<00:19,  1.78s/feature]Extracting features:  17%|█▋        | 2/12 [00:03<00:19,  1.98s/feature]Extracting features:  25%|██▌       | 3/12 [00:04<00:13,  1.49s/feature]Extracting features:  33%|███▎      | 4/12 [00:06<00:12,  1.62s/feature]Extracting features:  42%|████▏     | 5/12 [00:10<00:16,  2.41s/feature]Extracting features:  50%|█████     | 6/12 [00:12<00:12,  2.14s/feature]Extracting features:  58%|█████▊    | 7/12 [00:14<00:11,  2.27s/feature]Extracting features:  67%|██████▋   | 8/12 [00:17<00:10,  2.63s/feature]Extracting features:  75%|███████▌  | 9/12 [00:21<00:08,  2.88s/feature]Extracting features:  83%|████████▎ | 10/12 [00:27<00:07,  3.92s/feature]Extracting features:  92%|█████████▏| 11/12 [00:29<00:03,  3.42s/feature]Extracting features: 100%|██████████| 12/12 [00:36<00:00,  4.41s/feature]Extracting features: 100%|██████████| 12/12 [00:36<00:00,  3.05s/feature]
+Code for feature 'node_weight' generated in 1.76 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 1.79 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'inverse_weight' generated in 0.87 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'degree_zscore' generated in 1.74 seconds
+Extracting feature 'degree_zscore'
+Code for feature 'weighted_coverage_gain' generated in 3.50 seconds
+Extracting feature 'weighted_coverage_gain'
+Code for feature 'budget_normalized_weight' generated in 1.60 seconds
+Extracting feature 'budget_normalized_weight'
+Code for feature 'coverage_cost_ratio' generated in 2.22 seconds
+Extracting feature 'coverage_cost_ratio'
+Code for feature 'neighbor_inverse_weight_mean' generated in 2.69 seconds
+Extracting feature 'neighbor_inverse_weight_mean'
+Code for feature 'local_clustering_zscore' generated in 2.01 seconds
+Extracting feature 'local_clustering_zscore'
+Code for feature 'two_hop_coverage_gain' generated in 3.10 seconds
+Extracting feature 'two_hop_coverage_gain'
+Code for feature 'centrality_pagerank' generated in 1.33 seconds
+Extracting feature 'centrality_pagerank'
+Code for feature 'neighbor_coverage_gain_std' generated in 3.59 seconds
+Extracting feature 'neighbor_coverage_gain_std'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 1355
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.025721636146050456
+node_weight: 0.1879, coverage_gain: 0.1332, inverse_weight: 0.0519, degree_zscore: 0.0820, weighted_coverage_gain: 0.0691, budget_normalized_weight: 0.0472, coverage_cost_ratio: 0.1556, neighbor_inverse_weight_mean: 0.0706, local_clustering_zscore: 0.0351, two_hop_coverage_gain: 0.1224, centrality_pagerank: 0.0209, neighbor_coverage_gain_std: 0.0240
+Feature Space Search Iteration 3 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:25,  1.85s/feature]Extracting features:  13%|█▎        | 2/15 [00:04<00:30,  2.35s/feature]Extracting features:  20%|██        | 3/15 [00:07<00:32,  2.69s/feature]Extracting features:  27%|██▋       | 4/15 [00:11<00:32,  2.97s/feature]Extracting features:  33%|███▎      | 5/15 [00:13<00:27,  2.77s/feature]Extracting features:  40%|████      | 6/15 [01:49<05:09, 34.36s/feature]Extracting features:  47%|████▋     | 7/15 [01:57<03:27, 25.90s/feature]Extracting features:  53%|█████▎    | 8/15 [02:01<02:11, 18.78s/feature]Extracting features:  60%|██████    | 9/15 [02:03<01:21, 13.54s/feature]Extracting features:  67%|██████▋   | 10/15 [02:11<00:59, 11.85s/feature]Extracting features:  73%|███████▎  | 11/15 [02:13<00:35,  8.90s/feature]Extracting features:  80%|████████  | 12/15 [02:16<00:21,  7.16s/feature]Extracting features:  87%|████████▋ | 13/15 [02:21<00:13,  6.61s/feature]Extracting features:  93%|█████████▎| 14/15 [02:24<00:05,  5.25s/feature]Extracting features: 100%|██████████| 15/15 [02:25<00:00,  4.11s/feature]Extracting features: 100%|██████████| 15/15 [02:25<00:00,  9.70s/feature]
+Code for feature 'node_weight' generated in 1.82 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 2.31 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'inverse_weight' generated in 3.06 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'coverage_cost_ratio' generated in 3.38 seconds
+Extracting feature 'coverage_cost_ratio'
+⚠️ Skipping feature 'coverage_cost_ratio' due to error: name 'nx' is not defined
+Code for feature 'weighted_coverage_gain' generated in 2.13 seconds
+Extracting feature 'weighted_coverage_gain'
+Code for feature 'budget_normalized_weight' generated in 95.62 seconds
+Extracting feature 'budget_normalized_weight'
+Code for feature 'two_hop_coverage_gain' generated in 6.51 seconds
+Extracting feature 'two_hop_coverage_gain'
+Code for feature 'neighbor_inverse_weight_mean' generated in 2.90 seconds
+Extracting feature 'neighbor_inverse_weight_mean'
+Code for feature 'degree_zscore' generated in 1.95 seconds
+Extracting feature 'degree_zscore'
+Code for feature 'coverage_gain_zscore' generated in 3.06 seconds
+Extracting feature 'coverage_gain_zscore'
+⚠️ Skipping feature 'coverage_gain_zscore' due to error: 
+Code for feature 'pagerank_centrality_normalized' generated in 1.92 seconds
+Extracting feature 'pagerank_centrality_normalized'
+Code for feature 'neighbor_coverage_cost_ratio_std' generated in 3.18 seconds
+Extracting feature 'neighbor_coverage_cost_ratio_std'
+⚠️ Skipping feature 'neighbor_coverage_cost_ratio_std' due to error: 'weight'
+Code for feature 'neighbor_coverage_gain_sum' generated in 1.88 seconds
+Extracting feature 'neighbor_coverage_gain_sum'
+Code for feature 'uncovered_neighbor_fraction' generated in 2.00 seconds
+Extracting feature 'uncovered_neighbor_fraction'
+Code for feature 'budget_fraction_remaining' generated in 1.43 seconds
+Extracting feature 'budget_fraction_remaining'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 2704
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.052290357599090356
+node_weight: 0.1435, coverage_gain: 0.0485, inverse_weight: 0.0361, weighted_coverage_gain: 0.1020, budget_normalized_weight: 0.0160, two_hop_coverage_gain: 0.1441, neighbor_inverse_weight_mean: 0.1090, degree_zscore: 0.0389, pagerank_centrality_normalized: 0.0150, neighbor_coverage_gain_sum: 0.0601, uncovered_neighbor_fraction: 0.1438, budget_fraction_remaining: 0.1429
+Feature Space Search Iteration 4 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:16,  1.15s/feature]Extracting features:  13%|█▎        | 2/15 [00:03<00:25,  1.98s/feature]Extracting features:  20%|██        | 3/15 [00:06<00:26,  2.23s/feature]Extracting features:  27%|██▋       | 4/15 [00:07<00:21,  1.97s/feature]Extracting features:  33%|███▎      | 5/15 [00:14<00:36,  3.65s/feature]Extracting features:  40%|████      | 6/15 [00:17<00:30,  3.40s/feature]Extracting features:  47%|████▋     | 7/15 [00:18<00:21,  2.74s/feature]Extracting features:  53%|█████▎    | 8/15 [00:23<00:22,  3.25s/feature]Extracting features:  60%|██████    | 9/15 [00:33<00:32,  5.38s/feature]Extracting features:  67%|██████▋   | 10/15 [00:35<00:22,  4.58s/feature]Extracting features:  73%|███████▎  | 11/15 [00:41<00:19,  4.88s/feature]Extracting features:  80%|████████  | 12/15 [00:53<00:21,  7.13s/feature]Extracting features:  87%|████████▋ | 13/15 [00:58<00:12,  6.30s/feature]Extracting features:  93%|█████████▎| 14/15 [01:01<00:05,  5.31s/feature]Extracting features: 100%|██████████| 15/15 [01:03<00:00,  4.49s/feature]Extracting features: 100%|██████████| 15/15 [01:03<00:00,  4.25s/feature]
+Code for feature 'node_weight' generated in 1.12 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 2.20 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'weighted_coverage_gain' generated in 2.19 seconds
+Extracting feature 'weighted_coverage_gain'
+Code for feature 'inverse_weight' generated in 1.52 seconds
+Extracting feature 'inverse_weight'
+Code for feature 'two_hop_coverage_gain' generated in 3.22 seconds
+Extracting feature 'two_hop_coverage_gain'
+Code for feature 'uncovered_neighbor_fraction' generated in 2.78 seconds
+Extracting feature 'uncovered_neighbor_fraction'
+Code for feature 'budget_fraction_remaining' generated in 1.38 seconds
+Extracting feature 'budget_fraction_remaining'
+Code for feature 'neighbor_inverse_weight_mean' generated in 3.64 seconds
+Extracting feature 'neighbor_inverse_weight_mean'
+Code for feature 'degree_zscore' generated in 9.99 seconds
+Extracting feature 'degree_zscore'
+Code for feature 'normalized_weighted_coverage_gain' generated in 2.47 seconds
+Extracting feature 'normalized_weighted_coverage_gain'
+Code for feature 'neighbor_uncovered_edge_fraction' generated in 2.75 seconds
+Extracting feature 'neighbor_uncovered_edge_fraction'
+Code for feature 'second_hop_new_coverage_ratio' generated in 8.18 seconds
+Extracting feature 'second_hop_new_coverage_ratio'
+Code for feature 'local_weighted_degree_std' generated in 3.24 seconds
+Extracting feature 'local_weighted_degree_std'
+Code for feature 'neighbor_coverage_gain_max' generated in 2.54 seconds
+Extracting feature 'neighbor_coverage_gain_max'
+Code for feature 'pagerank_weighted_score' generated in 2.19 seconds
+Extracting feature 'pagerank_weighted_score'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 5242
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.10227658076277849
+node_weight: 0.0619, coverage_gain: 0.0799, weighted_coverage_gain: 0.1156, inverse_weight: 0.0853, two_hop_coverage_gain: 0.0823, uncovered_neighbor_fraction: 0.0541, budget_fraction_remaining: 0.0643, neighbor_inverse_weight_mean: 0.0836, degree_zscore: 0.0495, normalized_weighted_coverage_gain: 0.0810, neighbor_uncovered_edge_fraction: 0.0016, second_hop_new_coverage_ratio: 0.1092, local_weighted_degree_std: 0.0221, neighbor_coverage_gain_max: 0.0943, pagerank_weighted_score: 0.0152
+Feature Space Search Iteration 5 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/17 [00:00<?, ?feature/s]Extracting features:   6%|▌         | 1/17 [00:01<00:16,  1.04s/feature]Extracting features:  12%|█▏        | 2/17 [00:04<00:39,  2.67s/feature]Extracting features:  18%|█▊        | 3/17 [00:08<00:45,  3.25s/feature]Extracting features:  24%|██▎       | 4/17 [00:13<00:50,  3.87s/feature]Extracting features:  29%|██▉       | 5/17 [00:15<00:39,  3.31s/feature]Extracting features:  35%|███▌      | 6/17 [00:17<00:30,  2.74s/feature]Extracting features:  41%|████      | 7/17 [00:24<00:41,  4.15s/feature]Extracting features:  47%|████▋     | 8/17 [00:35<00:57,  6.39s/feature]Extracting features:  53%|█████▎    | 9/17 [00:38<00:42,  5.29s/feature]Extracting features:  59%|█████▉    | 10/17 [00:41<00:32,  4.58s/feature]Extracting features:  65%|██████▍   | 11/17 [00:44<00:25,  4.18s/feature]Extracting features:  71%|███████   | 12/17 [00:48<00:20,  4.08s/feature]Extracting features:  76%|███████▋  | 13/17 [00:51<00:15,  3.79s/feature]Extracting features:  82%|████████▏ | 14/17 [00:53<00:09,  3.24s/feature]Extracting features:  88%|████████▊ | 15/17 [01:53<00:40, 20.13s/feature]Extracting features:  94%|█████████▍| 16/17 [01:54<00:14, 14.47s/feature]Extracting features: 100%|██████████| 17/17 [01:58<00:00, 11.24s/feature]Extracting features: 100%|██████████| 17/17 [01:58<00:00,  6.95s/feature]
+Code for feature 'node_weight' generated in 1.01 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 3.44 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'weighted_coverage_gain' generated in 3.64 seconds
+Extracting feature 'weighted_coverage_gain'
+Code for feature 'two_hop_coverage_gain' generated in 2.54 seconds
+Extracting feature 'two_hop_coverage_gain'
+Code for feature 'uncovered_neighbor_fraction' generated in 2.09 seconds
+Extracting feature 'uncovered_neighbor_fraction'
+Code for feature 'budget_fraction_remaining' generated in 1.63 seconds
+Extracting feature 'budget_fraction_remaining'
+Code for feature 'normalized_weighted_coverage_gain' generated in 6.64 seconds
+Extracting feature 'normalized_weighted_coverage_gain'
+Code for feature 'second_hop_new_coverage_ratio' generated in 6.18 seconds
+Extracting feature 'second_hop_new_coverage_ratio'
+⚠️ Skipping feature 'second_hop_new_coverage_ratio' due to error: 
+Code for feature 'neighbor_inverse_weight_mean' generated in 2.23 seconds
+Extracting feature 'neighbor_inverse_weight_mean'
+Code for feature 'neighbor_coverage_gain_max' generated in 2.35 seconds
+Extracting feature 'neighbor_coverage_gain_max'
+Code for feature 'local_weighted_degree_std' generated in 2.79 seconds
+Extracting feature 'local_weighted_degree_std'
+Code for feature 'weighted_degree_zscore' generated in 3.70 seconds
+Extracting feature 'weighted_degree_zscore'
+Code for feature 'pagerank_weighted_score' generated in 2.47 seconds
+Extracting feature 'pagerank_weighted_score'
+Code for feature 'overlap_with_high_coverage_neighbors' generated in 1.88 seconds
+Extracting feature 'overlap_with_high_coverage_neighbors'
+Code for feature 'marginal_coverage_per_budget_remaining' generated in 58.87 seconds
+Extracting feature 'marginal_coverage_per_budget_remaining'
+Code for feature 'personal_coverage_fraction' generated in 1.30 seconds
+Extracting feature 'personal_coverage_fraction'
+Code for feature 'triangle_free_coverage_gain' generated in 2.79 seconds
+Extracting feature 'triangle_free_coverage_gain'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 7378
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.14434536432370748
+node_weight: 0.0883, coverage_gain: 0.1299, weighted_coverage_gain: 0.1480, two_hop_coverage_gain: 0.0624, uncovered_neighbor_fraction: 0.0239, budget_fraction_remaining: 0.1200, normalized_weighted_coverage_gain: 0.0158, neighbor_inverse_weight_mean: 0.0407, neighbor_coverage_gain_max: 0.0585, local_weighted_degree_std: 0.0000, weighted_degree_zscore: 0.0863, pagerank_weighted_score: 0.0211, overlap_with_high_coverage_neighbors: 0.0241, marginal_coverage_per_budget_remaining: 0.0301, personal_coverage_fraction: 0.0339, triangle_free_coverage_gain: 0.1170
+Feature Space Search Iteration 6 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/18 [00:00<?, ?feature/s]Extracting features:   6%|▌         | 1/18 [00:01<00:24,  1.42s/feature]Extracting features:  11%|█         | 2/18 [00:04<00:36,  2.31s/feature]Extracting features:  17%|█▋        | 3/18 [00:09<00:55,  3.68s/feature]Extracting features:  22%|██▏       | 4/18 [00:14<00:57,  4.14s/feature]Extracting features:  28%|██▊       | 5/18 [00:16<00:45,  3.53s/feature]Extracting features:  33%|███▎      | 6/18 [00:18<00:35,  3.00s/feature]Extracting features:  39%|███▉      | 7/18 [00:22<00:33,  3.08s/feature]Extracting features:  44%|████▍     | 8/18 [00:26<00:34,  3.47s/feature]Extracting features:  50%|█████     | 9/18 [01:38<03:45, 25.02s/feature]Extracting features:  56%|█████▌    | 10/18 [01:41<02:24, 18.08s/feature]Extracting features:  61%|██████    | 11/18 [01:46<01:38, 14.08s/feature]Extracting features:  67%|██████▋   | 12/18 [01:47<01:01, 10.20s/feature]Extracting features:  72%|███████▏  | 13/18 [01:52<00:42,  8.42s/feature]Extracting features:  78%|███████▊  | 14/18 [01:58<00:30,  7.72s/feature]Extracting features:  83%|████████▎ | 15/18 [02:03<00:21,  7.04s/feature]Extracting features:  89%|████████▉ | 16/18 [02:12<00:15,  7.62s/feature]Extracting features:  94%|█████████▍| 17/18 [02:13<00:05,  5.74s/feature]Extracting features: 100%|██████████| 18/18 [02:18<00:00,  5.24s/feature]Extracting features: 100%|██████████| 18/18 [02:18<00:00,  7.67s/feature]
+Code for feature 'node_weight' generated in 1.40 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 2.61 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'weighted_coverage_gain' generated in 2.22 seconds
+Extracting feature 'weighted_coverage_gain'
+Code for feature 'two_hop_coverage_gain' generated in 2.40 seconds
+Extracting feature 'two_hop_coverage_gain'
+Code for feature 'uncovered_neighbor_fraction' generated in 2.33 seconds
+Extracting feature 'uncovered_neighbor_fraction'
+Code for feature 'budget_fraction_remaining' generated in 1.94 seconds
+Extracting feature 'budget_fraction_remaining'
+Code for feature 'normalized_weighted_coverage_gain' generated in 2.96 seconds
+Extracting feature 'normalized_weighted_coverage_gain'
+Code for feature 'neighbor_inverse_weight_mean' generated in 3.64 seconds
+Extracting feature 'neighbor_inverse_weight_mean'
+Code for feature 'neighbor_coverage_gain_max' generated in 72.11 seconds
+Extracting feature 'neighbor_coverage_gain_max'
+Code for feature 'weighted_degree_zscore' generated in 2.33 seconds
+Extracting feature 'weighted_degree_zscore'
+Code for feature 'triangle_free_coverage_gain' generated in 4.07 seconds
+Extracting feature 'triangle_free_coverage_gain'
+Code for feature 'marginal_coverage_per_budget_remaining' generated in 1.31 seconds
+Extracting feature 'marginal_coverage_per_budget_remaining'
+Code for feature 'coverage_cost_ratio_zscore' generated in 3.71 seconds
+Extracting feature 'coverage_cost_ratio_zscore'
+Code for feature 'neighbor_coverage_entropy' generated in 5.16 seconds
+Extracting feature 'neighbor_coverage_entropy'
+Code for feature 'unique_neighbor_coverage_fraction' generated in 4.89 seconds
+Extracting feature 'unique_neighbor_coverage_fraction'
+Code for feature 'centrality_betweenness' generated in 3.79 seconds
+Extracting feature 'centrality_betweenness'
+⚠️ Skipping feature 'centrality_betweenness' due to error: 
+Code for feature 'budget_normalized_personal_coverage' generated in 1.34 seconds
+Extracting feature 'budget_normalized_personal_coverage'
+Code for feature 'neighbor_max_overlap_with_s' generated in 3.56 seconds
+Extracting feature 'neighbor_max_overlap_with_s'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 6603
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.12908164369649777
+node_weight: 0.1315, coverage_gain: 0.0767, weighted_coverage_gain: 0.0649, two_hop_coverage_gain: 0.1000, uncovered_neighbor_fraction: 0.0483, budget_fraction_remaining: 0.0235, normalized_weighted_coverage_gain: 0.0166, neighbor_inverse_weight_mean: 0.0551, neighbor_coverage_gain_max: 0.0542, weighted_degree_zscore: 0.0753, triangle_free_coverage_gain: 0.0640, marginal_coverage_per_budget_remaining: 0.0162, coverage_cost_ratio_zscore: 0.1082, neighbor_coverage_entropy: 0.0547, unique_neighbor_coverage_fraction: 0.0922, budget_normalized_personal_coverage: 0.0159, neighbor_max_overlap_with_s: 0.0027
+Feature Space Search Iteration 7 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/20 [00:00<?, ?feature/s]Extracting features:   5%|▌         | 1/20 [00:01<00:25,  1.33s/feature]Extracting features:  10%|█         | 2/20 [00:03<00:31,  1.75s/feature]Extracting features:  15%|█▌        | 3/20 [00:05<00:30,  1.82s/feature]Extracting features:  20%|██        | 4/20 [00:11<00:58,  3.64s/feature]Extracting features:  25%|██▌       | 5/20 [00:14<00:50,  3.40s/feature]Extracting features:  30%|███       | 6/20 [00:17<00:45,  3.24s/feature]Extracting features:  35%|███▌      | 7/20 [00:27<01:08,  5.31s/feature]Extracting features:  40%|████      | 8/20 [00:41<01:36,  8.08s/feature]Extracting features:  45%|████▌     | 9/20 [00:43<01:10,  6.39s/feature]Extracting features:  50%|█████     | 10/20 [00:45<00:49,  4.99s/feature]Extracting features:  55%|█████▌    | 11/20 [00:57<01:04,  7.15s/feature]Extracting features:  60%|██████    | 12/20 [00:59<00:43,  5.47s/feature]Extracting features:  65%|██████▌   | 13/20 [01:03<00:34,  4.94s/feature]Extracting features:  70%|███████   | 14/20 [01:04<00:23,  3.97s/feature]Extracting features:  75%|███████▌  | 15/20 [01:08<00:18,  3.74s/feature]Extracting features:  80%|████████  | 16/20 [01:12<00:15,  3.98s/feature]Extracting features:  85%|████████▌ | 17/20 [01:19<00:14,  4.73s/feature]Extracting features:  90%|█████████ | 18/20 [01:23<00:09,  4.67s/feature]Extracting features:  95%|█████████▌| 19/20 [01:25<00:03,  3.80s/feature]Extracting features: 100%|██████████| 20/20 [01:27<00:00,  3.29s/feature]Extracting features: 100%|██████████| 20/20 [01:27<00:00,  4.37s/feature]
+Code for feature 'node_weight' generated in 1.30 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 1.76 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'weighted_coverage_gain' generated in 1.54 seconds
+Extracting feature 'weighted_coverage_gain'
+Code for feature 'two_hop_coverage_gain' generated in 3.04 seconds
+Extracting feature 'two_hop_coverage_gain'
+Code for feature 'uncovered_neighbor_fraction' generated in 2.84 seconds
+Extracting feature 'uncovered_neighbor_fraction'
+Code for feature 'coverage_cost_ratio_zscore' generated in 2.61 seconds
+Extracting feature 'coverage_cost_ratio_zscore'
+Code for feature 'unique_neighbor_coverage_fraction' generated in 4.55 seconds
+Extracting feature 'unique_neighbor_coverage_fraction'
+⚠️ Skipping feature 'unique_neighbor_coverage_fraction' due to error: 
+Code for feature 'neighbor_inverse_weight_mean' generated in 13.37 seconds
+Extracting feature 'neighbor_inverse_weight_mean'
+Code for feature 'neighbor_coverage_gain_max' generated in 2.16 seconds
+Extracting feature 'neighbor_coverage_gain_max'
+Code for feature 'weighted_degree_zscore' generated in 1.68 seconds
+Extracting feature 'weighted_degree_zscore'
+Code for feature 'triangle_free_coverage_gain' generated in 7.05 seconds
+Extracting feature 'triangle_free_coverage_gain'
+⚠️ Skipping feature 'triangle_free_coverage_gain' due to error: 
+Code for feature 'personal_coverage_fraction' generated in 1.59 seconds
+Extracting feature 'personal_coverage_fraction'
+Code for feature 'local_weighted_degree_std' generated in 2.44 seconds
+Extracting feature 'local_weighted_degree_std'
+Code for feature 'pagerank_weighted_score' generated in 1.45 seconds
+Extracting feature 'pagerank_weighted_score'
+Code for feature 'normalized_personal_coverage_score' generated in 3.19 seconds
+Extracting feature 'normalized_personal_coverage_score'
+Code for feature 'marginal_coverage_per_budget_remaining' generated in 4.18 seconds
+Extracting feature 'marginal_coverage_per_budget_remaining'
+Code for feature 'coverage_overlap_with_high_coverage_neighbors' generated in 6.33 seconds
+Extracting feature 'coverage_overlap_with_high_coverage_neighbors'
+Code for feature 'neighbor_coverage_gain_entropy' generated in 3.81 seconds
+Extracting feature 'neighbor_coverage_gain_entropy'
+Code for feature 'mean_budget_normalized_weight' generated in 1.75 seconds
+Extracting feature 'mean_budget_normalized_weight'
+Code for feature 'greedy_rank_position' generated in 2.07 seconds
+Extracting feature 'greedy_rank_position'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 50631
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.9962185363091299
+node_weight: 0.1029, coverage_gain: 0.0314, weighted_coverage_gain: 0.0770, two_hop_coverage_gain: 0.1024, uncovered_neighbor_fraction: 0.1049, coverage_cost_ratio_zscore: 0.0642, neighbor_inverse_weight_mean: 0.1012, neighbor_coverage_gain_max: 0.0992, weighted_degree_zscore: 0.0253, personal_coverage_fraction: 0.0336, local_weighted_degree_std: 0.0000, pagerank_weighted_score: 0.0177, normalized_personal_coverage_score: 0.0209, marginal_coverage_per_budget_remaining: 0.0542, coverage_overlap_with_high_coverage_neighbors: 0.0017, neighbor_coverage_gain_entropy: 0.0695, mean_budget_normalized_weight: 0.0299, greedy_rank_position: 0.0640
+Feature Space Search Iteration 8 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/19 [00:00<?, ?feature/s]Extracting features:   5%|▌         | 1/19 [00:01<00:18,  1.05s/feature]Extracting features:  11%|█         | 2/19 [00:02<00:25,  1.51s/feature]Extracting features:  16%|█▌        | 3/19 [00:05<00:32,  2.01s/feature]Extracting features:  21%|██        | 4/19 [00:07<00:31,  2.11s/feature]Extracting features:  26%|██▋       | 5/19 [00:10<00:32,  2.32s/feature]Extracting features:  32%|███▏      | 6/19 [00:12<00:30,  2.34s/feature]Extracting features:  37%|███▋      | 7/19 [00:17<00:36,  3.05s/feature]Extracting features:  42%|████▏     | 8/19 [00:20<00:32,  3.00s/feature]Extracting features:  47%|████▋     | 9/19 [00:22<00:28,  2.85s/feature]Extracting features:  53%|█████▎    | 10/19 [00:31<00:42,  4.78s/feature]Extracting features:  58%|█████▊    | 11/19 [00:36<00:37,  4.63s/feature]Extracting features:  63%|██████▎   | 12/19 [00:43<00:37,  5.38s/feature]Extracting features:  68%|██████▊   | 13/19 [00:48<00:32,  5.40s/feature]Extracting features:  74%|███████▎  | 14/19 [00:52<00:24,  4.92s/feature]Extracting features:  79%|███████▉  | 15/19 [00:56<00:18,  4.66s/feature]Extracting features:  84%|████████▍ | 16/19 [01:02<00:15,  5.05s/feature]Extracting features:  89%|████████▉ | 17/19 [01:04<00:08,  4.15s/feature]Extracting features:  95%|█████████▍| 18/19 [01:10<00:04,  4.64s/feature]Extracting features: 100%|██████████| 19/19 [01:12<00:00,  3.80s/feature]Extracting features: 100%|██████████| 19/19 [01:12<00:00,  3.80s/feature]
+Code for feature 'node_weight' generated in 1.02 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 1.49 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'weighted_coverage_gain' generated in 2.28 seconds
+Extracting feature 'weighted_coverage_gain'
+Code for feature 'two_hop_coverage_gain' generated in 2.26 seconds
+Extracting feature 'two_hop_coverage_gain'
+⚠️ Skipping feature 'two_hop_coverage_gain' due to error: name 'nx' is not defined
+Code for feature 'uncovered_neighbor_fraction' generated in 2.52 seconds
+Extracting feature 'uncovered_neighbor_fraction'
+Code for feature 'neighbor_inverse_weight_mean' generated in 1.68 seconds
+Extracting feature 'neighbor_inverse_weight_mean'
+Code for feature 'neighbor_coverage_gain_max' generated in 2.91 seconds
+Extracting feature 'neighbor_coverage_gain_max'
+Code for feature 'weighted_degree_zscore' generated in 2.71 seconds
+Extracting feature 'weighted_degree_zscore'
+Code for feature 'coverage_cost_ratio_zscore' generated in 2.47 seconds
+Extracting feature 'coverage_cost_ratio_zscore'
+Code for feature 'unique_neighbor_coverage_fraction' generated in 4.09 seconds
+Extracting feature 'unique_neighbor_coverage_fraction'
+⚠️ Skipping feature 'unique_neighbor_coverage_fraction' due to error: 
+Code for feature 'marginal_coverage_per_budget_remaining' generated in 4.28 seconds
+Extracting feature 'marginal_coverage_per_budget_remaining'
+Code for feature 'triangle_free_coverage_gain' generated in 6.40 seconds
+Extracting feature 'triangle_free_coverage_gain'
+Code for feature 'neighbor_coverage_gain_entropy' generated in 4.03 seconds
+Extracting feature 'neighbor_coverage_gain_entropy'
+Code for feature 'greedy_rank_position' generated in 3.68 seconds
+Extracting feature 'greedy_rank_position'
+Code for feature 'normalized_budget_weight_gap' generated in 4.02 seconds
+Extracting feature 'normalized_budget_weight_gap'
+Code for feature 'local_new_coverage_clustering' generated in 4.20 seconds
+Extracting feature 'local_new_coverage_clustering'
+Code for feature 'personal_coverage_fraction' generated in 2.04 seconds
+Extracting feature 'personal_coverage_fraction'
+Code for feature 'neighbor_weighted_overlap_mean' generated in 3.10 seconds
+Extracting feature 'neighbor_weighted_overlap_mean'
+Code for feature 'budget_coverage_efficiency_projection' generated in 1.59 seconds
+Extracting feature 'budget_coverage_efficiency_projection'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 9983
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.19565116075452213
+node_weight: 0.0997, coverage_gain: 0.1075, weighted_coverage_gain: 0.0761, uncovered_neighbor_fraction: 0.0918, neighbor_inverse_weight_mean: 0.1207, neighbor_coverage_gain_max: 0.1455, weighted_degree_zscore: 0.0357, coverage_cost_ratio_zscore: 0.0429, marginal_coverage_per_budget_remaining: 0.0222, triangle_free_coverage_gain: 0.0494, neighbor_coverage_gain_entropy: 0.0182, greedy_rank_position: 0.0087, normalized_budget_weight_gap: 0.0222, local_new_coverage_clustering: 0.0000, personal_coverage_fraction: 0.0221, neighbor_weighted_overlap_mean: 0.1091, budget_coverage_efficiency_projection: 0.0282
+Feature Space Search Iteration 9 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/18 [00:00<?, ?feature/s]Extracting features:   6%|▌         | 1/18 [00:01<00:27,  1.63s/feature]Extracting features:  11%|█         | 2/18 [00:03<00:32,  2.04s/feature]Extracting features:  17%|█▋        | 3/18 [00:07<00:37,  2.51s/feature]Extracting features:  22%|██▏       | 4/18 [00:08<00:31,  2.28s/feature]Extracting features:  28%|██▊       | 5/18 [00:14<00:43,  3.35s/feature]Extracting features:  33%|███▎      | 6/18 [00:19<00:48,  4.06s/feature]Extracting features:  39%|███▉      | 7/18 [00:23<00:42,  3.88s/feature]Extracting features:  44%|████▍     | 8/18 [00:26<00:38,  3.83s/feature]Extracting features:  50%|█████     | 9/18 [00:30<00:33,  3.76s/feature]Extracting features:  56%|█████▌    | 10/18 [00:35<00:33,  4.15s/feature]Extracting features:  61%|██████    | 11/18 [00:41<00:32,  4.67s/feature]Extracting features:  67%|██████▋   | 12/18 [00:44<00:25,  4.17s/feature]Extracting features:  72%|███████▏  | 13/18 [00:46<00:18,  3.66s/feature]Extracting features:  78%|███████▊  | 14/18 [00:50<00:14,  3.52s/feature]Extracting features:  83%|████████▎ | 15/18 [00:53<00:10,  3.51s/feature]Extracting features:  89%|████████▉ | 16/18 [01:02<00:10,  5.06s/feature]Extracting features:  94%|█████████▍| 17/18 [01:06<00:04,  4.86s/feature]Extracting features: 100%|██████████| 18/18 [01:10<00:00,  4.43s/feature]Extracting features: 100%|██████████| 18/18 [01:10<00:00,  3.89s/feature]
+Code for feature 'node_weight' generated in 1.60 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 1.98 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'weighted_coverage_gain' generated in 2.68 seconds
+Extracting feature 'weighted_coverage_gain'
+Code for feature 'two_hop_coverage_gain' generated in 1.94 seconds
+Extracting feature 'two_hop_coverage_gain'
+⚠️ Skipping feature 'two_hop_coverage_gain' due to error: name 'nx' is not defined
+Code for feature 'neighbor_inverse_weight_mean' generated in 4.53 seconds
+Extracting feature 'neighbor_inverse_weight_mean'
+Code for feature 'neighbor_coverage_gain_max' generated in 3.72 seconds
+Extracting feature 'neighbor_coverage_gain_max'
+Code for feature 'uncovered_neighbor_fraction' generated in 3.37 seconds
+Extracting feature 'uncovered_neighbor_fraction'
+Code for feature 'coverage_cost_ratio_zscore' generated in 3.60 seconds
+Extracting feature 'coverage_cost_ratio_zscore'
+Code for feature 'marginal_coverage_per_budget_remaining' generated in 3.25 seconds
+Extracting feature 'marginal_coverage_per_budget_remaining'
+Code for feature 'triangle_free_coverage_gain' generated in 4.13 seconds
+Extracting feature 'triangle_free_coverage_gain'
+Code for feature 'neighbor_weighted_overlap_mean' generated in 4.75 seconds
+Extracting feature 'neighbor_weighted_overlap_mean'
+Code for feature 'normalized_personal_coverage_score' generated in 3.02 seconds
+Extracting feature 'normalized_personal_coverage_score'
+Code for feature 'greedy_rank_position' generated in 2.42 seconds
+Extracting feature 'greedy_rank_position'
+Code for feature 'unique_neighbor_coverage_fraction' generated in 2.57 seconds
+Extracting feature 'unique_neighbor_coverage_fraction'
+Code for feature 'pagerank_weighted_score' generated in 2.87 seconds
+Extracting feature 'pagerank_weighted_score'
+Code for feature 'coverage_gain_entropy_local' generated in 7.74 seconds
+Extracting feature 'coverage_gain_entropy_local'
+Code for feature 'neighbor_coverage_gain_sum' generated in 1.77 seconds
+Extracting feature 'neighbor_coverage_gain_sum'
+Code for feature 'distance_to_high_coverage_node' generated in 3.24 seconds
+Extracting feature 'distance_to_high_coverage_node'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 0
+Objective value pruned: 0
+Ratio 0.0
+queries ratio 0.0
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 205, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 85, in main
+    model, ratio, size_reduction, explainer_feedback_new = train_test_evaluate_gnn(
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~^
+        train_features = train_features,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        budget = budget
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/grads/a/anath/LLM_Pruning/utils.py", line 423, in train_test_evaluate_gnn
+    feature_importances = torch.stack(feature_importances)
+RuntimeError: stack expects a non-empty TensorList
+Data has been loaded from ../snap_dataset/train/Skitter
+Feature Space Search Iteration 1 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s]Extracting features:  10%|█         | 1/10 [00:01<00:10,  1.12s/feature]Extracting features:  20%|██        | 2/10 [00:02<00:08,  1.11s/feature]Extracting features:  30%|███       | 3/10 [00:03<00:09,  1.31s/feature]Extracting features:  40%|████      | 4/10 [00:05<00:08,  1.46s/feature]Extracting features:  50%|█████     | 5/10 [00:07<00:08,  1.77s/feature]Extracting features:  60%|██████    | 6/10 [00:12<00:11,  2.77s/feature]Extracting features:  70%|███████   | 7/10 [00:15<00:08,  2.88s/feature]Extracting features:  80%|████████  | 8/10 [00:24<00:09,  4.95s/feature]Extracting features:  90%|█████████ | 9/10 [00:26<00:03,  3.87s/feature]Extracting features: 100%|██████████| 10/10 [00:28<00:00,  3.44s/feature]Extracting features: 100%|██████████| 10/10 [00:28<00:00,  2.90s/feature]
+Code for feature 'node_weight' generated in 1.10 seconds
+Extracting feature 'node_weight'
+Code for feature 'degree' generated in 1.06 seconds
+Extracting feature 'degree'
+Code for feature 'weighted_degree' generated in 1.55 seconds
+Extracting feature 'weighted_degree'
+⚠️ Skipping feature 'weighted_degree' due to error: 'weight'
+Code for feature 'normalized_degree' generated in 1.65 seconds
+Extracting feature 'normalized_degree'
+Code for feature 'coverage_gain' generated in 2.08 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'coverage_efficiency' generated in 4.52 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'clustering_coefficient' generated in 2.35 seconds
+Extracting feature 'clustering_coefficient'
+Code for feature 'betweenness_centrality' generated in 4.24 seconds
+Extracting feature 'betweenness_centrality'
+⚠️ Skipping feature 'betweenness_centrality' due to error: 
+Code for feature 'core_number' generated in 1.32 seconds
+Extracting feature 'core_number'
+Code for feature 'neighbor_coverage_overlap' generated in 2.06 seconds
+Extracting feature 'neighbor_coverage_overlap'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 6794
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.18756929800143668
+node_weight: 0.1745, degree: 0.1533, normalized_degree: 0.0376, coverage_gain: 0.1227, coverage_efficiency: 0.1323, clustering_coefficient: 0.0000, core_number: 0.1546, neighbor_coverage_overlap: 0.2251
+Feature Space Search Iteration 2 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/12 [00:00<?, ?feature/s]Extracting features:   8%|▊         | 1/12 [00:01<00:16,  1.49s/feature]Extracting features:  17%|█▋        | 2/12 [00:03<00:15,  1.53s/feature]Extracting features:  25%|██▌       | 3/12 [00:04<00:14,  1.62s/feature]Extracting features:  33%|███▎      | 4/12 [00:08<00:18,  2.26s/feature]Extracting features:  42%|████▏     | 5/12 [00:10<00:15,  2.26s/feature]Extracting features:  50%|█████     | 6/12 [00:12<00:13,  2.26s/feature]Extracting features:  58%|█████▊    | 7/12 [00:18<00:17,  3.54s/feature]Extracting features:  67%|██████▋   | 8/12 [00:21<00:13,  3.39s/feature]Extracting features:  75%|███████▌  | 9/12 [00:25<00:10,  3.47s/feature]Extracting features:  83%|████████▎ | 10/12 [00:33<00:09,  4.88s/feature]Extracting features:  92%|█████████▏| 11/12 [00:41<00:05,  5.79s/feature]Extracting features: 100%|██████████| 12/12 [00:42<00:00,  4.48s/feature]Extracting features: 100%|██████████| 12/12 [00:42<00:00,  3.57s/feature]
+Code for feature 'node_weight' generated in 1.47 seconds
+Extracting feature 'node_weight'
+Code for feature 'degree' generated in 1.50 seconds
+Extracting feature 'degree'
+Code for feature 'normalized_degree_z' generated in 1.69 seconds
+Extracting feature 'normalized_degree_z'
+Code for feature 'coverage_gain' generated in 2.98 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'coverage_efficiency' generated in 2.06 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'core_number' generated in 2.07 seconds
+Extracting feature 'core_number'
+Code for feature 'neighbor_coverage_overlap' generated in 5.28 seconds
+Extracting feature 'neighbor_coverage_overlap'
+Code for feature 'average_neighbor_weight' generated in 2.57 seconds
+Extracting feature 'average_neighbor_weight'
+Code for feature 'inverse_neighbor_weight_sum' generated in 3.43 seconds
+Extracting feature 'inverse_neighbor_weight_sum'
+Code for feature 'fraction_uncovered_neighbors' generated in 7.94 seconds
+Extracting feature 'fraction_uncovered_neighbors'
+Code for feature 'ego_subgraph_density' generated in 3.64 seconds
+Extracting feature 'ego_subgraph_density'
+Code for feature 'pagerank_score' generated in 1.26 seconds
+Extracting feature 'pagerank_score'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 6980
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.19274171321867895
+node_weight: 0.1100, degree: 0.0521, normalized_degree_z: 0.0317, coverage_gain: 0.2135, coverage_efficiency: 0.0749, core_number: 0.1318, neighbor_coverage_overlap: 0.0275, average_neighbor_weight: 0.1153, inverse_neighbor_weight_sum: 0.0902, fraction_uncovered_neighbors: 0.0000, ego_subgraph_density: 0.1295, pagerank_score: 0.0235
+Feature Space Search Iteration 3 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/14 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/14 [00:01<00:24,  1.87s/feature]Extracting features:  14%|█▍        | 2/14 [00:05<00:36,  3.07s/feature]Extracting features:  21%|██▏       | 3/14 [00:10<00:39,  3.60s/feature]Extracting features:  29%|██▊       | 4/14 [00:13<00:36,  3.63s/feature]Extracting features:  36%|███▌      | 5/14 [00:15<00:26,  2.91s/feature]Extracting features:  43%|████▎     | 6/14 [01:38<04:01, 30.20s/feature]Extracting features:  50%|█████     | 7/14 [01:43<02:32, 21.84s/feature]Extracting features:  57%|█████▋    | 8/14 [01:51<01:44, 17.40s/feature]Extracting features:  64%|██████▍   | 9/14 [01:52<01:02, 12.45s/feature]Extracting features:  71%|███████▏  | 10/14 [01:59<00:43, 10.80s/feature]Extracting features:  79%|███████▊  | 11/14 [02:01<00:24,  8.15s/feature]Extracting features:  86%|████████▌ | 12/14 [02:07<00:14,  7.30s/feature]Extracting features:  93%|█████████▎| 13/14 [02:10<00:05,  5.94s/feature]Extracting features: 100%|██████████| 14/14 [03:28<00:00, 27.85s/feature]Extracting features: 100%|██████████| 14/14 [03:28<00:00, 14.89s/feature]
+Code for feature 'node_weight' generated in 1.85 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain' generated in 3.72 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'coverage_efficiency' generated in 4.01 seconds
+Extracting feature 'coverage_efficiency'
+Code for feature 'neighbor_coverage_overlap' generated in 3.00 seconds
+Extracting feature 'neighbor_coverage_overlap'
+Code for feature 'core_number' generated in 1.44 seconds
+Extracting feature 'core_number'
+Code for feature 'average_neighbor_weight_z' generated in 83.17 seconds
+Extracting feature 'average_neighbor_weight_z'
+⚠️ Skipping feature 'average_neighbor_weight_z' due to error: name 'nx' is not defined
+Code for feature 'inverse_neighbor_weight_sum' generated in 4.42 seconds
+Extracting feature 'inverse_neighbor_weight_sum'
+Code for feature 'ego_subgraph_density' generated in 6.44 seconds
+Extracting feature 'ego_subgraph_density'
+Code for feature 'pagerank' generated in 1.32 seconds
+Extracting feature 'pagerank'
+Code for feature 'exclusive_coverage_gain' generated in 2.11 seconds
+Extracting feature 'exclusive_coverage_gain'
+⚠️ Skipping feature 'exclusive_coverage_gain' due to error: 
+Code for feature 'weight_rank_percentile' generated in 2.11 seconds
+Extracting feature 'weight_rank_percentile'
+Code for feature 'neighbor_core_number_std' generated in 4.15 seconds
+Extracting feature 'neighbor_core_number_std'
+Code for feature 'relative_coverage_gain_z' generated in 2.61 seconds
+Extracting feature 'relative_coverage_gain_z'
+Code for feature 'coverage_overlap_with_high_core' generated in 78.37 seconds
+Extracting feature 'coverage_overlap_with_high_core'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 13779
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.3818129554876583
+node_weight: 0.1554, coverage_gain: 0.1091, coverage_efficiency: 0.0330, neighbor_coverage_overlap: 0.0000, core_number: 0.1613, inverse_neighbor_weight_sum: 0.1080, ego_subgraph_density: 0.1557, pagerank: 0.0300, weight_rank_percentile: 0.2085, neighbor_core_number_std: 0.0000, relative_coverage_gain_z: 0.0361, coverage_overlap_with_high_core: 0.0029
+Feature Space Search Iteration 4 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/17 [00:00<?, ?feature/s]Extracting features:   6%|▌         | 1/17 [00:01<00:17,  1.08s/feature]Extracting features:  12%|█▏        | 2/17 [00:03<00:27,  1.81s/feature]Extracting features:  18%|█▊        | 3/17 [00:11<01:05,  4.66s/feature]Extracting features:  24%|██▎       | 4/17 [00:13<00:47,  3.68s/feature]Extracting features:  29%|██▉       | 5/17 [00:16<00:39,  3.27s/feature]Extracting features:  35%|███▌      | 6/17 [00:20<00:39,  3.60s/feature]Extracting features:  41%|████      | 7/17 [00:24<00:37,  3.75s/feature]Extracting features:  47%|████▋     | 8/17 [00:27<00:30,  3.40s/feature]Extracting features:  53%|█████▎    | 9/17 [00:36<00:42,  5.32s/feature]Extracting features:  59%|█████▉    | 10/17 [00:38<00:29,  4.17s/feature]Extracting features:  65%|██████▍   | 11/17 [00:42<00:24,  4.10s/feature]Extracting features:  71%|███████   | 12/17 [00:45<00:19,  3.92s/feature]Extracting features:  76%|███████▋  | 13/17 [00:52<00:19,  4.87s/feature]Extracting features:  82%|████████▏ | 14/17 [01:03<00:20,  6.70s/feature]Extracting features:  88%|████████▊ | 15/17 [01:06<00:10,  5.38s/feature]Extracting features:  94%|█████████▍| 16/17 [01:08<00:04,  4.65s/feature]Extracting features: 100%|██████████| 17/17 [01:11<00:00,  4.10s/feature]Extracting features: 100%|██████████| 17/17 [01:11<00:00,  4.22s/feature]
+Code for feature 'node_weight' generated in 1.06 seconds
+Extracting feature 'node_weight'
+Code for feature 'core_number' generated in 2.14 seconds
+Extracting feature 'core_number'
+Code for feature 'ego_subgraph_density' generated in 6.70 seconds
+Extracting feature 'ego_subgraph_density'
+Code for feature 'weight_rank_percentile' generated in 2.14 seconds
+Extracting feature 'weight_rank_percentile'
+Code for feature 'coverage_gain' generated in 2.35 seconds
+Extracting feature 'coverage_gain'
+Code for feature 'coverage_gain_zscore' generated in 4.04 seconds
+Extracting feature 'coverage_gain_zscore'
+Code for feature 'inverse_neighbor_weight_sum' generated in 3.65 seconds
+Extracting feature 'inverse_neighbor_weight_sum'
+Code for feature 'average_neighbor_weight' generated in 2.17 seconds
+Extracting feature 'average_neighbor_weight'
+Code for feature 'pagerank_score' generated in 9.30 seconds
+Extracting feature 'pagerank_score'
+Code for feature 'degree_zscore' generated in 1.55 seconds
+Extracting feature 'degree_zscore'
+Code for feature 'coverage_efficiency_zscore' generated in 3.74 seconds
+Extracting feature 'coverage_efficiency_zscore'
+Code for feature 'neighbor_core_number_avg' generated in 3.03 seconds
+Extracting feature 'neighbor_core_number_avg'
+Code for feature 'second_order_coverage_gain' generated in 5.66 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'exclusive_coverage_gain' generated in 10.55 seconds
+Extracting feature 'exclusive_coverage_gain'
+Code for feature 'coverage_overlap_with_heavy_nodes' generated in 2.23 seconds
+Extracting feature 'coverage_overlap_with_heavy_nodes'
+Code for feature 'neighbor_weight_variance' generated in 2.06 seconds
+Extracting feature 'neighbor_weight_variance'
+Code for feature 'core_coverage_ratio' generated in 2.79 seconds
+Extracting feature 'core_coverage_ratio'
+⚠️ Skipping feature 'core_coverage_ratio' due to error: name 'nx' is not defined
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 10222
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.2828974666288909
+node_weight: 0.0687, core_number: 0.0614, ego_subgraph_density: 0.0374, weight_rank_percentile: 0.0606, coverage_gain: 0.1092, coverage_gain_zscore: 0.1028, inverse_neighbor_weight_sum: 0.0415, average_neighbor_weight: 0.0727, pagerank_score: 0.0177, degree_zscore: 0.0786, coverage_efficiency_zscore: 0.0618, neighbor_core_number_avg: 0.0760, second_order_coverage_gain: 0.1005, exclusive_coverage_gain: 0.0896, coverage_overlap_with_heavy_nodes: 0.0000, neighbor_weight_variance: 0.0215
+Feature Space Search Iteration 5 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:19,  1.43s/feature]Extracting features:  13%|█▎        | 2/15 [00:05<00:35,  2.75s/feature]Extracting features:  20%|██        | 3/15 [00:22<01:50,  9.25s/feature]Extracting features:  27%|██▋       | 4/15 [00:24<01:11,  6.49s/feature]Extracting features:  33%|███▎      | 5/15 [00:29<01:01,  6.16s/feature]Extracting features:  40%|████      | 6/15 [00:33<00:46,  5.15s/feature]Extracting features:  47%|████▋     | 7/15 [00:37<00:39,  4.95s/feature]Extracting features:  53%|█████▎    | 8/15 [00:42<00:34,  4.95s/feature]Extracting features:  60%|██████    | 9/15 [00:45<00:26,  4.41s/feature]Extracting features:  67%|██████▋   | 10/15 [00:54<00:28,  5.75s/feature]Extracting features:  73%|███████▎  | 11/15 [00:58<00:20,  5.16s/feature]Extracting features:  80%|████████  | 12/15 [01:01<00:13,  4.59s/feature]Extracting features:  87%|████████▋ | 13/15 [01:08<00:10,  5.37s/feature]Extracting features:  93%|█████████▎| 14/15 [01:11<00:04,  4.60s/feature]Extracting features: 100%|██████████| 15/15 [01:15<00:00,  4.25s/feature]Extracting features: 100%|██████████| 15/15 [01:15<00:00,  5.01s/feature]
+Code for feature 'node_weight' generated in 1.40 seconds
+Extracting feature 'node_weight'
+Code for feature 'coverage_gain_zscore' generated in 3.45 seconds
+Extracting feature 'coverage_gain_zscore'
+Code for feature 'exclusive_coverage_gain' generated in 16.41 seconds
+Extracting feature 'exclusive_coverage_gain'
+Code for feature 'inverse_neighbor_weight_sum' generated in 2.06 seconds
+Extracting feature 'inverse_neighbor_weight_sum'
+Code for feature 'core_number' generated in 5.34 seconds
+Extracting feature 'core_number'
+Code for feature 'ego_subgraph_density' generated in 3.19 seconds
+Extracting feature 'ego_subgraph_density'
+⚠️ Skipping feature 'ego_subgraph_density' due to error: 'weight'
+Code for feature 'weight_rank_percentile' generated in 4.50 seconds
+Extracting feature 'weight_rank_percentile'
+Code for feature 'second_order_coverage_gain' generated in 3.85 seconds
+Extracting feature 'second_order_coverage_gain'
+Code for feature 'average_neighbor_weight_zscore' generated in 2.72 seconds
+Extracting feature 'average_neighbor_weight_zscore'
+Code for feature 'exclusive_coverage_efficiency' generated in 8.19 seconds
+Extracting feature 'exclusive_coverage_efficiency'
+Code for feature 'neighbor_core_number_avg' generated in 2.95 seconds
+Extracting feature 'neighbor_core_number_avg'
+Code for feature 'coverage_efficiency_zscore' generated in 2.93 seconds
+Extracting feature 'coverage_efficiency_zscore'
+Code for feature 'pagerank_score' generated in 6.89 seconds
+Extracting feature 'pagerank_score'
+Code for feature 'uncovered_neighbor_ratio' generated in 2.60 seconds
+Extracting feature 'uncovered_neighbor_ratio'
+Code for feature 'neighbor_exclusive_coverage_avg' generated in 3.44 seconds
+Extracting feature 'neighbor_exclusive_coverage_avg'
+⚠️ Skipping feature 'neighbor_exclusive_coverage_avg' due to error: name 'nx' is not defined
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 13548
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.375389149492051
+node_weight: 0.1322, coverage_gain_zscore: 0.0318, exclusive_coverage_gain: 0.1080, inverse_neighbor_weight_sum: 0.1110, core_number: 0.0948, weight_rank_percentile: 0.1476, second_order_coverage_gain: 0.0068, average_neighbor_weight_zscore: 0.0233, exclusive_coverage_efficiency: 0.1490, neighbor_core_number_avg: 0.1433, coverage_efficiency_zscore: 0.0273, pagerank_score: 0.0248, uncovered_neighbor_ratio: 0.0000
+Feature Space Search Iteration 6 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:21,  1.53s/feature]Extracting features:  13%|█▎        | 2/15 [00:08<01:01,  4.73s/feature]Extracting features:  20%|██        | 3/15 [00:12<00:50,  4.21s/feature]Extracting features:  27%|██▋       | 4/15 [00:13<00:35,  3.26s/feature]Extracting features:  33%|███▎      | 5/15 [00:16<00:28,  2.87s/feature]Extracting features:  40%|████      | 6/15 [00:48<01:55, 12.80s/feature]Extracting features:  47%|████▋     | 7/15 [00:56<01:30, 11.33s/feature]Extracting features:  53%|█████▎    | 8/15 [01:00<01:03,  9.04s/feature]Extracting features:  60%|██████    | 9/15 [01:04<00:44,  7.48s/feature]Extracting features:  67%|██████▋   | 10/15 [01:19<00:49,  9.89s/feature]Extracting features:  73%|███████▎  | 11/15 [01:24<00:33,  8.41s/feature]Extracting features:  80%|████████  | 12/15 [01:33<00:25,  8.46s/feature]Extracting features:  87%|████████▋ | 13/15 [01:36<00:13,  6.75s/feature]Extracting features:  93%|█████████▎| 14/15 [01:41<00:06,  6.14s/feature]Extracting features: 100%|██████████| 15/15 [01:52<00:00,  7.79s/feature]Extracting features: 100%|██████████| 15/15 [01:52<00:00,  7.51s/feature]
+Code for feature 'node_weight' generated in 1.50 seconds
+Extracting feature 'node_weight'
+Code for feature 'exclusive_coverage_gain' generated in 6.00 seconds
+Extracting feature 'exclusive_coverage_gain'
+Code for feature 'exclusive_coverage_efficiency' generated in 3.32 seconds
+Extracting feature 'exclusive_coverage_efficiency'
+Code for feature 'core_number' generated in 1.35 seconds
+Extracting feature 'core_number'
+Code for feature 'inverse_neighbor_weight_sum' generated in 2.01 seconds
+Extracting feature 'inverse_neighbor_weight_sum'
+Code for feature 'weight_rank_percentile' generated in 32.05 seconds
+Extracting feature 'weight_rank_percentile'
+Code for feature 'coverage_gain_zscore' generated in 3.29 seconds
+Extracting feature 'coverage_gain_zscore'
+⚠️ Skipping feature 'coverage_gain_zscore' due to error: 
+Code for feature 'neighbor_core_number_avg' generated in 3.57 seconds
+Extracting feature 'neighbor_core_number_avg'
+Code for feature 'pagerank_score' generated in 3.79 seconds
+Extracting feature 'pagerank_score'
+Code for feature 'relative_exclusive_efficiency_z' generated in 10.30 seconds
+Extracting feature 'relative_exclusive_efficiency_z'
+⚠️ Skipping feature 'relative_exclusive_efficiency_z' due to error: 
+Code for feature 'ego_subgraph_density' generated in 3.52 seconds
+Extracting feature 'ego_subgraph_density'
+Code for feature 'second_order_coverage_gain_ratio' generated in 7.83 seconds
+Extracting feature 'second_order_coverage_gain_ratio'
+Code for feature 'neighbor_weight_contrast' generated in 2.28 seconds
+Extracting feature 'neighbor_weight_contrast'
+Code for feature 'max_neighbor_exclusive_coverage' generated in 3.50 seconds
+Extracting feature 'max_neighbor_exclusive_coverage'
+Code for feature 'weighted_core_ratio' generated in 11.14 seconds
+Extracting feature 'weighted_core_ratio'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 7511
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.2075081244033867
+node_weight: 0.1204, exclusive_coverage_gain: 0.1139, exclusive_coverage_efficiency: 0.0833, core_number: 0.1196, inverse_neighbor_weight_sum: 0.0239, weight_rank_percentile: 0.1000, neighbor_core_number_avg: 0.1123, pagerank_score: 0.0182, ego_subgraph_density: 0.0635, second_order_coverage_gain_ratio: 0.0164, neighbor_weight_contrast: 0.0739, max_neighbor_exclusive_coverage: 0.0483, weighted_core_ratio: 0.1064
+Feature Space Search Iteration 7 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/18 [00:00<?, ?feature/s]Extracting features:   6%|▌         | 1/18 [00:01<00:22,  1.32s/feature]Extracting features:  11%|█         | 2/18 [00:03<00:28,  1.78s/feature]Extracting features:  17%|█▋        | 3/18 [00:11<01:11,  4.80s/feature]Extracting features:  22%|██▏       | 4/18 [00:14<00:57,  4.11s/feature]Extracting features:  28%|██▊       | 5/18 [00:17<00:47,  3.63s/feature]Extracting features:  33%|███▎      | 6/18 [00:21<00:44,  3.71s/feature]Extracting features:  39%|███▉      | 7/18 [00:24<00:38,  3.51s/feature]Extracting features:  44%|████▍     | 8/18 [00:44<01:28,  8.85s/feature]Extracting features:  50%|█████     | 9/18 [02:23<05:32, 36.93s/feature]Extracting features:  56%|█████▌    | 10/18 [02:28<03:36, 27.09s/feature]Extracting features:  61%|██████    | 11/18 [02:34<02:23, 20.45s/feature]Extracting features:  67%|██████▋   | 12/18 [02:35<01:28, 14.83s/feature]Extracting features:  72%|███████▏  | 13/18 [02:39<00:57, 11.43s/feature]Extracting features:  78%|███████▊  | 14/18 [02:47<00:41, 10.44s/feature]Extracting features:  83%|████████▎ | 15/18 [02:59<00:32, 10.77s/feature]Extracting features:  89%|████████▉ | 16/18 [03:01<00:16,  8.27s/feature]Extracting features:  94%|█████████▍| 17/18 [03:03<00:06,  6.29s/feature]Extracting features: 100%|██████████| 18/18 [03:09<00:00,  6.28s/feature]Extracting features: 100%|██████████| 18/18 [03:09<00:00, 10.54s/feature]
+Code for feature 'node_weight' generated in 1.30 seconds
+Extracting feature 'node_weight'
+Code for feature 'core_number' generated in 1.64 seconds
+Extracting feature 'core_number'
+Code for feature 'exclusive_coverage_gain' generated in 3.38 seconds
+Extracting feature 'exclusive_coverage_gain'
+⚠️ Skipping feature 'exclusive_coverage_gain' due to error: 
+Code for feature 'exclusive_coverage_efficiency' generated in 2.51 seconds
+Extracting feature 'exclusive_coverage_efficiency'
+Code for feature 'weight_rank_percentile' generated in 2.76 seconds
+Extracting feature 'weight_rank_percentile'
+Code for feature 'neighbor_core_number_avg' generated in 3.60 seconds
+Extracting feature 'neighbor_core_number_avg'
+Code for feature 'inverse_neighbor_weight_sum_log' generated in 2.82 seconds
+Extracting feature 'inverse_neighbor_weight_sum_log'
+Code for feature 'exclusive_coverage_gain_zscore' generated in 15.27 seconds
+Extracting feature 'exclusive_coverage_gain_zscore'
+⚠️ Skipping feature 'exclusive_coverage_gain_zscore' due to error: 
+Code for feature 'pagerank_score' generated in 98.43 seconds
+Extracting feature 'pagerank_score'
+Code for feature 'ego_subgraph_density_zscore' generated in 3.48 seconds
+Extracting feature 'ego_subgraph_density_zscore'
+Code for feature 'max_neighbor_exclusive_coverage' generated in 4.14 seconds
+Extracting feature 'max_neighbor_exclusive_coverage'
+Code for feature 'weight_core_ratio' generated in 1.95 seconds
+Extracting feature 'weight_core_ratio'
+⚠️ Skipping feature 'weight_core_ratio' due to error: name 'nx' is not defined
+Code for feature 'neighbor_weight_contrast' generated in 3.13 seconds
+Extracting feature 'neighbor_weight_contrast'
+Code for feature 'second_order_exclusive_coverage_ratio' generated in 5.14 seconds
+Extracting feature 'second_order_exclusive_coverage_ratio'
+Code for feature 'degree_percentile' generated in 11.48 seconds
+Extracting feature 'degree_percentile'
+Code for feature 'normalized_exclusive_coverage_efficiency' generated in 2.26 seconds
+Extracting feature 'normalized_exclusive_coverage_efficiency'
+Code for feature 'pagerank_weight_product' generated in 1.42 seconds
+Extracting feature 'pagerank_weight_product'
+Code for feature 'neighbor_exclusive_gain_entropy' generated in 4.50 seconds
+Extracting feature 'neighbor_exclusive_gain_entropy'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 10662
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.29513328757290486
+node_weight: 0.1236, core_number: 0.0447, exclusive_coverage_efficiency: 0.0693, weight_rank_percentile: 0.0704, neighbor_core_number_avg: 0.0497, inverse_neighbor_weight_sum_log: 0.1272, pagerank_score: 0.0164, ego_subgraph_density_zscore: 0.0745, max_neighbor_exclusive_coverage: 0.0441, neighbor_weight_contrast: 0.0646, second_order_exclusive_coverage_ratio: 0.0731, degree_percentile: 0.1393, normalized_exclusive_coverage_efficiency: 0.0017, pagerank_weight_product: 0.0163, neighbor_exclusive_gain_entropy: 0.0852
+Feature Space Search Iteration 8 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/15 [00:00<?, ?feature/s]Extracting features:   7%|▋         | 1/15 [00:01<00:15,  1.08s/feature]Extracting features:  13%|█▎        | 2/15 [00:13<01:41,  7.80s/feature]Extracting features:  20%|██        | 3/15 [00:15<01:03,  5.29s/feature]Extracting features:  27%|██▋       | 4/15 [00:19<00:50,  4.58s/feature]Extracting features:  33%|███▎      | 5/15 [00:22<00:39,  3.98s/feature]Extracting features:  40%|████      | 6/15 [00:24<00:29,  3.28s/feature]Extracting features:  47%|████▋     | 7/15 [00:27<00:25,  3.19s/feature]Extracting features:  53%|█████▎    | 8/15 [00:28<00:18,  2.70s/feature]Extracting features:  60%|██████    | 9/15 [00:36<00:25,  4.26s/feature]Extracting features:  67%|██████▋   | 10/15 [00:42<00:23,  4.71s/feature]Extracting features:  73%|███████▎  | 11/15 [00:46<00:18,  4.51s/feature]Extracting features:  80%|████████  | 12/15 [00:53<00:16,  5.34s/feature]Extracting features:  87%|████████▋ | 13/15 [01:01<00:12,  6.20s/feature]Extracting features:  93%|█████████▎| 14/15 [01:03<00:04,  4.89s/feature]Extracting features: 100%|██████████| 15/15 [01:06<00:00,  4.18s/feature]Extracting features: 100%|██████████| 15/15 [01:06<00:00,  4.41s/feature]
+Code for feature 'node_weight' generated in 1.06 seconds
+Extracting feature 'node_weight'
+Code for feature 'exclusive_coverage_gain' generated in 12.06 seconds
+Extracting feature 'exclusive_coverage_gain'
+Code for feature 'exclusive_coverage_efficiency' generated in 2.11 seconds
+Extracting feature 'exclusive_coverage_efficiency'
+Code for feature 'core_number' generated in 3.29 seconds
+Extracting feature 'core_number'
+Code for feature 'inverse_neighbor_weight_sum_log' generated in 2.63 seconds
+Extracting feature 'inverse_neighbor_weight_sum_log'
+Code for feature 'weight_rank_percentile' generated in 1.89 seconds
+Extracting feature 'weight_rank_percentile'
+Code for feature 'neighbor_core_number_avg' generated in 2.14 seconds
+Extracting feature 'neighbor_core_number_avg'
+Code for feature 'degree_percentile' generated in 1.61 seconds
+Extracting feature 'degree_percentile'
+Code for feature 'neighbor_exclusive_gain_entropy' generated in 6.05 seconds
+Extracting feature 'neighbor_exclusive_gain_entropy'
+Code for feature 'max_neighbor_exclusive_coverage' generated in 5.21 seconds
+Extracting feature 'max_neighbor_exclusive_coverage'
+Code for feature 'ego_net_effective_density' generated in 3.60 seconds
+Extracting feature 'ego_net_effective_density'
+Code for feature 'relative_exclusive_coverage_zscore' generated in 6.85 seconds
+Extracting feature 'relative_exclusive_coverage_zscore'
+Code for feature 'neighbor_weight_contrast_z' generated in 6.94 seconds
+Extracting feature 'neighbor_weight_contrast_z'
+Code for feature 'pagerank_weight_product' generated in 1.58 seconds
+Extracting feature 'pagerank_weight_product'
+Code for feature 'uncovered_ego_neighbors_ratio' generated in 2.33 seconds
+Extracting feature 'uncovered_ego_neighbors_ratio'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 4534
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.1247216722435468
+node_weight: 0.0827, exclusive_coverage_gain: 0.1728, exclusive_coverage_efficiency: 0.0250, core_number: 0.0320, inverse_neighbor_weight_sum_log: 0.0272, weight_rank_percentile: 0.1102, neighbor_core_number_avg: 0.0945, degree_percentile: 0.1165, neighbor_exclusive_gain_entropy: 0.0250, max_neighbor_exclusive_coverage: 0.1211, ego_net_effective_density: 0.1172, relative_exclusive_coverage_zscore: 0.0277, neighbor_weight_contrast_z: 0.0242, pagerank_weight_product: 0.0240, uncovered_ego_neighbors_ratio: 0.0000
+Feature Space Search Iteration 9 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/20 [00:00<?, ?feature/s]Extracting features:   5%|▌         | 1/20 [00:01<00:25,  1.34s/feature]Extracting features:  10%|█         | 2/20 [00:06<01:02,  3.47s/feature]Extracting features:  15%|█▌        | 3/20 [00:11<01:10,  4.17s/feature]Extracting features:  20%|██        | 4/20 [00:12<00:50,  3.16s/feature]Extracting features:  25%|██▌       | 5/20 [00:15<00:43,  2.91s/feature]Extracting features:  30%|███       | 6/20 [00:47<03:01, 12.96s/feature]Extracting features:  35%|███▌      | 7/20 [00:50<02:02,  9.44s/feature]Extracting features:  40%|████      | 8/20 [00:52<01:28,  7.35s/feature]Extracting features:  45%|████▌     | 9/20 [00:54<01:02,  5.64s/feature]Extracting features:  50%|█████     | 10/20 [01:00<00:56,  5.65s/feature]Extracting features:  55%|█████▌    | 11/20 [01:06<00:51,  5.72s/feature]Extracting features:  60%|██████    | 12/20 [01:07<00:35,  4.46s/feature]Extracting features:  65%|██████▌   | 13/20 [01:10<00:26,  3.84s/feature]Extracting features:  70%|███████   | 14/20 [01:14<00:23,  3.95s/feature]Extracting features:  75%|███████▌  | 15/20 [02:07<01:34, 18.80s/feature]Extracting features:  80%|████████  | 16/20 [02:15<01:02, 15.56s/feature]Extracting features:  85%|████████▌ | 17/20 [02:18<00:35, 11.82s/feature]Extracting features:  90%|█████████ | 18/20 [02:21<00:17,  8.94s/feature]Extracting features:  95%|█████████▌| 19/20 [02:35<00:10, 10.59s/feature]Extracting features: 100%|██████████| 20/20 [02:41<00:00,  9.12s/feature]Extracting features: 100%|██████████| 20/20 [02:41<00:00,  8.06s/feature]
+Code for feature 'node_weight' generated in 1.32 seconds
+Extracting feature 'node_weight'
+Code for feature 'exclusive_coverage_gain' generated in 4.62 seconds
+Extracting feature 'exclusive_coverage_gain'
+Code for feature 'exclusive_coverage_efficiency' generated in 4.57 seconds
+Extracting feature 'exclusive_coverage_efficiency'
+Code for feature 'core_number' generated in 1.14 seconds
+Extracting feature 'core_number'
+Code for feature 'neighbor_core_number_avg' generated in 2.18 seconds
+Extracting feature 'neighbor_core_number_avg'
+Code for feature 'inverse_neighbor_weight_sum_log' generated in 32.21 seconds
+Extracting feature 'inverse_neighbor_weight_sum_log'
+Code for feature 'weight_rank_percentile' generated in 2.16 seconds
+Extracting feature 'weight_rank_percentile'
+Code for feature 'max_neighbor_exclusive_coverage' generated in 2.60 seconds
+Extracting feature 'max_neighbor_exclusive_coverage'
+Code for feature 'degree_percentile' generated in 1.84 seconds
+Extracting feature 'degree_percentile'
+Code for feature 'ego_net_effective_density' generated in 5.68 seconds
+Extracting feature 'ego_net_effective_density'
+⚠️ Skipping feature 'ego_net_effective_density' due to error: 'weight'
+Code for feature 'neighbor_weight_contrast_z' generated in 4.72 seconds
+Extracting feature 'neighbor_weight_contrast_z'
+Code for feature 'pagerank_weight_product' generated in 1.14 seconds
+Extracting feature 'pagerank_weight_product'
+Code for feature 'relative_exclusive_coverage_zscore' generated in 2.37 seconds
+Extracting feature 'relative_exclusive_coverage_zscore'
+Code for feature 'second_order_exclusive_coverage_ratio' generated in 3.24 seconds
+Extracting feature 'second_order_exclusive_coverage_ratio'
+Code for feature 'neighbor_exclusive_gain_entropy' generated in 52.34 seconds
+Extracting feature 'neighbor_exclusive_gain_entropy'
+Code for feature 'weighted_core_ratio' generated in 8.03 seconds
+Extracting feature 'weighted_core_ratio'
+⚠️ Skipping feature 'weighted_core_ratio' due to error: name 'nx' is not defined
+Code for feature 'exclusive_coverage_gain_per_log_degree' generated in 2.40 seconds
+Extracting feature 'exclusive_coverage_gain_per_log_degree'
+Code for feature 'max_uncovered_neighbor_weight' generated in 2.08 seconds
+Extracting feature 'max_uncovered_neighbor_weight'
+Code for feature 'coverage_gain_overlapping_fraction' generated in 9.45 seconds
+Extracting feature 'coverage_gain_overlapping_fraction'
+⚠️ Skipping feature 'coverage_gain_overlapping_fraction' due to error: 
+Code for feature 'average_neighbor_exclusive_efficiency' generated in 5.09 seconds
+Extracting feature 'average_neighbor_exclusive_efficiency'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 15023
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.4164069583384614
+node_weight: 0.0541, exclusive_coverage_gain: 0.0935, exclusive_coverage_efficiency: 0.0546, core_number: 0.0924, neighbor_core_number_avg: 0.0728, inverse_neighbor_weight_sum_log: 0.0209, weight_rank_percentile: 0.1120, max_neighbor_exclusive_coverage: 0.0840, degree_percentile: 0.1785, neighbor_weight_contrast_z: 0.0096, pagerank_weight_product: 0.0199, relative_exclusive_coverage_zscore: 0.0199, second_order_exclusive_coverage_ratio: 0.0453, neighbor_exclusive_gain_entropy: 0.0848, exclusive_coverage_gain_per_log_degree: 0.0267, max_uncovered_neighbor_weight: 0.0000, average_neighbor_exclusive_efficiency: 0.0311
+Feature Space Search Iteration 10 for problem: Maximum Coverage Weighted
+Extracting features:   0%|          | 0/20 [00:00<?, ?feature/s]Extracting features:   5%|▌         | 1/20 [00:02<00:53,  2.83s/feature]Extracting features:  10%|█         | 2/20 [00:04<00:36,  2.00s/feature]Extracting features:  15%|█▌        | 3/20 [00:07<00:41,  2.44s/feature]Extracting features:  20%|██        | 4/20 [00:11<00:51,  3.23s/feature]Extracting features:  25%|██▌       | 5/20 [00:13<00:40,  2.73s/feature]Extracting features:  30%|███       | 6/20 [00:15<00:32,  2.33s/feature]Extracting features:  35%|███▌      | 7/20 [00:16<00:26,  2.04s/feature]Extracting features:  40%|████      | 8/20 [00:23<00:44,  3.74s/feature]Extracting features:  45%|████▌     | 9/20 [00:31<00:54,  4.98s/feature]Extracting features:  50%|█████     | 10/20 [00:35<00:46,  4.70s/feature]Extracting features:  55%|█████▌    | 11/20 [00:38<00:37,  4.14s/feature]Extracting features:  60%|██████    | 12/20 [00:40<00:26,  3.37s/feature]Extracting features:  65%|██████▌   | 13/20 [01:03<01:05,  9.35s/feature]Extracting features:  70%|███████   | 14/20 [01:10<00:52,  8.72s/feature]Extracting features:  75%|███████▌  | 15/20 [01:17<00:41,  8.20s/feature]Extracting features:  80%|████████  | 16/20 [01:21<00:28,  7.08s/feature]Extracting features:  85%|████████▌ | 17/20 [01:26<00:18,  6.20s/feature]Extracting features:  90%|█████████ | 18/20 [01:30<00:11,  5.79s/feature]Extracting features:  95%|█████████▌| 19/20 [01:35<00:05,  5.33s/feature]Extracting features: 100%|██████████| 20/20 [01:43<00:00,  6.21s/feature]Extracting features: 100%|██████████| 20/20 [01:43<00:00,  5.18s/feature]
+Code for feature 'exclusive_coverage_gain' generated in 2.45 seconds
+Extracting feature 'exclusive_coverage_gain'
+⚠️ Skipping feature 'exclusive_coverage_gain' due to error: unsupported operand type(s) for |: 'list' and 'set'
+Code for feature 'degree_percentile' generated in 1.36 seconds
+Extracting feature 'degree_percentile'
+Code for feature 'inverse_neighbor_weight_sum_log' generated in 2.70 seconds
+Extracting feature 'inverse_neighbor_weight_sum_log'
+Code for feature 'neighbor_core_number_avg' generated in 3.85 seconds
+Extracting feature 'neighbor_core_number_avg'
+Code for feature 'node_weight' generated in 1.82 seconds
+Extracting feature 'node_weight'
+Code for feature 'weight_rank_percentile' generated in 1.54 seconds
+Extracting feature 'weight_rank_percentile'
+Code for feature 'core_number' generated in 1.22 seconds
+Extracting feature 'core_number'
+Code for feature 'max_neighbor_exclusive_coverage' generated in 6.07 seconds
+Extracting feature 'max_neighbor_exclusive_coverage'
+Code for feature 'ego_net_effective_density' generated in 5.68 seconds
+Extracting feature 'ego_net_effective_density'
+Code for feature 'neighbor_exclusive_gain_entropy' generated in 2.77 seconds
+Extracting feature 'neighbor_exclusive_gain_entropy'
+Code for feature 'exclusive_coverage_efficiency' generated in 2.60 seconds
+Extracting feature 'exclusive_coverage_efficiency'
+Code for feature 'pagerank_weight_product' generated in 1.40 seconds
+Extracting feature 'pagerank_weight_product'
+Code for feature 'second_order_exclusive_coverage_ratio' generated in 22.39 seconds
+Extracting feature 'second_order_exclusive_coverage_ratio'
+Code for feature 'exclusive_coverage_gain_zscore' generated in 6.72 seconds
+Extracting feature 'exclusive_coverage_gain_zscore'
+Code for feature 'neighbor_weight_contrast_z' generated in 5.86 seconds
+Extracting feature 'neighbor_weight_contrast_z'
+Code for feature 'average_neighbor_exclusive_efficiency' generated in 2.93 seconds
+Extracting feature 'average_neighbor_exclusive_efficiency'
+Code for feature 'exclusive_degree_ratio' generated in 3.09 seconds
+Extracting feature 'exclusive_degree_ratio'
+Code for feature 'weighted_core_ratio' generated in 4.84 seconds
+Extracting feature 'weighted_core_ratio'
+⚠️ Skipping feature 'weighted_core_ratio' due to error: name 'nx' is not defined
+Code for feature 'neighbor_exclusive_gain_gini' generated in 3.88 seconds
+Extracting feature 'neighbor_exclusive_gain_gini'
+Code for feature 'relative_exclusive_coverage_percentile' generated in 8.11 seconds
+Extracting feature 'relative_exclusive_coverage_percentile'
+Objective value: 200
+A candidate node set has been provided.
+Size of the candidate set = 12989
+Objective value pruned: 200
+Ratio 1.0
+queries ratio 0.3598440951563605
+degree_percentile: 0.0443, inverse_neighbor_weight_sum_log: 0.1074, neighbor_core_number_avg: 0.0848, node_weight: 0.1151, weight_rank_percentile: 0.0838, core_number: 0.1106, max_neighbor_exclusive_coverage: 0.0443, ego_net_effective_density: 0.0965, neighbor_exclusive_gain_entropy: 0.0675, exclusive_coverage_efficiency: 0.0161, pagerank_weight_product: 0.0168, second_order_exclusive_coverage_ratio: 0.0320, exclusive_coverage_gain_zscore: 0.0414, neighbor_weight_contrast_z: 0.0007, average_neighbor_exclusive_efficiency: 0.0314, exclusive_degree_ratio: 0.0842, neighbor_exclusive_gain_gini: 0.0065, relative_exclusive_coverage_percentile: 0.0166
+Best model, data, and history saved in 'Maximum Coverage Weighted/Skitter'.
+Data has been loaded from ../snap_dataset/test/Skitter
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 205, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 147, in main
+    model.load_state_dict(torch.load(model_save_path))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/a/anath/anaconda3/envs/eoh/lib/python3.13/site-packages/torch/nn/modules/module.py", line 2593, in load_state_dict
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: Error(s) in loading state_dict for GCN:
+	size mismatch for conv1.lin.weight: copying a param with shape torch.Size([16, 15]) from checkpoint, the shape in current model is torch.Size([16, 18]).
