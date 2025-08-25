@@ -47,6 +47,10 @@ def main():
     val_graph, val_forward_mapping, val_reverse_mapping = relabel_graph(val_graph)
     val_graph = assign_normalized_degree_weights(val_graph)
 
+    test_graph = load_from_pickle(f'../snap_dataset/test/{dataset}')
+    test_graph, _, _ = relabel_graph(test_graph)
+    test_graph = assign_normalized_degree_weights(test_graph)
+
     explainer_feedback_list = []
     history = []
     best_score = float('-inf')
@@ -58,29 +62,48 @@ def main():
     best_model_data_path = os.path.join(save_folder, "best_model_data.pkl")
     history_path = os.path.join(save_folder, "history.pkl")
 
-    best_model_data = {
-        "iteration": None,
-        "codes": None,
-        "ratio": None,
-        "size_reduction": None,
-        "multiplication": None,
-    }
+    # best_model_data = {
+    #     "iteration": None,
+    #     "codes": None,
+    #     "ratio": None,
+    #     "size_reduction": None,
+    #     "multiplication": None,
+    # }
 
-    for iter in range(iterations):
+    for iter in tqdm(range(iterations)):
         print(f"Feature Space Search Iteration {iter+1} for problem: {problem}")
 
         cumulative_feedback = "\n".join(explainer_feedback_list) if explainer_feedback_list else None
-        
+
+        if cumulative_feedback:
+
+            summary_prompt = generate_summary_prompt(cumulative_feedback= cumulative_feedback)
+            summary = get_response(client, summary_prompt)
+        else:
+            summary = None       
         node_feature_prompt = generate_llm_prompt(
             problem = problem,
             problem_definition = problem_definitions[problem],
-            explainer_feedback = cumulative_feedback
+            explainer_feedback = summary
         )
         
         proposed_features = get_response(client,node_feature_prompt)
-        features, definitions, reasons = parse_llm_features(proposed_features)
-        
-        train_features, codes = generate_train_features(features, definitions, train_graph, timeout=5)
+
+        try:
+            features, definitions, reasons = parse_llm_features(proposed_features)
+        except Exception as e:
+            print(f"Error parsing LLM features: {e}")
+            continue
+
+        try:
+            train_features, codes = generate_train_features(features, definitions, train_graph, test_graph, timeout= 5)
+        except Exception as e:
+            print(f"Error generating train features: {e}")
+            continue
+
+        if len(codes) == 0:
+            print("No valid features generated. Skipping iteration.")
+            continue
         
         model, ratio, size_reduction, explainer_feedback_new = train_test_evaluate_gnn(
             train_features = train_features, 
@@ -95,13 +118,15 @@ def main():
 
         if multiplication > best_score:
             best_score = multiplication
-            best_model_data.update({
+            best_model_data = {
                 "iteration": iter + 1,
                 "codes": codes,
                 "ratio": ratio,
                 "size_reduction": size_reduction,
                 "multiplication": multiplication,
-            })
+            }
+            with open(best_model_data_path, "wb") as f:
+                pickle.dump(best_model_data, f)
             torch.save(model.state_dict(), model_save_path)
 
         history.append({
@@ -117,20 +142,22 @@ def main():
             f"Feature importance: {explainer_feedback_new}"
         )
 
-    with open(best_model_data_path, "wb") as f:
-        pickle.dump(best_model_data, f)
+    
 
     with open(history_path, "wb") as f:
         pickle.dump(history, f)
 
     print(f"Best model, data, and history saved in '{save_folder}'.")
 
-    test_graph = load_from_pickle(f'../snap_dataset/test/{dataset}')
-    test_graph, _, _ = relabel_graph(test_graph)
-    test_graph = assign_normalized_degree_weights(test_graph)
+    
+
+    
 
     start = time.time()
     test_X = []
+    best_model_data = load_from_pickle(best_model_data_path)
+
+    print(f"Best model data: {best_model_data}")
     for feature in best_model_data['codes']:
         namespace = {}
         exec(best_model_data['codes'][feature], namespace)
@@ -143,8 +170,10 @@ def main():
     test_data = from_networkx(test_graph)
     test_data.x = test_X
     test_data = test_data.to(device)
-
+    model     = GCN(input_channels= test_data.x.shape[1] ,hidden_channels = 16, out_channels = 2).to(device)
     model.load_state_dict(torch.load(model_save_path))
+
+    
     model = model.to(device)
     model.eval()
 

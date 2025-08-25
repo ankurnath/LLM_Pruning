@@ -33,16 +33,81 @@ import argparse
 
 from key import *
 
+import time
 
-client = OpenAI(api_key = OPENAI_API_KEY)
-def get_response(client,prompt):
+import requests
+import json
 
-    response = client.responses.create(
-        model="gpt-4.1",
-        input= prompt
-    )
+def save_as_pickle(obj, filename):
+    """
+    Save a Python object to a pickle file.
 
-    return response.output_text
+    Args:
+        obj: The Python object to save.
+        filename (str): Path where the pickle file will be stored.
+    """
+    with open(filename, "wb") as f:
+        pickle.dump(obj, f)
+
+
+
+# def get_response(client,prompt):
+
+#     response = client.responses.create(
+#         # model="gpt-4.1",
+#         model = "gpt-5-nano",
+#         input= prompt
+#     )
+
+#     return response.output_text
+
+client = None
+def get_response(client, prompt):
+
+    url = 'http://127.0.0.1:11015/completions'
+
+    data = {
+        'prompt': prompt,
+        'repeat_prompt': 20,
+        'system_prompt': '',
+        'stream': False,
+        'params': {
+            'temperature': None,
+            'top_k': None,
+            'top_p': None,
+            'add_special_tokens': False,
+            'skip_special_tokens': True,
+        }
+    }
+
+    headers = {'Content-Type': 'application/json'}
+
+    response = requests.post(url, data=json.dumps(data), headers=headers)
+
+    print(f'time: {time.time()}s')
+
+    if response.status_code == 200:
+        
+        # print(f'Response: {response.json()}')
+        content = response.json()["content"]
+
+        
+    else:
+        print('Failed to make the POST request.')
+
+    
+
+    # print(f'Query time: {durations}')
+
+    return content
+
+if __name__ == "__main__":
+    response = get_response(client, prompt="What is the capital of France?")
+    # print(f"Response: {response}")
+
+# response = get_response(client, prompt = "What is the capital of France?")
+
+
 
 problem_definitions = {
     "Maximum Coverage": (
@@ -96,24 +161,10 @@ def load_from_pickle(file_path):
     """
     with open(file_path, 'rb') as file:
         loaded_data = pickle.load(file)
-    print(f'Data has been loaded from {file_path}')
+    # print(f'Data has been loaded from {file_path}')
     return loaded_data
 
-
-def load_from_pickle(file_path):
-    """
-    Load data from a pickle file.
-
-    Parameters:
-    - file_path: The path to the pickle file.
-
-    Returns:
-    - loaded_data: The loaded data.
-    """
-    with open(file_path, 'rb') as file:
-        loaded_data = pickle.load(file)
-    print(f'Data has been loaded from {file_path}')
-    return loaded_data
+client = OpenAI(api_key = load_from_pickle('../key.pkl'))
 
 def relabel_graph(graph: nx.Graph):
     """
@@ -137,12 +188,29 @@ def relabel_graph(graph: nx.Graph):
 
 
 
+def generate_summary_prompt(cumulative_feedback):
+    """
+    Generate a prompt for summarizing the cumulative feedback from previous iterations.
+
+    Parameters:
+    cumulative_feedback (str): The cumulative feedback string from previous iterations.
+
+    Returns:
+    str: A formatted prompt for summarizing the feedback.
+    """
+    return (
+        "You are an expert in graph neural networks and combinatorial optimization.\n\n"
+        "Summarize the following feedback from previous iterations:\n"
+        f"{cumulative_feedback}\n\n"
+        "Provide a concise summary of the key points and insights."
+    )
+
 
 def generate_llm_prompt(problem, problem_definition, explainer_feedback=None):
     base_prompt = (
         f"You are an expert in graph neural networks and combinatorial optimization.\n\n"
         f"For the {problem} problem ({problem_definition}), your task is to propose "
-        f"node-level features for a GNN binary classifier predicting nodes likely in the optimal solution.\n\n"
+        f"node-level features (e.g. degree, weight, weight to degree ratio, weight to budget ratio) for a GNN binary classifier predicting nodes likely in the optimal solution.\n\n"
     )
 
     if explainer_feedback:
@@ -226,7 +294,7 @@ def clean_code_block(response):
     return code_match.group(1).strip() if code_match else response
 
 
-def generate_train_features(features,definitions,train_graph, budget = 100, timeout=5):
+def generate_train_features(features,definitions,train_graph,test_graph, budget = 100, timeout=5):
     class TimeoutException(Exception):
         pass
 
@@ -269,14 +337,16 @@ def generate_train_features(features,definitions,train_graph, budget = 100, time
 
         
         end = time.time()
-        print(f"Code for feature '{feature}' generated in {end - start:.2f} seconds")
+        # print(f"Code for feature '{feature}' generated in {end - start:.2f} seconds")
 
         try:
-            print(f"Extracting feature '{feature}'")
+            # print(f"Extracting feature '{feature}'")
             signal.alarm(timeout)  # Set timeout
 
             namespace = {}
             exec(code, namespace)  # Execute code in namespace
+
+            namespace["extract_feature"](G=test_graph, budget=budget)
             feature_values = namespace["extract_feature"](G=train_graph, budget=budget)
 
 
@@ -291,6 +361,10 @@ def generate_train_features(features,definitions,train_graph, budget = 100, time
 
             
             print(f"⚠️ Skipping feature '{feature}' due to error: {e}")
+
+            print('*'*30)
+            print(code)
+            print('*'*30)
         finally:
             signal.alarm(0)  # Reset alarm
 
@@ -404,7 +478,6 @@ def train_test_evaluate_gnn(train_features,
     # Randomly select 100 nodes from indices
     sampled_indices = random.sample(indices.tolist(), min(100, len(indices)))
 
-    sampled_indices = indices[:100]
 
     feature_importances = []
 
@@ -416,7 +489,7 @@ def train_test_evaluate_gnn(train_features,
             index=int(node_index)
         )
         feature_importances.append(
-            explanation.node_mask[node_index].cpu().detach()
+            explanation.node_mask.sum(dim=0).cpu().detach()
         )
 
     # Aggregate by mean
@@ -432,7 +505,7 @@ def train_test_evaluate_gnn(train_features,
         for feature, importance in zip(codes, mean_importance.tolist())
     )
 
-    print(explainer_feedback)
+    # print(explainer_feedback)
 
 
     return model,ratio,size_reduction, explainer_feedback
