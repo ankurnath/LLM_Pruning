@@ -1,5 +1,10 @@
 from utils import *
 from max_cover import *
+from max_cut import *
+from max_cut_weighted import *
+from imm import *
+from knapsack_imm import knapsack_greedy
+from heuristic_description import heuristic_description
 
 
 
@@ -7,9 +12,9 @@ def main():
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--problem", type=str, default="Maximum Coverage Weighted", help="Problem name")
+    parser.add_argument("--problem", type=str, default="Maximum Coverage", help="Problem name")
     parser.add_argument("--budget", type=int, default=100, help="Budget for the problem")
-    parser.add_argument("--dataset", type=str, default= 'Facebook', help="Dataset to use")
+    parser.add_argument("--dataset", type=str, default= 'HK', help="Dataset to use")
     parser.add_argument("--iterations", type=int, default=10, help="Number of feature search iterations")
 
     args = parser.parse_args()
@@ -23,6 +28,16 @@ def main():
         heuristic = greedy_max_cover
     elif problem == "Maximum Coverage Weighted":
         heuristic = knapsack_greedy_max_cover
+
+
+    elif problem == "Influence Maximization":
+        heuristic = imm
+    elif problem == "Influence Maximization Weighted":
+        heuristic = knapsack_greedy  
+    elif problem == "Maximum Cut":
+        heuristic = maxcut_greedy
+    elif problem == "Maximum Cut Weighted":
+        heuristic = DLA
     else:
         raise ValueError(f"Unknown problem: {problem}")
 
@@ -34,22 +49,29 @@ def main():
 
 
     train_graph = load_from_pickle(f'../snap_dataset/train/{dataset}')
+    val_graph = load_from_pickle(f'../snap_dataset/val/{dataset}')
 
-    train_graph,val_graph = train_test_split(
-        graph=train_graph, 
-        ratio=0.8, 
-        edge_level_split=True, 
-        seed=42)
+    # train_graph,val_graph = train_test_split(
+    #     graph=train_graph, 
+    #     ratio=0.8, 
+    #     edge_level_split=True, 
+    #     seed=42)
     
-    train_graph, train_forward_mapping, train_reverse_mapping = relabel_graph(train_graph)
-    train_graph = assign_normalized_degree_weights(train_graph)
+    # train_graph, train_forward_mapping, train_reverse_mapping = relabel_graph(train_graph)
 
-    val_graph, val_forward_mapping, val_reverse_mapping = relabel_graph(val_graph)
-    val_graph = assign_normalized_degree_weights(val_graph)
+    
 
-    test_graph = load_from_pickle(f'../snap_dataset/test/{dataset}')
-    test_graph, _, _ = relabel_graph(test_graph)
-    test_graph = assign_normalized_degree_weights(test_graph)
+    # val_graph, val_forward_mapping, val_reverse_mapping = relabel_graph(val_graph)
+    
+
+    # test_graph = load_from_pickle(f'../snap_dataset/test/{dataset}')
+    # test_graph, _, _ = relabel_graph(test_graph)
+
+    if problem in ["Maximum Coverage Weighted", "Influence Maximization Weighted", "Maximum Cut Weighted"]:
+        train_graph = assign_normalized_degree_weights(train_graph)
+        val_graph = assign_normalized_degree_weights(val_graph)
+        test_graph = assign_normalized_degree_weights(test_graph)
+    
 
     explainer_feedback_list = []
     history = []
@@ -62,13 +84,7 @@ def main():
     best_model_data_path = os.path.join(save_folder, "best_model_data.pkl")
     history_path = os.path.join(save_folder, "history.pkl")
 
-    # best_model_data = {
-    #     "iteration": None,
-    #     "codes": None,
-    #     "ratio": None,
-    #     "size_reduction": None,
-    #     "multiplication": None,
-    # }
+   
 
     for iter in tqdm(range(iterations)):
         print(f"Feature Space Search Iteration {iter+1} for problem: {problem}")
@@ -80,9 +96,12 @@ def main():
             summary_prompt = generate_summary_prompt(cumulative_feedback= cumulative_feedback)
             summary = get_response(client, summary_prompt)
         else:
-            summary = None       
+            summary = None
+
+
         node_feature_prompt = generate_llm_prompt(
             problem = problem,
+            heuristic_description=heuristic_description[problem],
             problem_definition = problem_definitions[problem],
             explainer_feedback = summary
         )
@@ -91,12 +110,20 @@ def main():
 
         try:
             features, definitions, reasons = parse_llm_features(proposed_features)
+            print(f"Proposed features: {features}")
         except Exception as e:
             print(f"Error parsing LLM features: {e}")
             continue
 
         try:
-            train_features, codes = generate_train_features(features, definitions, train_graph, test_graph, timeout= 5)
+            train_features, codes = generate_train_features(problem = problem,
+                                                            features= features, 
+                                                            definitions= definitions, 
+                                                            train_graph= train_graph, 
+                                                            test_graph=val_graph,
+                                                            budget=budget, 
+                                                            timeout= 5
+                                                            )
         except Exception as e:
             print(f"Error generating train features: {e}")
             continue
@@ -153,81 +180,81 @@ def main():
 
     
 
-    start = time.time()
-    test_X = []
-    best_model_data = load_from_pickle(best_model_data_path)
+    # start = time.time()
+    # test_X = []
+    # best_model_data = load_from_pickle(best_model_data_path)
 
-    print(f"Best model data: {best_model_data}")
-    for feature in best_model_data['codes']:
-        namespace = {}
-        exec(best_model_data['codes'][feature], namespace)
-        feature_values = namespace["extract_feature"](G=test_graph, budget=budget)
-        test_X.append(feature_values)
-    time_taken_to_calculate = time.time() - start
+    # print(f"Best model data: {best_model_data}")
+    # for feature in best_model_data['codes']:
+    #     namespace = {}
+    #     exec(best_model_data['codes'][feature], namespace)
+    #     feature_values = namespace["extract_feature"](G=test_graph, budget=budget)
+    #     test_X.append(feature_values)
+    # time_taken_to_calculate = time.time() - start
 
-    test_X = torch.tensor(np.array(test_X).T, dtype=torch.float)
+    # test_X = torch.tensor(np.array(test_X).T, dtype=torch.float)
 
-    test_data = from_networkx(test_graph)
-    test_data.x = test_X
-    test_data = test_data.to(device)
-    model     = GCN(input_channels= test_data.x.shape[1] ,hidden_channels = 16, out_channels = 2).to(device)
-    model.load_state_dict(torch.load(model_save_path))
+    # test_data = from_networkx(test_graph)
+    # test_data.x = test_X
+    # test_data = test_data.to(device)
+    # model     = GCN(input_channels= test_data.x.shape[1] ,hidden_channels = 16, out_channels = 2).to(device)
+    # model.load_state_dict(torch.load(model_save_path))
 
     
-    model = model.to(device)
-    model.eval()
+    # model = model.to(device)
+    # model.eval()
 
-    y_pred = torch.argmax(model(test_data.x, test_data.edge_index), axis=1).cpu().numpy()
-    indices = np.where(y_pred == 1)[0]
+    # y_pred = torch.argmax(model(test_data.x, test_data.edge_index), axis=1).cpu().numpy()
+    # indices = np.where(y_pred == 1)[0]
 
-    start = time.time()
-    obj_val, number_of_queries, solution = heuristic(test_graph, budget=budget)
-    time_taken = time.time() - start
+    # start = time.time()
+    # obj_val, number_of_queries, solution = heuristic(test_graph, budget=budget)
+    # time_taken = time.time() - start
 
-    start = time.time()
-    obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(
-        test_graph, budget=budget, ground_set=indices
-    )
-    time_taken_pruned = time.time() - start
+    # start = time.time()
+    # obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(
+    #     test_graph, budget=budget, ground_set=indices
+    # )
+    # time_taken_pruned = time.time() - start
 
-    ratio = obj_val_pruned / obj_val if obj_val != 0 else 0
-    size_reduction = 1 - len(indices) / test_graph.number_of_nodes()
-    time_ratio = time_taken / time_taken_pruned if time_taken_pruned != 0 else 0
+    # ratio = obj_val_pruned / obj_val if obj_val != 0 else 0
+    # size_reduction = 1 - len(indices) / test_graph.number_of_nodes()
+    # time_ratio = time_taken / time_taken_pruned if time_taken_pruned != 0 else 0
 
-    results.append({
-        "Dataset": dataset,
-        "Obj Value": obj_val,
-        "Obj Value Pruned": obj_val_pruned,
-        "Queries": number_of_queries,
-        "Queries Pruned": number_of_queries_pruned,
-        "Ratio": ratio,
-        "Size Reduction": size_reduction,
-        "Time Ratio": time_ratio,
-        "Feature Extraction Time": time_taken_to_calculate,
-        "Time Baseline": time_taken,
-        "Time Pruned": time_taken_pruned,
-        "Num Selected Nodes": len(indices)
-    })
+    # results.append({
+    #     "Dataset": dataset,
+    #     "Obj Value": obj_val,
+    #     "Obj Value Pruned": obj_val_pruned,
+    #     "Queries": number_of_queries,
+    #     "Queries Pruned": number_of_queries_pruned,
+    #     "Ratio": ratio,
+    #     "Size Reduction": size_reduction,
+    #     "Time Ratio": time_ratio,
+    #     "Feature Extraction Time": time_taken_to_calculate,
+    #     "Time Baseline": time_taken,
+    #     "Time Pruned": time_taken_pruned,
+    #     "Num Selected Nodes": len(indices)
+    # })
 
-    # ------------------------------
-    # Save results after all datasets
-    # ------------------------------
+    # # ------------------------------
+    # # Save results after all datasets
+    # # ------------------------------
 
-    results = pd.DataFrame(results)
-    results_folder = f"{problem}/{dataset}"
-    os.makedirs(results_folder, exist_ok=True)
+    # results = pd.DataFrame(results)
+    # results_folder = f"{problem}/{dataset}"
+    # os.makedirs(results_folder, exist_ok=True)
 
-    results_path_pkl = os.path.join(results_folder, "results.pkl")
-
-
-    with open(results_path_pkl, "wb") as f:
-        pickle.dump(results, f)
+    # results_path_pkl = os.path.join(results_folder, "results.pkl")
 
 
+    # with open(results_path_pkl, "wb") as f:
+    #     pickle.dump(results, f)
 
-    print(f"\n✅ All results saved in:\n- {results_path_pkl}")
 
-    print(results)
+
+    # print(f"\n✅ All results saved in:\n- {results_path_pkl}")
+
+    # print(results)
 
 
 if __name__ == "__main__":

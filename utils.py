@@ -51,58 +51,50 @@ def save_as_pickle(obj, filename):
 
 
 
-# def get_response(client,prompt):
 
-#     response = client.responses.create(
-#         # model="gpt-4.1",
-#         model = "gpt-5-nano",
-#         input= prompt
-#     )
 
-#     return response.output_text
+# client = None
+# def get_response(client, prompt):
 
-client = None
-def get_response(client, prompt):
+#     url = 'http://127.0.0.1:11015/completions'
 
-    url = 'http://127.0.0.1:11015/completions'
+#     data = {
+#         'prompt': prompt,
+#         'repeat_prompt': 20,
+#         'system_prompt': '',
+#         'stream': False,
+#         'params': {
+#             'temperature': None,
+#             'top_k': None,
+#             'top_p': None,
+#             'add_special_tokens': False,
+#             'skip_special_tokens': True,
+#         }
+#     }
 
-    data = {
-        'prompt': prompt,
-        'repeat_prompt': 20,
-        'system_prompt': '',
-        'stream': False,
-        'params': {
-            'temperature': None,
-            'top_k': None,
-            'top_p': None,
-            'add_special_tokens': False,
-            'skip_special_tokens': True,
-        }
-    }
+#     headers = {'Content-Type': 'application/json'}
 
-    headers = {'Content-Type': 'application/json'}
+#     response = requests.post(url, data=json.dumps(data), headers=headers)
 
-    response = requests.post(url, data=json.dumps(data), headers=headers)
+#     print(f'time: {time.time()}s')
 
-    print(f'time: {time.time()}s')
-
-    if response.status_code == 200:
+#     if response.status_code == 200:
         
-        # print(f'Response: {response.json()}')
-        content = response.json()["content"]
+#         # print(f'Response: {response.json()}')
+#         content = response.json()["content"]
 
         
-    else:
-        print('Failed to make the POST request.')
+#     else:
+#         print('Failed to make the POST request.')
 
     
 
-    # print(f'Query time: {durations}')
+#     # print(f'Query time: {durations}')
 
-    return content
+#     return content
 
-if __name__ == "__main__":
-    response = get_response(client, prompt="What is the capital of France?")
+# if __name__ == "__main__":
+#     response = get_response(client, prompt="What is the capital of France?")
     # print(f"Response: {response}")
 
 # response = get_response(client, prompt = "What is the capital of France?")
@@ -135,6 +127,18 @@ problem_definitions = {
         "f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \\setminus S}|.\n"
     ),
 
+    "Maximum Cut Weighted": (
+            "The problem is defined over an undirected graph G = (V, E), where each node v ∈ V has an "
+            "associated weight w(v) > 0. The weight of each node is defined as "
+            "w(v) = (β / |V|) * (|N(v)| - α), where N(v) is the set of neighbors of v, "
+            "α = 1/20, and β is a normalizing factor ensuring w(v) ≥ 1. "
+            "Given a budget k, the task is to select a subset S ⊆ V such that "
+            "the total weight ∑_{v ∈ S} w(v) ≤ k, while maximizing the cut value, i.e., "
+            "the number of edges crossing between S and V \\ S. "
+            "Formally, the objective is:\n"
+            "f(S) = |{ (u, v) ∈ E : u ∈ S, v ∈ V \\ S }|."
+    ),
+
     "Influence Maximization": (
     "The problem is defined over a directed graph \( G = (V, E) \).\n"
     "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
@@ -145,7 +149,21 @@ problem_definitions = {
     "Formally, maximize:\n"
     "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
     "where \\( \\text{Influence}(S) \\) is the random set of nodes activated starting from the seed set \\( S \\).\n"
-)
+    ),
+
+    "Influence Maximization Weighted": (
+        "The problem is defined over a directed graph G = (V, E), where each node v ∈ V has an associated weight w(v) > 0. "
+        "The weight of each node is defined as w(v) = (β / |V|) * (|N(v)| - α), where N(v) is the set of out-neighbors of v, "
+        "α = 1/20, and β is a normalizing factor ensuring w(v) ≥ 1. "
+        "Given a budget k, the goal is to select a seed set S ⊆ V such that the total weight ∑_{v ∈ S} w(v) ≤ k, "
+        "while maximizing the expected influence spread under the Independent Cascade (IC) model. "
+        "In the IC model, when a node becomes active, it has a single chance to activate each inactive neighbor v through edge (u, v) "
+        "with probability p_uv. The process continues until no further activations occur. "
+        "Formally, the objective is:\n"
+        "f(S) = E[|Influence(S)|], "
+        "where Influence(S) is the random set of nodes activated starting from the weighted seed set S."
+    )
+
 
 }
 
@@ -165,6 +183,18 @@ def load_from_pickle(file_path):
     return loaded_data
 
 client = OpenAI(api_key = load_from_pickle('../key.pkl'))
+
+def get_response(client,prompt):
+
+    response = client.responses.create(
+        # model="gpt-4.1",
+        model = "gpt-5-nano",
+        input= prompt
+    )
+
+    return response.output_text
+
+
 
 def relabel_graph(graph: nx.Graph):
     """
@@ -206,33 +236,42 @@ def generate_summary_prompt(cumulative_feedback):
     )
 
 
-def generate_llm_prompt(problem, problem_definition, explainer_feedback=None):
+def generate_llm_prompt(
+        problem,
+        problem_definition,
+        heuristic_description,
+        explainer_feedback=None,
+    ):
     base_prompt = (
         f"You are an expert in graph neural networks and combinatorial optimization.\n\n"
-        f"For the {problem} problem ({problem_definition}), your task is to propose "
-        f"node-level features (e.g. degree, weight, weight to degree ratio, weight to budget ratio) for a GNN binary classifier predicting nodes likely in the optimal solution.\n\n"
+        f"For the {problem} problem ({problem_definition}), propose node-level features "
+        f"for a GNN binary classifier that predicts nodes likely to be in the optimal solution.\n\n"
+        f"The heuristic can only select nodes from the reduced candidate set provided by the GNN. "
+        f"The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.\n\n"
+        f"Heuristic:\n{heuristic_description}\n\n"
     )
 
     if explainer_feedback:
         base_prompt += (
-            f"Here is feedback from the previous iterations:\n{explainer_feedback}\n\n"
-            "Refinement instructions:\n"
-            "1. Identify features from the feedback with high importance and keep them in the proposal.\n"
-            "2. Slightly modify or create normalized/variant versions of features with medium importance.\n"
-            "3. Remove features with very low importance or replace them with better alternatives.\n"
-            "4. Add at least 3–5 new features inspired by patterns or relationships seen in the important features.\n"
-            "5. Ensure new features are distinct and not redundant with old ones.\n\n"
+            f"Feedback from previous iterations:\n{explainer_feedback}\n\n"
+            "Refinement rules:\n"
+            "1) Keep high-importance features.\n"
+            "2) Adjust or normalize medium-importance features.\n"
+            "3) Remove or replace low-importance features.\n"
+            "4) Add 3–5 new features inspired by important patterns.\n"
+            "5) Ensure all features are distinct and non-redundant.\n\n"
         )
 
     base_prompt += (
-        "Return output as a JSON array where each element is an object with keys:\n"
-        "- `feature`: name of the feature (snake_case)\n"
-        "- `definition`: a one-line formal definition of the feature\n"
-        "- `reason`: a concise explanation (1–2 sentences) why this feature is important\n\n"
-        "Do not add any extra text outside the JSON.\n"
+        "Return the output as a JSON array of objects with keys:\n"
+        '- "feature": feature name in snake_case\n'
+        '- "definition": one-line definition of how to compute it\n'
+        '- "reason": 1–2 sentences on why it is useful\n\n'
+        "Do not include any text outside the JSON array."
     )
 
     return base_prompt
+
 
 
 # def generate_llm_prompt(problem, problem_definition, explainer_feedback=None):
@@ -294,7 +333,7 @@ def clean_code_block(response):
     return code_match.group(1).strip() if code_match else response
 
 
-def generate_train_features(features,definitions,train_graph,test_graph, budget = 100, timeout=5):
+def generate_train_features(problem,features,definitions,train_graph,test_graph, budget = 100, timeout=5):
     class TimeoutException(Exception):
         pass
 
@@ -304,21 +343,31 @@ def generate_train_features(features,definitions,train_graph,test_graph, budget 
     signal.signal(signal.SIGALRM, handler)
 
     train_X = []
-    codes = []
+    codes = {}
     
 
-    train_X = []
-    codes = {}
+    if problem.endswith('Weighted'):
+        graph_description = (
+            f"The input is a weighted NetworkX graph `G` where each node has an attribute `'weight'`, "
+            f"and an integer variable `budget` is provided.\n"
+        )
+        additional_description = "If the feature involves weight, use the existing `'weight'` attribute directly without recomputing it from other functions"
+    else:
+        graph_description = (
+            f"The input is a NetworkX graph `G` where each node has no attribute `'weight'`, "
+            f"and an integer variable `budget` is provided.\n"
+        )
+        additional_description = ''
 
     # Add tqdm to loop
     for idx, feature in enumerate(tqdm(features, desc="Extracting features", unit="feature")):
         prompt_code = (
-            f"The input is a weighted NetworkX graph `G` where each node has an attribute `'weight'`, "
-            f"and an integer variable `budget` is provided.\n"
+            f"{graph_description}"
             f"Feature name: '{feature}'\n"
-            # f"Feature definition: '{definitions[feature]}'\n"
-            f"Write Python code for a function `extract_feature(G, budget)` that computes this feature for all nodes in `G`. "
-            f"If the feature involves weight, use the existing `'weight'` attribute directly without recomputing it from other functions. "
+            f"Feature definition: '{definitions[feature]}'\n"
+            # f"Write Python code for a function `extract_feature(G, budget)` that computes this feature for all nodes in `G`. "
+            f"Write Python code for a function `extract_feature(G)` that computes this feature for all nodes in `G`. "
+            f"{additional_description}"
             f"If the budget is relevant to the computation, incorporate it. "
             f"The function should return a NumPy array with the computed feature values, ordered to align with the order of `G.nodes()`.\n"
             f"Ensure the code is efficient and avoids expensive computations.\n"
@@ -331,9 +380,7 @@ def generate_train_features(features,definitions,train_graph,test_graph, budget 
         code_response = get_response(client,prompt_code)
         code = clean_code_block(code_response)
 
-        # print('*'*30)
-        # print(code)
-        # print('*'*30)
+        print(f"Code for feature '{feature}':\n{code}\n")
 
         
         end = time.time()
@@ -346,8 +393,8 @@ def generate_train_features(features,definitions,train_graph,test_graph, budget 
             namespace = {}
             exec(code, namespace)  # Execute code in namespace
 
-            namespace["extract_feature"](G=test_graph, budget=budget)
-            feature_values = namespace["extract_feature"](G=train_graph, budget=budget)
+            namespace["extract_feature"](G=test_graph)
+            feature_values = namespace["extract_feature"](G=train_graph)
 
 
 
