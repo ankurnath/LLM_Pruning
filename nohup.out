@@ -1,9 +1,52 @@
-  0%|          | 0/10 [00:00<?, ?it/s]Feature Space Search Iteration 1 for problem: Maximum Coverage
-Proposed features: ['degree', 'own_coverage_size', 'candidate_neighbors', 'candidate_neighbor_coverage_ratio', 'local_neighborhood_edges', 'neighborhood_edge_density', 'clustering_coefficient', 'betweenness_centrality', 'eigenvector_centrality', 'pagerank', 'core_number', 'max_neighbor_degree', 'two_hop_neighbor_count', 'in_candidate']
+  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:03<?, ?it/s]
+Feature Space Search Iteration 1 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
 
-Extracting features:   0%|          | 0/14 [00:00<?, ?feature/s][A
-Extracting features:   7%|▋         | 1/14 [00:10<02:19, 10.76s/feature][A
-Extracting features:  14%|█▍        | 2/14 [00:16<01:35,  7.94s/feature][A
-Extracting features:  21%|██▏       | 3/14 [00:36<02:24, 13.15s/feature][A
-Extracting features:  29%|██▊       | 4/14 [00:48<02:06, 12.67s/feature][A
-Extracting features:  36%|███▌      | 5/14 [01:10<02:24, 16.09s/feature][A
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 112, in main
+    proposed_features = get_response(client,node_feature_prompt)
+  File "/home/grads/a/anath/LLM_Pruning/utils.py", line 190, in get_response
+    response = client.responses.create(
+        # model="gpt-4.1",
+        model = "gpt-5",
+        input= prompt
+    )
+  File "/home/grads/a/anath/anaconda3/envs/eoh/lib/python3.13/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/home/grads/a/anath/anaconda3/envs/eoh/lib/python3.13/site-packages/openai/resources/responses/responses.py", line 671, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/responses",
+        ^^^^^^^^^^^^^
+    ...<31 lines>...
+        stream_cls=Stream[ResponseStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/grads/a/anath/anaconda3/envs/eoh/lib/python3.13/site-packages/openai/_base_client.py", line 1239, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/a/anath/anaconda3/envs/eoh/lib/python3.13/site-packages/openai/_base_client.py", line 1034, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}

@@ -12,7 +12,7 @@ def main():
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--problem", type=str, default="Maximum Coverage", help="Problem name")
+    parser.add_argument("--problem", type=str, default="Maximum Cut", help="Problem name")
     parser.add_argument("--budget", type=int, default=100, help="Budget for the problem")
     parser.add_argument("--dataset", type=str, default= 'HK', help="Dataset to use")
     parser.add_argument("--iterations", type=int, default=10, help="Number of feature search iterations")
@@ -45,11 +45,12 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-    results = []
+    results = [] # To store results for all datasets
 
 
     train_graph = load_from_pickle(f'../snap_dataset/train/{dataset}')
     val_graph = load_from_pickle(f'../snap_dataset/val/{dataset}')
+    test_graph = load_from_pickle(f'../snap_dataset/test/{dataset}')
 
     # train_graph,val_graph = train_test_split(
     #     graph=train_graph, 
@@ -105,6 +106,8 @@ def main():
             problem_definition = problem_definitions[problem],
             explainer_feedback = summary
         )
+
+        print(f"LLM Prompt:\n{node_feature_prompt}\n")
         
         proposed_features = get_response(client,node_feature_prompt)
 
@@ -120,7 +123,7 @@ def main():
                                                             features= features, 
                                                             definitions= definitions, 
                                                             train_graph= train_graph, 
-                                                            test_graph=val_graph,
+                                                            test_graph= test_graph,
                                                             budget=budget, 
                                                             timeout= 5
                                                             )

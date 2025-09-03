@@ -48,6 +48,7 @@ def save_as_pickle(obj, filename):
     """
     with open(filename, "wb") as f:
         pickle.dump(obj, f)
+    print(f"Data has been saved to {filename}")
 
 
 
@@ -188,7 +189,7 @@ def get_response(client,prompt):
 
     response = client.responses.create(
         # model="gpt-4.1",
-        model = "gpt-5-nano",
+        model = "gpt-5",
         input= prompt
     )
 
@@ -244,11 +245,11 @@ def generate_llm_prompt(
     ):
     base_prompt = (
         f"You are an expert in graph neural networks and combinatorial optimization.\n\n"
-        f"For the {problem} problem ({problem_definition}), propose node-level features "
+        f"For the {problem} problem ({problem_definition}), propose up to ten node-level features (degree must be one of them) "
         f"for a GNN binary classifier that predicts nodes likely to be in the optimal solution.\n\n"
         f"The heuristic can only select nodes from the reduced candidate set provided by the GNN. "
         f"The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.\n\n"
-        f"Heuristic:\n{heuristic_description}\n\n"
+        # f"Heuristic:\n{heuristic_description}\n\n"
     )
 
     if explainer_feedback:
@@ -368,7 +369,7 @@ def generate_train_features(problem,features,definitions,train_graph,test_graph,
             # f"Write Python code for a function `extract_feature(G, budget)` that computes this feature for all nodes in `G`. "
             f"Write Python code for a function `extract_feature(G)` that computes this feature for all nodes in `G`. "
             f"{additional_description}"
-            f"If the budget is relevant to the computation, incorporate it. "
+            # f"If the budget is relevant to the computation, incorporate it. "
             f"The function should return a NumPy array with the computed feature values, ordered to align with the order of `G.nodes()`.\n"
             f"Ensure the code is efficient and avoids expensive computations.\n"
             f"DO NOT INCLUDE ANY EXPLANATIONS OR COMMENTS.\n"
@@ -454,22 +455,31 @@ def train_test_evaluate_gnn(train_features,
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     train_data = train_data.to(device)
 
-    counts = torch.bincount(train_data.y)
-    counts = counts + 1e-6               # avoid zero
-    inv_freq = 1.0 / counts.float()
-    num_classes = counts.size(0)
-    class_weights = inv_freq * (num_classes / inv_freq.sum())
+    # counts = torch.bincount(train_data.y)
+    # counts = counts + 1e-6               # avoid zero
+    # inv_freq = 1.0 / counts.float()
+    # num_classes = counts.size(0)
+    # class_weights = inv_freq * (num_classes / inv_freq.sum())
 
-    model     = GCN(input_channels=train_data.x.shape[1] ,hidden_channels=16, out_channels=num_classes).to(device)
+    
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=5e-4)
-    criterion = torch.nn.CrossEntropyLoss(weight=class_weights.to(device))
+    model     = GCN(input_channels=train_data.x.shape[1] ,hidden_channels=16, out_channels=2).to(device)
 
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=5e-4)
+    criterion = torch.nn.CrossEntropyLoss()
+
+    # optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=5e-4)
+    # criterion = torch.nn.CrossEntropyLoss(weight=class_weights.to(device))
+
+
+    print('Training GNN')
     model.train()
-    for epoch in range(1, 1000):
+    for epoch in tqdm(range(1, 1000)):
         optimizer.zero_grad()
+        mask = torch.cat([train_mask, torch.randint(0, train_mask.size(0), (train_mask.size(0),))], dim=0)
         out  = model(train_data.x, train_data.edge_index)        # [N, num_classes]
-        loss = criterion(out, train_data.y)                # full-graph loss
+        loss = criterion(out[mask], train_data.y[mask]) 
+        # loss = criterion(out, train_data.y)                # full-graph loss
         loss.backward()
         optimizer.step()
 
@@ -483,7 +493,7 @@ def train_test_evaluate_gnn(train_features,
     for feature in codes:
         namespace = {}
         exec(codes[feature], namespace)  # Execute code in namespace
-        feature_values = namespace["extract_feature"](G=test_graph, budget=budget)
+        feature_values = namespace["extract_feature"](G=test_graph)
         test_X.append(feature_values)  # Assuming budget is relevant
     test_data.x = torch.tensor(np.array(test_X).T, dtype=torch.float).to(device)
     test_data = test_data.to(device)
@@ -509,6 +519,8 @@ def train_test_evaluate_gnn(train_features,
 
     ratio = obj_val_pruned / obj_val
     size_reduction = 1 - len(indices) / test_graph.number_of_nodes()
+
+    print('Explaining GNN predictions')
 
     explainer = Explainer(
         model=model,

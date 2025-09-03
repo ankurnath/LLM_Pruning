@@ -1,6 +1,6 @@
 import subprocess
 
-problem = "Maximum Coverage Weighted"
+problem = "Maximum Coverage"
 budget = 100
 iterations = 10
 datasets = ["Facebook", "Wiki", "Deezer", "Slashdot", "Twitter", "DBLP", "YouTube", "Skitter"]

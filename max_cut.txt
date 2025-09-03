@@ -1,0 +1,212 @@
+nohup: ignoring input
+  0%|          | 0/10 [00:00<?, ?it/s]Feature Space Search Iteration 1 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Feature Space Search Iteration 2 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Feature Space Search Iteration 3 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Feature Space Search Iteration 4 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Feature Space Search Iteration 5 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Feature Space Search Iteration 6 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Feature Space Search Iteration 7 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+100%|██████████| 10/10 [00:00<00:00, 1299.11it/s]
+
+Feature Space Search Iteration 8 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Feature Space Search Iteration 9 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Feature Space Search Iteration 10 for problem: Maximum Cut
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut problem (The problem is defined over an undirected graph \( G = (V, E) \).
+The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \setminus S \)
+such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \setminus S \),
+is maximized.
+Formally, maximize the cut value:
+f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \setminus S}|.
+), propose up to ten node-level features (degree must be one of them) for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+

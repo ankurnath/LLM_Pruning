@@ -312,11 +312,12 @@ def calculate_spread(graph,solution,mc=10000):
 
 
 
-def imm(graph, seed_size, ground_set, model="IC", epsoid=0.5, l=1,seed=0):
+def imm(graph, budget, ground_set = None, model="IC", epsoid=0.5, l=1,seed=0):
     """
     graph must be a file path to a .txt file of edge lists where the first line has the number of nodes in the first
     column, or it must be a networkx graph object with edge weights under the key 'weight'.
     """
+    seed_size = budget
     
     if ground_set is not None:
         subgraph = make_subgraph(graph,ground_set)
@@ -342,7 +343,7 @@ def imm(graph, seed_size, ground_set, model="IC", epsoid=0.5, l=1,seed=0):
 
     objective_value = calculate_spread(graph, solution)
 
-    print(objective_value)
+    # print(objective_value)
     # print(R[:10])
     return objective_value,len(R),solution
 

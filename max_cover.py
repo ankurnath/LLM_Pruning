@@ -53,8 +53,8 @@ def greedy_max_cover(graph, budget, ground_set=None):
         objective_value += gains[selected_node]
         update_max_cover_gains_after_selection(graph, gains, selected_node, uncovered_nodes)
 
-    print('Objective value =', objective_value)
-    print('Number of queries =', number_of_queries)
+    # print('Objective value =', objective_value)
+    # print('Number of queries =', number_of_queries)
     return objective_value, number_of_queries, solution
 
 
