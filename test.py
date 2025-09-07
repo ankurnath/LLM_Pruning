@@ -15,6 +15,7 @@ def main():
     parser.add_argument('--base_dataset',type=str, default= 'HK', help="train Dataset to use")
     parser.add_argument("--train_dataset", type=str, default= 'HK', help="train Dataset to use")
     parser.add_argument("--test_dataset", type=str, default= 'HK', help="test Dataset to use")
+    parser.add_argument("--k", type=int, default=1000, help="Size of pruned set to use")
     
 
     args = parser.parse_args()
@@ -23,6 +24,7 @@ def main():
     budget = args.budget
     train_dataset = args.train_dataset
     test_dataset = args.test_dataset
+    k= args.k
 
     heuristics = {
     "Maximum Coverage": greedy_max_cover,
@@ -48,6 +50,9 @@ def main():
     print(f'Loaded test graph with {test_graph.number_of_nodes()} nodes and {test_graph.number_of_edges()} edges.')
 
     test_graph,_,_ = relabel_graph(test_graph)
+
+    if problem in ["Maximum Coverage Weighted", "Influence Maximization Weighted", "Maximum Cut Weighted"]:
+        test_graph = assign_normalized_degree_weights(test_graph)
 
     best_model_data_path = os.path.join(f"{problem}/{args.base_dataset}", "best_model_data.pkl")
 
@@ -76,8 +81,20 @@ def main():
     model = model.to(device)
     model.eval()
 
-    y_pred = torch.argmax(model(test_data.x, test_data.edge_index), axis=1).cpu().numpy()
-    indices = np.where(y_pred == 1)[0]
+    # y_pred = torch.argmax(model(test_data.x, test_data.edge_index), axis=1).cpu().numpy()
+    # indices = np.where(y_pred == 1)[0]
+
+    with torch.no_grad():
+        logits = model(test_data.x, test_data.edge_index)
+        probs = torch.softmax(logits, dim=1)[:, 1]  # P(class=1)
+
+    # print(f"Predicted probabilities for {test_graph.number_of_nodes()} nodes.",probs)
+
+    # pick top-k nodes
+    # k = min(k, test_graph.number_of_nodes())  # change 100 to whatever k you want
+    topk_vals, topk_idx = torch.topk(probs, k)
+
+    indices = topk_idx.cpu().numpy()
 
     start = time.time()
     obj_val, number_of_queries, solution = heuristic(test_graph, budget=budget)

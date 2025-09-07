@@ -1,0 +1,386 @@
+nohup: ignoring input
+
+  0%|          | 0/10 [00:00<?, ?it/s]Feature Space Search Iteration 1 for problem: Maximum Cut Weighted
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut Weighted problem (The problem is defined over an undirected graph G = (V, E), where each node v ∈ V has an associated weight w(v) > 0. The weight of each node is defined as w(v) = (β / |V|) * (|N(v)| - α), where N(v) is the set of neighbors of v, α = 1/20, and β is a normalizing factor ensuring w(v) ≥ 1. Given a budget k, the task is to select a subset S ⊆ V such that the total weight ∑_{v ∈ S} w(v) ≤ k, while maximizing the cut value, i.e., the number of edges crossing between S and V \ S. Formally, the objective is:
+f(S) = |{ (u, v) ∈ E : u ∈ S, v ∈ V \ S }|.), propose up to ten node-level features. Degree to weight ratio must be included.. for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Proposed features: ['degree', 'node_weight', 'degree_to_weight_ratio', 'budget_normalized_weight', 'mean_neighbor_weight', 'low_weight_neighbor_fraction', 'clustering_coefficient', 'core_number', 'degree_minus_mean_neighbor_degree', 'two_hop_neighbor_count']
+
+
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
+
+Extracting features:  10%|█         | 1/10 [00:27<04:04, 27.21s/feature][A
+
+Extracting features:  20%|██        | 2/10 [00:47<03:03, 22.92s/feature][A
+
+Extracting features:  30%|███       | 3/10 [01:07<02:32, 21.85s/feature][A
+
+Extracting features:  40%|████      | 4/10 [01:16<01:40, 16.72s/feature][A
+
+Extracting features:  50%|█████     | 5/10 [02:04<02:19, 27.89s/feature][A
+
+Extracting features:  60%|██████    | 6/10 [02:23<01:39, 24.96s/feature][A
+
+Extracting features:  70%|███████   | 7/10 [02:43<01:10, 23.37s/feature][A
+
+Extracting features:  80%|████████  | 8/10 [02:56<00:40, 20.14s/feature][A
+
+Extracting features:  90%|█████████ | 9/10 [03:15<00:19, 19.68s/feature][A
+
+Extracting features: 100%|██████████| 10/10 [03:58<00:00, 26.77s/feature][A
+Extracting features: 100%|██████████| 10/10 [03:58<00:00, 23.81s/feature]
+Code for feature 'degree':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    if isinstance(G, (nx.DiGraph, nx.MultiDiGraph)):
+        counts = []
+        succ = G.succ
+        pred = G.pred
+        for n in nodes:
+            s = set(succ[n].keys())
+            s.update(pred[n].keys())
+            counts.append(len(s))
+    else:
+        counts = [len(G.adj[n]) for n in nodes]
+    return np.asarray(counts)
+
+Code for feature 'node_weight':
+import numpy as np
+
+def extract_feature(G):
+    n = G.number_of_nodes()
+    if n == 0:
+        return np.array([], dtype=float)
+    nodes = list(G.nodes())
+    deg = dict(G.degree())
+    inv_n = 1.0 / n
+    alpha = budget
+    return np.array([(G.nodes[v]['weight'] * inv_n) * (deg.get(v, 0) - alpha) for v in nodes], dtype=float)
+
+⚠️ Skipping feature 'node_weight' due to error: name 'budget' is not defined
+******************************
+import numpy as np
+
+def extract_feature(G):
+    n = G.number_of_nodes()
+    if n == 0:
+        return np.array([], dtype=float)
+    nodes = list(G.nodes())
+    deg = dict(G.degree())
+    inv_n = 1.0 / n
+    alpha = budget
+    return np.array([(G.nodes[v]['weight'] * inv_n) * (deg.get(v, 0) - alpha) for v in nodes], dtype=float)
+******************************
+Code for feature 'degree_to_weight_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    degs = np.fromiter((G.degree[n] for n in nodes), dtype=float, count=len(nodes))
+    weights = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    result = np.zeros_like(degs, dtype=float)
+    np.divide(degs, weights, out=result, where=weights != 0)
+    result[degs == 0] = 0.0
+    return result
+
+Code for feature 'budget_normalized_weight':
+import numpy as np
+
+def extract_feature(G):
+    return np.fromiter((G.nodes[n].get('weight', 0.0) / budget for n in G.nodes()), dtype=float, count=G.number_of_nodes())
+
+⚠️ Skipping feature 'budget_normalized_weight' due to error: name 'budget' is not defined
+******************************
+import numpy as np
+
+def extract_feature(G):
+    return np.fromiter((G.nodes[n].get('weight', 0.0) / budget for n in G.nodes()), dtype=float, count=G.number_of_nodes())
+******************************
+Code for feature 'mean_neighbor_weight':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    w = nx.get_node_attributes(G, 'weight')
+    out = np.zeros(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        nbrs = G[v]
+        d = len(nbrs)
+        if d:
+            s = 0.0
+            for u in nbrs:
+                s += w.get(u, 0.0)
+            out[i] = s / d
+    return out
+
+⚠️ Skipping feature 'mean_neighbor_weight' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    w = nx.get_node_attributes(G, 'weight')
+    out = np.zeros(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        nbrs = G[v]
+        d = len(nbrs)
+        if d:
+            s = 0.0
+            for u in nbrs:
+                s += w.get(u, 0.0)
+            out[i] = s / d
+    return out
+******************************
+Code for feature 'low_weight_neighbor_fraction':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    weights = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    med = float(np.median(weights))
+    low = {n for n, w in zip(nodes, weights) if w <= med}
+    adj = G.adj
+    out = np.empty(len(nodes), dtype=float)
+    for i, n in enumerate(nodes):
+        nbrs = adj[n]
+        deg = len(nbrs)
+        if deg == 0:
+            out[i] = 0.0
+        else:
+            c = 0
+            for u in nbrs:
+                if u in low:
+                    c += 1
+            out[i] = c / deg
+    return out
+
+Code for feature 'clustering_coefficient':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg = dict(G.degree(nodes))
+    tri = nx.triangles(G, nodes)
+    res = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        d = deg[v]
+        res[i] = 0.0 if d < 2 else (2.0 * tri[v]) / (d * (d - 1))
+    return res
+
+⚠️ Skipping feature 'clustering_coefficient' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg = dict(G.degree(nodes))
+    tri = nx.triangles(G, nodes)
+    res = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        d = deg[v]
+        res[i] = 0.0 if d < 2 else (2.0 * tri[v]) / (d * (d - 1))
+    return res
+******************************
+Code for feature 'core_number':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    if G.number_of_nodes() == 0:
+        return np.array([], dtype=int)
+    c = nx.core_number(G)
+    return np.fromiter((c[n] for n in G.nodes()), dtype=int, count=G.number_of_nodes())
+
+⚠️ Skipping feature 'core_number' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    if G.number_of_nodes() == 0:
+        return np.array([], dtype=int)
+    c = nx.core_number(G)
+    return np.fromiter((c[n] for n in G.nodes()), dtype=int, count=G.number_of_nodes())
+******************************
+Code for feature 'degree_minus_mean_neighbor_degree':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    index = {node: i for i, node in enumerate(nodes)}
+    degs = np.fromiter((G.degree(node) for node in nodes), dtype=float, count=n)
+    out = np.empty(n, dtype=float)
+    for i, v in enumerate(nodes):
+        d = degs[i]
+        if d == 0:
+            out[i] = 0.0
+        else:
+            s = 0.0
+            for u in G.neighbors(v):
+                s += degs[index[u]]
+            out[i] = d - (s / d)
+    return out
+
+⚠️ Skipping feature 'degree_minus_mean_neighbor_degree' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    index = {node: i for i, node in enumerate(nodes)}
+    degs = np.fromiter((G.degree(node) for node in nodes), dtype=float, count=n)
+    out = np.empty(n, dtype=float)
+    for i, v in enumerate(nodes):
+        d = degs[i]
+        if d == 0:
+            out[i] = 0.0
+        else:
+            s = 0.0
+            for u in G.neighbors(v):
+                s += degs[index[u]]
+            out[i] = d - (s / d)
+    return out
+******************************
+Code for feature 'two_hop_neighbor_count':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    adj = G.adj
+    out = np.empty(len(nodes), dtype=np.int64)
+    for i, v in enumerate(nodes):
+        n1 = adj[v]
+        two = set()
+        for u in n1:
+            two.update(adj[u])
+        two.difference_update(n1)
+        two.discard(v)
+        out[i] = len(two)
+    return out
+
+⚠️ Skipping feature 'two_hop_neighbor_count' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    adj = G.adj
+    out = np.empty(len(nodes), dtype=np.int64)
+    for i, v in enumerate(nodes):
+        n1 = adj[v]
+        two = set()
+        for u in n1:
+            two.update(adj[u])
+        two.difference_update(n1)
+        two.discard(v)
+        out[i] = len(two)
+    return out
+******************************
+c_Y 60.62711864406779
+Training GNN
+
+
+  0%|          | 0/999 [00:00<?, ?it/s][A
+
+  0%|          | 1/999 [00:00<04:08,  4.02it/s][A
+
+  3%|▎         | 33/999 [00:00<00:08, 118.85it/s][A
+
+  7%|▋         | 66/999 [00:00<00:04, 189.67it/s][A
+
+ 10%|█         | 103/999 [00:00<00:03, 247.88it/s][A
+
+ 14%|█▍        | 140/999 [00:00<00:03, 285.73it/s][A
+
+ 18%|█▊        | 177/999 [00:00<00:02, 310.37it/s][A
+
+ 21%|██▏       | 214/999 [00:00<00:02, 328.18it/s][A
+
+ 25%|██▌       | 251/999 [00:00<00:02, 340.60it/s][A
+
+ 29%|██▉       | 288/999 [00:01<00:02, 346.87it/s][A
+
+ 32%|███▏      | 324/999 [00:01<00:01, 349.96it/s][A
+
+ 36%|███▌      | 360/999 [00:01<00:01, 349.46it/s][A
+
+ 40%|███▉      | 396/999 [00:01<00:01, 350.54it/s][A
+
+ 43%|████▎     | 432/999 [00:01<00:01, 353.26it/s][A
+
+ 47%|████▋     | 468/999 [00:01<00:01, 352.18it/s][A
+
+ 50%|█████     | 504/999 [00:01<00:01, 350.94it/s][A
+
+ 54%|█████▍    | 540/999 [00:01<00:01, 350.40it/s][A
+
+ 58%|█████▊    | 576/999 [00:01<00:01, 352.52it/s][A
+
+ 61%|██████▏   | 613/999 [00:01<00:01, 354.87it/s][A
+
+ 65%|██████▌   | 650/999 [00:02<00:00, 356.98it/s][A
+
+ 69%|██████▉   | 687/999 [00:02<00:00, 359.05it/s][A
+
+ 73%|███████▎  | 725/999 [00:02<00:00, 362.65it/s][A
+
+ 76%|███████▋  | 762/999 [00:02<00:00, 362.18it/s][A
+
+ 80%|███████▉  | 799/999 [00:02<00:00, 361.61it/s][A
+
+ 84%|████████▎ | 836/999 [00:02<00:00, 357.43it/s][A
+
+ 87%|████████▋ | 873/999 [00:02<00:00, 359.53it/s][A
+
+ 91%|█████████ | 909/999 [00:02<00:00, 357.24it/s][A
+
+ 95%|█████████▍| 946/999 [00:02<00:00, 359.99it/s][A
+
+ 98%|█████████▊| 983/999 [00:03<00:00, 358.62it/s][A
+100%|██████████| 999/999 [00:03<00:00, 327.65it/s]
+
+  0%|          | 0/10 [05:49<?, ?it/s]
+c_Y 95.20338983050847
+Objective value: 298.0
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/main.py", line 138, in main
+    model, ratio, size_reduction, explainer_feedback_new = train_test_evaluate_gnn(
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~^
+        train_features = train_features,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        budget = budget
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/grads/a/anath/LLM_Pruning/utils.py", line 518, in train_test_evaluate_gnn
+    obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(test_graph, budget=budget, ground_set=indices)
+                                                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/grads/a/anath/LLM_Pruning/max_cut_weighted.py", line 431, in DLA
+    if ground_set:
+       ^^^^^^^^^^
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()

@@ -10,9 +10,9 @@ def maxcut_get_gains(graph, ground_set):
     if ground_set is None:
         gains = {node: graph.degree(node) for node in graph.nodes()}
     else:
-        print('A ground set has been given')
+        # print('A ground set has been given')
         gains = {node: graph.degree(node) for node in ground_set}
-        print('Size of the ground set = ', len(gains))
+        # print('Size of the ground set = ', len(gains))
     
     return gains
 
@@ -44,14 +44,14 @@ def maxcut_greedy(graph, budget, ground_set=None):
         selected_element = max(gains, key=gains.get)
 
         if gains[selected_element] == 0:
-            print('All elements are already covered')
+            # print('All elements are already covered')
             break
         solution.append(selected_element)
         obj_val += gains[selected_element]
         
         maxcut_gain_adjustment(graph, gains, selected_element, spins)
-    print('Objective value =', obj_val)
-    print('Number of queries =', number_of_queries)
+    # print('Objective value =', obj_val)
+    # print('Number of queries =', number_of_queries)
 
     return obj_val, number_of_queries, solution
 

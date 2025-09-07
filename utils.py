@@ -240,12 +240,18 @@ def generate_summary_prompt(cumulative_feedback):
 def generate_llm_prompt(
         problem,
         problem_definition,
-        heuristic_description,
+        # heuristic_description,
         explainer_feedback=None,
     ):
+
+    if problem.endswith('Weighted'):
+        few_shot_examples = "Degree to weight ratio must be included." 
+    else:
+        few_shot_examples = "Degree must be included."
+
     base_prompt = (
         f"You are an expert in graph neural networks and combinatorial optimization.\n\n"
-        f"For the {problem} problem ({problem_definition}), propose up to ten node-level features (degree must be one of them) "
+        f"For the {problem} problem ({problem_definition}), propose up to ten node-level features. {few_shot_examples}. "
         f"for a GNN binary classifier that predicts nodes likely to be in the optimal solution.\n\n"
         f"The heuristic can only select nodes from the reduced candidate set provided by the GNN. "
         f"The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.\n\n"
@@ -259,7 +265,7 @@ def generate_llm_prompt(
             "1) Keep high-importance features.\n"
             "2) Adjust or normalize medium-importance features.\n"
             "3) Remove or replace low-importance features.\n"
-            "4) Add 3–5 new features inspired by important patterns.\n"
+            "4) Add new features inspired by important patterns.\n"
             "5) Ensure all features are distinct and non-redundant.\n\n"
         )
 

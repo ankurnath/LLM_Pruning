@@ -204,6 +204,7 @@ def generate_rr_lt(node, graph):
 
 def logcnk(n, k):
     res = 0
+    # eps = 1e-10
     for i in range(n - k + 1, n + 1):
         res += math.log(i)
     for i in range(1, k + 1):
@@ -217,12 +218,13 @@ def get_graph(network):
     """
     
     weight = 0.01    
-    print(f'Creating with graph default weight = {weight}')
+    # print(f'Creating with graph default weight = {weight}')
     
     graph_ = Graph()
     # node_num = network.number_of_nodes()
 
-    for u, v in tqdm(network.edges()):
+    # for u, v in tqdm(network.edges()):
+    for u, v in network.edges():
 
         
         # weight = network[u][v]['weight']
@@ -289,11 +291,13 @@ def calculate_spread(graph,solution,mc=10000):
     # sprint('Calculating spread')
     # print(f'Default weight has been loaded:{0.01}')
     weight = 0.01    
-    print(f'Default weight = {weight}')
+    # print(f'Default weight = {weight}')
 
     spread = 0
 
-    for _ in tqdm(range(mc)):
+    # for _ in tqdm(range(mc)):
+
+    for _ in range(mc):
 
         activated_nodes = set(solution)
         queue = deque(solution)
@@ -327,6 +331,11 @@ def imm(graph, budget, ground_set = None, model="IC", epsoid=0.5, l=1,seed=0):
     else: 
         graph_ = get_graph(graph)
         node_num = graph.number_of_nodes()
+
+
+    if node_num < seed_size:
+        # print('Budget is larger than the number of nodes in the graph. Reducing budget to the number of nodes.')
+        seed_size = node_num
 
 
     # np.random.seed(args.seed)

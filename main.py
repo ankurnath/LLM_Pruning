@@ -12,7 +12,7 @@ def main():
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--problem", type=str, default="Maximum Cut", help="Problem name")
+    parser.add_argument("--problem", type=str, default="Influence Maximization", help="Problem name")
     parser.add_argument("--budget", type=int, default=100, help="Budget for the problem")
     parser.add_argument("--dataset", type=str, default= 'HK', help="Dataset to use")
     parser.add_argument("--iterations", type=int, default=10, help="Number of feature search iterations")
@@ -102,7 +102,7 @@ def main():
 
         node_feature_prompt = generate_llm_prompt(
             problem = problem,
-            heuristic_description=heuristic_description[problem],
+            # heuristic_description=heuristic_description[problem],
             problem_definition = problem_definitions[problem],
             explainer_feedback = summary
         )

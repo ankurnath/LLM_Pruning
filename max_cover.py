@@ -6,9 +6,9 @@ def compute_max_cover_initial_gains(graph, ground_set):
     if ground_set is None:
         gains = {node: graph.degree(node) + 1 for node in graph.nodes()}
     else:
-        print('A candidate node set has been provided.')
+        # print('A candidate node set has been provided.')
         gains = {node: graph.degree(node) + 1 for node in ground_set}
-        print('Size of the candidate set =', len(gains))
+        # print('Size of the candidate set =', len(gains))
     return gains
 
 
