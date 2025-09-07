@@ -193,7 +193,7 @@ def LA(adj_list,start,end,gains,node_weights,budget,mask):
         else:
             break
 
-    print('c_Y',c_Y)
+    # print('c_Y',c_Y)
 
     obj_X_prime = max_cut_weighted_calculate_obj(adj_list=adj_list,start=start,end=end,solution=X_prime)
     obj_Y_prime = max_cut_weighted_calculate_obj(adj_list=adj_list,start=start,end=end,solution=Y_prime)

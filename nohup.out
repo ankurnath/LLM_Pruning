@@ -1,182 +1,104 @@
 Loaded test graph with 3847 nodes and 26470 edges.
 Train graph has 3771 nodes and 21176 edges.
 Validation graph has 2859 nodes and 5294 edges.
-Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'incoming_activation_upper_bound', 'bridge_ratio_across_communities', 'effective_closeness_under_ic'])
+Calculating features for training graph: dict_keys(['degree_to_weight_ratio', 'external_degree_to_weight_ratio', 'inverse_weight', 'degree_zscore'])
 Training GNN
 Loaded test graph with 4891 nodes and 30228 edges.
 Train graph has 4563 nodes and 24182 edges.
 Validation graph has 2985 nodes and 6046 edges.
-Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'incoming_activation_upper_bound', 'bridge_ratio_across_communities', 'effective_closeness_under_ic'])
+Calculating features for training graph: dict_keys(['degree_to_weight_ratio', 'external_degree_to_weight_ratio', 'inverse_weight', 'degree_zscore'])
 Training GNN
 Loaded test graph with 48870 nodes and 149460 edges.
 Train graph has 46977 nodes and 119568 edges.
 Validation graph has 29697 nodes and 29892 edges.
-Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'incoming_activation_upper_bound', 'bridge_ratio_across_communities', 'effective_closeness_under_ic'])
+Calculating features for training graph: dict_keys(['degree_to_weight_ratio', 'external_degree_to_weight_ratio', 'inverse_weight', 'degree_zscore'])
 Training GNN
 Loaded test graph with 47546 nodes and 140566 edges.
 Train graph has 43007 nodes and 112452 edges.
 Validation graph has 20910 nodes and 28114 edges.
-Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'incoming_activation_upper_bound', 'bridge_ratio_across_communities', 'effective_closeness_under_ic'])
+Calculating features for training graph: dict_keys(['degree_to_weight_ratio', 'external_degree_to_weight_ratio', 'inverse_weight', 'degree_zscore'])
 Training GNN
 Loaded test graph with 55827 nodes and 134229 edges.
 Train graph has 51894 nodes and 107383 edges.
 Validation graph has 27523 nodes and 26846 edges.
-Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'incoming_activation_upper_bound', 'bridge_ratio_across_communities', 'effective_closeness_under_ic'])
+Calculating features for training graph: dict_keys(['degree_to_weight_ratio', 'external_degree_to_weight_ratio', 'inverse_weight', 'degree_zscore'])
 Training GNN
 Loaded test graph with 63004 nodes and 41994 edges.
 Train graph has 52698 nodes and 33595 edges.
 Validation graph has 15598 nodes and 8399 edges.
-Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'incoming_activation_upper_bound', 'bridge_ratio_across_communities', 'effective_closeness_under_ic'])
-Training GNN
-Loaded test graph with 4002 nodes and 61764 edges.
-Dataset: Facebook
-ratio: 0.9947527574841237 Size Reduction: 0.7501249375312344 Time Ratio: 0.9796178753621143
-    Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  Facebook   330.0019  ...    15.427876                1000
-
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization/Facebook/results/Facebook.pkl
-Loaded test graph with 6358 nodes and 70534 edges.
-Dataset: Wiki
-ratio: 0.998178441815439 Size Reduction: 0.8427178357974205 Time Ratio: 1.0010569321027598
-  Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0    Wiki   437.3179  ...    21.350774                1000
-
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization/Wiki/results/Wiki.pkl
-Loaded test graph with 53511 nodes and 348742 edges.
-Dataset: Deezer
-ratio: 0.9625253123424866 Size Reduction: 0.9813122535553438 Time Ratio: 1.46920132889388
-  Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  Deezer   249.5818  ...    10.113487                1000
-
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization/Deezer/results/Deezer.pkl
-Loaded test graph with 67640 nodes and 327988 edges.
-Dataset: Slashdot
-ratio: 1.0051624406001893 Size Reduction: 0.9852158486102898 Time Ratio: 1.0359301955980127
-    Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  Slashdot   948.2143  ...    54.059841                1000
-
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization/Slashdot/results/Slashdot.pkl
-Loaded test graph with 80712 nodes and 1208067 edges.
-Dataset: Twitter
-ratio: 1.0006446287504247 Size Reduction: 0.9380513430468828 Time Ratio: 1.0432461024130175
-   Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  Twitter  4550.6813  ...   351.757123                5000
-
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization/Twitter/results/Twitter.pkl
-Loaded test graph with 315305 nodes and 1007872 edges.
-Dataset: DBLP
-ratio: 1.0067248104878643 Size Reduction: 0.9841423383707838 Time Ratio: 2.3686272332976364
-  Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0    DBLP   354.9245  ...     25.10501                5000
-
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization/DBLP/results/DBLP.pkl
-Loaded test graph with 3847 nodes and 26470 edges.
-Train graph has 3771 nodes and 21176 edges.
-Validation graph has 2859 nodes and 5294 edges.
-Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
-Training GNN
-Loaded test graph with 4891 nodes and 30228 edges.
-Train graph has 4563 nodes and 24182 edges.
-Validation graph has 2985 nodes and 6046 edges.
-Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
-Training GNN
-Loaded test graph with 48870 nodes and 149460 edges.
-Train graph has 46977 nodes and 119568 edges.
-Validation graph has 29697 nodes and 29892 edges.
-Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
-Training GNN
-Loaded test graph with 47546 nodes and 140566 edges.
-Train graph has 43007 nodes and 112452 edges.
-Validation graph has 20910 nodes and 28114 edges.
-Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
-Training GNN
-Loaded test graph with 55827 nodes and 134229 edges.
-Train graph has 51894 nodes and 107383 edges.
-Validation graph has 27523 nodes and 26846 edges.
-Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
-Training GNN
-Loaded test graph with 63004 nodes and 41994 edges.
-Train graph has 52698 nodes and 33595 edges.
-Validation graph has 15598 nodes and 8399 edges.
-Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+Calculating features for training graph: dict_keys(['degree_to_weight_ratio', 'external_degree_to_weight_ratio', 'inverse_weight', 'degree_zscore'])
 Training GNN
 Loaded test graph with 185193 nodes and 179257 edges.
 Train graph has 156282 nodes and 143405 edges.
 Validation graph has 50823 nodes and 35852 edges.
-Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+Calculating features for training graph: dict_keys(['degree_to_weight_ratio', 'external_degree_to_weight_ratio', 'inverse_weight', 'degree_zscore'])
 Training GNN
 Loaded test graph with 147604 nodes and 110952 edges.
 Train graph has 122456 nodes and 88761 edges.
 Validation graph has 36009 nodes and 22191 edges.
-Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+Calculating features for training graph: dict_keys(['degree_to_weight_ratio', 'external_degree_to_weight_ratio', 'inverse_weight', 'degree_zscore'])
 Training GNN
 Loaded test graph with 4002 nodes and 61764 edges.
 Dataset: Facebook
-ratio: 0.9771428571428571 Size Reduction: 0.7501249375312344 Time Ratio: 2.3155152353169317
+ratio: 0.95 Size Reduction: 0.7501249375312344 Time Ratio: 32.944619572009834
     Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  Facebook        175  ...     0.014139                1000
+0  Facebook      100.0  ...     0.051506                1000
 
 [1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Facebook/results/Facebook.pkl
+Data has been saved to Maximum Cut Weighted/Facebook/results/Facebook.pkl
 Loaded test graph with 6358 nodes and 70534 edges.
 Dataset: Wiki
-ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 3.2765767211536256
+ratio: 0.97 Size Reduction: 0.8427178357974205 Time Ratio: 33.203955093119454
   Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0    Wiki        200  ...     0.020799                1000
+0    Wiki      100.0  ...     0.052794                1000
 
 [1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Wiki/results/Wiki.pkl
+Data has been saved to Maximum Cut Weighted/Wiki/results/Wiki.pkl
 Loaded test graph with 53511 nodes and 348742 edges.
 Dataset: Deezer
-ratio: 1.0 Size Reduction: 0.9813122535553438 Time Ratio: 22.412034954983554
+ratio: 0.97 Size Reduction: 0.9813122535553438 Time Ratio: 12.577426006610244
   Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  Deezer        200  ...     0.027037                1000
+0  Deezer      100.0  ...     0.269284                1000
 
 [1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Deezer/results/Deezer.pkl
+Data has been saved to Maximum Cut Weighted/Deezer/results/Deezer.pkl
 Loaded test graph with 67640 nodes and 327988 edges.
 Dataset: Slashdot
-ratio: 0.905 Size Reduction: 0.9852158486102898 Time Ratio: 31.205658231447256
+ratio: 0.95 Size Reduction: 0.9852158486102898 Time Ratio: 10.24027478882212
     Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  Slashdot        200  ...     0.025156                1000
+0  Slashdot      100.0  ...     0.328594                1000
 
 [1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Slashdot/results/Slashdot.pkl
+Data has been saved to Maximum Cut Weighted/Slashdot/results/Slashdot.pkl
 Loaded test graph with 80712 nodes and 1208067 edges.
 Dataset: Twitter
-ratio: 1.0 Size Reduction: 0.9380513430468828 Time Ratio: 7.3336858052118385
+ratio: 0.95 Size Reduction: 0.9380513430468828 Time Ratio: 5.398746445994571
    Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  Twitter        200  ...     0.117246                5000
+0  Twitter      100.0  ...     0.933397                5000
 
 [1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Twitter/results/Twitter.pkl
+Data has been saved to Maximum Cut Weighted/Twitter/results/Twitter.pkl
 Loaded test graph with 315305 nodes and 1007872 edges.
 Dataset: DBLP
-ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 21.530851216496668
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 5.283000726218117
   Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0    DBLP        200  ...     0.172783                5000
+0    DBLP      100.0  ...     2.437968                5000
 
 [1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/DBLP/results/DBLP.pkl
+Data has been saved to Maximum Cut Weighted/DBLP/results/DBLP.pkl
 Loaded test graph with 1098104 nodes and 2808367 edges.
 Dataset: YouTube
-ratio: 1.0 Size Reduction: 0.9954466972162929 Time Ratio: 46.03585878619595
+ratio: 0.95 Size Reduction: 0.9954466972162929 Time Ratio: 4.75326516611235
    Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  YouTube        200  ...     0.288506                5000
+0  YouTube      100.0  ...     9.194092                5000
 
 [1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/YouTube/results/YouTube.pkl
+Data has been saved to Maximum Cut Weighted/YouTube/results/YouTube.pkl
 Loaded test graph with 1694318 nodes and 10984346 edges.
 Dataset: Skitter
-ratio: 1.0 Size Reduction: 0.9970489601125645 Time Ratio: 49.56315423145209
+ratio: 1.0 Size Reduction: 0.9970489601125645 Time Ratio: 4.707868135746787
    Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
-0  Skitter        200  ...     0.401119                5000
+0  Skitter      100.0  ...    21.718288                5000
 
 [1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Skitter/results/Skitter.pkl
+Data has been saved to Maximum Cut Weighted/Skitter/results/Skitter.pkl
