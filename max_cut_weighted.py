@@ -428,7 +428,7 @@ def DLA(graph,budget,ground_set=None):
 
     
 
-    if ground_set:
+    if ground_set is not None and len(ground_set) > 0:
         mask = np.zeros(N)
         for node in ground_set:
             mask[node] = 1
