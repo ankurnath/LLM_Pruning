@@ -3,7 +3,7 @@ from max_cover import *
 from max_cut import *
 from max_cut_weighted import *
 from imm import *
-from knapsack_imm import knapsack_greedy
+from knapsack_im import knapsack_im_greedy
 from heuristic_description import heuristic_description
 
 
@@ -12,7 +12,7 @@ def main():
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--problem", type=str, default="Maximum Cut Weighted", help="Problem name")
+    parser.add_argument("--problem", type=str, default="Influence Maximization Weighted", help="Problem name")
     parser.add_argument("--budget", type=int, default=100, help="Budget for the problem")
     parser.add_argument("--dataset", type=str, default= 'HK', help="Dataset to use")
     parser.add_argument("--iterations", type=int, default=10, help="Number of feature search iterations")
@@ -33,11 +33,13 @@ def main():
     elif problem == "Influence Maximization":
         heuristic = imm
     elif problem == "Influence Maximization Weighted":
-        heuristic = knapsack_greedy  
+        heuristic = knapsack_im_greedy  
     elif problem == "Maximum Cut":
         heuristic = maxcut_greedy
     elif problem == "Maximum Cut Weighted":
         heuristic = DLA
+
+ 
     else:
         raise ValueError(f"Unknown problem: {problem}")
 
@@ -72,6 +74,9 @@ def main():
         train_graph = assign_normalized_degree_weights(train_graph)
         val_graph = assign_normalized_degree_weights(val_graph)
         test_graph = assign_normalized_degree_weights(test_graph)
+
+
+    # print(heuristic(graph=train_graph, budget=budget)) # Warm-up call to ensure any lazy initializations are done
     
 
     explainer_feedback_list = []

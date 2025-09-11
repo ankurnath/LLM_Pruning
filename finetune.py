@@ -133,41 +133,50 @@ def main():
     os.makedirs(f"{problem}/{dataset}",exist_ok=True)
     finetune_model_save_path = os.path.join(f"{problem}/{dataset}", "best_model.pth")
 
+
+    
+
+
+    # Uncomment below to train the model
+
+
+
+
     
 
     
-    for epoch in range(1, 10000):
-        optimizer.zero_grad()
-        mask = torch.cat([train_mask, torch.randint(0, train_mask.size(0), (train_mask.size(0),))], dim=0)
-        out  = model(train_data.x, train_data.edge_index)        # [N, num_classes]
-        loss = criterion(out[mask], train_data.y[mask]) 
-        # loss = criterion(out, train_data.y)                # full-graph loss
-        loss.backward()
-        optimizer.step()
+    # for epoch in range(1, 10000):
+    #     optimizer.zero_grad()
+    #     mask = torch.cat([train_mask, torch.randint(0, train_mask.size(0), (train_mask.size(0),))], dim=0)
+    #     out  = model(train_data.x, train_data.edge_index)        # [N, num_classes]
+    #     loss = criterion(out[mask], train_data.y[mask]) 
+    #     # loss = criterion(out, train_data.y)                # full-graph loss
+    #     loss.backward()
+    #     optimizer.step()
 
-        if epoch % 100 == 0:
-            # print(f'Epoch: {epoch:03d})')
+    #     if epoch % 100 == 0:
+    #         # print(f'Epoch: {epoch:03d})')
                   
-            obj_val,number_of_queries,solution = heuristic(val_graph, budget=budget, ground_set=None)
+    #         obj_val,number_of_queries,solution = heuristic(val_graph, budget=budget, ground_set=None)
 
-            y_pred = torch.argmax(model(val_data.x, val_data.edge_index), axis=1).cpu().numpy()
-            indices = np.where(y_pred == 1)[0]
-            if indices.size == 0:
-                continue
+    #         y_pred = torch.argmax(model(val_data.x, val_data.edge_index), axis=1).cpu().numpy()
+    #         indices = np.where(y_pred == 1)[0]
+    #         if indices.size == 0:
+    #             continue
 
-            obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(
-                val_graph, budget=budget, ground_set=indices
-            )
-            time_taken_pruned = time.time() - start
+    #         obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(
+    #             val_graph, budget=budget, ground_set=indices
+    #         )
+    #         time_taken_pruned = time.time() - start
 
-            ratio = obj_val_pruned / obj_val if obj_val != 0 else 0
-            size_reduction = 1 - len(indices) / train_graph.number_of_nodes()
+    #         ratio = obj_val_pruned / obj_val if obj_val != 0 else 0
+    #         size_reduction = 1 - len(indices) / train_graph.number_of_nodes()
 
-            C = ratio + size_reduction
+    #         C = ratio * size_reduction
 
-            if C > best_C:
-                best_C = C
-                torch.save(model.state_dict(), finetune_model_save_path)
+    #         if C > best_C:
+    #             best_C = C
+    #             torch.save(model.state_dict(), finetune_model_save_path)
                 # print(f'New best model saved with C={best_C}, ratio={ratio}, size_reduction={size_reduction}')
 
 
@@ -176,22 +185,7 @@ def main():
     
 
 
-    # y_pred = torch.argmax(model(train_data.x, train_data.edge_index), axis=1).cpu().numpy()
-    # indices = np.where(y_pred == 1)[0]
-
-    # start = time.time()
-    # obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(
-    #     train_graph, budget=budget, ground_set=indices
-    # )
-    # time_taken_pruned = time.time() - start
-
-    # ratio = obj_val_pruned / obj_val if obj_val != 0 else 0
-    # size_reduction = 1 - len(indices) / train_graph.number_of_nodes()
-    
-
-    # print(f"Dataset: {dataset}")
-    # print(f"ratio: {ratio} Size Reduction: {size_reduction}")
-
+   
     
 
 if __name__ == "__main__":

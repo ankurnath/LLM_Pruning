@@ -1,4 +1,6 @@
+from collections import deque
 from imm import *
+
 
 def get_gains(graph,num_rr):
 
@@ -9,7 +11,7 @@ def get_gains(graph,num_rr):
     RR = []
 
     worker = []
-    worker_num = NUM_PROCESSORS
+    worker_num =NUM_PROCESSORS
     create_worker(num =worker_num, worker = worker,  model = 'IC', graph_=graph_)
 
     for ii in range(worker_num):
@@ -49,21 +51,26 @@ def gain_adjustment(gains,node_rr_set,RR,selected_element,covered_rr_set):
     assert gains[selected_element] == 0, 'gains adjustment error'
 
 
-def knapsack_greedy(graph,ground_set , budget ,node_weights,
-                    gains=None,node_rr_set=None,RR=None,num_rr=None):
 
 
-    if gains is None or node_rr_set is None or RR is None:
-        gains,node_rr_set,RR = get_gains(graph=graph,num_rr=num_rr)
 
-    if ground_set:
+# def knapsack_im_greedy(graph,ground_set , budget ,node_weights,
+#                     gains=None,node_rr_set=None,RR=None,num_rr=None):
+
+
+def knapsack_im_greedy(graph, budget, ground_set=None, num_rr=100000):
+
+    N = graph.number_of_nodes()
+    node_weights = np.array([graph.nodes[i]['weight'] for i in range(N)])
+
+
+    
+    gains,node_rr_set,RR = get_gains(graph=graph,num_rr=num_rr)
+
+    if ground_set is not None:
         gains= {node:gains[node] for node in ground_set if node in gains}
 
-    # sprint(gains)
-
-    # gains = {}
-
-    # get max singleton
+    
 
     max_singleton = None
 
@@ -125,10 +132,7 @@ def knapsack_greedy(graph,ground_set , budget ,node_weights,
 
     # print('Number of queries:',number_of_queries)
         
-    # if calculate_spread(graph,solution)< calculate_spread(graph,solution=[max_singleton]) :
-    #     solution = [ max_singleton ]
+    if calculate_spread(graph,solution)< calculate_spread(graph,solution=[max_singleton]) :
+        solution = [ max_singleton ]
 
-    return objective_value,solution,number_of_queries
-
-if __name__ == '__main__':
-    pass
+    return objective_value, number_of_queries, solution
