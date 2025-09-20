@@ -128,6 +128,17 @@ problem_definitions = {
         "f(S) = |{(u, v) ∈ E : u ∈ S, v ∈ V \\setminus S}|.\n"
     ),
 
+    "Maximum Cut Negative": (
+    "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
+    "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
+    "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+    "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+    "is maximized.\n"
+    "Formally, maximize the cut value:\n"
+    "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
+    ),
+
+
     "Maximum Cut Weighted": (
             "The problem is defined over an undirected graph G = (V, E), where each node v ∈ V has an "
             "associated weight w(v) > 0. The weight of each node is defined as "
@@ -189,7 +200,7 @@ def get_response(client,prompt):
 
     response = client.responses.create(
         # model="gpt-4.1",
-        model = "gpt-5",
+        model = "gpt-5-nano",
         input= prompt
     )
 
@@ -326,6 +337,18 @@ def parse_llm_features(llm_response):
         print("Error parsing cleaned response:", e)
         return [], {}, {}
     
+import networkx as nx
+import numpy as np
+
+# def assign_random_edge_weights(graph):
+#     """
+#     Assigns +1 or -1 randomly to each edge in the graph.
+#     """
+#     edge_weights = {edge: np.random.choice([-1, 1]) for edge in graph.edges()}
+#     nx.set_edge_attributes(graph, edge_weights, name="weight")
+#     return graph
+
+
 def assign_normalized_degree_weights(graph, alpha= 1/20):
     out_degrees = {node: (graph.degree(node) - alpha) / graph.number_of_nodes() for node in graph.nodes()}
     out_degree_min = np.min(list(out_degrees.values()))
@@ -359,6 +382,15 @@ def generate_train_features(problem,features,definitions,train_graph,test_graph,
             f"and an integer variable `budget` is provided.\n"
         )
         additional_description = "If the feature involves weight, use the existing `'weight'` attribute directly without recomputing it from other functions"
+    
+    elif problem == "Maximum Cut Negative":
+
+        graph_description = (
+            f"The input is a weighted NetworkX graph `G` where each edge has an attribute `'weight'`, "
+            f"and an integer variable `budget` is provided.\n"
+        )
+        additional_description = "If the feature involves weight, use the existing `'weight'` attribute directly without recomputing it from other functions"
+    
     else:
         graph_description = (
             f"The input is a NetworkX graph `G` where each node has no attribute `'weight'`, "
@@ -387,7 +419,7 @@ def generate_train_features(problem,features,definitions,train_graph,test_graph,
         code_response = get_response(client,prompt_code)
         code = clean_code_block(code_response)
 
-        print(f"Code for feature '{feature}':\n{code}\n")
+        # print(f"Code for feature '{feature}':\n{code}\n")
 
         
         end = time.time()

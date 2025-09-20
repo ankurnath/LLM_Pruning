@@ -1,0 +1,116 @@
+Loaded test graph with 3847 nodes and 26470 edges.
+Train graph has 3771 nodes and 21176 edges.
+Validation graph has 2859 nodes and 5294 edges.
+Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'degree_to_weight_ratio', 'out_prob_mass_1hop', 'passive_activation_prob'])
+Training GNN
+Loaded test graph with 4002 nodes and 61764 edges.
+Traceback (most recent call last):
+  File "/home/grads/a/anath/LLM_Pruning/test.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/home/grads/a/anath/LLM_Pruning/test.py", line 190, in main
+    model.load_state_dict(torch.load(model_save_path))
+                          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/grads/a/anath/anaconda3/envs/eoh/lib/python3.13/site-packages/torch/serialization.py", line 1479, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/grads/a/anath/anaconda3/envs/eoh/lib/python3.13/site-packages/torch/serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/grads/a/anath/anaconda3/envs/eoh/lib/python3.13/site-packages/torch/serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+                     ~~~~^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Influence Maximization Weighted/Facebook/best_model.pth'
+Loaded test graph with 3847 nodes and 26470 edges.
+Train graph has 3771 nodes and 21176 edges.
+Validation graph has 2859 nodes and 5294 edges.
+Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'degree_to_weight_ratio', 'out_prob_mass_1hop', 'passive_activation_prob'])
+Training GNN
+New best model saved with C=0.7691683935644964, ratio=0.9525563258232236, size_reduction=0.807478122513922
+Loaded test graph with 4891 nodes and 30228 edges.
+Train graph has 4563 nodes and 24182 edges.
+Validation graph has 2985 nodes and 6046 edges.
+Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'degree_to_weight_ratio', 'out_prob_mass_1hop', 'passive_activation_prob'])
+Training GNN
+New best model saved with C=0.8439601024441361, ratio=0.9063285355266164, size_reduction=0.9311856234933158
+Loaded test graph with 48870 nodes and 149460 edges.
+Train graph has 46977 nodes and 119568 edges.
+Validation graph has 29697 nodes and 29892 edges.
+Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'degree_to_weight_ratio', 'out_prob_mass_1hop', 'passive_activation_prob'])
+Training GNN
+New best model saved with C=0.7983398557684624, ratio=0.9292502639915523, size_reduction=0.8591225493326522
+Loaded test graph with 47546 nodes and 140566 edges.
+Train graph has 43007 nodes and 112452 edges.
+Validation graph has 20910 nodes and 28114 edges.
+Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'degree_to_weight_ratio', 'out_prob_mass_1hop', 'passive_activation_prob'])
+Training GNN
+New best model saved with C=0.8043411320347981, ratio=0.9243840271877655, size_reduction=0.8701374194898505
+Loaded test graph with 55827 nodes and 134229 edges.
+Train graph has 51894 nodes and 107383 edges.
+Validation graph has 27523 nodes and 26846 edges.
+Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'degree_to_weight_ratio', 'out_prob_mass_1hop', 'passive_activation_prob'])
+Training GNN
+New best model saved with C=0.7704841390891881, ratio=0.8933463796477495, size_reduction=0.8624696496704821
+Loaded test graph with 63004 nodes and 41994 edges.
+Train graph has 52698 nodes and 33595 edges.
+Validation graph has 15598 nodes and 8399 edges.
+Calculating features for training graph: dict_keys(['out_degree', 'in_degree', 'degree_to_weight_ratio', 'out_prob_mass_1hop', 'passive_activation_prob'])
+Training GNN
+New best model saved with C=0.7412521103971109, ratio=0.9763673193787981, size_reduction=0.7591938973016054
+New best model saved with C=0.7513832604980909, ratio=0.9897119341563786, size_reduction=0.7591938973016054
+New best model saved with C=0.7529152434300552, ratio=0.9917298414886285, size_reduction=0.7591938973016054
+New best model saved with C=0.7685666614658228, ratio=1.0123456790123457, size_reduction=0.7591938973016054
+New best model saved with C=0.7722924807609154, ratio=1.0172532781228434, size_reduction=0.7591938973016054
+Loaded test graph with 4002 nodes and 61764 edges.
+Selected 1000 nodes out of 4002 nodes.
+Dataset: Facebook
+ratio: 1.0285404624277457 Size Reduction: 0.7501249375312344 Time Ratio: 2.031710553141605
+    Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
+0  Facebook       2768  ...     1.496868                1000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization Weighted/Facebook/results/Facebook.pkl
+Loaded test graph with 6358 nodes and 70534 edges.
+Selected 1000 nodes out of 6358 nodes.
+Dataset: Wiki
+ratio: 0.9191537589724216 Size Reduction: 0.8427178357974205 Time Ratio: 1.6623237354905553
+  Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
+0    Wiki       2647  ...     1.425575                1000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization Weighted/Wiki/results/Wiki.pkl
+Loaded test graph with 53511 nodes and 348742 edges.
+Selected 1000 nodes out of 53511 nodes.
+Dataset: Deezer
+ratio: 0.7724137931034483 Size Reduction: 0.9813122535553438 Time Ratio: 1.7835325660545873
+  Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
+0  Deezer        580  ...     1.340086                1000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization Weighted/Deezer/results/Deezer.pkl
+Loaded test graph with 67640 nodes and 327988 edges.
+Selected 1000 nodes out of 67640 nodes.
+Dataset: Slashdot
+ratio: 0.5907692307692308 Size Reduction: 0.9852158486102898 Time Ratio: 2.4764291826616045
+    Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
+0  Slashdot        650  ...     1.691196                1000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization Weighted/Slashdot/results/Slashdot.pkl
+Loaded test graph with 80712 nodes and 1208067 edges.
+Selected 5000 nodes out of 80712 nodes.
+Dataset: Twitter
+ratio: 0.37312957656797197 Size Reduction: 0.9380513430468828 Time Ratio: 10.850598910920864
+   Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
+0  Twitter       3141  ...    64.537168                5000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization Weighted/Twitter/results/Twitter.pkl
+Loaded test graph with 315305 nodes and 1007872 edges.
+Selected 5000 nodes out of 315305 nodes.
+Dataset: DBLP
+ratio: 0.6918238993710691 Size Reduction: 0.9841423383707838 Time Ratio: 0.8721548209354508
+  Dataset  Obj Value  ...  Time Pruned  Num Selected Nodes
+0    DBLP        318  ...     4.974328                5000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization Weighted/DBLP/results/DBLP.pkl

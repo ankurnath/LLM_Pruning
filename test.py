@@ -3,7 +3,8 @@ from max_cover import *
 from max_cut import *
 from max_cut_weighted import *
 from imm import *
-from knapsack_imm import knapsack_greedy
+# from knapsack_imm import knapsack_greedy
+from knapsack_im import knapsack_im_greedy
 # from heuristic_description import heuristic_description
 
 
@@ -13,63 +14,63 @@ import torch.nn.functional as F
 import torch
 import torch.nn.functional as F
 
-def mmr_selection_subset(probs, embeddings, k, lambda_div=0.7, top_m=None, threshold=None):
-    """
-    probs: [N] tensor, predicted probabilities
-    embeddings: [N, d] tensor, node embeddings
-    k: number of nodes to select
-    lambda_div: trade-off parameter
-    top_m: consider only top_m highest-prob nodes
-    threshold: consider only nodes with prob >= threshold
-    """
-    device = probs.device
-    embeddings = F.normalize(embeddings, p=2, dim=1)
+# def mmr_selection_subset(probs, embeddings, k, lambda_div=0.7, top_m=None, threshold=None):
+#     """
+#     probs: [N] tensor, predicted probabilities
+#     embeddings: [N, d] tensor, node embeddings
+#     k: number of nodes to select
+#     lambda_div: trade-off parameter
+#     top_m: consider only top_m highest-prob nodes
+#     threshold: consider only nodes with prob >= threshold
+#     """
+#     device = probs.device
+#     embeddings = F.normalize(embeddings, p=2, dim=1)
 
-    # filter candidates
-    candidates = torch.arange(len(probs), device=device)
-    if threshold is not None:
-        candidates = candidates[probs[candidates] >= threshold]
-    if top_m is not None and len(candidates) > top_m:
-        top_idx = torch.topk(probs[candidates], top_m).indices
-        candidates = candidates[top_idx]
+#     # filter candidates
+#     candidates = torch.arange(len(probs), device=device)
+#     if threshold is not None:
+#         candidates = candidates[probs[candidates] >= threshold]
+#     if top_m is not None and len(candidates) > top_m:
+#         top_idx = torch.topk(probs[candidates], top_m).indices
+#         candidates = candidates[top_idx]
 
-    if len(candidates) == 0:
-        return []
+#     if len(candidates) == 0:
+#         return []
 
-    # precompute similarity matrix
-    emb_cand = embeddings[candidates]              # [C, d]
-    sim_matrix = emb_cand @ emb_cand.T             # cosine sim [C, C]
+#     # precompute similarity matrix
+#     emb_cand = embeddings[candidates]              # [C, d]
+#     sim_matrix = emb_cand @ emb_cand.T             # cosine sim [C, C]
 
-    # init: pick the best by probability
-    first_idx = torch.argmax(probs[candidates]).item()
-    selected = [candidates[first_idx].item()]
+#     # init: pick the best by probability
+#     first_idx = torch.argmax(probs[candidates]).item()
+#     selected = [candidates[first_idx].item()]
 
-    # mask to keep track of available candidates
-    mask = torch.ones(len(candidates), dtype=torch.bool, device=device)
-    mask[first_idx] = False
+#     # mask to keep track of available candidates
+#     mask = torch.ones(len(candidates), dtype=torch.bool, device=device)
+#     mask[first_idx] = False
 
-    # iterative selection
-    selected_mask = torch.zeros(len(candidates), dtype=torch.bool, device=device)
-    selected_mask[first_idx] = True
+#     # iterative selection
+#     selected_mask = torch.zeros(len(candidates), dtype=torch.bool, device=device)
+#     selected_mask[first_idx] = True
 
-    for _ in range(1, k):
-        if not mask.any():
-            break
+#     for _ in range(1, k):
+#         if not mask.any():
+#             break
 
-        # max similarity with already selected for each candidate
-        max_sim, _ = torch.max(sim_matrix[mask][:, selected_mask], dim=1)
+#         # max similarity with already selected for each candidate
+#         max_sim, _ = torch.max(sim_matrix[mask][:, selected_mask], dim=1)
 
-        cand_probs = probs[candidates[mask]]
-        scores = lambda_div * cand_probs - (1 - lambda_div) * max_sim
+#         cand_probs = probs[candidates[mask]]
+#         scores = lambda_div * cand_probs - (1 - lambda_div) * max_sim
 
-        best_local = torch.argmax(scores).item()
-        best_global = torch.arange(len(candidates), device=device)[mask][best_local].item()
+#         best_local = torch.argmax(scores).item()
+#         best_global = torch.arange(len(candidates), device=device)[mask][best_local].item()
 
-        selected.append(candidates[best_global].item())
-        mask[best_global] = False
-        selected_mask[best_global] = True
+#         selected.append(candidates[best_global].item())
+#         mask[best_global] = False
+#         selected_mask[best_global] = True
 
-    return selected
+#     return selected
 
 
 # def mmr_selection_subset(probs, embeddings, k, lambda_div=0.7, top_m=None, threshold=None):
@@ -141,7 +142,7 @@ def main():
     "Maximum Coverage": greedy_max_cover,
     "Maximum Coverage Weighted": knapsack_greedy_max_cover,
     "Influence Maximization": imm,
-    "Influence Maximization Weighted": knapsack_greedy,
+    "Influence Maximization Weighted": knapsack_im_greedy,
     "Maximum Cut": maxcut_greedy,
     "Maximum Cut Weighted": DLA,
     }
@@ -195,6 +196,8 @@ def main():
     # y_pred = torch.argmax(model(test_data.x, test_data.edge_index), axis=1).cpu().numpy()
     # indices = np.where(y_pred == 1)[0]
 
+    start = time.time()
+
     with torch.no_grad():
         logits = model(test_data.x, test_data.edge_index)
         probs = torch.softmax(logits, dim=1)[:, 1]  # P(class=1)
@@ -202,15 +205,17 @@ def main():
     # print(f"Predicted probabilities for {test_graph.number_of_nodes()} nodes.",probs)
 
     # pick top-k nodes
-    # topk_vals, topk_idx = torch.topk(probs, k)
-    # indices = topk_idx.cpu().numpy()
+    topk_vals, topk_idx = torch.topk(probs, k)
+    indices = topk_idx.cpu().numpy()
 
-    emb = model.conv1(test_data.x, test_data.edge_index)
-    probs = probs
-    selected_idx = mmr_selection_subset(probs, emb, k=k, lambda_div=0.7, top_m=2*k)
-    indices = np.array(selected_idx)
+    # emb = model.conv1(test_data.x, test_data.edge_index)
+    # probs = probs
+    # selected_idx = mmr_selection_subset(probs, emb, k=k, lambda_div=0.7, top_m=2*k)
+    # indices = np.array(selected_idx)
 
     print(f"Selected {len(indices)} nodes out of {test_graph.number_of_nodes()} nodes.")
+
+    time_taken_to_select = time.time() - start
 
 
     start = time.time()
@@ -232,16 +237,18 @@ def main():
 
     results.append({
         "Dataset": test_dataset,
-        "Obj Value": obj_val,
-        "Obj Value Pruned": obj_val_pruned,
-        "Queries": number_of_queries,
-        "Queries Pruned": number_of_queries_pruned,
+        "Obj Value(Unpruned)": obj_val,
+        "Obj Value(Pruned)": obj_val_pruned,
+        # "Queries": number_of_queries,
+        # "Queries Pruned": number_of_queries_pruned,
         "Ratio": ratio,
         "Size Reduction": size_reduction,
-        "Time Ratio": time_ratio,
+        "CombinedMetric": ratio * size_reduction,
+        "TimeRatio": time_ratio,
         "Feature Extraction Time": time_taken_to_calculate,
-        "Time Baseline": time_taken,
-        "Time Pruned": time_taken_pruned,
+        'TimeToPrune': time_taken_to_select,
+        "Time(Unpruned)": time_taken,
+        "Time(Pruned)": time_taken_pruned,
         "Num Selected Nodes": len(indices)
     })
 

@@ -119,7 +119,7 @@ def knapsack_im_greedy(graph, budget, ground_set=None, num_rr=100000):
         if node_weights[selected_element]+constraint <= budget:
 
             solution.append(selected_element)
-            objective_value += gains[selected_element]
+            # objective_value += gains[selected_element] 
             gain_adjustment(gains=gains,node_rr_set=node_rr_set,RR=RR,
                             selected_element=selected_element,covered_rr_set=covered_rr_set)
             constraint += node_weights[selected_element]
@@ -131,8 +131,11 @@ def knapsack_im_greedy(graph, budget, ground_set=None, num_rr=100000):
         gains.pop(selected_element)
 
     # print('Number of queries:',number_of_queries)
+
+    objective_value = calculate_spread(graph,solution)
+    objective_value_max_singleton = calculate_spread(graph,solution=[max_singleton])
         
-    if calculate_spread(graph,solution)< calculate_spread(graph,solution=[max_singleton]) :
+    if objective_value< objective_value_max_singleton  :
         solution = [ max_singleton ]
 
-    return objective_value, number_of_queries, solution
+    return max(objective_value,objective_value_max_singleton), number_of_queries, solution
