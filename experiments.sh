@@ -85,15 +85,15 @@
 # python finetune.py --problem "Maximum Coverage" --dataset Skitter &
 # wait  # waits until all background jobs finish
 
-# Testing
-python test.py --problem "Maximum Coverage" --train_dataset Facebook --test_dataset Facebook --k 1000 
-python test.py --problem "Maximum Coverage" --train_dataset Wiki --test_dataset Wiki --k 1000 
-python test.py --problem "Maximum Coverage" --train_dataset Deezer --test_dataset Deezer --k 1000 
-python test.py --problem "Maximum Coverage" --train_dataset Slashdot --test_dataset Slashdot --k 1000 
-python test.py --problem "Maximum Coverage" --train_dataset Twitter --test_dataset Twitter --k 5000 
-python test.py --problem "Maximum Coverage" --train_dataset DBLP --test_dataset DBLP --k 5000 
-python test.py --problem "Maximum Coverage" --train_dataset YouTube --test_dataset YouTube --k 5000 
-python test.py --problem "Maximum Coverage" --train_dataset Skitter --test_dataset Skitter --k 5000 
+# # Testing
+# python test.py --problem "Maximum Coverage" --train_dataset Facebook --test_dataset Facebook --k 1000 &
+# python test.py --problem "Maximum Coverage" --train_dataset Wiki --test_dataset Wiki --k 1000 &
+# python test.py --problem "Maximum Coverage" --train_dataset Deezer --test_dataset Deezer --k 1000 &
+# python test.py --problem "Maximum Coverage" --train_dataset Slashdot --test_dataset Slashdot --k 1000  &
+# python test.py --problem "Maximum Coverage" --train_dataset Twitter --test_dataset Twitter --k 5000 &
+# python test.py --problem "Maximum Coverage" --train_dataset DBLP --test_dataset DBLP --k 5000 &
+# python test.py --problem "Maximum Coverage" --train_dataset YouTube --test_dataset YouTube --k 5000 &
+# python test.py --problem "Maximum Coverage" --train_dataset Skitter --test_dataset Skitter --k 5000 &
 # wait
 
 
@@ -105,32 +105,34 @@ python test.py --problem "Maximum Coverage" --train_dataset Skitter --test_datas
 # python finetune.py --problem "Maximum Cut" --dataset DBLP
 # python finetune.py --problem "Maximum Cut" --dataset YouTube
 # python finetune.py --problem "Maximum Cut" --dataset Skitter
+# wait
 
-python test.py --problem "Maximum Cut" --train_dataset Facebook --test_dataset Facebook --k 1000
-python test.py --problem "Maximum Cut" --train_dataset Wiki --test_dataset Wiki --k 1000
-python test.py --problem "Maximum Cut" --train_dataset Deezer --test_dataset Deezer --k 1000
-python test.py --problem "Maximum Cut" --train_dataset Slashdot --test_dataset Slashdot --k 1000
-python test.py --problem "Maximum Cut" --train_dataset Twitter --test_dataset Twitter --k 5000
-python test.py --problem "Maximum Cut" --train_dataset DBLP --test_dataset DBLP    --k 5000
-python test.py --problem "Maximum Cut" --train_dataset YouTube --test_dataset YouTube --k 5000
-python test.py --problem "Maximum Cut" --train_dataset Skitter --test_dataset Skitter --k 5000
+# python test.py --problem "Maximum Cut" --train_dataset Facebook --test_dataset Facebook --k 1000 &
+# python test.py --problem "Maximum Cut" --train_dataset Wiki --test_dataset Wiki --k 1000 &
+# python test.py --problem "Maximum Cut" --train_dataset Deezer --test_dataset Deezer --k 1000 &
+# python test.py --problem "Maximum Cut" --train_dataset Slashdot --test_dataset Slashdot --k 1000 &
+# python test.py --problem "Maximum Cut" --train_dataset Twitter --test_dataset Twitter --k 5000 &
+# python test.py --problem "Maximum Cut" --train_dataset DBLP --test_dataset DBLP    --k 5000 &
+# python test.py --problem "Maximum Cut" --train_dataset YouTube --test_dataset YouTube --k 5000 &
+# python test.py --problem "Maximum Cut" --train_dataset Skitter --test_dataset Skitter --k 5000 &
+# wait
 
 
-# python finetune.py --problem "Influence Maximization" --dataset Facebook
-# python finetune.py --problem "Influence Maximization" --dataset Wiki
-# python finetune.py --problem "Influence Maximization" --dataset Deezer
-# python finetune.py --problem "Influence Maximization" --dataset Slashdot
-# python finetune.py --problem "Influence Maximization" --dataset Twitter
-# python finetune.py --problem "Influence Maximization" --dataset DBLP
-# python finetune.py --problem "Influence Maximization" --dataset YouTube
-# python finetune.py --problem "Influence Maximization" --dataset Skitter
+python finetune.py --problem "Influence Maximization" --dataset Facebook
+python finetune.py --problem "Influence Maximization" --dataset Wiki
+python finetune.py --problem "Influence Maximization" --dataset Deezer
+python finetune.py --problem "Influence Maximization" --dataset Slashdot
+python finetune.py --problem "Influence Maximization" --dataset Twitter
+python finetune.py --problem "Influence Maximization" --dataset DBLP
+python finetune.py --problem "Influence Maximization" --dataset YouTube
+python finetune.py --problem "Influence Maximization" --dataset Skitter
 
-# python test.py --problem "Influence Maximization" --train_dataset Facebook --test_dataset Facebook --k 1000
-# python test.py --problem "Influence Maximization" --train_dataset Wiki --test_dataset Wiki --k 1000
-# python test.py --problem "Influence Maximization" --train_dataset Deezer --test_dataset Deezer --k 1000
-# python test.py --problem "Influence Maximization" --train_dataset Slashdot --test_dataset Slashdot --k 1000
-# python test.py --problem "Influence Maximization" --train_dataset Twitter --test_dataset Twitter --k 5000
-# python test.py --problem "Influence Maximization" --train_dataset DBLP --test_dataset DBLP    --k 5000
+python test.py --problem "Influence Maximization" --train_dataset Facebook --test_dataset Facebook --k 1000
+python test.py --problem "Influence Maximization" --train_dataset Wiki --test_dataset Wiki --k 1000
+python test.py --problem "Influence Maximization" --train_dataset Deezer --test_dataset Deezer --k 1000
+python test.py --problem "Influence Maximization" --train_dataset Slashdot --test_dataset Slashdot --k 1000
+python test.py --problem "Influence Maximization" --train_dataset Twitter --test_dataset Twitter --k 5000
+python test.py --problem "Influence Maximization" --train_dataset DBLP --test_dataset DBLP    --k 5000
 # python test.py --problem "Influence Maximization" --train_dataset YouTube --test_dataset YouTube --k 5000
 # python test.py --problem "Influence Maximization" --train_dataset Skitter --test_dataset Skitter --k 5000
 
@@ -154,16 +156,17 @@ python test.py --problem "Maximum Cut" --train_dataset Skitter --test_dataset Sk
 # python test.py --problem "Maximum Coverage Weighted" --train_dataset DBLP --test_dataset DBLP --k 5000 &
 # python test.py --problem "Maximum Coverage Weighted" --train_dataset YouTube --test_dataset YouTube --k 5000 &
 # python test.py --problem "Maximum Coverage Weighted" --train_dataset Skitter --test_dataset Skitter --k 5000 &
+
 # wait
 
-# python test.py --problem "Maximum Cut Weighted" --train_dataset Facebook --test_dataset Facebook --k 1000
-# python test.py --problem "Maximum Cut Weighted" --train_dataset Wiki --test_dataset Wiki --k 1000
-# python test.py --problem "Maximum Cut Weighted" --train_dataset Deezer --test_dataset Deezer --k 1000
-# python test.py --problem "Maximum Cut Weighted" --train_dataset Slashdot --test_dataset Slashdot --k 1000
-# python test.py --problem "Maximum Cut Weighted" --train_dataset Twitter --test_dataset Twitter --k 5000
-# python test.py --problem "Maximum Cut Weighted" --train_dataset DBLP --test_dataset DBLP    --k 5000
-# python test.py --problem "Maximum Cut Weighted" --train_dataset YouTube --test_dataset YouTube --k 5000
-# python test.py --problem "Maximum Cut Weighted" --train_dataset Skitter --test_dataset Skitter --k 5000
+# python test.py --problem "Maximum Cut Weighted" --train_dataset Facebook --test_dataset Facebook --k 1000 &
+# python test.py --problem "Maximum Cut Weighted" --train_dataset Wiki --test_dataset Wiki --k 1000 &
+# python test.py --problem "Maximum Cut Weighted" --train_dataset Deezer --test_dataset Deezer --k 1000 &
+# python test.py --problem "Maximum Cut Weighted" --train_dataset Slashdot --test_dataset Slashdot --k 1000 &
+# python test.py --problem "Maximum Cut Weighted" --train_dataset Twitter --test_dataset Twitter --k 5000 &
+# python test.py --problem "Maximum Cut Weighted" --train_dataset DBLP --test_dataset DBLP    --k 5000 &
+# python test.py --problem "Maximum Cut Weighted" --train_dataset YouTube --test_dataset YouTube --k 5000 &
+# python test.py --problem "Maximum Cut Weighted" --train_dataset Skitter --test_dataset Skitter --k 5000 &
 
 
 # python finetune.py --problem "Influence Maximization Weighted" --dataset Facebook
@@ -172,8 +175,8 @@ python test.py --problem "Maximum Cut" --train_dataset Skitter --test_dataset Sk
 # python finetune.py --problem "Influence Maximization Weighted" --dataset Slashdot
 # python finetune.py --problem "Influence Maximization Weighted" --dataset Twitter
 # python finetune.py --problem "Influence Maximization Weighted" --dataset DBLP
-# # python finetune.py --problem "Influence Maximization Weighted" --dataset YouTube
-# # python finetune.py --problem "Influence Maximization Weighted" --dataset Skitter
+# python finetune.py --problem "Influence Maximization Weighted" --dataset YouTube
+# python finetune.py --problem "Influence Maximization Weighted" --dataset Skitter
 
 # python test.py --problem "Influence Maximization Weighted" --train_dataset Facebook --test_dataset Facebook --k 1000
 # python test.py --problem "Influence Maximization Weighted" --train_dataset Wiki --test_dataset Wiki --k 1000

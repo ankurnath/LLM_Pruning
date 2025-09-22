@@ -163,8 +163,21 @@ def main():
 
     test_graph,_,_ = relabel_graph(test_graph)
 
+
+
+    # if problem in ["Maximum Coverage Weighted", "Influence Maximization Weighted", "Maximum Cut Weighted"]:
+    #     test_graph = assign_normalized_degree_weights(test_graph)
+    #     weight = []
+    #     mask = mask <= budget
+
+    
+
     if problem in ["Maximum Coverage Weighted", "Influence Maximization Weighted", "Maximum Cut Weighted"]:
         test_graph = assign_normalized_degree_weights(test_graph)
+        weight = np.array([test_graph.nodes[v].get("weight", 1.0) for v in test_graph.nodes], dtype=np.float32)
+        mask = torch.tensor(weight <= budget, dtype=torch.bool, device=device)
+
+
 
     best_model_data_path = os.path.join(f"{problem}/{args.base_dataset}", "best_model_data.pkl")
 
@@ -182,6 +195,8 @@ def main():
     test_X = torch.tensor(np.array(test_X).T, dtype=torch.float)
 
     test_data = from_networkx(test_graph)
+
+    
     test_data.x = test_X
     test_data = test_data.to(device)
     model     = GCN(input_channels= test_data.x.shape[1] ,hidden_channels = 16, out_channels = 2).to(device)
@@ -200,11 +215,17 @@ def main():
 
     with torch.no_grad():
         logits = model(test_data.x, test_data.edge_index)
+
+        
         probs = torch.softmax(logits, dim=1)[:, 1]  # P(class=1)
 
     # print(f"Predicted probabilities for {test_graph.number_of_nodes()} nodes.",probs)
 
     # pick top-k nodes
+
+    if problem.endswith("Weighted"):
+
+        probs *= mask
     topk_vals, topk_idx = torch.topk(probs, k)
     indices = topk_idx.cpu().numpy()
 

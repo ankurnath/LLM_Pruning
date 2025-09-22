@@ -154,6 +154,8 @@ def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, e
 
                 # 5. Evaluate with GNN
                 model, ratio, size_reduction, feedback = train_test_evaluate_gnn(
+                    problem= problem,
+                    dataset= dataset,
                     train_features=train_features,
                     train_graph=train_graph,
                     test_graph=val_graph,
@@ -226,7 +228,7 @@ def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, e
 # -----------------------------
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--problem", type=str, default="Maximum Coverage", help="Problem name")
+    parser.add_argument("--problem", type=str, default="Influence Maximization", help="Problem name")
     parser.add_argument("--budget", type=int, default=100, help="Budget for the problem")
     parser.add_argument("--dataset", type=str, default='HK', help="Dataset to use")
     parser.add_argument("--depth", type=int, default=3, help="Number of feature search depth")

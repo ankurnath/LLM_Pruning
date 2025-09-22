@@ -466,7 +466,10 @@ class GCN(torch.nn.Module):
         x = self.conv1(x, edge_index).relu()
         return self.conv2(x, edge_index)
 
-def train_test_evaluate_gnn(train_features, 
+def train_test_evaluate_gnn(
+                            problem,
+                            dataset,
+                            train_features, 
                             train_graph,
                             test_graph,
                             codes,
@@ -479,7 +482,22 @@ def train_test_evaluate_gnn(train_features,
 
     train_data = from_networkx(train_graph)
     train_data.x = train_features
-    obj_val,number_of_queries,solution = heuristic(train_graph, budget=budget, ground_set=None)
+
+    # import os
+
+    save_folder = f'Presolved/{problem}/{dataset}'
+    os.makedirs(save_folder, exist_ok=True)
+
+    try:
+        obj_val, number_of_queries, solution = load_from_pickle(
+            f'{save_folder}/train'
+        )
+    except:
+        obj_val, number_of_queries, solution = heuristic(
+            train_graph, budget=budget, ground_set=None
+        )
+        save_as_pickle((obj_val, number_of_queries, solution), f'{save_folder}/train')
+
 
     mapping = dict(zip(train_graph.nodes(), range(train_graph.number_of_nodes())))
     train_mask = torch.tensor([mapping[node] for node in solution], dtype=torch.long)
@@ -543,7 +561,20 @@ def train_test_evaluate_gnn(train_features,
 
     indices = np.where(y_pred == 1)[0]
 
-    obj_val,number_of_queries,solution= heuristic(test_graph, budget=budget)
+    # obj_val,number_of_queries,solution= heuristic(test_graph, budget=budget)
+    save_folder = f'Presolved/{problem}/{dataset}'
+    os.makedirs(save_folder, exist_ok=True)
+
+    try:
+        obj_val, number_of_queries, solution = load_from_pickle(
+            f'{save_folder}/test'
+        )
+    except:
+        obj_val, number_of_queries, solution = heuristic(
+            test_graph, budget=budget, ground_set=None
+        )
+        save_as_pickle((obj_val, number_of_queries, solution), f'{save_folder}/test')
+
     test_data.y[solution] = 1
 
     print('Objective value:', obj_val)
