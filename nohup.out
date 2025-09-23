@@ -118,3 +118,323 @@ Selected 5000 nodes out of 1694318 nodes.
    Dataset  Feature Extraction Time  TimeToPrune
 0  Skitter                18.541433    18.767263
 Data has been saved to /home/grads/a/anath/Results/Influence Maximization/Skitter/LLM2Prune
+Loaded test graph with 4002 nodes and 61764 edges.
+Selected 500 nodes out of 4002 nodes.
+Dataset: Facebook
+ratio: 0.9255629139072847 Size Reduction: 0.8750624687656172 Time Ratio: 2.169982887628762
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Facebook                 3775  ...      0.007106                 500
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Coverage/Facebook/results/Facebook.pkl
+Loaded test graph with 6358 nodes and 70534 edges.
+Selected 500 nodes out of 6358 nodes.
+Dataset: Wiki
+ratio: 0.9987913947304811 Size Reduction: 0.9213589178987103 Time Ratio: 1.571375
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    Wiki                 4137  ...      0.013351                 500
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Coverage/Wiki/results/Wiki.pkl
+Loaded test graph with 53511 nodes and 348742 edges.
+Selected 500 nodes out of 53511 nodes.
+Dataset: Deezer
+ratio: 0.978063725490196 Size Reduction: 0.9906561267776719 Time Ratio: 7.128166266902133
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Deezer                 8160  ...      0.018091                 500
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Coverage/Deezer/results/Deezer.pkl
+Loaded test graph with 67640 nodes and 327988 edges.
+Selected 500 nodes out of 67640 nodes.
+Dataset: Slashdot
+ratio: 0.9913676286072773 Size Reduction: 0.9926079243051449 Time Ratio: 4.204244768846047
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Slashdot                19925  ...       0.04462                 500
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Coverage/Slashdot/results/Slashdot.pkl
+Loaded test graph with 80712 nodes and 1208067 edges.
+Selected 1000 nodes out of 80712 nodes.
+Dataset: Twitter
+ratio: 0.9373663463272615 Size Reduction: 0.9876102686093765 Time Ratio: 2.3743838710645897
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Twitter                38813  ...      0.135001                1000
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Coverage/Twitter/results/Twitter.pkl
+Loaded test graph with 315305 nodes and 1007872 edges.
+Selected 5000 nodes out of 315305 nodes.
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 11.530430266503043
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    DBLP                14059  ...      0.056925                5000
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Coverage/DBLP/results/DBLP.pkl
+Loaded test graph with 1098104 nodes and 2808367 edges.
+Selected 5000 nodes out of 1098104 nodes.
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9954466972162929 Time Ratio: 5.5896555948815685
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  YouTube               194267  ...      0.525427                5000
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Coverage/YouTube/results/YouTube.pkl
+Loaded test graph with 1694318 nodes and 10984346 edges.
+Selected 5000 nodes out of 1694318 nodes.
+Dataset: Skitter
+ratio: 0.9957563976531189 Size Reduction: 0.9970489601125645 Time Ratio: 3.704114457692615
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Skitter               449618  ...      1.584218                5000
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Coverage/Skitter/results/Skitter.pkl
+Loaded test graph with 4002 nodes and 61764 edges.
+Selected 500 nodes out of 4002 nodes.
+Dataset: Facebook
+ratio: 0.9704345229207108 Size Reduction: 0.8750624687656172 Time Ratio: 2.2538373424971363
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Facebook                13394  ...      0.004163                 500
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Cut/Facebook/results/Facebook.pkl
+Loaded test graph with 6358 nodes and 70534 edges.
+Selected 500 nodes out of 6358 nodes.
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 3.2996274901473845
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    Wiki                21827  ...      0.004416                 500
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Cut/Wiki/results/Wiki.pkl
+Loaded test graph with 53511 nodes and 348742 edges.
+Selected 500 nodes out of 53511 nodes.
+Dataset: Deezer
+ratio: 0.9999124189875634 Size Reduction: 0.9906561267776719 Time Ratio: 26.135895919574217
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Deezer                11418  ...      0.004032                 500
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Cut/Deezer/results/Deezer.pkl
+Loaded test graph with 67640 nodes and 327988 edges.
+Selected 500 nodes out of 67640 nodes.
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 23.076023391812864
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Slashdot                44443  ...      0.005993                 500
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Cut/Slashdot/results/Slashdot.pkl
+Loaded test graph with 80712 nodes and 1208067 edges.
+Selected 1000 nodes out of 80712 nodes.
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 13.404215614836405
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Twitter               104660  ...      0.013415                1000
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Cut/Twitter/results/Twitter.pkl
+Loaded test graph with 315305 nodes and 1007872 edges.
+Selected 5000 nodes out of 315305 nodes.
+Dataset: DBLP
+ratio: 0.9980604885144554 Size Reduction: 0.9841423383707838 Time Ratio: 20.589882330702707
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    DBLP                16499  ...      0.030271                5000
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Cut/DBLP/results/DBLP.pkl
+Loaded test graph with 1098104 nodes and 2808367 edges.
+Selected 5000 nodes out of 1098104 nodes.
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9954466972162929 Time Ratio: 23.867655279390377
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  YouTube               314552  ...      0.098524                5000
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Cut/YouTube/results/YouTube.pkl
+Loaded test graph with 1694318 nodes and 10984346 edges.
+Selected 5000 nodes out of 1694318 nodes.
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9970489601125645 Time Ratio: 20.171875125033868
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Skitter              1397253  ...       0.20856                5000
+
+[1 rows x 12 columns]
+Data has been saved to Maximum Cut/Skitter/results/Skitter.pkl
+Loaded test graph with 3847 nodes and 26470 edges.
+Train graph has 3771 nodes and 21176 edges.
+Validation graph has 2859 nodes and 5294 edges.
+Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Training GNN
+New best model saved with C=0.29315903109186797, ratio=0.9977461247720523, size_reduction=0.2938212675682843
+New best model saved with C=0.5907989305427976, ratio=1.0145276717107878, size_reduction=0.5823389021479713
+New best model saved with C=0.6355972950786166, ratio=1.0143196782655368, size_reduction=0.6266242376027579
+New best model saved with C=0.6748071898803417, ratio=0.9990961574553471, size_reduction=0.675417661097852
+New best model saved with C=0.7219683935025303, ratio=1.0113457696500898, size_reduction=0.7138690002651816
+New best model saved with C=0.7697713770617332, ratio=1.0304607252040452, size_reduction=0.7470167064439142
+New best model saved with C=0.7802963251522654, ratio=1.0083952851779276, size_reduction=0.7738000530363299
+New best model saved with C=0.824289251394742, ratio=1.01781099116227, size_reduction=0.8098647573587907
+New best model saved with C=0.8291562058136155, ratio=1.0109111064090346, size_reduction=0.8202068416865553
+New best model saved with C=0.83796598497206, ratio=1.0079648259424683, size_reduction=0.8313444709626094
+New best model saved with C=0.8918685641955195, ratio=1.0241280010905311, size_reduction=0.8708565367276584
+New best model saved with C=0.9081844437224069, ratio=1.0087668740139017, size_reduction=0.9002916998143728
+New best model saved with C=0.9180622558455613, ratio=1.0194383883373415, size_reduction=0.9005568814638027
+New best model saved with C=0.9269067940423418, ratio=1.01022124865135, size_reduction=0.9175285070273137
+New best model saved with C=0.9641885983885323, ratio=1.017619704596461, size_reduction=0.9474940334128878
+New best model saved with C=0.9644910829567083, ratio=1.0216561443341985, size_reduction=0.9440466719702997
+New best model saved with C=0.9678391690364531, ratio=1.0112833212625283, size_reduction=0.9570405727923628
+New best model saved with C=0.9745233428412615, ratio=1.0112623901635656, size_reduction=0.9636701140281092
+New best model saved with C=0.9947335759487375, ratio=1.022387657373314, size_reduction=0.9729514717581543
+New best model saved with C=0.9999806629843262, ratio=1.0126012567437954, size_reduction=0.9875364624767966
+New best model saved with C=1.000841320255309, ratio=1.0162015666889528, size_reduction=0.984884645982498
+New best model saved with C=1.0035197263935116, ratio=1.0159121847597132, size_reduction=0.9878016441262265
+New best model saved with C=1.0054426901437796, ratio=1.0110731692085848, size_reduction=0.994431185361973
+Loaded test graph with 4891 nodes and 30228 edges.
+Train graph has 4563 nodes and 24182 edges.
+Validation graph has 2985 nodes and 6046 edges.
+Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Training GNN
+New best model saved with C=0.3574989948957618, ratio=0.9910497653155291, size_reduction=0.3607275914968223
+New best model saved with C=0.45444613028533115, ratio=0.9926460950176955, size_reduction=0.45781284242822706
+New best model saved with C=0.514174865901445, ratio=0.9853758559883636, size_reduction=0.5218058294981371
+New best model saved with C=0.5765196892936947, ratio=0.9994906315528604, size_reduction=0.576813499890423
+New best model saved with C=0.6588598582688282, ratio=0.9789571909087147, size_reduction=0.6730221345605961
+New best model saved with C=0.7343022369122072, ratio=0.9945447037786885, size_reduction=0.7383300460223536
+New best model saved with C=0.7877431972218747, ratio=0.9834397288436154, size_reduction=0.8010081087004164
+New best model saved with C=0.818604289721392, ratio=0.9762915248297731, size_reduction=0.8384834538680692
+New best model saved with C=0.8703096309452556, ratio=0.9913187334006993, size_reduction=0.8779311856234933
+New best model saved with C=0.937210609159594, ratio=1.0143481996193613, size_reduction=0.9239535393381547
+New best model saved with C=0.9615745978122949, ratio=1.0072692584521354, size_reduction=0.9546351084812623
+New best model saved with C=0.9652407595777144, ratio=1.0071789585989277, size_reduction=0.9583607275914968
+New best model saved with C=0.9841361909241163, ratio=1.006412693676993, size_reduction=0.9778654394039009
+New best model saved with C=0.9898298486688634, ratio=1.0003529566945788, size_reduction=0.9894806048652203
+New best model saved with C=0.9940220601832427, ratio=1.0028128809675296, size_reduction=0.9912338373876836
+Loaded test graph with 48870 nodes and 149460 edges.
+Train graph has 46977 nodes and 119568 edges.
+Validation graph has 29697 nodes and 29892 edges.
+Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Training GNN
+New best model saved with C=0.36942859505179637, ratio=1.0043198558882083, size_reduction=0.3678395810715882
+New best model saved with C=0.6681138220526418, ratio=1.0005413949621267, size_reduction=0.6677523043191349
+New best model saved with C=0.7960974789354124, ratio=1.0054109543228988, size_reduction=0.791813014879622
+New best model saved with C=0.8721582353366295, ratio=1.0057287402771085, size_reduction=0.8671903271813867
+New best model saved with C=0.9327504692900013, ratio=1.007908607347757, size_reduction=0.9254315941843881
+New best model saved with C=0.9849172900950653, ratio=1.0208379564203487, size_reduction=0.9648125678523533
+New best model saved with C=0.9967555207162846, ratio=1.0148371065602275, size_reduction=0.982182770291845
+New best model saved with C=1.0145773216710319, ratio=1.021513970597541, size_reduction=0.9932094429188751
+New best model saved with C=1.0184691893364939, ratio=1.021557107023817, size_reduction=0.9969772441833238
+New best model saved with C=1.02160795101445, ratio=1.0235034488122376, size_reduction=0.9981480298869659
+New best model saved with C=1.0229540820579064, ratio=1.024218630252867, size_reduction=0.9987653532579773
+Loaded test graph with 47546 nodes and 140566 edges.
+Train graph has 43007 nodes and 112452 edges.
+Validation graph has 20910 nodes and 28114 edges.
+Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Training GNN
+New best model saved with C=0.5677364493563878, ratio=0.9845022973859994, size_reduction=0.576673564768526
+New best model saved with C=0.7384214859629346, ratio=1.0142211563237074, size_reduction=0.7280675238914596
+New best model saved with C=0.8378746803472242, ratio=1.025571390530882, size_reduction=0.8169832817913363
+New best model saved with C=0.889712536791844, ratio=1.0074475940551022, size_reduction=0.8831353035552352
+New best model saved with C=0.9486401193571534, ratio=1.0197756795858999, size_reduction=0.9302439137814774
+New best model saved with C=0.9522345631755914, ratio=0.9939988315168121, size_reduction=0.9579835840677099
+New best model saved with C=1.0314602017222398, ratio=1.0492704992186856, size_reduction=0.9830260190201595
+New best model saved with C=1.0337956368887815, ratio=1.0385771439574816, size_reduction=0.9953960983095775
+Loaded test graph with 55827 nodes and 134229 edges.
+Train graph has 51894 nodes and 107383 edges.
+Validation graph has 27523 nodes and 26846 edges.
+Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Training GNN
+New best model saved with C=0.468439733607552, ratio=0.9974646725957204, size_reduction=0.46963040043164916
+New best model saved with C=0.6444417407094409, ratio=1.0096506866037414, size_reduction=0.6382818822985317
+New best model saved with C=0.7501916699746775, ratio=1.0085869199115498, size_reduction=0.7438046787682584
+New best model saved with C=0.8459307045052556, ratio=1.0089110335224596, size_reduction=0.8384591667630169
+New best model saved with C=0.8981787343676084, ratio=1.0029498255174547, size_reduction=0.8955370563070875
+New best model saved with C=0.9503818585208108, ratio=1.0132746320563548, size_reduction=0.9379311673796585
+New best model saved with C=1.0048973332465752, ratio=1.0431923465461956, size_reduction=0.9632905538212511
+New best model saved with C=1.0068983476587836, ratio=1.0146410123384386, size_reduction=0.9923690600069373
+New best model saved with C=1.0231322780662913, ratio=1.0273888124377817, size_reduction=0.9958569391451806
+Loaded test graph with 63004 nodes and 41994 edges.
+Train graph has 52698 nodes and 33595 edges.
+Validation graph has 15598 nodes and 8399 edges.
+Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Training GNN
+New best model saved with C=0.7045431298127108, ratio=1.0007550904277691, size_reduction=0.7040115374397511
+New best model saved with C=0.9988704510304292, ratio=1.0015121107403404, size_reduction=0.9973623287411287
+Loaded test graph with 185193 nodes and 179257 edges.
+Train graph has 156282 nodes and 143405 edges.
+Validation graph has 50823 nodes and 35852 edges.
+Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Training GNN
+New best model saved with C=0.6624017595707882, ratio=0.9816276637294296, size_reduction=0.6747994010826583
+New best model saved with C=0.9180742099807433, ratio=1.0316477468180254, size_reduction=0.8899105463201137
+New best model saved with C=0.9416109201898826, ratio=1.009022413649901, size_reduction=0.9331912824253593
+New best model saved with C=0.9558789971231961, ratio=1.0017346268199623, size_reduction=0.954223774970886
+New best model saved with C=0.9691382021684468, ratio=0.9875840751112667, size_reduction=0.9813222252082774
+New best model saved with C=0.9749685756971438, ratio=0.986801454245253, size_reduction=0.9880088557863349
+New best model saved with C=0.9902458649742013, ratio=0.9999586743034434, size_reduction=0.9902867892655585
+New best model saved with C=1.047744611394692, ratio=1.0544987690572913, size_reduction=0.9935949117620712
+Loaded test graph with 147604 nodes and 110952 edges.
+Train graph has 122456 nodes and 88761 edges.
+Validation graph has 36009 nodes and 22191 edges.
+Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Training GNN
+New best model saved with C=0.7076923161472997, ratio=1.0024774748242706, size_reduction=0.7059433592474031
+New best model saved with C=0.940953088284565, ratio=1.05244970798183, size_reduction=0.8940599072319854
+New best model saved with C=0.9428959261222754, ratio=1.0026856516424036, size_reduction=0.9403704187626576
+New best model saved with C=1.007861545345815, ratio=1.0496036381615765, size_reduction=0.9602306134448292
+New best model saved with C=1.0391129451650698, ratio=1.053366458440333, size_reduction=0.9864686091330763
+New best model saved with C=1.04647333140683, ratio=1.0556456625704722, size_reduction=0.9913111648265499
+Loaded test graph with 4002 nodes and 61764 edges.
+Selected 500 nodes out of 4002 nodes.
+Dataset: Facebook
+ratio: 0.9557269320223979 Size Reduction: 0.8750624687656172 Time Ratio: 1.0227608752654698
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Facebook             327.5829  ...     15.604723                 500
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization/Facebook/results/Facebook.pkl
+Loaded test graph with 6358 nodes and 70534 edges.
+Selected 500 nodes out of 6358 nodes.
+Dataset: Wiki
+ratio: 1.003561183579941 Size Reduction: 0.9213589178987103 Time Ratio: 0.9866380075769089
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    Wiki             436.6245  ...     22.874047                 500
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization/Wiki/results/Wiki.pkl
+Loaded test graph with 53511 nodes and 348742 edges.
+Selected 500 nodes out of 53511 nodes.
+Dataset: Deezer
+ratio: 1.0170661406203823 Size Reduction: 0.9906561267776719 Time Ratio: 1.3882211089381897
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Deezer             242.6149  ...     10.918008                 500
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization/Deezer/results/Deezer.pkl
+Loaded test graph with 67640 nodes and 327988 edges.
+Selected 500 nodes out of 67640 nodes.
+Dataset: Slashdot
+ratio: 0.9985838118034827 Size Reduction: 0.9926079243051449 Time Ratio: 1.0324559063482333
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Slashdot             950.7211  ...     56.772582                 500
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization/Slashdot/results/Slashdot.pkl
+Loaded test graph with 80712 nodes and 1208067 edges.
+Selected 1000 nodes out of 80712 nodes.
+Dataset: Twitter
+ratio: 0.9815466561260653 Size Reduction: 0.9876102686093765 Time Ratio: 1.0949813220559623
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Twitter            4557.8677  ...    343.621647                1000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization/Twitter/results/Twitter.pkl
+Loaded test graph with 315305 nodes and 1007872 edges.
+Selected 5000 nodes out of 315305 nodes.
+Dataset: DBLP
+ratio: 0.9880243859463651 Size Reduction: 0.9841423383707838 Time Ratio: 2.4182851176561857
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    DBLP             354.7125  ...     25.954039                5000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization/DBLP/results/DBLP.pkl
