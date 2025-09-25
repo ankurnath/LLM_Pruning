@@ -228,7 +228,7 @@ def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, e
 # -----------------------------
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--problem", type=str, default="Influence Maximization", help="Problem name")
+    parser.add_argument("--problem", type=str, default="Maximum Coverage Weighted", help="Problem name")
     parser.add_argument("--budget", type=int, default=100, help="Budget for the problem")
     parser.add_argument("--dataset", type=str, default='HK', help="Dataset to use")
     parser.add_argument("--depth", type=int, default=3, help="Number of feature search depth")

@@ -383,14 +383,6 @@ def generate_train_features(problem,features,definitions,train_graph,test_graph,
         )
         additional_description = "If the feature involves weight, use the existing `'weight'` attribute directly without recomputing it from other functions"
     
-    elif problem == "Maximum Cut Negative":
-
-        graph_description = (
-            f"The input is a weighted NetworkX graph `G` where each edge has an attribute `'weight'`, "
-            f"and an integer variable `budget` is provided.\n"
-        )
-        additional_description = "If the feature involves weight, use the existing `'weight'` attribute directly without recomputing it from other functions"
-    
     else:
         graph_description = (
             f"The input is a NetworkX graph `G` where each node has no attribute `'weight'`, "

@@ -227,7 +227,7 @@ def main():
 
         probs *= mask
     topk_vals, topk_idx = torch.topk(probs, k)
-    indices = topk_idx.cpu().numpy()
+    indices = topk_idx.cpu().tolist()
 
     # emb = model.conv1(test_data.x, test_data.edge_index)
     # probs = probs
@@ -243,10 +243,14 @@ def main():
     obj_val, number_of_queries, solution = heuristic(test_graph, budget=budget)
     time_taken = time.time() - start
 
+    # print(solution)
+
     start = time.time()
     obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(
         test_graph, budget=budget, ground_set=indices
     )
+
+    # print(solution_pruned)
     time_taken_pruned = time.time() - start
 
     ratio = obj_val_pruned / obj_val if obj_val != 0 else 0
