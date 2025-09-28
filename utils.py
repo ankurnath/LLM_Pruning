@@ -256,13 +256,13 @@ def generate_llm_prompt(
     ):
 
     if problem.endswith('Weighted'):
-        few_shot_examples = "Degree to weight ratio must be included." 
+        few_shot_examples = "(Degree to weight ratio must be included)" 
     else:
-        few_shot_examples = "Degree must be included."
+        few_shot_examples = "(Degree must be included)"
 
     base_prompt = (
         f"You are an expert in graph neural networks and combinatorial optimization.\n\n"
-        f"For the {problem} problem ({problem_definition}), propose up to ten node-level features. {few_shot_examples}. "
+        f"For the {problem} problem. The defination of the problem is ({problem_definition}). Propose node-level features {few_shot_examples}. "
         f"for a GNN binary classifier that predicts nodes likely to be in the optimal solution.\n\n"
         f"The heuristic can only select nodes from the reduced candidate set provided by the GNN. "
         f"The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.\n\n"
@@ -274,7 +274,7 @@ def generate_llm_prompt(
             f"Feedback from previous iterations:\n{explainer_feedback}\n\n"
             "Refinement rules:\n"
             "1) Keep high-importance features.\n"
-            "2) Adjust or normalize medium-importance features.\n"
+            "2) Do not propose features that are too similar to existing or previously failed ones.\n"
             "3) Remove or replace low-importance features.\n"
             "4) Add new features inspired by important patterns.\n"
             "5) Ensure all features are distinct and non-redundant.\n\n"
@@ -363,90 +363,236 @@ def clean_code_block(response):
     return code_match.group(1).strip() if code_match else response
 
 
-def generate_train_features(problem,features,definitions,train_graph,test_graph, budget = 100, timeout=5):
+
+def generate_train_features(problem, features, definitions, train_graph, test_graph, budget=100, timeout=5, retries=0):
+    """
+    Generate feature matrices by LLM code synthesis with retry-on-error.
+    If executing a generated code block raises an error, the error (with traceback)
+    is fed back into the next LLM prompt to request a fixed version.
+
+    Args:
+        problem (str): Problem name; if it ends with 'Weighted' nodes have 'weight'.
+        features (List[str]): Feature names.
+        definitions (Dict[str, str]): {feature_name: natural-language definition}.
+        train_graph (nx.Graph): Graph to compute training features on.
+        test_graph (nx.Graph): Graph used to preflight the feature code.
+        budget (int): Unused in extract_feature(G); kept for compatibility.
+        timeout (int): Seconds before code execution is aborted.
+        retries (int): Number of repair attempts after the first try (total attempts = 1 + retries).
+
+    Returns:
+        (torch.Tensor, Dict[str,str]): Tensor of shape [|V|, d] and dict of {feature_name: working_code}.
+    """
+    import signal, time, traceback
+    import numpy as np
+    import torch
+    from tqdm import tqdm
+
     class TimeoutException(Exception):
         pass
 
     def handler(signum, frame):
         raise TimeoutException
-    
+
+    # POSIX-only timeout; okay on Linux/macOS.
     signal.signal(signal.SIGALRM, handler)
 
     train_X = []
     codes = {}
-    
 
     if problem.endswith('Weighted'):
         graph_description = (
-            f"The input is a weighted NetworkX graph `G` where each node has an attribute `'weight'`, "
-            f"and an integer variable `budget` is provided.\n"
+            "The input is a weighted NetworkX graph `G` where each node has an attribute 'weight', "
+            "and an integer variable `budget` is provided.\n"
         )
-        additional_description = "If the feature involves weight, use the existing `'weight'` attribute directly without recomputing it from other functions"
-    
+        additional_description = (
+            "If the feature involves weight, use the existing 'weight' attribute directly without recomputing it.\n"
+        )
     else:
         graph_description = (
-            f"The input is a NetworkX graph `G` where each node has no attribute `'weight'`, "
-            f"and an integer variable `budget` is provided.\n"
+            "The input is a NetworkX graph `G` where nodes do NOT have a 'weight' attribute, "
+            "and an integer variable `budget` is provided.\n"
         )
-        additional_description = ''
+        additional_description = ""
 
-    # Add tqdm to loop
-    for idx, feature in enumerate(tqdm(features, desc="Extracting features", unit="feature")):
-        prompt_code = (
+    base_requirements = (
+        "Write Python code for a function `extract_feature(G)` that computes this feature for ALL nodes in `G`.\n"
+        "The function must return a NumPy array with one value per node, ordered to align with the iteration order of `G.nodes()`.\n"
+        "Keep the implementation efficient; avoid expensive computations.\n"
+        "DO NOT INCLUDE ANY EXPLANATIONS OR COMMENTS.\n"
+    )
+
+    failures_features = "These features failed:\n"
+
+    for feature in tqdm(features, desc="Extracting features", unit="feature"):
+        base_prompt = (
             f"{graph_description}"
             f"Feature name: '{feature}'\n"
             f"Feature definition: '{definitions[feature]}'\n"
-            # f"Write Python code for a function `extract_feature(G, budget)` that computes this feature for all nodes in `G`. "
-            f"Write Python code for a function `extract_feature(G)` that computes this feature for all nodes in `G`. "
-            f"{additional_description}"
-            # f"If the budget is relevant to the computation, incorporate it. "
-            f"The function should return a NumPy array with the computed feature values, ordered to align with the order of `G.nodes()`.\n"
-            f"Ensure the code is efficient and avoids expensive computations.\n"
-            f"DO NOT INCLUDE ANY EXPLANATIONS OR COMMENTS.\n"
+            f"{additional_description}{base_requirements}"
         )
 
+        prev_code = None
+        last_error_tb = None
+        attempts = retries + 1  # initial try + retries
+
+        for attempt in range(1, attempts + 1):
+            if attempt == 1:
+                prompt = base_prompt
+            else:
+                # Feed the error and the previous code back to the LLM for a fix.
+                prompt = (
+                    f"{graph_description}"
+                    f"Feature name: '{feature}'\n"
+                    f"Feature definition: '{definitions[feature]}'\n"
+                    f"{additional_description}"
+                    "The previous attempt failed with the following error traceback:\n"
+                    f"{last_error_tb}\n"
+                    "Here is the code that failed:\n"
+                    f"```\n{prev_code}\n```\n"
+                    "Rewrite `extract_feature(G)` to FIX the error.\n"
+                    f"{base_requirements}"
+                )
+
+            start = time.time()
+            code_response = get_response(client, prompt)
+            code = clean_code_block(code_response)
+            prev_code = code
+            end = time.time()
+
+            try:
+                signal.alarm(timeout)  # Set execution timeout
+                namespace = {}
+                exec(code, namespace)  # Define extract_feature
+
+                # Preflight on test_graph to catch obvious mistakes quickly
+                _ = namespace["extract_feature"](G=test_graph)
+
+                # Compute on train_graph
+                feature_values = namespace["extract_feature"](G=train_graph)
+
+                # Validate output shape/type
+                if not isinstance(feature_values, np.ndarray):
+                    raise TypeError("extract_feature must return a NumPy array.")
+                if feature_values.shape[0] != train_graph.number_of_nodes():
+                    raise ValueError(
+                        f"Output length {feature_values.shape[0]} != number of nodes {train_graph.number_of_nodes()}."
+                    )
+
+                # Success: store and break
+                train_X.append(feature_values)
+                codes[feature] = code
+                break
+
+            except (TimeoutException, Exception) as e:
+                last_error_tb = traceback.format_exc()
+                if attempt < attempts:
+                    # Try again with error feedback
+                    continue
+                else:
+                    # Exhausted attempts; skip this feature
+                    print(f"⚠️ Skipping feature '{feature}' after {attempt} attempts. Last error: {e}")
+                    print("*" * 30)
+                    print(prev_code)
+                    print("*" * 30)
+
+                    failures_features += f"- {feature}: {e}\n"
+            finally:
+                signal.alarm(0)  # Always clear the alarm
+
+    if len(train_X) == 0:
+        X = torch.empty((train_graph.number_of_nodes(), 0), dtype=torch.float)
+    else:
+        X = torch.tensor(np.stack(train_X, axis=1), dtype=torch.float)
+
+    return X, codes,failures_features
 
 
-        start = time.time()
-        code_response = get_response(client,prompt_code)
-        code = clean_code_block(code_response)
 
-        # print(f"Code for feature '{feature}':\n{code}\n")
+# def generate_train_features(problem,features,definitions,train_graph,test_graph, budget = 100, timeout=5):
+#     class TimeoutException(Exception):
+#         pass
+
+#     def handler(signum, frame):
+#         raise TimeoutException
+    
+#     signal.signal(signal.SIGALRM, handler)
+
+#     train_X = []
+#     codes = {}
+    
+
+#     if problem.endswith('Weighted'):
+#         graph_description = (
+#             f"The input is a weighted NetworkX graph `G` where each node has an attribute `'weight'`, "
+#             f"and an integer variable `budget` is provided.\n"
+#         )
+#         additional_description = "If the feature involves weight, use the existing `'weight'` attribute directly without recomputing it from other functions"
+    
+#     else:
+#         graph_description = (
+#             f"The input is a NetworkX graph `G` where each node has no attribute `'weight'`, "
+#             f"and an integer variable `budget` is provided.\n"
+#         )
+#         additional_description = ''
+
+#     # Add tqdm to loop
+#     for idx, feature in enumerate(tqdm(features, desc="Extracting features", unit="feature")):
+#         prompt_code = (
+#             f"{graph_description}"
+#             f"Feature name: '{feature}'\n"
+#             f"Feature definition: '{definitions[feature]}'\n"
+#             # f"Write Python code for a function `extract_feature(G, budget)` that computes this feature for all nodes in `G`. "
+#             f"Write Python code for a function `extract_feature(G)` that computes this feature for all nodes in `G`. "
+#             f"{additional_description}"
+#             # f"If the budget is relevant to the computation, incorporate it. "
+#             f"The function should return a NumPy array with the computed feature values, ordered to align with the order of `G.nodes()`.\n"
+#             f"Ensure the code is efficient and avoids expensive computations.\n"
+#             f"DO NOT INCLUDE ANY EXPLANATIONS OR COMMENTS.\n"
+#         )
+
+
+
+#         start = time.time()
+#         code_response = get_response(client,prompt_code)
+#         code = clean_code_block(code_response)
+
+#         # print(f"Code for feature '{feature}':\n{code}\n")
 
         
-        end = time.time()
-        # print(f"Code for feature '{feature}' generated in {end - start:.2f} seconds")
+#         end = time.time()
+#         # print(f"Code for feature '{feature}' generated in {end - start:.2f} seconds")
 
-        try:
-            # print(f"Extracting feature '{feature}'")
-            signal.alarm(timeout)  # Set timeout
+#         try:
+#             # print(f"Extracting feature '{feature}'")
+#             signal.alarm(timeout)  # Set timeout
 
-            namespace = {}
-            exec(code, namespace)  # Execute code in namespace
+#             namespace = {}
+#             exec(code, namespace)  # Execute code in namespace
 
-            namespace["extract_feature"](G=test_graph)
-            feature_values = namespace["extract_feature"](G=train_graph)
+#             namespace["extract_feature"](G=test_graph)
+#             feature_values = namespace["extract_feature"](G=train_graph)
 
 
 
-            if  isinstance(feature_values, np.ndarray) and feature_values.shape[0] == train_graph.number_of_nodes():
-                # train_X[feature] = feature_values
-                train_X.append(feature_values)
+#             if  isinstance(feature_values, np.ndarray) and feature_values.shape[0] == train_graph.number_of_nodes():
+#                 # train_X[feature] = feature_values
+#                 train_X.append(feature_values)
 
-                codes[feature] = code
-                # codes.append(code)
-        except (TimeoutException, Exception) as e:
+#                 codes[feature] = code
+#                 # codes.append(code)
+#         except (TimeoutException, Exception) as e:
 
             
-            print(f"⚠️ Skipping feature '{feature}' due to error: {e}")
+#             print(f"⚠️ Skipping feature '{feature}' due to error: {e}")
 
-            print('*'*30)
-            print(code)
-            print('*'*30)
-        finally:
-            signal.alarm(0)  # Reset alarm
+#             print('*'*30)
+#             print(code)
+#             print('*'*30)
+#         finally:
+#             signal.alarm(0)  # Reset alarm
 
-    return torch.tensor(np.array(train_X).T, dtype=torch.float),codes
+#     return torch.tensor(np.array(train_X).T, dtype=torch.float),codes
 
 class GCN(torch.nn.Module):
     def __init__(self, input_channels, hidden_channels, out_channels):
@@ -463,7 +609,7 @@ def train_test_evaluate_gnn(
                             dataset,
                             train_features, 
                             train_graph,
-                            test_graph,
+                            val_graph,
                             codes,
                             heuristic,
                             budget=100,
@@ -522,7 +668,7 @@ def train_test_evaluate_gnn(
 
     print('Training GNN')
     model.train()
-    for epoch in tqdm(range(1, 1000)):
+    for epoch in tqdm(range(1000), desc="Training epochs", unit="epoch"):
         optimizer.zero_grad()
         mask = torch.cat([train_mask, torch.randint(0, train_mask.size(0), (train_mask.size(0),))], dim=0)
         out  = model(train_data.x, train_data.edge_index)        # [N, num_classes]
@@ -530,26 +676,25 @@ def train_test_evaluate_gnn(
         # loss = criterion(out, train_data.y)                # full-graph loss
         loss.backward()
         optimizer.step()
+        
 
 
-    test_data = from_networkx(test_graph)
+    val_data = from_networkx(val_graph)
 
 
-    
-
-    test_X = []
+    val_X = []
     for feature in codes:
         namespace = {}
         exec(codes[feature], namespace)  # Execute code in namespace
-        feature_values = namespace["extract_feature"](G=test_graph)
-        test_X.append(feature_values)  # Assuming budget is relevant
-    test_data.x = torch.tensor(np.array(test_X).T, dtype=torch.float).to(device)
-    test_data = test_data.to(device)
+        feature_values = namespace["extract_feature"](G=val_graph)
+        val_X.append(feature_values)  # Assuming budget is relevant
+    val_data.x = torch.tensor(np.array(val_X).T, dtype=torch.float).to(device)
+    val_data  = val_data.to(device)
 
-    test_data.y = torch.zeros(test_graph.number_of_nodes(), dtype=torch.long).to(device)
+    val_data.y = torch.zeros(val_graph.number_of_nodes(), dtype=torch.long).to(device)
 
 
-    y_pred = torch.argmax(model(test_data.x, test_data.edge_index),axis=1).cpu().numpy()
+    y_pred = torch.argmax(model(val_data.x, val_data.edge_index),axis=1).cpu().numpy()
 
     indices = np.where(y_pred == 1)[0]
 
@@ -559,18 +704,18 @@ def train_test_evaluate_gnn(
 
     try:
         obj_val, number_of_queries, solution = load_from_pickle(
-            f'{save_folder}/test'
+            f'{save_folder}/val'
         )
     except:
         obj_val, number_of_queries, solution = heuristic(
-            test_graph, budget=budget, ground_set=None
+            val_graph, budget=budget, ground_set=None
         )
-        save_as_pickle((obj_val, number_of_queries, solution), f'{save_folder}/test')
+        save_as_pickle((obj_val, number_of_queries, solution), f'{save_folder}/val')
 
-    test_data.y[solution] = 1
+    val_data.y[solution] = 1
 
     print('Objective value:', obj_val)
-    obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(test_graph, budget=budget, ground_set=indices)
+    obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(val_graph, budget=budget, ground_set=indices)
     print('Objective value pruned:', obj_val_pruned)
 
 
@@ -579,7 +724,7 @@ def train_test_evaluate_gnn(
     print('queries ratio',number_of_queries_pruned/number_of_queries)
 
     ratio = obj_val_pruned / obj_val
-    size_reduction = 1 - len(indices) / test_graph.number_of_nodes()
+    size_reduction = 1 - len(indices) / val_graph.number_of_nodes()
 
     print('Explaining GNN predictions')
 
@@ -603,9 +748,9 @@ def train_test_evaluate_gnn(
 
     for node_index in sampled_indices:
         explanation = explainer(
-            test_data.x, 
-            test_data.edge_index, 
-            target=test_data.y,
+            val_data.x, 
+            val_data.edge_index, 
+            target=val_data.y,
             index=int(node_index)
         )
         feature_importances.append(

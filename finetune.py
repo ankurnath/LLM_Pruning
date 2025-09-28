@@ -113,6 +113,9 @@ def main():
     print('Training GNN')
     model.train()
 
+    save_folder = f'Presolved/{problem}/{dataset}'
+    os.makedirs(save_folder, exist_ok=True)
+
     obj_val,number_of_queries,solution = heuristic(train_graph, budget=budget, ground_set=None)
 
     mapping = dict(zip(train_graph.nodes(), range(train_graph.number_of_nodes())))
@@ -143,7 +146,7 @@ def main():
 
 
     
-
+    objective_value_validation,_,_= heuristic(val_graph, budget=budget, ground_set=None)
     
     for epoch in range(10000):
         optimizer.zero_grad()
@@ -156,30 +159,34 @@ def main():
 
         if (epoch+1) % 100 == 0:
             # print(f'Epoch: {epoch:03d})')
+
+            model.eval()
+
+            with torch.no_grad():
                   
-            obj_val,number_of_queries,solution = heuristic(val_graph, budget=budget, ground_set=None)
+                
 
-            y_pred = torch.argmax(model(val_data.x, val_data.edge_index), axis=1).cpu().numpy()
-            indices = np.where(y_pred == 1)[0]
-            if indices.size == 0:
-                continue
+                y_pred = torch.argmax(model(val_data.x, val_data.edge_index), axis=1).cpu().numpy()
+                indices = np.where(y_pred == 1)[0]
+                if indices.size == 0:
+                    continue
 
-            obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(
-                val_graph, budget=budget, ground_set=indices
-            )
-            time_taken_pruned = time.time() - start
+                obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(
+                    val_graph, budget=budget, ground_set=indices
+                )
+                time_taken_pruned = time.time() - start
 
-            ratio = obj_val_pruned / obj_val if obj_val != 0 else 0
-            size_reduction = 1 - len(indices) / train_graph.number_of_nodes()
+                ratio = obj_val_pruned / objective_value_validation if objective_value_validation != 0 else 0
+                size_reduction = 1 - len(indices) / train_graph.number_of_nodes()
 
-            C = ratio * size_reduction
+                C = ratio * size_reduction
 
-            if C > best_C:
-                best_C = C
-                torch.save(model.state_dict(), finetune_model_save_path)
-                print(f'New best model saved with C={best_C}, ratio={ratio}, size_reduction={size_reduction}')
+                if C > best_C:
+                    best_C = C
+                    torch.save(model.state_dict(), finetune_model_save_path)
+                    print(f'New best model saved with C={best_C}, ratio={ratio}, size_reduction={size_reduction}')
 
-
+            model.train()
     
 
     

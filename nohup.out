@@ -1,3981 +1,268 @@
+Loaded test graph with 3847 nodes and 26470 edges.
+Train graph has 3771 nodes and 21176 edges.
+Validation graph has 2859 nodes and 5294 edges.
+Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size'])
+Training GNN
+New best model saved with C=0.24184566428003185, ratio=1.0, size_reduction=0.24184566428003185
+New best model saved with C=0.24211084592946164, ratio=1.0, size_reduction=0.24211084592946164
+New best model saved with C=0.24237602757889154, ratio=1.0, size_reduction=0.24237602757889154
+New best model saved with C=0.24264120922832144, ratio=1.0, size_reduction=0.24264120922832144
+New best model saved with C=0.24290639087775123, ratio=1.0, size_reduction=0.24290639087775123
+New best model saved with C=0.24317157252718113, ratio=1.0, size_reduction=0.24317157252718113
+New best model saved with C=0.24476266242376032, ratio=1.0, size_reduction=0.24476266242376032
+New best model saved with C=0.2500662954123575, ratio=1.0, size_reduction=0.2500662954123575
+New best model saved with C=0.25165738530893667, ratio=1.0, size_reduction=0.25165738530893667
+New best model saved with C=0.25192256695836646, ratio=1.0, size_reduction=0.25192256695836646
+New best model saved with C=0.25245293025722615, ratio=1.0, size_reduction=0.25245293025722615
+New best model saved with C=0.25351365685494565, ratio=1.0, size_reduction=0.25351365685494565
+New best model saved with C=0.25510474675152484, ratio=1.0, size_reduction=0.25510474675152484
+New best model saved with C=0.2553699284009546, ratio=1.0, size_reduction=0.2553699284009546
+New best model saved with C=0.2561654733492442, ratio=1.0, size_reduction=0.2561654733492442
+New best model saved with C=0.2572261999469637, ratio=1.0, size_reduction=0.2572261999469637
+New best model saved with C=0.2606735613895519, ratio=1.0, size_reduction=0.2606735613895519
+New best model saved with C=0.26306019623442056, ratio=1.0, size_reduction=0.26306019623442056
+New best model saved with C=0.26518164942985945, ratio=1.0, size_reduction=0.26518164942985945
+New best model saved with C=0.26571201272871914, ratio=1.0, size_reduction=0.26571201272871914
+New best model saved with C=0.267833465924158, ratio=1.0, size_reduction=0.267833465924158
+New best model saved with C=0.27419782551047467, ratio=1.0, size_reduction=0.27419782551047467
+New best model saved with C=0.27446300715990457, ratio=1.0, size_reduction=0.27446300715990457
+New best model saved with C=0.27525855210819417, ratio=1.0, size_reduction=0.27525855210819417
+New best model saved with C=0.27817555025192253, ratio=1.0, size_reduction=0.27817555025192253
+New best model saved with C=0.28586581808538847, ratio=1.0, size_reduction=0.28586581808538847
+New best model saved with C=0.28957836117740654, ratio=1.0, size_reduction=0.28957836117740654
+New best model saved with C=0.29037390612569614, ratio=1.0, size_reduction=0.29037390612569614
+New best model saved with C=0.2916998143728454, ratio=1.0, size_reduction=0.2916998143728454
+New best model saved with C=0.292495359321135, ratio=1.0, size_reduction=0.292495359321135
+New best model saved with C=0.2930257226199947, ratio=1.0, size_reduction=0.2930257226199947
+New best model saved with C=0.2970034473614426, ratio=1.0, size_reduction=0.2970034473614426
+New best model saved with C=0.29992044550517105, ratio=1.0, size_reduction=0.29992044550517105
+New best model saved with C=0.30204189870060993, ratio=1.0, size_reduction=0.30204189870060993
+New best model saved with C=0.3086714399363564, ratio=1.0, size_reduction=0.3086714399363564
+New best model saved with C=0.3092018032352162, ratio=1.0, size_reduction=0.3092018032352162
+New best model saved with C=0.3200742508618404, ratio=1.0, size_reduction=0.3200742508618404
+New best model saved with C=0.32325643065499865, ratio=1.0, size_reduction=0.32325643065499865
+New best model saved with C=0.32458233890214794, ratio=1.0, size_reduction=0.32458233890214794
+New best model saved with C=0.3298859718907452, ratio=1.0, size_reduction=0.3298859718907452
+New best model saved with C=0.3304163351896049, ratio=1.0, size_reduction=0.3304163351896049
+New best model saved with C=0.33704587642535133, ratio=1.0, size_reduction=0.33704587642535133
+New best model saved with C=0.3386369663219305, ratio=1.0, size_reduction=0.3386369663219305
 Loaded test graph with 4002 nodes and 61764 edges.
-Selected 1000 nodes out of 4002 nodes.
-    Dataset  Feature Extraction Time  TimeToPrune
-0  Facebook                 0.005929     0.209994
-Data has been saved to /home/grads/a/anath/Results/Maximum Coverage/Facebook/LLM2Prune
-Loaded test graph with 6358 nodes and 70534 edges.
-Selected 1000 nodes out of 6358 nodes.
-  Dataset  Feature Extraction Time  TimeToPrune
-0    Wiki                 0.007095     0.207298
-Data has been saved to /home/grads/a/anath/Results/Maximum Coverage/Wiki/LLM2Prune
-Loaded test graph with 53511 nodes and 348742 edges.
-Selected 1000 nodes out of 53511 nodes.
-  Dataset  Feature Extraction Time  TimeToPrune
-0  Deezer                 0.050236     0.245602
-Data has been saved to /home/grads/a/anath/Results/Maximum Coverage/Deezer/LLM2Prune
-Loaded test graph with 67640 nodes and 327988 edges.
-Selected 1000 nodes out of 67640 nodes.
-    Dataset  Feature Extraction Time  TimeToPrune
-0  Slashdot                  0.05551      0.24755
-Data has been saved to /home/grads/a/anath/Results/Maximum Coverage/Slashdot/LLM2Prune
-Loaded test graph with 80712 nodes and 1208067 edges.
-Selected 5000 nodes out of 80712 nodes.
-   Dataset  Feature Extraction Time  TimeToPrune
-0  Twitter                 0.123916     0.318754
-Data has been saved to /home/grads/a/anath/Results/Maximum Coverage/Twitter/LLM2Prune
-Loaded test graph with 315305 nodes and 1007872 edges.
-Selected 5000 nodes out of 315305 nodes.
-  Dataset  Feature Extraction Time  TimeToPrune
-0    DBLP                 0.250868     0.444701
-Data has been saved to /home/grads/a/anath/Results/Maximum Coverage/DBLP/LLM2Prune
-Loaded test graph with 1098104 nodes and 2808367 edges.
-Selected 5000 nodes out of 1098104 nodes.
-   Dataset  Feature Extraction Time  TimeToPrune
-0  YouTube                 0.867974      1.06242
-Data has been saved to /home/grads/a/anath/Results/Maximum Coverage/YouTube/LLM2Prune
-Loaded test graph with 1694318 nodes and 10984346 edges.
-Selected 5000 nodes out of 1694318 nodes.
-   Dataset  Feature Extraction Time  TimeToPrune
-0  Skitter                 2.066722     2.291898
-Data has been saved to /home/grads/a/anath/Results/Maximum Coverage/Skitter/LLM2Prune
-Loaded test graph with 4002 nodes and 61764 edges.
-Selected 1000 nodes out of 4002 nodes.
-    Dataset  Feature Extraction Time  TimeToPrune
-0  Facebook                  0.01139      0.20778
-Data has been saved to /home/grads/a/anath/Results/Maximum Cut/Facebook/LLM2Prune
-Loaded test graph with 6358 nodes and 70534 edges.
-Selected 1000 nodes out of 6358 nodes.
-  Dataset  Feature Extraction Time  TimeToPrune
-0    Wiki                  0.01534     0.215113
-Data has been saved to /home/grads/a/anath/Results/Maximum Cut/Wiki/LLM2Prune
-Loaded test graph with 53511 nodes and 348742 edges.
-Selected 1000 nodes out of 53511 nodes.
-  Dataset  Feature Extraction Time  TimeToPrune
-0  Deezer                 0.130704     0.328666
-Data has been saved to /home/grads/a/anath/Results/Maximum Cut/Deezer/LLM2Prune
-Loaded test graph with 67640 nodes and 327988 edges.
-Selected 1000 nodes out of 67640 nodes.
-    Dataset  Feature Extraction Time  TimeToPrune
-0  Slashdot                 0.156348     0.352323
-Data has been saved to /home/grads/a/anath/Results/Maximum Cut/Slashdot/LLM2Prune
-Loaded test graph with 80712 nodes and 1208067 edges.
-Selected 5000 nodes out of 80712 nodes.
-   Dataset  Feature Extraction Time  TimeToPrune
-0  Twitter                 0.350852     0.544985
-Data has been saved to /home/grads/a/anath/Results/Maximum Cut/Twitter/LLM2Prune
-Loaded test graph with 315305 nodes and 1007872 edges.
-Selected 5000 nodes out of 315305 nodes.
-  Dataset  Feature Extraction Time  TimeToPrune
-0    DBLP                 0.817268     1.019152
-Data has been saved to /home/grads/a/anath/Results/Maximum Cut/DBLP/LLM2Prune
-Loaded test graph with 1098104 nodes and 2808367 edges.
-Selected 5000 nodes out of 1098104 nodes.
-   Dataset  Feature Extraction Time  TimeToPrune
-0  YouTube                 3.193445      3.39339
-Data has been saved to /home/grads/a/anath/Results/Maximum Cut/YouTube/LLM2Prune
-Loaded test graph with 1694318 nodes and 10984346 edges.
-Selected 5000 nodes out of 1694318 nodes.
-   Dataset  Feature Extraction Time  TimeToPrune
-0  Skitter                  8.63517     8.858638
-Data has been saved to /home/grads/a/anath/Results/Maximum Cut/Skitter/LLM2Prune
-Loaded test graph with 4002 nodes and 61764 edges.
-Selected 1000 nodes out of 4002 nodes.
-    Dataset  Feature Extraction Time  TimeToPrune
-0  Facebook                 0.089599     0.284101
-Data has been saved to /home/grads/a/anath/Results/Influence Maximization/Facebook/LLM2Prune
-Loaded test graph with 6358 nodes and 70534 edges.
-Selected 1000 nodes out of 6358 nodes.
-  Dataset  Feature Extraction Time  TimeToPrune
-0    Wiki                 0.262477     0.461478
-Data has been saved to /home/grads/a/anath/Results/Influence Maximization/Wiki/LLM2Prune
-Loaded test graph with 53511 nodes and 348742 edges.
-Selected 1000 nodes out of 53511 nodes.
-  Dataset  Feature Extraction Time  TimeToPrune
-0  Deezer                 0.432475     0.627382
-Data has been saved to /home/grads/a/anath/Results/Influence Maximization/Deezer/LLM2Prune
-Loaded test graph with 67640 nodes and 327988 edges.
-Selected 1000 nodes out of 67640 nodes.
-    Dataset  Feature Extraction Time  TimeToPrune
-0  Slashdot                  0.43613     0.642165
-Data has been saved to /home/grads/a/anath/Results/Influence Maximization/Slashdot/LLM2Prune
-Loaded test graph with 80712 nodes and 1208067 edges.
-Selected 5000 nodes out of 80712 nodes.
-   Dataset  Feature Extraction Time  TimeToPrune
-0  Twitter                 1.245937     1.443974
-Data has been saved to /home/grads/a/anath/Results/Influence Maximization/Twitter/LLM2Prune
-Loaded test graph with 315305 nodes and 1007872 edges.
-Selected 5000 nodes out of 315305 nodes.
-  Dataset  Feature Extraction Time  TimeToPrune
-0    DBLP                 1.679981     1.875001
-Data has been saved to /home/grads/a/anath/Results/Influence Maximization/DBLP/LLM2Prune
-Loaded test graph with 1098104 nodes and 2808367 edges.
-Selected 5000 nodes out of 1098104 nodes.
-   Dataset  Feature Extraction Time  TimeToPrune
-0  YouTube                 5.681864     5.879651
-Data has been saved to /home/grads/a/anath/Results/Influence Maximization/YouTube/LLM2Prune
-Loaded test graph with 1694318 nodes and 10984346 edges.
-Selected 5000 nodes out of 1694318 nodes.
-   Dataset  Feature Extraction Time  TimeToPrune
-0  Skitter                18.541433    18.767263
-Data has been saved to /home/grads/a/anath/Results/Influence Maximization/Skitter/LLM2Prune
-Loaded test graph with 4002 nodes and 61764 edges.
-Selected 500 nodes out of 4002 nodes.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
+Final k=2000, obj_val=3762.0000
 Dataset: Facebook
-ratio: 0.9255629139072847 Size Reduction: 0.8750624687656172 Time Ratio: 2.169982887628762
+ratio: 0.9965562913907284 Size Reduction: 0.5002498750624688 Time Ratio: 1.4319269039418294
     Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Facebook                 3775  ...      0.007106                 500
+0  Facebook                 3775  ...      0.009968                2000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Coverage/Facebook/results/Facebook.pkl
 Loaded test graph with 6358 nodes and 70534 edges.
-Selected 500 nodes out of 6358 nodes.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
+Final k=500, obj_val=4132.0000
 Dataset: Wiki
-ratio: 0.9987913947304811 Size Reduction: 0.9213589178987103 Time Ratio: 1.571375
+ratio: 0.9987913947304811 Size Reduction: 0.9213589178987103 Time Ratio: 1.9592109343319897
   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    Wiki                 4137  ...      0.013351                 500
+0    Wiki                 4137  ...      0.009995                 500
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Coverage/Wiki/results/Wiki.pkl
 Loaded test graph with 53511 nodes and 348742 edges.
-Selected 500 nodes out of 53511 nodes.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
+Final k=1000, obj_val=8103.0000
 Dataset: Deezer
-ratio: 0.978063725490196 Size Reduction: 0.9906561267776719 Time Ratio: 7.128166266902133
+ratio: 0.993014705882353 Size Reduction: 0.9813122535553438 Time Ratio: 7.537329276059727
   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Deezer                 8160  ...      0.018091                 500
+0  Deezer                 8160  ...      0.016845                1000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Coverage/Deezer/results/Deezer.pkl
 Loaded test graph with 67640 nodes and 327988 edges.
-Selected 500 nodes out of 67640 nodes.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
+Final k=500, obj_val=19753.0000
 Dataset: Slashdot
-ratio: 0.9913676286072773 Size Reduction: 0.9926079243051449 Time Ratio: 4.204244768846047
+ratio: 0.9913676286072773 Size Reduction: 0.9926079243051449 Time Ratio: 5.002869806645999
     Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Slashdot                19925  ...       0.04462                 500
+0  Slashdot                19925  ...      0.038299                 500
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Coverage/Slashdot/results/Slashdot.pkl
 Loaded test graph with 80712 nodes and 1208067 edges.
-Selected 1000 nodes out of 80712 nodes.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
+Final k=5000, obj_val=38169.0000
 Dataset: Twitter
-ratio: 0.9373663463272615 Size Reduction: 0.9876102686093765 Time Ratio: 2.3743838710645897
+ratio: 0.9834076211578595 Size Reduction: 0.9380513430468828 Time Ratio: 2.045969010656297
    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Twitter                38813  ...      0.135001                1000
+0  Twitter                38813  ...      0.160642                5000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Coverage/Twitter/results/Twitter.pkl
 Loaded test graph with 315305 nodes and 1007872 edges.
-Selected 5000 nodes out of 315305 nodes.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
+Final k=5000, obj_val=14059.0000
 Dataset: DBLP
-ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 11.530430266503043
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 14.812004452345658
   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    DBLP                14059  ...      0.056925                5000
+0    DBLP                14059  ...      0.045195                5000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Coverage/DBLP/results/DBLP.pkl
 Loaded test graph with 1098104 nodes and 2808367 edges.
-Selected 5000 nodes out of 1098104 nodes.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
+Final k=1000, obj_val=194126.0000
 Dataset: YouTube
-ratio: 1.0 Size Reduction: 0.9954466972162929 Time Ratio: 5.5896555948815685
+ratio: 0.9992741947937632 Size Reduction: 0.9990893394432586 Time Ratio: 7.539305982829389
    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  YouTube               194267  ...      0.525427                5000
+0  YouTube               194267  ...      0.404395                1000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Coverage/YouTube/results/YouTube.pkl
 Loaded test graph with 1694318 nodes and 10984346 edges.
-Selected 5000 nodes out of 1694318 nodes.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
+Final k=5000, obj_val=447710.0000
 Dataset: Skitter
-ratio: 0.9957563976531189 Size Reduction: 0.9970489601125645 Time Ratio: 3.704114457692615
+ratio: 0.9957563976531189 Size Reduction: 0.9970489601125645 Time Ratio: 4.051908959700292
    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Skitter               449618  ...      1.584218                5000
+0  Skitter               449618  ...      1.486382                5000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Coverage/Skitter/results/Skitter.pkl
 Loaded test graph with 4002 nodes and 61764 edges.
-Selected 500 nodes out of 4002 nodes.
+Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
+Final k=1000, obj_val=13399.0000
 Dataset: Facebook
-ratio: 0.9704345229207108 Size Reduction: 0.8750624687656172 Time Ratio: 2.2538373424971363
+ratio: 1.0003733014782739 Size Reduction: 0.7501249375312344 Time Ratio: 2.3760384215991692
     Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Facebook                13394  ...      0.004163                 500
+0  Facebook                13394  ...      0.003674                1000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Cut/Facebook/results/Facebook.pkl
 Loaded test graph with 6358 nodes and 70534 edges.
-Selected 500 nodes out of 6358 nodes.
+Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
+Final k=500, obj_val=21827.0000
 Dataset: Wiki
-ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 3.2996274901473845
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 4.798232814526589
   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    Wiki                21827  ...      0.004416                 500
+0    Wiki                21827  ...      0.002941                 500
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Cut/Wiki/results/Wiki.pkl
 Loaded test graph with 53511 nodes and 348742 edges.
-Selected 500 nodes out of 53511 nodes.
+Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
+Final k=500, obj_val=11417.0000
 Dataset: Deezer
-ratio: 0.9999124189875634 Size Reduction: 0.9906561267776719 Time Ratio: 26.135895919574217
+ratio: 0.9999124189875634 Size Reduction: 0.9906561267776719 Time Ratio: 34.01829080848447
   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Deezer                11418  ...      0.004032                 500
+0  Deezer                11418  ...      0.003102                 500
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Cut/Deezer/results/Deezer.pkl
 Loaded test graph with 67640 nodes and 327988 edges.
-Selected 500 nodes out of 67640 nodes.
+Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
+Final k=500, obj_val=44443.0000
 Dataset: Slashdot
-ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 23.076023391812864
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 28.32630129685557
     Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Slashdot                44443  ...      0.005993                 500
+0  Slashdot                44443  ...      0.005368                 500
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Cut/Slashdot/results/Slashdot.pkl
 Loaded test graph with 80712 nodes and 1208067 edges.
-Selected 1000 nodes out of 80712 nodes.
+Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
+Final k=500, obj_val=104660.0000
 Dataset: Twitter
-ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 13.404215614836405
+ratio: 1.0 Size Reduction: 0.9938051343046883 Time Ratio: 23.44006773014883
    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Twitter               104660  ...      0.013415                1000
+0  Twitter               104660  ...      0.008026                 500
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Cut/Twitter/results/Twitter.pkl
 Loaded test graph with 315305 nodes and 1007872 edges.
-Selected 5000 nodes out of 315305 nodes.
+Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
+Final k=5000, obj_val=16467.0000
 Dataset: DBLP
-ratio: 0.9980604885144554 Size Reduction: 0.9841423383707838 Time Ratio: 20.589882330702707
+ratio: 0.9980604885144554 Size Reduction: 0.9841423383707838 Time Ratio: 25.791713044067404
   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    DBLP                16499  ...      0.030271                5000
+0    DBLP                16499  ...      0.024633                5000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Cut/DBLP/results/DBLP.pkl
 Loaded test graph with 1098104 nodes and 2808367 edges.
-Selected 5000 nodes out of 1098104 nodes.
+Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
+Final k=1000, obj_val=314552.0000
 Dataset: YouTube
-ratio: 1.0 Size Reduction: 0.9954466972162929 Time Ratio: 23.867655279390377
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 30.14616286676374
    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  YouTube               314552  ...      0.098524                5000
+0  YouTube               314552  ...      0.079088                1000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Cut/YouTube/results/YouTube.pkl
 Loaded test graph with 1694318 nodes and 10984346 edges.
-Selected 5000 nodes out of 1694318 nodes.
+Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
+Final k=2000, obj_val=1392490.0000
 Dataset: Skitter
-ratio: 1.0 Size Reduction: 0.9970489601125645 Time Ratio: 20.171875125033868
+ratio: 0.9965911685285342 Size Reduction: 0.9988195840450258 Time Ratio: 24.234736880020172
    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Skitter              1397253  ...       0.20856                5000
+0  Skitter              1397253  ...      0.178719                2000
 
 [1 rows x 12 columns]
 Data has been saved to Maximum Cut/Skitter/results/Skitter.pkl
-Loaded test graph with 3847 nodes and 26470 edges.
-Train graph has 3771 nodes and 21176 edges.
-Validation graph has 2859 nodes and 5294 edges.
-Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
-Training GNN
-New best model saved with C=0.29315903109186797, ratio=0.9977461247720523, size_reduction=0.2938212675682843
-New best model saved with C=0.5907989305427976, ratio=1.0145276717107878, size_reduction=0.5823389021479713
-New best model saved with C=0.6355972950786166, ratio=1.0143196782655368, size_reduction=0.6266242376027579
-New best model saved with C=0.6748071898803417, ratio=0.9990961574553471, size_reduction=0.675417661097852
-New best model saved with C=0.7219683935025303, ratio=1.0113457696500898, size_reduction=0.7138690002651816
-New best model saved with C=0.7697713770617332, ratio=1.0304607252040452, size_reduction=0.7470167064439142
-New best model saved with C=0.7802963251522654, ratio=1.0083952851779276, size_reduction=0.7738000530363299
-New best model saved with C=0.824289251394742, ratio=1.01781099116227, size_reduction=0.8098647573587907
-New best model saved with C=0.8291562058136155, ratio=1.0109111064090346, size_reduction=0.8202068416865553
-New best model saved with C=0.83796598497206, ratio=1.0079648259424683, size_reduction=0.8313444709626094
-New best model saved with C=0.8918685641955195, ratio=1.0241280010905311, size_reduction=0.8708565367276584
-New best model saved with C=0.9081844437224069, ratio=1.0087668740139017, size_reduction=0.9002916998143728
-New best model saved with C=0.9180622558455613, ratio=1.0194383883373415, size_reduction=0.9005568814638027
-New best model saved with C=0.9269067940423418, ratio=1.01022124865135, size_reduction=0.9175285070273137
-New best model saved with C=0.9641885983885323, ratio=1.017619704596461, size_reduction=0.9474940334128878
-New best model saved with C=0.9644910829567083, ratio=1.0216561443341985, size_reduction=0.9440466719702997
-New best model saved with C=0.9678391690364531, ratio=1.0112833212625283, size_reduction=0.9570405727923628
-New best model saved with C=0.9745233428412615, ratio=1.0112623901635656, size_reduction=0.9636701140281092
-New best model saved with C=0.9947335759487375, ratio=1.022387657373314, size_reduction=0.9729514717581543
-New best model saved with C=0.9999806629843262, ratio=1.0126012567437954, size_reduction=0.9875364624767966
-New best model saved with C=1.000841320255309, ratio=1.0162015666889528, size_reduction=0.984884645982498
-New best model saved with C=1.0035197263935116, ratio=1.0159121847597132, size_reduction=0.9878016441262265
-New best model saved with C=1.0054426901437796, ratio=1.0110731692085848, size_reduction=0.994431185361973
-Loaded test graph with 4891 nodes and 30228 edges.
-Train graph has 4563 nodes and 24182 edges.
-Validation graph has 2985 nodes and 6046 edges.
-Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
-Training GNN
-New best model saved with C=0.3574989948957618, ratio=0.9910497653155291, size_reduction=0.3607275914968223
-New best model saved with C=0.45444613028533115, ratio=0.9926460950176955, size_reduction=0.45781284242822706
-New best model saved with C=0.514174865901445, ratio=0.9853758559883636, size_reduction=0.5218058294981371
-New best model saved with C=0.5765196892936947, ratio=0.9994906315528604, size_reduction=0.576813499890423
-New best model saved with C=0.6588598582688282, ratio=0.9789571909087147, size_reduction=0.6730221345605961
-New best model saved with C=0.7343022369122072, ratio=0.9945447037786885, size_reduction=0.7383300460223536
-New best model saved with C=0.7877431972218747, ratio=0.9834397288436154, size_reduction=0.8010081087004164
-New best model saved with C=0.818604289721392, ratio=0.9762915248297731, size_reduction=0.8384834538680692
-New best model saved with C=0.8703096309452556, ratio=0.9913187334006993, size_reduction=0.8779311856234933
-New best model saved with C=0.937210609159594, ratio=1.0143481996193613, size_reduction=0.9239535393381547
-New best model saved with C=0.9615745978122949, ratio=1.0072692584521354, size_reduction=0.9546351084812623
-New best model saved with C=0.9652407595777144, ratio=1.0071789585989277, size_reduction=0.9583607275914968
-New best model saved with C=0.9841361909241163, ratio=1.006412693676993, size_reduction=0.9778654394039009
-New best model saved with C=0.9898298486688634, ratio=1.0003529566945788, size_reduction=0.9894806048652203
-New best model saved with C=0.9940220601832427, ratio=1.0028128809675296, size_reduction=0.9912338373876836
-Loaded test graph with 48870 nodes and 149460 edges.
-Train graph has 46977 nodes and 119568 edges.
-Validation graph has 29697 nodes and 29892 edges.
-Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
-Training GNN
-New best model saved with C=0.36942859505179637, ratio=1.0043198558882083, size_reduction=0.3678395810715882
-New best model saved with C=0.6681138220526418, ratio=1.0005413949621267, size_reduction=0.6677523043191349
-New best model saved with C=0.7960974789354124, ratio=1.0054109543228988, size_reduction=0.791813014879622
-New best model saved with C=0.8721582353366295, ratio=1.0057287402771085, size_reduction=0.8671903271813867
-New best model saved with C=0.9327504692900013, ratio=1.007908607347757, size_reduction=0.9254315941843881
-New best model saved with C=0.9849172900950653, ratio=1.0208379564203487, size_reduction=0.9648125678523533
-New best model saved with C=0.9967555207162846, ratio=1.0148371065602275, size_reduction=0.982182770291845
-New best model saved with C=1.0145773216710319, ratio=1.021513970597541, size_reduction=0.9932094429188751
-New best model saved with C=1.0184691893364939, ratio=1.021557107023817, size_reduction=0.9969772441833238
-New best model saved with C=1.02160795101445, ratio=1.0235034488122376, size_reduction=0.9981480298869659
-New best model saved with C=1.0229540820579064, ratio=1.024218630252867, size_reduction=0.9987653532579773
-Loaded test graph with 47546 nodes and 140566 edges.
-Train graph has 43007 nodes and 112452 edges.
-Validation graph has 20910 nodes and 28114 edges.
-Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
-Training GNN
-New best model saved with C=0.5677364493563878, ratio=0.9845022973859994, size_reduction=0.576673564768526
-New best model saved with C=0.7384214859629346, ratio=1.0142211563237074, size_reduction=0.7280675238914596
-New best model saved with C=0.8378746803472242, ratio=1.025571390530882, size_reduction=0.8169832817913363
-New best model saved with C=0.889712536791844, ratio=1.0074475940551022, size_reduction=0.8831353035552352
-New best model saved with C=0.9486401193571534, ratio=1.0197756795858999, size_reduction=0.9302439137814774
-New best model saved with C=0.9522345631755914, ratio=0.9939988315168121, size_reduction=0.9579835840677099
-New best model saved with C=1.0314602017222398, ratio=1.0492704992186856, size_reduction=0.9830260190201595
-New best model saved with C=1.0337956368887815, ratio=1.0385771439574816, size_reduction=0.9953960983095775
-Loaded test graph with 55827 nodes and 134229 edges.
-Train graph has 51894 nodes and 107383 edges.
-Validation graph has 27523 nodes and 26846 edges.
-Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
-Training GNN
-New best model saved with C=0.468439733607552, ratio=0.9974646725957204, size_reduction=0.46963040043164916
-New best model saved with C=0.6444417407094409, ratio=1.0096506866037414, size_reduction=0.6382818822985317
-New best model saved with C=0.7501916699746775, ratio=1.0085869199115498, size_reduction=0.7438046787682584
-New best model saved with C=0.8459307045052556, ratio=1.0089110335224596, size_reduction=0.8384591667630169
-New best model saved with C=0.8981787343676084, ratio=1.0029498255174547, size_reduction=0.8955370563070875
-New best model saved with C=0.9503818585208108, ratio=1.0132746320563548, size_reduction=0.9379311673796585
-New best model saved with C=1.0048973332465752, ratio=1.0431923465461956, size_reduction=0.9632905538212511
-New best model saved with C=1.0068983476587836, ratio=1.0146410123384386, size_reduction=0.9923690600069373
-New best model saved with C=1.0231322780662913, ratio=1.0273888124377817, size_reduction=0.9958569391451806
-Loaded test graph with 63004 nodes and 41994 edges.
-Train graph has 52698 nodes and 33595 edges.
-Validation graph has 15598 nodes and 8399 edges.
-Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
-Training GNN
-New best model saved with C=0.7045431298127108, ratio=1.0007550904277691, size_reduction=0.7040115374397511
-New best model saved with C=0.9988704510304292, ratio=1.0015121107403404, size_reduction=0.9973623287411287
-Loaded test graph with 185193 nodes and 179257 edges.
-Train graph has 156282 nodes and 143405 edges.
-Validation graph has 50823 nodes and 35852 edges.
-Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
-Training GNN
-New best model saved with C=0.6624017595707882, ratio=0.9816276637294296, size_reduction=0.6747994010826583
-New best model saved with C=0.9180742099807433, ratio=1.0316477468180254, size_reduction=0.8899105463201137
-New best model saved with C=0.9416109201898826, ratio=1.009022413649901, size_reduction=0.9331912824253593
-New best model saved with C=0.9558789971231961, ratio=1.0017346268199623, size_reduction=0.954223774970886
-New best model saved with C=0.9691382021684468, ratio=0.9875840751112667, size_reduction=0.9813222252082774
-New best model saved with C=0.9749685756971438, ratio=0.986801454245253, size_reduction=0.9880088557863349
-New best model saved with C=0.9902458649742013, ratio=0.9999586743034434, size_reduction=0.9902867892655585
-New best model saved with C=1.047744611394692, ratio=1.0544987690572913, size_reduction=0.9935949117620712
-Loaded test graph with 147604 nodes and 110952 edges.
-Train graph has 122456 nodes and 88761 edges.
-Validation graph has 36009 nodes and 22191 edges.
-Calculating features for training graph: dict_keys(['degree', 'avg_incoming_activation_prob'])
-Training GNN
-New best model saved with C=0.7076923161472997, ratio=1.0024774748242706, size_reduction=0.7059433592474031
-New best model saved with C=0.940953088284565, ratio=1.05244970798183, size_reduction=0.8940599072319854
-New best model saved with C=0.9428959261222754, ratio=1.0026856516424036, size_reduction=0.9403704187626576
-New best model saved with C=1.007861545345815, ratio=1.0496036381615765, size_reduction=0.9602306134448292
-New best model saved with C=1.0391129451650698, ratio=1.053366458440333, size_reduction=0.9864686091330763
-New best model saved with C=1.04647333140683, ratio=1.0556456625704722, size_reduction=0.9913111648265499
 Loaded test graph with 4002 nodes and 61764 edges.
-Selected 500 nodes out of 4002 nodes.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Final k=1000, obj_val=327.8918
 Dataset: Facebook
-ratio: 0.9557269320223979 Size Reduction: 0.8750624687656172 Time Ratio: 1.0227608752654698
+ratio: 1.0097304020415772 Size Reduction: 0.7501249375312344 Time Ratio: 0.9890154878432099
     Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Facebook             327.5829  ...     15.604723                 500
+0  Facebook             327.5507  ...     16.498539                1000
 
 [1 rows x 12 columns]
 Data has been saved to Influence Maximization/Facebook/results/Facebook.pkl
 Loaded test graph with 6358 nodes and 70534 edges.
-Selected 500 nodes out of 6358 nodes.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Final k=500, obj_val=438.8221
 Dataset: Wiki
-ratio: 1.003561183579941 Size Reduction: 0.9213589178987103 Time Ratio: 0.9866380075769089
+ratio: 1.016932642984685 Size Reduction: 0.9213589178987103 Time Ratio: 0.9831410500366584
   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    Wiki             436.6245  ...     22.874047                 500
+0    Wiki             433.1338  ...     23.471494                 500
 
 [1 rows x 12 columns]
 Data has been saved to Influence Maximization/Wiki/results/Wiki.pkl
 Loaded test graph with 53511 nodes and 348742 edges.
-Selected 500 nodes out of 53511 nodes.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Final k=500, obj_val=243.8828
 Dataset: Deezer
-ratio: 1.0170661406203823 Size Reduction: 0.9906561267776719 Time Ratio: 1.3882211089381897
+ratio: 0.9931733791161378 Size Reduction: 0.9906561267776719 Time Ratio: 1.4287572711380658
   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Deezer             242.6149  ...     10.918008                 500
+0  Deezer             245.0993  ...     11.169531                 500
 
 [1 rows x 12 columns]
 Data has been saved to Influence Maximization/Deezer/results/Deezer.pkl
 Loaded test graph with 67640 nodes and 327988 edges.
-Selected 500 nodes out of 67640 nodes.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Final k=500, obj_val=950.5297
 Dataset: Slashdot
-ratio: 0.9985838118034827 Size Reduction: 0.9926079243051449 Time Ratio: 1.0324559063482333
+ratio: 1.0073668714892425 Size Reduction: 0.9926079243051449 Time Ratio: 1.0088490914011772
     Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Slashdot             950.7211  ...     56.772582                 500
+0  Slashdot             946.4126  ...     59.758923                 500
 
 [1 rows x 12 columns]
 Data has been saved to Influence Maximization/Slashdot/results/Slashdot.pkl
 Loaded test graph with 80712 nodes and 1208067 edges.
-Selected 1000 nodes out of 80712 nodes.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Final k=2000, obj_val=4530.3194
 Dataset: Twitter
-ratio: 0.9815466561260653 Size Reduction: 0.9876102686093765 Time Ratio: 1.0949813220559623
+ratio: 0.9962890086796982 Size Reduction: 0.9752205372187531 Time Ratio: 1.045941430723231
    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Twitter            4557.8677  ...    343.621647                1000
+0  Twitter             4543.476  ...    377.586566                2000
 
 [1 rows x 12 columns]
 Data has been saved to Influence Maximization/Twitter/results/Twitter.pkl
 Loaded test graph with 315305 nodes and 1007872 edges.
-Selected 5000 nodes out of 315305 nodes.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Final k=500, obj_val=359.4441
 Dataset: DBLP
-ratio: 0.9880243859463651 Size Reduction: 0.9841423383707838 Time Ratio: 2.4182851176561857
+ratio: 1.0022820051501418 Size Reduction: 0.9984142338370784 Time Ratio: 3.197980973819936
   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    DBLP             354.7125  ...     25.954039                5000
+0    DBLP             358.2814  ...      21.32058                 500
 
 [1 rows x 12 columns]
 Data has been saved to Influence Maximization/DBLP/results/DBLP.pkl
-  0%|          | 0/3 [00:00<?, ?it/s]
-Beam Search Depth 1
-Proposed features: ['degree', 'degree_to_weight_ratio', 'closed_neighborhood_size', 'sum_neighbor_weights', 'neighbor_degree_mean', 'local_clustering_coefficient', 'k_core_index', 'eigenvector_centrality', 'pagerank_score', 'neighbor_weight_above_self_ratio']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:09<01:26,  9.58s/feature][A
-Extracting features:  20%|██        | 2/10 [00:23<01:38, 12.34s/feature][A
-Extracting features:  30%|███       | 3/10 [00:33<01:17, 11.09s/feature][A  0%|          | 0/3 [00:00<?, ?it/s]
-Extracting features:  40%|████      | 4/10 [00:46<01:12, 12.06s/feature][A
-Beam Search Depth 1
-Proposed features: ['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'average_neighbor_degree', 'clustering_coefficient', 'eigenvector_centrality', 'pagerank', 'k_shell_index']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:07<01:09,  7.70s/feature][A
-Extracting features:  20%|██        | 2/10 [00:13<00:51,  6.41s/feature][A
-Extracting features:  50%|█████     | 5/10 [01:15<01:30, 18.12s/feature][A
-Extracting features:  30%|███       | 3/10 [00:27<01:08,  9.84s/feature][A
-Extracting features:  40%|████      | 4/10 [00:35<00:54,  9.07s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:32<01:10, 17.66s/feature][A  0%|          | 0/3 [00:00<?, ?it/s]
-Extracting features:  50%|█████     | 5/10 [00:49<00:55, 11.15s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:43<00:46, 15.36s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:03<00:47, 11.93s/feature][A
-Beam Search Depth 1
-Proposed features: ['degree_to_weight_ratio', 'out_degree', 'in_degree', 'total_degree', 'normalized_weight', 'pagerank_score', 'eigenvector_centrality', 'k_core', 'two_hop_reachability', 'average_out_neighbor_weight']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:09<01:28,  9.88s/feature][A
-Extracting features:  80%|████████  | 8/10 [02:15<00:41, 20.86s/feature][A
-Extracting features:  20%|██        | 2/10 [00:24<01:41, 12.67s/feature][A
-Extracting features:  30%|███       | 3/10 [00:30<01:07,  9.70s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:32<00:19, 19.57s/feature][A
-Extracting features:  40%|████      | 4/10 [00:42<01:03, 10.51s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:45<00:00, 17.37s/feature][AExtracting features: 100%|██████████| 10/10 [02:45<00:00, 16.51s/feature]
-⚠️ Skipping feature 'neighbor_degree_mean' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    deg = dict(G.degree())
-    feat = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        dv = deg[v]
-        if dv == 0:
-            feat[i] = 0.0
-        else:
-            s = 0.0
-            for u in G.neighbors(v):
-                s += deg[u]
-            feat[i] = s / dv
-    return feat
-******************************
-⚠️ Skipping feature 'local_clustering_coefficient' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    if G.is_directed():
-        G = G.to_undirected()
-    cl = nx.clustering(G)
-    return np.array([cl[n] for n in G.nodes()], dtype=float)
-******************************
-⚠️ Skipping feature 'k_core_index' due to error: core_number() got an unexpected keyword argument 'weight'
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    if G.number_of_nodes() == 0:
-        return np.array([], dtype=int)
-    core_num = nx.core_number(G, weight=None)
-    nodes = list(G.nodes())
-    return np.array([core_num[n] for n in nodes], dtype=int)
-******************************
-⚠️ Skipping feature 'eigenvector_centrality' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-
-    n = G.number_of_nodes()
-    if n == 0:
-        return np.array([], dtype=float)
-
-    nodes = list(G.nodes())
-    idx = {node: i for i, node in enumerate(nodes)}
-
-    x = np.ones(n, dtype=float)
-    x /= np.linalg.norm(x)
-
-    is_directed = G.is_directed()
-    max_iter = 500
-    tol = 1e-6
-
-    for _ in range(max_iter):
-        y = np.zeros(n, dtype=float)
-        if is_directed:
-            for u, v, data in G.edges(data=True):
-                w = data.get('weight', 1.0)
-                y[idx[v]] += w * x[idx[u]]
-        else:
-            for u, v, data in G.edges(data=True):
-                w = data.get('weight', 1.0)
-                i, j = idx[u], idx[v]
-                y[i] += w * x[j]
-                y[j] += w * x[i]
-
-        norm = np.linalg.norm(y)
-        if norm == 0:
-            y = np.ones(n, dtype=float)
-            norm = np.linalg.norm(y)
-        y /= norm
-
-        if np.linalg.norm(y - x) < tol:
-            x = y
-            break
-        x = y
-
-    x_norm = np.linalg.norm(x)
-    if x_norm > 0:
-        x = x / x_norm
-
-    feature = np.array([x[idx[node]] for node in nodes], dtype=float)
-    return feature
-******************************
-⚠️ Skipping feature 'pagerank_score' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    alpha = 0.85
-    max_iter = None
-    try:
-        max_iter = int(budget)
-    except NameError:
-        max_iter = None
-    if max_iter is not None:
-        pr = nx.pagerank(G, alpha=alpha, weight='weight', max_iter=max_iter)
-    else:
-        pr = nx.pagerank(G, alpha=alpha, weight='weight')
-    return np.asarray([pr[n] for n in G.nodes()], dtype=float)
-******************************
-⚠️ Skipping feature 'neighbor_weight_above_self_ratio' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    weights = {n: G.nodes[n].get('weight', 0) for n in G}
-    node_order = list(G)
-    feat = np.zeros(len(node_order), dtype=float)
-    for i, v in enumerate(node_order):
-        deg = G.degree(v)
-        if deg == 0:
-            feat[i] = 0.0
-        else:
-            wv = weights[v]
-            cnt = 0
-            for u in G.neighbors(v):
-                if weights[u] > wv:
-                    cnt += 1
-            feat[i] = cnt / deg
-    return feat
-******************************
-Data has been saved to Presolved/Maximum Coverage Weighted/HK/train
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  0%|          | 1/999 [00:00<04:05,  4.07it/s][A
-  9%|▉         | 88/999 [00:00<00:02, 322.04it/s][A
- 17%|█▋        | 172/999 [00:00<00:01, 499.87it/s][A
- 25%|██▌       | 254/999 [00:00<00:01, 603.23it/s][A
- 34%|███▍      | 339/999 [00:00<00:00, 681.72it/s][A
- 43%|████▎     | 425/999 [00:00<00:00, 735.80it/s][A
- 51%|█████▏    | 513/999 [00:00<00:00, 779.38it/s][A
-Extracting features:  50%|█████     | 5/10 [00:48<00:45,  9.06s/feature][A
- 60%|██████    | 601/999 [00:00<00:00, 808.12it/s][A
- 69%|██████▊   | 686/999 [00:01<00:00, 820.54it/s][A
- 77%|███████▋  | 772/999 [00:01<00:00, 831.69it/s][A
- 86%|████████▋ | 863/999 [00:01<00:00, 854.59it/s][A
- 95%|█████████▌| 954/999 [00:01<00:00, 869.62it/s][A100%|██████████| 999/999 [00:01<00:00, 713.40it/s]
-
-Extracting features:  60%|██████    | 6/10 [01:04<00:45, 11.36s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:22<00:40, 13.34s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:34<00:25, 12.94s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:50<00:13, 13.91s/feature][AData has been saved to Presolved/Maximum Coverage Weighted/HK/test
-Objective value: 400
-Objective value pruned: 400
-Ratio 1.0
-queries ratio 0.816601164121188
-Explaining GNN predictions
-Proposed features: ['degree', 'weight', 'degree_to_weight_ratio', 'sum_neighbor_weights', 'local_clustering_coefficient', 'betweenness_centrality', 'eigenvector_centrality', 'is_articulation_point', 'two_hop_coverage', 'fraction_neighbors_high_degree']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  70%|███████   | 7/10 [03:01<02:19, 46.61s/feature][A
-Extracting features:  80%|████████  | 8/10 [03:13<01:11, 35.52s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:06<00:00, 14.51s/feature][AExtracting features: 100%|██████████| 10/10 [02:06<00:00, 12.61s/feature]
-⚠️ Skipping feature 'degree_to_weight_ratio' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    deg_map = dict(G.out_degree(nodes))
-    feats = []
-    for n in nodes:
-        w = G.nodes[n]['weight']
-        d = deg_map[n]
-        feats.append(d / w if w != 0 else float('nan'))
-    return np.array(feats, dtype=float)
-******************************
-⚠️ Skipping feature 'in_degree' due to error: 'Graph' object has no attribute 'in_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    degs = [d for _, d in G.in_degree()]
-    return np.array(degs, dtype=int)
-******************************
-⚠️ Skipping feature 'total_degree' due to error: 'Graph' object has no attribute 'in_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    indeg = dict(G.in_degree())
-    outdeg = dict(G.out_degree())
-    feat = [indeg[n] + outdeg[n] for n in nodes]
-    return np.asarray(feat, dtype=float)
-******************************
-⚠️ Skipping feature 'pagerank_score' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-
-    nodes = list(G.nodes())
-    total = 0.0
-    weights = {}
-    for n in nodes:
-        w = G.nodes[n].get('weight', 0.0)
-        weights[n] = w
-        total += w
-
-    if total > 0.0:
-        personalization = {n: weights[n] / total for n in nodes}
-        pr = nx.pagerank(G, alpha=0.85, personalization=personalization, weight=None)
-    else:
-        pr = nx.pagerank(G, alpha=0.85, weight=None)
-
-    return np.array([pr[n] for n in nodes])
-******************************
-⚠️ Skipping feature 'eigenvector_centrality' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-
-    use_weight = False
-    for _, _, data in G.edges(data=True):
-        if 'weight' in data:
-            use_weight = True
-            break
-
-    if use_weight:
-        all_have_weight = True
-        for _, _, data in G.edges(data=True):
-            if 'weight' not in data:
-                all_have_weight = False
-                break
-        if all_have_weight:
-            centrality = nx.eigenvector_centrality(G, weight='weight')
-        else:
-            centrality = nx.eigenvector_centrality(G)
-    else:
-        centrality = nx.eigenvector_centrality(G)
-
-    order = list(G.nodes())
-    return np.array([centrality[n] for n in order], dtype=float)
-******************************
-⚠️ Skipping feature 'k_core' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    core_num = nx.core_number(G)
-    nodes = list(G.nodes())
-    return np.array([core_num[n] for n in nodes], dtype=int)
-******************************
-⚠️ Skipping feature 'two_hop_reachability' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    feat = np.zeros(n, dtype=int)
-    for i, v in enumerate(nodes):
-        reachable = set()
-        if hasattr(G, 'successors'):
-            first_iter = G.successors(v)
-        else:
-            first_iter = G.neighbors(v)
-        first_list = list(first_iter)
-        for w in first_list:
-            reachable.add(w)
-        for w in first_list:
-            if hasattr(G, 'successors'):
-                second_iter = G.successors(w)
-            else:
-                second_iter = G.neighbors(w)
-            for u in second_iter:
-                reachable.add(u)
-        reachable.discard(v)
-        feat[i] = len(reachable)
-    return feat
-******************************
-⚠️ Skipping feature 'average_out_neighbor_weight' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    weights = {u: G.nodes[u]['weight'] for u in G}
-    out = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        if G.is_directed():
-            nbrs = G.successors(v)
-        else:
-            nbrs = G.neighbors(v)
-        total = 0.0
-        count = 0
-        for u in nbrs:
-            total += weights[u]
-            count += 1
-        out[i] = total / count if count > 0 else 0.0
-    return out
-******************************
-Data has been saved to Presolved/Influence Maximization Weighted/HK/train
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  0%|          | 1/999 [00:00<04:05,  4.06it/s][A
-  8%|▊         | 81/999 [00:00<00:03, 295.74it/s][A
- 17%|█▋        | 169/999 [00:00<00:01, 495.04it/s][A
- 26%|██▌       | 255/999 [00:00<00:01, 613.55it/s][A
- 33%|███▎      | 334/999 [00:00<00:00, 669.79it/s][A
- 42%|████▏     | 420/999 [00:00<00:00, 727.31it/s][A
- 51%|█████     | 506/999 [00:00<00:00, 765.71it/s][A
-Extracting features:  10%|█         | 1/10 [00:16<02:29, 16.64s/feature][A
- 59%|█████▉    | 592/999 [00:00<00:00, 792.26it/s][A
- 68%|██████▊   | 675/999 [00:01<00:00, 798.08it/s][A
- 76%|███████▌  | 759/999 [00:01<00:00, 808.97it/s][A
- 85%|████████▍ | 847/999 [00:01<00:00, 830.12it/s][A
- 93%|█████████▎| 934/999 [00:01<00:00, 841.72it/s][A100%|██████████| 999/999 [00:01<00:00, 698.64it/s]
-
-Extracting features:  20%|██        | 2/10 [00:23<01:25, 10.67s/feature][AData has been saved to Presolved/Influence Maximization Weighted/HK/test
-Objective value: 103.0092
-
-Extracting features:  90%|█████████ | 9/10 [03:29<00:29, 29.68s/feature][A
-Extracting features:  30%|███       | 3/10 [00:30<01:03,  9.10s/feature][A
-Extracting features: 100%|██████████| 10/10 [03:42<00:00, 24.38s/feature][AExtracting features: 100%|██████████| 10/10 [03:42<00:00, 22.24s/feature]
-
-Extracting features:  40%|████      | 4/10 [00:43<01:05, 10.87s/feature][A⚠️ Skipping feature 'average_neighbor_degree' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    degrees = dict(G.degree())
-    nodes = list(G.nodes())
-    result = np.empty(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        d = degrees[v]
-        if d == 0:
-            result[i] = 0.0
-        else:
-            total = sum(degrees[u] for u in G.neighbors(v))
-            result[i] = total / d
-    return result
-******************************
-⚠️ Skipping feature 'eigenvector_centrality' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    if not nodes:
-        return np.array([], dtype=float)
-    centrality = nx.eigenvector_centrality(G, weight='weight')
-    return np.array([centrality[n] for n in nodes], dtype=float)
-******************************
-⚠️ Skipping feature 'pagerank' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    nodes = list(G.nodes())
-    max_iter = 100
-    if 'budget' in globals():
-        b = globals()['budget']
-        if isinstance(b, int) and b > 0:
-            max_iter = b
-    pr = nx.pagerank(G, alpha=0.85, weight='weight', max_iter=max_iter, tol=1e-06)
-    return np.array([pr[n] for n in nodes], dtype=float)
-******************************
-⚠️ Skipping feature 'k_shell_index' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    G_eff = G if not G.is_directed() else G.to_undirected()
-    core_numbers = nx.core_number(G_eff)
-    order = list(G.nodes())
-    return np.array([core_numbers[v] for v in order], dtype=int)
-******************************
-Data has been saved to Presolved/Maximum Cut Weighted/HK/train
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  0%|          | 1/999 [00:00<04:11,  3.98it/s][A
-  3%|▎         | 28/999 [00:00<00:09, 100.06it/s][A
-  6%|▌         | 55/999 [00:00<00:05, 157.41it/s][A
-  8%|▊         | 82/999 [00:00<00:04, 193.49it/s][A
- 11%|█         | 110/999 [00:00<00:04, 218.69it/s][A
- 14%|█▍        | 138/999 [00:00<00:03, 235.76it/s][A
- 17%|█▋        | 166/999 [00:00<00:03, 246.41it/s][A
- 19%|█▉        | 193/999 [00:00<00:03, 253.44it/s][A
- 22%|██▏       | 220/999 [00:01<00:03, 258.34it/s][A
- 25%|██▍       | 248/999 [00:01<00:02, 261.61it/s][A
- 28%|██▊       | 276/999 [00:01<00:02, 264.76it/s][A
- 30%|███       | 304/999 [00:01<00:02, 265.69it/s][A
- 33%|███▎      | 332/999 [00:01<00:02, 268.00it/s][A
- 36%|███▌      | 360/999 [00:01<00:02, 269.90it/s][A
- 39%|███▉      | 388/999 [00:01<00:02, 270.19it/s][A
- 42%|████▏     | 416/999 [00:01<00:02, 272.93it/s][A
- 44%|████▍     | 444/999 [00:01<00:02, 273.25it/s][A
- 47%|████▋     | 472/999 [00:01<00:01, 274.34it/s][A
- 50%|█████     | 500/999 [00:02<00:01, 275.34it/s][A
- 53%|█████▎    | 528/999 [00:02<00:01, 275.42it/s][A
- 56%|█████▌    | 556/999 [00:02<00:01, 273.02it/s][A
- 58%|█████▊    | 584/999 [00:02<00:01, 274.27it/s][A
- 61%|██████▏   | 612/999 [00:02<00:01, 272.65it/s][A
- 64%|██████▍   | 641/999 [00:02<00:01, 275.01it/s][A
- 67%|██████▋   | 669/999 [00:02<00:01, 273.52it/s][A
- 70%|██████▉   | 697/999 [00:02<00:01, 272.62it/s][A
- 73%|███████▎  | 725/999 [00:02<00:01, 273.47it/s][A
- 75%|███████▌  | 753/999 [00:03<00:00, 272.10it/s][A
- 78%|███████▊  | 781/999 [00:03<00:00, 271.61it/s][A
- 81%|████████  | 809/999 [00:03<00:00, 269.40it/s][A
- 84%|████████▎ | 836/999 [00:03<00:00, 267.59it/s][A
- 86%|████████▋ | 863/999 [00:03<00:00, 268.10it/s][A
- 89%|████████▉ | 890/999 [00:03<00:00, 268.04it/s][A
- 92%|█████████▏| 918/999 [00:03<00:00, 269.51it/s][A
- 95%|█████████▍| 945/999 [00:03<00:00, 267.62it/s][A
- 97%|█████████▋| 972/999 [00:03<00:00, 267.50it/s][A
-100%|██████████| 999/999 [00:03<00:00, 266.79it/s][A100%|██████████| 999/999 [00:03<00:00, 253.76it/s]
-
-Extracting features:  50%|█████     | 5/10 [00:58<01:00, 12.04s/feature][AObjective value pruned: 104.0068
-Ratio 1.009684571863484
-queries ratio 0.018125232885793235
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio', 'out_degree', 'weight_value', 'neighbor_avg_out_degree', 'neighbor_avg_weight', 'page_rank_score', 'betweenness_centrality', 'core_number', 'sum_out_edge_probability', 'local_efficiency']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:08<01:18,  8.71s/feature][AData has been saved to Presolved/Maximum Cut Weighted/HK/test
-Objective value: 298.0
-Objective value pruned: 298.0
-Ratio 1.0
-queries ratio 1.0
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio', 'node_weight', 'degree', 'normalized_degree', 'neighbor_weight_sum', 'neighbor_degree_sum', 'local_clustering_coefficient', 'betweenness_centrality', 'page_rank', 'k_core_number']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  20%|██        | 2/10 [00:24<01:45, 13.13s/feature][A
-Extracting features:  10%|█         | 1/10 [00:07<01:08,  7.64s/feature][A
-Extracting features:  30%|███       | 3/10 [00:29<01:05,  9.29s/feature][A
-Extracting features:  40%|████      | 4/10 [00:44<01:07, 11.33s/feature][A
-Extracting features:  20%|██        | 2/10 [00:25<01:50, 13.85s/feature][A
-Extracting features:  30%|███       | 3/10 [00:31<01:11, 10.26s/feature][A
-Extracting features:  50%|█████     | 5/10 [01:00<01:05, 13.06s/feature][A
-Extracting features:  40%|████      | 4/10 [00:39<00:55,  9.33s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:56<00:59, 11.89s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:17<00:57, 14.39s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:10<00:50, 12.59s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:31<00:43, 14.43s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:44<00:27, 13.85s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:27<00:42, 14.20s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:41<00:27, 14.00s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:10<00:17, 17.64s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:57<00:14, 14.70s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:08<00:00, 13.70s/feature][AExtracting features: 100%|██████████| 10/10 [02:08<00:00, 12.89s/feature]
-⚠️ Skipping feature 'neighbor_weight_sum' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    idx = {node: i for i, node in enumerate(nodes)}
-    w = np.array([G.nodes[node].get('weight', 0.0) for node in nodes], dtype=float)
-    feat = np.zeros(n, dtype=float)
-    for v in nodes:
-        i = idx[v]
-        s = 0.0
-        for nb in G.neighbors(v):
-            s += w[idx[nb]]
-        feat[i] = s
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_degree_sum' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    idx = {node: i for i, node in enumerate(nodes)}
-    deg = {node: int(G.degree(node)) for node in nodes}
-    out = np.zeros(len(nodes), dtype=float)
-    for v in nodes:
-        s = 0
-        for u in G.neighbors(v):
-            s += deg[u]
-        out[idx[v]] = s
-    return out
-******************************
-⚠️ Skipping feature 'local_clustering_coefficient' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    nodes = list(G.nodes())
-    n = len(nodes)
-    triangles = nx.triangles(G)
-    deg = dict(G.degree())
-    out = np.zeros(n, dtype=float)
-    for i, v in enumerate(nodes):
-        d = deg.get(v, 0)
-        if d < 2:
-            out[i] = 0.0
-        else:
-            t = triangles.get(v, 0)
-            out[i] = (2.0 * t) / (d * (d - 1))
-    return out
-******************************
-⚠️ Skipping feature 'betweenness_centrality' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    centrality = nx.betweenness_centrality(G, normalized=True, weight='weight')
-    order = list(G.nodes())
-    return np.array([centrality[n] for n in order], dtype=float)
-******************************
-⚠️ Skipping feature 'page_rank' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-
-    d = 0.85
-    personalization = {}
-    total = 0.0
-    for n in G:
-        w = G.nodes[n].get('weight', 1.0)
-        try:
-            w_val = float(w)
-        except (TypeError, ValueError):
-            w_val = 1.0
-        personalization[n] = w_val
-        total += w_val
-
-    if total > 0.0:
-        personalization = {n: v / total for n, v in personalization.items()}
-    else:
-        personalization = None
-
-    pr = nx.pagerank(G, alpha=d, personalization=personalization, weight=None)
-    return np.array([pr[n] for n in G.nodes()], dtype=float)
-******************************
-⚠️ Skipping feature 'k_core_number' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    core_numbers = nx.core_number(G)
-    return np.array([core_numbers[n] for n in G.nodes()], dtype=int)
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 31/999 [00:00<00:03, 307.94it/s][A
-  6%|▋         | 63/999 [00:00<00:02, 313.42it/s][A
- 10%|▉         | 98/999 [00:00<00:02, 328.43it/s][A
- 14%|█▎        | 135/999 [00:00<00:02, 343.99it/s][A
- 17%|█▋        | 172/999 [00:00<00:02, 350.85it/s][A
- 21%|██        | 209/999 [00:00<00:02, 355.47it/s][A
- 25%|██▍       | 246/999 [00:00<00:02, 359.52it/s][A
- 28%|██▊       | 283/999 [00:00<00:01, 360.34it/s][A
- 32%|███▏      | 320/999 [00:00<00:01, 360.01it/s][A
- 36%|███▌      | 357/999 [00:01<00:01, 362.29it/s][A
- 39%|███▉      | 394/999 [00:01<00:01, 363.78it/s][A
-Extracting features: 100%|██████████| 10/10 [02:31<00:00, 18.75s/feature][AExtracting features: 100%|██████████| 10/10 [02:31<00:00, 15.15s/feature]
-
- 43%|████▎     | 431/999 [00:01<00:01, 364.95it/s][A
- 47%|████▋     | 468/999 [00:01<00:01, 363.64it/s][A
- 51%|█████     | 505/999 [00:01<00:01, 363.79it/s][A
- 54%|█████▍    | 542/999 [00:01<00:01, 364.58it/s][A⚠️ Skipping feature 'out_degree' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    return np.fromiter((d for _, d in G.out_degree()), dtype=int, count=G.number_of_nodes())
-******************************
-⚠️ Skipping feature 'neighbor_avg_out_degree' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    feat = np.zeros(len(nodes), dtype=float)
-    if G.is_directed():
-        deg_out = dict(G.out_degree())
-        for idx, v in enumerate(nodes):
-            s = 0.0
-            d = 0
-            for u in G.successors(v):
-                d += 1
-                s += deg_out.get(u, 0)
-            feat[idx] = 0.0 if d == 0 else s / d
-    else:
-        deg = dict(G.degree())
-        for idx, v in enumerate(nodes):
-            s = 0.0
-            d = 0
-            for u in G.neighbors(v):
-                d += 1
-                s += deg.get(u, 0)
-            feat[idx] = 0.0 if d == 0 else s / d
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_avg_weight' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    node_order = list(G.nodes())
-    n = len(node_order)
-    feature = np.zeros(n, dtype=float)
-    for i, v in enumerate(node_order):
-        if G.is_directed():
-            nbrs = G.successors(v)
-        else:
-            nbrs = G.neighbors(v)
-        s = 0.0
-        cnt = 0
-        for u in nbrs:
-            w = G.nodes[u].get('weight', 0.0)
-            s += w
-            cnt += 1
-        feature[i] = s / cnt if cnt > 0 else 0.0
-    return feature
-******************************
-⚠️ Skipping feature 'page_rank_score' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    weight_attr = None
-    for _, _, data in G.edges(data=True):
-        if 'weight' in data:
-            weight_attr = 'weight'
-            break
-    pr = nx.pagerank(G, alpha=0.85, weight=weight_attr)
-    nodes = list(G.nodes())
-    return np.array([pr[n] for n in nodes], dtype=float)
-******************************
-⚠️ Skipping feature 'betweenness_centrality' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    bc = nx.betweenness_centrality(G, normalized=True, weight='weight')
-    return np.array([bc[n] for n in G], dtype=float)
-******************************
-⚠️ Skipping feature 'core_number' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    core_num = nx.core_number(G)
-    order = list(G.nodes())
-    return np.array([core_num[n] for n in order], dtype=int)
-******************************
-⚠️ Skipping feature 'local_efficiency' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    nodes = list(G.nodes())
-    n = len(nodes)
-    if n == 0:
-        return np.array([], dtype=float)
-    idx = {v: i for i, v in enumerate(nodes)}
-    feats = np.zeros(n, dtype=float)
-    directed = G.is_directed()
-    for v in nodes:
-        neigh = list(G.successors(v)) if directed else list(G.neighbors(v))
-        if len(neigh) == 0:
-            feats[idx[v]] = 0.0
-            continue
-        H = G.subgraph(neigh)
-        feats[idx[v]] = nx.global_efficiency(H)
-    return feats
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 26/999 [00:00<00:03, 258.02it/s][A
- 58%|█████▊    | 579/999 [00:01<00:01, 330.85it/s][A
-  5%|▌         | 52/999 [00:00<00:03, 255.26it/s][A
- 61%|██████▏   | 613/999 [00:01<00:01, 309.35it/s][A
-  8%|▊         | 81/999 [00:00<00:03, 266.42it/s][A
- 65%|██████▍   | 645/999 [00:01<00:01, 294.06it/s][A
- 11%|█         | 108/999 [00:00<00:03, 267.56it/s][A
- 68%|██████▊   | 675/999 [00:02<00:01, 287.91it/s][A
- 14%|█▎        | 135/999 [00:00<00:03, 262.89it/s][A
- 71%|███████   | 705/999 [00:02<00:01, 286.27it/s][A
- 16%|█▋        | 164/999 [00:00<00:03, 271.72it/s][A
- 73%|███████▎  | 734/999 [00:02<00:00, 287.06it/s][A
- 19%|█▉        | 193/999 [00:00<00:02, 277.34it/s][A
- 76%|███████▋  | 763/999 [00:02<00:00, 284.43it/s][A
- 22%|██▏       | 221/999 [00:00<00:02, 277.45it/s][A
- 79%|███████▉  | 792/999 [00:02<00:00, 285.79it/s][A
- 25%|██▌       | 250/999 [00:00<00:02, 281.02it/s][A
- 82%|████████▏ | 821/999 [00:02<00:00, 286.76it/s][A
- 28%|██▊       | 279/999 [00:01<00:02, 283.44it/s][A
- 85%|████████▌ | 850/999 [00:02<00:00, 287.59it/s][A
- 31%|███       | 308/999 [00:01<00:02, 282.47it/s][A
- 88%|████████▊ | 879/999 [00:02<00:00, 287.91it/s][A
- 34%|███▎      | 337/999 [00:01<00:02, 280.68it/s][A
- 91%|█████████ | 908/999 [00:02<00:00, 287.33it/s][A
- 37%|███▋      | 366/999 [00:01<00:02, 282.96it/s][A
- 94%|█████████▍| 937/999 [00:02<00:00, 287.92it/s][A
- 40%|███▉      | 395/999 [00:01<00:02, 284.93it/s][A
- 97%|█████████▋| 966/999 [00:03<00:00, 288.26it/s][A
- 42%|████▏     | 424/999 [00:01<00:02, 286.18it/s][A
-100%|█████████▉| 995/999 [00:03<00:00, 287.38it/s][A100%|██████████| 999/999 [00:03<00:00, 317.35it/s]
-
- 46%|████▌     | 459/999 [00:01<00:01, 304.26it/s][A
- 54%|█████▍    | 543/999 [00:01<00:00, 463.48it/s][A
- 63%|██████▎   | 627/999 [00:01<00:00, 574.87it/s][A
- 71%|███████▏  | 713/999 [00:01<00:00, 659.06it/s][A
- 80%|████████  | 800/999 [00:02<00:00, 719.81it/s][A
- 87%|████████▋ | 873/999 [00:02<00:00, 718.99it/s][A
- 95%|█████████▍| 945/999 [00:02<00:00, 654.11it/s][A100%|██████████| 999/999 [00:02<00:00, 423.08it/s]
-Objective value: 103.0092
- 33%|███▎      | 1/3 [07:47<15:35, 467.99s/it]Objective value: 298.0
-Objective value pruned: 284.0
-Ratio 0.9530201342281879
-queries ratio 1.0
-Explaining GNN predictions
-
-Beam Search Depth 2
-Proposed features: ['degree', 'normalized_degree', 'degree_to_weight_ratio', 'weight', 'neighbor_weight_sum', 'neighbor_weight_mean', 'clustering_coefficient', 'eigenvector_centrality', 'betweenness_centrality', 'k_core_number']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:08<01:20,  8.90s/feature][A
-Extracting features:  20%|██        | 2/10 [00:16<01:05,  8.13s/feature][A 33%|███▎      | 1/3 [07:33<15:06, 453.11s/it]
-Extracting features:  30%|███       | 3/10 [00:26<01:03,  9.13s/feature][A
-Extracting features:  40%|████      | 4/10 [00:29<00:40,  6.73s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:41<00:41,  8.38s/feature][AObjective value pruned: 102.8533
-Ratio 0.9984865429495617
-queries ratio 0.8024483008790539
-Explaining GNN predictions
-
-Beam Search Depth 2
-Proposed features: ['degree_to_weight_ratio', 'normalized_weight', 'in_degree', 'out_degree', 'sum_out_edge_probability', 'expected_neighbor_influence', 'average_neighbor_weight', 'neighbor_weight_std', 'out_to_in_degree_ratio', 'degree_weight_product_norm']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:07<01:03,  7.04s/feature][A
-Extracting features:  60%|██████    | 6/10 [00:55<00:41, 10.36s/feature][A
-Extracting features:  20%|██        | 2/10 [00:14<00:57,  7.16s/feature][A
-Extracting features:  30%|███       | 3/10 [00:21<00:51,  7.34s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:08<00:33, 11.19s/feature][A
-Extracting features:  40%|████      | 4/10 [00:30<00:46,  7.78s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:30<00:29, 14.79s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:58<01:15, 15.01s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:48<00:15, 15.68s/feature][A
-Extracting features: 100%|██████████| 10/10 [01:59<00:00, 14.41s/feature][AExtracting features: 100%|██████████| 10/10 [01:59<00:00, 12.00s/feature]
-⚠️ Skipping feature 'neighbor_weight_sum' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    weights = {n: G.nodes[n].get('weight', 0.0) for n in nodes}
-    feat = np.empty(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        s = 0.0
-        for u in G.neighbors(v):
-            s += weights[u]
-        feat[i] = s
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_weight_mean' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    weights = {n: G.nodes[n].get('weight', 0.0) for n in G}
-    arr = np.empty(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        deg = G.degree(v)
-        s = 0.0
-        for nb in G.neighbors(v):
-            s += weights.get(nb, 0.0)
-        arr[i] = s / max(1, deg)
-    return arr
-******************************
-⚠️ Skipping feature 'clustering_coefficient' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    nodes = list(G.nodes())
-    clust = nx.clustering(G)
-    return np.array([clust[n] for n in nodes], dtype=float)
-******************************
-⚠️ Skipping feature 'eigenvector_centrality' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    has_edge_weight = any('weight' in data for _, _, data in G.edges(data=True))
-    if has_edge_weight:
-        centrality = nx.eigenvector_centrality(G, weight='weight')
-    else:
-        centrality = nx.eigenvector_centrality(G, weight=None)
-    return np.asarray([centrality[n] for n in G.nodes()], dtype=float)
-******************************
-⚠️ Skipping feature 'betweenness_centrality' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    centrality = nx.betweenness_centrality(G, normalized=True, weight='weight')
-    order = list(G.nodes())
-    return np.array([centrality[n] for n in order], dtype=float)
-******************************
-⚠️ Skipping feature 'k_core_number' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    core = nx.core_number(G)
-    nodes = list(G.nodes())
-    return np.array([core[n] for n in nodes], dtype=float)
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 32/999 [00:00<00:03, 312.00it/s][A
-  7%|▋         | 66/999 [00:00<00:02, 323.61it/s][A
- 10%|█         | 103/999 [00:00<00:02, 343.92it/s][A
- 14%|█▍        | 140/999 [00:00<00:02, 353.25it/s][A
- 18%|█▊        | 176/999 [00:00<00:02, 355.34it/s][A
-Extracting features:  60%|██████    | 6/10 [01:17<01:05, 16.48s/feature][A
- 21%|██▏       | 213/999 [00:00<00:02, 359.85it/s][A
- 25%|██▌       | 250/999 [00:00<00:02, 362.97it/s][A
- 29%|██▊       | 287/999 [00:00<00:01, 365.09it/s][A
- 32%|███▏      | 324/999 [00:00<00:01, 365.10it/s][A
- 36%|███▌      | 361/999 [00:01<00:01, 363.81it/s][A
- 40%|███▉      | 398/999 [00:01<00:01, 363.22it/s][A
- 44%|████▎     | 435/999 [00:01<00:01, 364.91it/s][A
- 47%|████▋     | 472/999 [00:01<00:01, 365.30it/s][A
- 51%|█████     | 509/999 [00:01<00:01, 366.55it/s][A
- 55%|█████▍    | 546/999 [00:01<00:01, 361.89it/s][A
- 58%|█████▊    | 583/999 [00:01<00:01, 360.07it/s][A
- 62%|██████▏   | 620/999 [00:01<00:01, 359.87it/s][A
- 66%|██████▌   | 657/999 [00:01<00:00, 361.02it/s][A
- 69%|██████▉   | 694/999 [00:01<00:00, 363.19it/s][A
- 73%|███████▎  | 731/999 [00:02<00:00, 358.52it/s][A
- 77%|███████▋  | 768/999 [00:02<00:00, 360.65it/s][A
- 81%|████████  | 805/999 [00:02<00:00, 361.78it/s][A
- 84%|████████▍ | 842/999 [00:02<00:00, 363.94it/s][A
- 88%|████████▊ | 879/999 [00:02<00:00, 363.85it/s][A
- 92%|█████████▏| 916/999 [00:02<00:00, 365.05it/s][A
- 95%|█████████▌| 953/999 [00:02<00:00, 365.36it/s][A
- 99%|█████████▉| 990/999 [00:02<00:00, 363.74it/s][A100%|██████████| 999/999 [00:02<00:00, 360.68it/s]
-
-Extracting features:  70%|███████   | 7/10 [01:33<00:49, 16.41s/feature][AObjective value: 298.0
-Objective value pruned: 275.0
-Ratio 0.9228187919463087
-queries ratio 1.0
-Explaining GNN predictions
-Proposed features: ['degree', 'normalized_degree', 'node_weight', 'neighbor_weight_sum', 'neighbor_weight_mean', 'degree_to_weight_ratio', 'neighbor_degree_variance', 'local_clustering_coefficient', 'eigenvector_centrality', 'second_order_neighbor_degree_mean']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  80%|████████  | 8/10 [01:46<00:30, 15.37s/feature][A
-Extracting features:  10%|█         | 1/10 [00:13<02:05, 13.93s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:57<00:13, 13.86s/feature][A
-Extracting features:  20%|██        | 2/10 [00:23<01:29, 11.16s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:06<00:00, 12.51s/feature][AExtracting features: 100%|██████████| 10/10 [02:06<00:00, 12.69s/feature]
-⚠️ Skipping feature 'degree_to_weight_ratio' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    degs = np.array([G.out_degree(n) for n in nodes], dtype=float)
-    weights = np.array([G.nodes[n].get('weight', 0.0) for n in nodes], dtype=float)
-    with np.errstate(divide='ignore', invalid='ignore'):
-        ratios = degs / weights
-    ratios[~np.isfinite(ratios)] = np.nan
-    return ratios
-******************************
-⚠️ Skipping feature 'sum_out_edge_probability' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    n = G.number_of_nodes()
-    order = list(G.nodes())
-    idx = {node: i for i, node in enumerate(order)}
-    feature = np.zeros(n, dtype=float)
-
-    if G.is_directed():
-        sum_out = {}
-        for v in order:
-            s = 0.0
-            for _, _, data in G.out_edges(v, data=True):
-                s += data.get('weight', 1.0)
-            sum_out[v] = s
-        for v in order:
-            denom = sum_out[v]
-            val = 0.0
-            if denom != 0.0:
-                for _, _, data in G.out_edges(v, data=True):
-                    val += data.get('weight', 1.0) / denom
-            feature[idx[v]] = val
-    else:
-        sum_out = {}
-        for v in order:
-            s = 0.0
-            for _, _, data in G.edges(v, data=True):
-                s += data.get('weight', 1.0)
-            sum_out[v] = s
-        for v in order:
-            denom = sum_out[v]
-            val = 0.0
-            if denom != 0.0:
-                for _, _, data in G.edges(v, data=True):
-                    val += data.get('weight', 1.0) / denom
-            feature[idx[v]] = val
-
-    return feature
-******************************
-⚠️ Skipping feature 'expected_neighbor_influence' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    if n == 0:
-        return np.array([], dtype=float)
-    idx_map = {node: i for i, node in enumerate(nodes)}
-    weights = np.array([G.nodes[node].get('weight', 0.0) for node in nodes], dtype=float)
-    feat = np.zeros(n, dtype=float)
-    if G.is_directed():
-        for i, v in enumerate(nodes):
-            nbrs = [idx_map[u] for u in G.successors(v)]
-            d = len(nbrs)
-            if d:
-                feat[i] = weights[nbrs].sum() / d
-            else:
-                feat[i] = 0.0
-    else:
-        for i, v in enumerate(nodes):
-            nbrs = [idx_map[u] for u in G.neighbors(v)]
-            d = len(nbrs)
-            if d:
-                feat[i] = weights[nbrs].sum() / d
-            else:
-                feat[i] = 0.0
-    return feat
-******************************
-⚠️ Skipping feature 'average_neighbor_weight' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    n = len(nodes)
-    out = np.zeros(n, dtype=float)
-    wmap = {u: G.nodes[u].get('weight', 0.0) for u in nodes}
-    if G.is_directed():
-        for i, v in enumerate(nodes):
-            neigh = list(G.successors(v))
-            d = len(neigh)
-            if d > 0:
-                s = 0.0
-                for u in neigh:
-                    s += wmap.get(u, 0.0)
-                out[i] = s / d
-            else:
-                out[i] = 0.0
-    else:
-        for i, v in enumerate(nodes):
-            neigh = list(G.neighbors(v))
-            d = len(neigh)
-            if d > 0:
-                s = 0.0
-                for u in neigh:
-                    s += wmap.get(u, 0.0)
-                out[i] = s / d
-            else:
-                out[i] = 0.0
-    return out
-******************************
-⚠️ Skipping feature 'neighbor_weight_std' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    feat = np.empty(n, dtype=float)
-    for i, v in enumerate(nodes):
-        if G.is_directed():
-            nbr_iter = G.successors(v)
-        else:
-            nbr_iter = G.neighbors(v)
-        wts = [ float(G.nodes[u].get('weight', 0.0)) for u in nbr_iter ]
-        if len(wts) <= 1:
-            feat[i] = 0.0
-        else:
-            feat[i] = float(np.std(np.asarray(wts, dtype=float), ddof=0))
-    return feat
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  8%|▊         | 80/999 [00:00<00:01, 798.35it/s][A
- 16%|█▋        | 164/999 [00:00<00:01, 821.78it/s][A
- 25%|██▍       | 247/999 [00:00<00:00, 825.27it/s][A
- 33%|███▎      | 334/999 [00:00<00:00, 840.42it/s][A
- 42%|████▏     | 419/999 [00:00<00:00, 838.03it/s][A
- 51%|█████     | 506/999 [00:00<00:00, 846.02it/s][A
- 59%|█████▉    | 593/999 [00:00<00:00, 852.42it/s][A
- 68%|██████▊   | 681/999 [00:00<00:00, 858.53it/s][A
- 77%|███████▋  | 771/999 [00:00<00:00, 870.42it/s][A
- 86%|████████▌ | 859/999 [00:01<00:00, 852.81it/s][A
- 95%|█████████▍| 946/999 [00:01<00:00, 855.37it/s][A100%|██████████| 999/999 [00:01<00:00, 847.05it/s]
-Objective value: 103.0092
-
-Extracting features:  30%|███       | 3/10 [00:47<01:58, 16.97s/feature][A
-Extracting features:  40%|████      | 4/10 [00:59<01:30, 15.09s/feature][A
-Extracting features:  50%|█████     | 5/10 [01:16<01:19, 15.97s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:26<00:55, 13.86s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:40<00:42, 14.02s/feature][AObjective value pruned: 102.7144
-Ratio 0.9971381197019294
-queries ratio 0.7260618007013061
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio', 'normalized_weight', 'out_degree', 'in_degree', 'average_out_neighbor_weight', 'directed_local_clustering_coefficient', 'core_number', 'page_rank_score', 'avg_neighbor_out_degree', 'epsilon_smoothed_out_edge_probability']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  80%|████████  | 8/10 [01:55<00:28, 14.36s/feature][A
-Extracting features:  10%|█         | 1/10 [00:15<02:16, 15.20s/feature][A
-Extracting features:  20%|██        | 2/10 [00:20<01:16,  9.61s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:12<00:14, 14.97s/feature][A
-Extracting features:  30%|███       | 3/10 [00:32<01:13, 10.45s/feature][A
-Extracting features:  40%|████      | 4/10 [00:37<00:50,  8.43s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:31<00:00, 16.16s/feature][AExtracting features: 100%|██████████| 10/10 [02:31<00:00, 15.11s/feature]
-⚠️ Skipping feature 'neighbor_weight_mean' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    idx = {v: i for i, v in enumerate(nodes)}
-    weights = np.array([G.nodes[v]['weight'] for v in nodes], dtype=float)
-    feature = np.zeros(n, dtype=float)
-    for i, v in enumerate(nodes):
-        nbrs = list(G.neighbors(v))
-        d = len(nbrs)
-        if d:
-            s = 0.0
-            for u in nbrs:
-                s += weights[idx[u]]
-            feature[i] = s / d
-        else:
-            feature[i] = 0.0
-    return feature
-******************************
-⚠️ Skipping feature 'neighbor_degree_variance' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    deg = dict(G.degree())
-    feats = []
-    for v in nodes:
-        neighbor_degrees = [deg[u] for u in G.neighbors(v)]
-        if not neighbor_degrees:
-            feats.append(0.0)
-        else:
-            feats.append(float(np.var(neighbor_degrees, ddof=0)))
-    return np.array(feats, dtype=float)
-******************************
-⚠️ Skipping feature 'local_clustering_coefficient' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    n = len(nodes)
-    if n == 0:
-        return np.array([], dtype=float)
-    triangles = nx.triangles(G)
-    deg = dict(G.degree())
-    out = np.empty(n, dtype=float)
-    for i, v in enumerate(nodes):
-        d = deg.get(v, 0)
-        if d > 1:
-            t = triangles.get(v, 0)
-            out[i] = (2.0 * t) / (d * (d - 1))
-        else:
-            out[i] = 0.0
-    return out
-******************************
-⚠️ Skipping feature 'eigenvector_centrality' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    centrality = nx.eigenvector_centrality(G, weight='weight')
-    nodes = list(G.nodes())
-    return np.array([centrality.get(n, 0.0) for n in nodes])
-******************************
-⚠️ Skipping feature 'second_order_neighbor_degree_mean' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    deg = {n: G.degree(n) for n in nodes}
-    neigh = {n: set(G.neighbors(n)) for n in nodes}
-    result = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        second = set()
-        for nb in neigh[v]:
-            second.update(neigh[nb])
-        second.discard(v)
-        second.difference_update(neigh[v])
-        if not second:
-            result[i] = 0.0
-        else:
-            s = 0.0
-            for w in second:
-                s += deg[w]
-            result[i] = s / len(second)
-    return result
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 31/999 [00:00<00:03, 308.80it/s][A
-  6%|▋         | 63/999 [00:00<00:02, 315.32it/s][A
- 10%|█         | 101/999 [00:00<00:02, 341.55it/s][A
- 14%|█▍        | 139/999 [00:00<00:02, 353.63it/s][A
- 18%|█▊        | 176/999 [00:00<00:02, 359.01it/s][A
- 21%|██▏       | 213/999 [00:00<00:02, 362.42it/s][A
- 25%|██▌       | 250/999 [00:00<00:02, 360.47it/s][A
- 29%|██▊       | 287/999 [00:00<00:01, 362.67it/s][A
- 32%|███▏      | 324/999 [00:00<00:01, 363.16it/s][A
-Extracting features:  50%|█████     | 5/10 [00:50<00:49,  9.94s/feature][A
- 36%|███▌      | 361/999 [00:01<00:01, 364.11it/s][A
- 40%|███▉      | 398/999 [00:01<00:01, 365.75it/s][A
- 44%|████▎     | 436/999 [00:01<00:01, 367.30it/s][A
- 47%|████▋     | 473/999 [00:01<00:01, 368.06it/s][A
- 51%|█████     | 510/999 [00:01<00:01, 365.56it/s][A
- 55%|█████▍    | 547/999 [00:01<00:01, 363.64it/s][A
- 58%|█████▊    | 584/999 [00:01<00:01, 363.60it/s][A
- 62%|██████▏   | 622/999 [00:01<00:01, 366.10it/s][A
- 66%|██████▌   | 660/999 [00:01<00:00, 367.90it/s][A
- 70%|██████▉   | 698/999 [00:01<00:00, 369.34it/s][A
- 74%|███████▎  | 736/999 [00:02<00:00, 370.17it/s][A
- 77%|███████▋  | 774/999 [00:02<00:00, 370.72it/s][A
- 81%|████████▏ | 812/999 [00:02<00:00, 369.89it/s][A
- 85%|████████▍ | 849/999 [00:02<00:00, 368.11it/s][A
- 89%|████████▉ | 887/999 [00:02<00:00, 369.49it/s][A
- 92%|█████████▏| 924/999 [00:02<00:00, 362.91it/s][A
- 96%|█████████▋| 962/999 [00:02<00:00, 365.04it/s][A
-100%|██████████| 999/999 [00:02<00:00, 366.49it/s][A100%|██████████| 999/999 [00:02<00:00, 363.38it/s]
-
-Extracting features:  60%|██████    | 6/10 [01:03<00:43, 10.95s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:14<00:33, 11.16s/feature][AObjective value: 298.0
-Objective value pruned: 265.0
-Ratio 0.889261744966443
-queries ratio 1.0
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio', 'node_weight', 'degree', 'normalized_degree', 'weight_to_degree_ratio', 'neighbor_avg_weight', 'neighbor_max_weight', 'neighbor_min_weight', 'avg_weight_diff_to_neighbors', 'local_clustering_coefficient']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  80%|████████  | 8/10 [01:30<00:25, 12.62s/feature][A
-Extracting features:  10%|█         | 1/10 [00:09<01:26,  9.65s/feature][A
-Extracting features:  20%|██        | 2/10 [00:15<01:01,  7.63s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:39<00:11, 11.51s/feature][A
-Extracting features:  30%|███       | 3/10 [00:31<01:19, 11.40s/feature][A
-Extracting features:  40%|████      | 4/10 [00:39<00:59,  9.92s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:04<00:00, 15.62s/feature][AExtracting features: 100%|██████████| 10/10 [02:04<00:00, 12.44s/feature]
-⚠️ Skipping feature 'average_out_neighbor_weight' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    node_order = list(G.nodes())
-    n = len(node_order)
-    weight_map = {n_id: G.nodes[n_id].get('weight', 0.0) for n_id in node_order}
-    result = np.zeros(n, dtype=float)
-    if G.is_directed():
-        for i, v in enumerate(node_order):
-            total = 0.0
-            count = 0
-            for u in G.successors(v):
-                total += weight_map.get(u, 0.0)
-                count += 1
-            result[i] = total / count if count > 0 else 0.0
-    else:
-        for i, v in enumerate(node_order):
-            total = 0.0
-            count = 0
-            for u in G.neighbors(v):
-                total += weight_map.get(u, 0.0)
-                count += 1
-            result[i] = total / count if count > 0 else 0.0
-    return result
-******************************
-⚠️ Skipping feature 'directed_local_clustering_coefficient' due to error: 'Graph' object has no attribute 'successors'
-******************************
-import numpy as np
-
-def extract_feature(G):
-    succs = {n: set(G.successors(n)) for n in G}
-    nodes = list(G.nodes())
-    features = np.zeros(len(nodes), dtype=float)
-    for idx, v in enumerate(nodes):
-        S = succs[v]
-        k = len(S)
-        if k <= 1:
-            features[idx] = 0.0
-            continue
-        actual = 0
-        for a in S:
-            inter = len(succs[a] & S)
-            if a in succs[a] and a in S:
-                inter -= 1
-            actual += max(0, inter)
-        denom = k * (k - 1)
-        features[idx] = actual / denom if denom > 0 else 0.0
-    return features
-******************************
-⚠️ Skipping feature 'core_number' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    core = nx.core_number(G)
-    nodes = list(G.nodes())
-    values = [core[n] for n in nodes]
-    return np.asarray(values, dtype=int)
-******************************
-⚠️ Skipping feature 'page_rank_score' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    if G.number_of_nodes() == 0:
-        return np.array([], dtype=float)
-    has_weight = any('weight' in data for _, _, data in G.edges(data=True))
-    if has_weight:
-        pr = nx.pagerank(G, alpha=0.85, weight='weight')
-    else:
-        pr = nx.pagerank(G, alpha=0.85)
-    order = list(G.nodes())
-    return np.array([pr.get(n, 0.0) for n in order], dtype=float)
-******************************
-⚠️ Skipping feature 'avg_neighbor_out_degree' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    out_deg = dict(G.out_degree())
-    directed = G.is_directed()
-    feature = np.empty(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        if directed:
-            neighbors = G.successors(v)
-        else:
-            neighbors = G.neighbors(v)
-        total = 0.0
-        count = 0
-        for u in neighbors:
-            total += out_deg.get(u, 0)
-            count += 1
-        feature[i] = (total / count) if count > 0 else 0.0
-    return feature
-******************************
-⚠️ Skipping feature 'epsilon_smoothed_out_edge_probability' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    epsilon = 0.01
-    nodes = list(G.nodes())
-    feat = np.empty(len(nodes), dtype=float)
-    weights = {node: G.nodes[node].get('weight', 0.0) for node in nodes}
-    directed = G.is_directed()
-
-    for i, v in enumerate(nodes):
-        if directed:
-            nbrs = list(G.successors(v))
-        else:
-            nbrs = list(G.neighbors(v))
-        if not nbrs:
-            sum_p = 0.0
-        else:
-            total = 0.0
-            for u in nbrs:
-                total += weights.get(u, 0.0)
-            if total > 0.0:
-                s = 0.0
-                for u in nbrs:
-                    s += weights.get(u, 0.0) / total
-                sum_p = s
-            else:
-                sum_p = 0.0
-        feat[i] = max(sum_p, epsilon)
-
-    return feat
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  9%|▉         | 88/999 [00:00<00:01, 878.83it/s][A
- 18%|█▊        | 179/999 [00:00<00:00, 894.90it/s][A
- 27%|██▋       | 270/999 [00:00<00:00, 899.69it/s][A
- 36%|███▌      | 360/999 [00:00<00:00, 876.74it/s][A
- 45%|████▍     | 448/999 [00:00<00:00, 877.50it/s][A
- 54%|█████▎    | 536/999 [00:00<00:00, 851.85it/s][A
- 62%|██████▏   | 622/999 [00:00<00:00, 850.18it/s][A
- 71%|███████   | 711/999 [00:00<00:00, 859.51it/s][A
- 80%|███████▉  | 799/999 [00:00<00:00, 864.55it/s][A
- 89%|████████▉ | 887/999 [00:01<00:00, 868.04it/s][A
- 97%|█████████▋| 974/999 [00:01<00:00, 857.09it/s][A100%|██████████| 999/999 [00:01<00:00, 865.97it/s]
-Objective value: 103.0092
-
-Extracting features:  50%|█████     | 5/10 [00:47<00:46,  9.32s/feature][A
-Extracting features:  60%|██████    | 6/10 [00:58<00:39,  9.84s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:11<00:32, 10.86s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:26<00:24, 12.28s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:40<00:12, 12.87s/feature][A
-Extracting features: 100%|██████████| 10/10 [01:53<00:00, 12.76s/feature][AExtracting features: 100%|██████████| 10/10 [01:53<00:00, 11.34s/feature]
-⚠️ Skipping feature 'neighbor_avg_weight' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    weights = {}
-    for n, data in G.nodes(data=True):
-        weights[n] = data.get('weight', 0.0)
-    nodes = list(G.nodes())
-    res = np.zeros(len(nodes), dtype=float)
-    for i, n in enumerate(nodes):
-        neighs = list(G.neighbors(n))
-        if not neighs:
-            res[i] = 0.0
-        else:
-            s = 0.0
-            for u in neighs:
-                s += weights.get(u, 0.0)
-            res[i] = s / len(neighs)
-    return res
-******************************
-⚠️ Skipping feature 'neighbor_max_weight' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    weights = {n: G.nodes[n].get('weight', 0) for n in G}
-    feats = []
-    for v in G:
-        max_w = 0
-        for u in G.neighbors(v):
-            wu = weights.get(u, 0)
-            if wu > max_w:
-                max_w = wu
-        feats.append(max_w)
-    return np.asarray(feats)
-******************************
-⚠️ Skipping feature 'neighbor_min_weight' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    wmap = {n: data.get('weight', 0) for n, data in G.nodes(data=True)}
-    feature = np.empty(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        min_w = min((wmap[u] for u in G.neighbors(v)), default=0)
-        feature[i] = min_w
-    return feature
-******************************
-⚠️ Skipping feature 'avg_weight_diff_to_neighbors' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    weights = np.array([G.nodes[v].get('weight', 0.0) for v in nodes], dtype=float)
-    idx = {v: i for i, v in enumerate(nodes)}
-    adj_indices = []
-    for v in nodes:
-        neighs = list(G.neighbors(v))
-        adj_indices.append([idx[u] for u in neighs])
-    feature = np.zeros(n, dtype=float)
-    for i in range(n):
-        neigh_i = adj_indices[i]
-        if not neigh_i:
-            feature[i] = 0.0
-        else:
-            wv = weights[i]
-            s = 0.0
-            for j in neigh_i:
-                s += abs(wv - weights[j])
-            feature[i] = s / len(neigh_i)
-    return feature
-******************************
-⚠️ Skipping feature 'local_clustering_coefficient' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    clustering = nx.clustering(G, weight=None)
-    nodes = list(G.nodes())
-    return np.array([clustering[n] for n in nodes], dtype=float)
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 31/999 [00:00<00:03, 307.71it/s][A
-  7%|▋         | 66/999 [00:00<00:02, 327.38it/s][A
- 10%|█         | 103/999 [00:00<00:02, 343.41it/s][A
- 14%|█▍        | 140/999 [00:00<00:02, 353.44it/s][A
- 18%|█▊        | 177/999 [00:00<00:02, 356.33it/s][A
- 21%|██▏       | 213/999 [00:00<00:02, 356.78it/s][A
- 25%|██▌       | 250/999 [00:00<00:02, 359.57it/s][A
- 29%|██▊       | 286/999 [00:00<00:02, 356.40it/s][A
- 32%|███▏      | 322/999 [00:00<00:01, 354.73it/s][A
- 36%|███▌      | 359/999 [00:01<00:01, 358.94it/s][A
- 40%|███▉      | 396/999 [00:01<00:01, 360.00it/s][A
- 43%|████▎     | 433/999 [00:01<00:01, 355.55it/s][A
- 47%|████▋     | 470/999 [00:01<00:01, 359.01it/s][A
- 51%|█████     | 507/999 [00:01<00:01, 362.11it/s][A
- 54%|█████▍    | 544/999 [00:01<00:01, 362.86it/s][A
- 58%|█████▊    | 581/999 [00:01<00:01, 362.80it/s][A
- 62%|██████▏   | 618/999 [00:01<00:01, 363.66it/s][A
- 66%|██████▌   | 655/999 [00:01<00:00, 365.15it/s][A
- 69%|██████▉   | 692/999 [00:01<00:00, 363.52it/s][A
- 73%|███████▎  | 729/999 [00:02<00:00, 364.65it/s][A
- 77%|███████▋  | 766/999 [00:02<00:00, 363.86it/s][A
- 80%|████████  | 803/999 [00:02<00:00, 365.35it/s][A
- 84%|████████▍ | 840/999 [00:02<00:00, 366.58it/s][A
- 88%|████████▊ | 877/999 [00:02<00:00, 367.44it/s][A
- 91%|█████████▏| 914/999 [00:02<00:00, 365.71it/s][A
- 95%|█████████▌| 952/999 [00:02<00:00, 367.04it/s][A
- 99%|█████████▉| 989/999 [00:02<00:00, 366.59it/s][A100%|██████████| 999/999 [00:02<00:00, 360.42it/s]
-Objective value pruned: 101.8779
-Ratio 0.9890174858168007
-queries ratio 0.758107225884733
-Explaining GNN predictions
-Proposed features: ['out_degree', 'degree_to_weight_ratio', 'log_weight', 'weight_normalized_by_max', 'neighbor_out_degree_mean', 'neighbor_out_degree_max', 'in_degree', 'avg_p_to_out_neighbors', 'sum_p_to_out_neighbors', 'eigenvector_centrality']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:07<01:05,  7.33s/feature][AObjective value: 298.0
-Objective value pruned: 276.0
-Ratio 0.9261744966442953
-queries ratio 1.0
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio', 'node_weight', 'degree', 'normalized_degree_fraction', 'neighbor_mean_degree', 'neighbor_mean_weight', 'neighbor_weight_variance', 'neighbor_weight_above_node_ratio', 'local_clustering_coefficient', 'neighbor_degree_weight_correlation']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  20%|██        | 2/10 [00:18<01:17,  9.68s/feature][A
-Extracting features:  30%|███       | 3/10 [00:22<00:50,  7.24s/feature][A
-Extracting features:  10%|█         | 1/10 [00:07<01:08,  7.66s/feature][A
-Extracting features:  40%|████      | 4/10 [00:27<00:37,  6.17s/feature][A
-Extracting features:  20%|██        | 2/10 [00:13<00:52,  6.56s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:43<00:49,  9.82s/feature][A
-Extracting features:  30%|███       | 3/10 [00:26<01:07,  9.68s/feature][A
-Extracting features:  60%|██████    | 6/10 [00:50<00:34,  8.75s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:00<00:27,  9.18s/feature][A
-Extracting features:  40%|████      | 4/10 [00:41<01:10, 11.81s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:55<01:02, 12.55s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:17<00:23, 11.75s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:07<00:48, 12.13s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:19<00:36, 12.24s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:43<00:16, 16.19s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:35<00:26, 13.32s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:03<00:00, 17.31s/feature][AExtracting features: 100%|██████████| 10/10 [02:03<00:00, 12.36s/feature]
-⚠️ Skipping feature 'degree_to_weight_ratio' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    degs = np.array([G.out_degree(v) for v in nodes], dtype=float)
-    weights = np.array([G.nodes[v].get('weight', 0.0) for v in nodes], dtype=float)
-    with np.errstate(divide='ignore', invalid='ignore'):
-        feature = degs / weights
-    return feature
-******************************
-⚠️ Skipping feature 'neighbor_out_degree_mean' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    idx = {node: i for i, node in enumerate(nodes)}
-    deg_out_arr = np.zeros(n, dtype=float)
-    for i, v in enumerate(nodes):
-        deg_out_arr[i] = G.out_degree(v)
-    feature = np.zeros(n, dtype=float)
-    for i, v in enumerate(nodes):
-        total = 0.0
-        count = 0
-        for u in G.successors(v):
-            total += deg_out_arr[idx[u]]
-            count += 1
-        feature[i] = 0.0 if count == 0 else total / count
-    return feature
-******************************
-⚠️ Skipping feature 'neighbor_out_degree_max' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    outdeg = dict(G.out_degree())
-    n = G.number_of_nodes()
-    feat = np.empty(n, dtype=int)
-    for i, v in enumerate(G.nodes()):
-        max_deg = 0
-        for u in G.successors(v):
-            du = outdeg.get(u, 0)
-            if du > max_deg:
-                max_deg = du
-        feat[i] = max_deg
-    return feat
-******************************
-⚠️ Skipping feature 'sum_p_to_out_neighbors' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    n = G.number_of_nodes()
-    result = np.zeros(n, dtype=float)
-    nodes = list(G.nodes())
-    for i, v in enumerate(nodes):
-        if G.is_directed():
-            out_neighbors = list(G.successors(v))
-        else:
-            out_neighbors = list(G.neighbors(v))
-        if not out_neighbors:
-            result[i] = 0.0
-            continue
-        denom_edges = 0.0
-        all_have_edge_weight = True
-        for w in out_neighbors:
-            w_e = G[v][w].get('weight', None)
-            if w_e is None:
-                all_have_edge_weight = False
-                break
-            denom_edges += w_e
-        if all_have_edge_weight:
-            if denom_edges == 0.0:
-                result[i] = 0.0
-            else:
-                s = 0.0
-                for w in out_neighbors:
-                    w_e = G[v][w].get('weight', 1.0)
-                    s += w_e / denom_edges
-                result[i] = s
-        else:
-            denom_nodes = 0.0
-            for w in out_neighbors:
-                denom_nodes += G.nodes[w].get('weight', 0.0)
-            if denom_nodes == 0.0:
-                result[i] = 0.0
-            else:
-                s = 0.0
-                for w in out_neighbors:
-                    s += G.nodes[w].get('weight', 0.0) / denom_nodes
-                result[i] = s
-    return result
-******************************
-⚠️ Skipping feature 'eigenvector_centrality' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    nodes = list(G.nodes())
-    try:
-        centrality = nx.eigenvector_centrality(G, weight='weight')
-    except nx.NetworkXError:
-        centrality = nx.eigenvector_centrality(G, weight=None)
-    return np.array([centrality[n] for n in nodes], dtype=float)
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  9%|▊         | 86/999 [00:00<00:01, 851.88it/s][A
- 18%|█▊        | 175/999 [00:00<00:00, 870.98it/s][A
- 27%|██▋       | 265/999 [00:00<00:00, 880.99it/s][A
- 36%|███▌      | 355/999 [00:00<00:00, 884.61it/s][A
- 45%|████▍     | 445/999 [00:00<00:00, 887.43it/s][A
- 53%|█████▎    | 534/999 [00:00<00:00, 887.13it/s][A
- 62%|██████▏   | 623/999 [00:00<00:00, 878.94it/s][A
- 71%|███████   | 711/999 [00:00<00:00, 799.88it/s][A
- 80%|████████  | 801/999 [00:00<00:00, 824.02it/s][A
- 89%|████████▊ | 886/999 [00:01<00:00, 826.94it/s][A
- 97%|█████████▋| 970/999 [00:01<00:00, 829.03it/s][A100%|██████████| 999/999 [00:01<00:00, 848.35it/s]
-Objective value: 103.0092
-
-Extracting features:  90%|█████████ | 9/10 [01:57<00:16, 16.25s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:14<00:00, 16.48s/feature][AExtracting features: 100%|██████████| 10/10 [02:14<00:00, 13.49s/feature]
-⚠️ Skipping feature 'neighbor_mean_degree' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    deg = dict(G.degree())
-    vals = np.empty(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        s = 0.0
-        cnt = 0
-        for u in G.neighbors(v):
-            s += deg.get(u, 0)
-            cnt += 1
-        vals[i] = (s / cnt) if cnt > 0 else 0.0
-    return vals
-******************************
-⚠️ Skipping feature 'neighbor_mean_weight' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    node_order = list(G.nodes())
-    n = len(node_order)
-    feat = np.zeros(n, dtype=float)
-    for i, v in enumerate(node_order):
-        total = 0.0
-        cnt = 0
-        for u in G.neighbors(v):
-            w = G.nodes[u].get('weight', 0.0)
-            total += w
-            cnt += 1
-        feat[i] = total / cnt if cnt > 0 else 0.0
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_weight_variance' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    result = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        s = 0.0
-        s2 = 0.0
-        m = 0
-        for u in G.neighbors(v):
-            w = G.nodes[u].get('weight', 0.0)
-            s += w
-            s2 += w * w
-            m += 1
-        if m > 0:
-            mean = s / m
-            var = s2 / m - mean * mean
-            if var < 0 and var > -1e-12:
-                var = 0.0
-            result[i] = var
-        else:
-            result[i] = 0.0
-    return result
-******************************
-⚠️ Skipping feature 'neighbor_weight_above_node_ratio' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    weights = {n: G.nodes[n]['weight'] for n in nodes}
-    feat = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        wv = weights[v]
-        deg = G.degree(v)
-        if deg == 0:
-            feat[i] = 0.0
-        else:
-            cnt = 0
-            for u in G.neighbors(v):
-                if weights[u] > wv:
-                    cnt += 1
-            feat[i] = cnt / deg
-    return feat
-******************************
-⚠️ Skipping feature 'local_clustering_coefficient' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-
-    if G.is_directed():
-        H = G.to_undirected()
-    else:
-        H = G
-
-    has_weight = False
-    for _, _, data in H.edges(data=True):
-        if isinstance(data, dict) and 'weight' in data:
-            has_weight = True
-            break
-
-    if has_weight:
-        clustering_vals = nx.clustering(H, weight='weight')
-    else:
-        clustering_vals = nx.clustering(H)
-
-    nodes_order = list(G.nodes())
-    result = np.array([float(clustering_vals.get(n, 0.0)) for n in nodes_order], dtype=float)
-    return result
-******************************
-⚠️ Skipping feature 'neighbor_degree_weight_correlation' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    feature = np.empty(len(nodes), dtype=float)
-    degs = dict(G.degree())
-    for i, v in enumerate(nodes):
-        neigh = list(G.neighbors(v))
-        m = len(neigh)
-        if m < 2:
-            feature[i] = np.nan
-            continue
-        X = np.empty(m, dtype=float)
-        Y = np.empty(m, dtype=float)
-        for j, u in enumerate(neigh):
-            X[j] = degs[u]
-            Y[j] = G.nodes[u]['weight']
-        Xm = X - X.mean()
-        Ym = Y - Y.mean()
-        num = np.dot(Xm, Ym)
-        den = np.sqrt(np.dot(Xm, Xm) * np.dot(Ym, Ym))
-        feature[i] = num / den if den != 0 else np.nan
-    return feature
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 28/999 [00:00<00:03, 274.73it/s][A
-  6%|▌         | 56/999 [00:00<00:03, 266.55it/s][A
-  8%|▊         | 83/999 [00:00<00:03, 266.50it/s][A
- 11%|█         | 110/999 [00:00<00:03, 267.58it/s][A
- 14%|█▎        | 137/999 [00:00<00:03, 267.95it/s][A
- 17%|█▋        | 165/999 [00:00<00:03, 269.42it/s][A
- 19%|█▉        | 192/999 [00:00<00:03, 268.19it/s][A
- 22%|██▏       | 220/999 [00:00<00:02, 269.03it/s][A
- 25%|██▍       | 248/999 [00:00<00:02, 270.58it/s][A
- 28%|██▊       | 276/999 [00:01<00:02, 271.17it/s][A
- 30%|███       | 304/999 [00:01<00:02, 269.45it/s][A
- 33%|███▎      | 331/999 [00:01<00:02, 269.10it/s][A
- 36%|███▌      | 358/999 [00:01<00:02, 268.59it/s][A
- 39%|███▊      | 385/999 [00:01<00:02, 268.26it/s][A
- 41%|████      | 412/999 [00:01<00:02, 268.14it/s][A
- 44%|████▍     | 439/999 [00:01<00:02, 264.56it/s][A
- 47%|████▋     | 466/999 [00:01<00:02, 264.53it/s][A
- 49%|████▉     | 493/999 [00:01<00:01, 264.46it/s][A
- 52%|█████▏    | 520/999 [00:01<00:01, 265.62it/s][A
- 55%|█████▍    | 548/999 [00:02<00:01, 267.35it/s][A
- 58%|█████▊    | 575/999 [00:02<00:01, 265.70it/s][A
- 60%|██████    | 602/999 [00:02<00:01, 266.45it/s][A
- 63%|██████▎   | 629/999 [00:02<00:01, 266.82it/s][A
- 66%|██████▌   | 656/999 [00:02<00:01, 265.66it/s][A
- 68%|██████▊   | 683/999 [00:02<00:01, 264.56it/s][A
- 71%|███████   | 710/999 [00:02<00:01, 265.38it/s][A
- 74%|███████▍  | 737/999 [00:02<00:00, 266.32it/s][A
- 76%|███████▋  | 764/999 [00:02<00:00, 265.60it/s][A
- 79%|███████▉  | 791/999 [00:02<00:00, 264.54it/s][A
- 82%|████████▏ | 819/999 [00:03<00:00, 267.44it/s][A
- 85%|████████▍ | 846/999 [00:03<00:00, 266.79it/s][A
- 87%|████████▋ | 874/999 [00:03<00:00, 267.66it/s][A
- 90%|█████████ | 901/999 [00:03<00:00, 266.13it/s][A
- 93%|█████████▎| 928/999 [00:03<00:00, 266.02it/s][A
- 96%|█████████▌| 955/999 [00:03<00:00, 264.93it/s][A
- 98%|█████████▊| 982/999 [00:03<00:00, 265.31it/s][A100%|██████████| 999/999 [00:03<00:00, 266.81it/s]
- 67%|██████▋   | 2/3 [18:34<09:32, 572.79s/it]Objective value: 298.0
-Objective value pruned: 284.0
-Ratio 0.9530201342281879
-queries ratio 1.0
-Explaining GNN predictions
-
-Beam Search Depth 3
-Proposed features: ['degree_to_weight_ratio', 'node_weight', 'normalized_degree', 'neighbor_weight_sum', 'avg_neighbor_weight', 'neighbor_degree_sum', 'neighbor_degree_std', 'clustering_coefficient', 'candidate_neighbor_fraction', 'neighbor_weight_variance']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][AObjective value pruned: 104.0007
-Ratio 1.009625353851889
-queries ratio 0.017739374292216708
-Explaining GNN predictions
-Proposed features: ['out_degree', 'in_degree', 'weight', 'out_degree_to_weight_ratio', 'in_degree_to_weight_ratio', 'average_out_neighbor_weight', 'max_out_neighbor_weight', 'one_step_influence_expectation', 'directed_clustering_coefficient', 'average_out_neighbor_out_degree']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:08<01:17,  8.65s/feature][A
-Extracting features:  10%|█         | 1/10 [00:07<01:09,  7.73s/feature][A
-Extracting features:  20%|██        | 2/10 [00:12<00:47,  5.88s/feature][A
-Extracting features:  20%|██        | 2/10 [00:16<01:05,  8.25s/feature][A
-Extracting features:  30%|███       | 3/10 [00:20<00:47,  6.83s/feature][A
-Extracting features:  30%|███       | 3/10 [00:21<00:49,  7.01s/feature][A
-Extracting features:  40%|████      | 4/10 [00:30<00:46,  7.73s/feature][A
-Extracting features:  40%|████      | 4/10 [00:34<00:57,  9.59s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:46<00:53, 10.61s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:46<00:52, 10.55s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:01<00:47, 11.89s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:00<00:47, 11.77s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:19<00:42, 14.06s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:17<00:40, 13.53s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:34<00:28, 14.20s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:45<00:35, 17.97s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:53<00:15, 15.65s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:58<00:16, 16.56s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:06<00:00, 14.90s/feature][AExtracting features: 100%|██████████| 10/10 [02:06<00:00, 12.62s/feature]
-⚠️ Skipping feature 'neighbor_weight_sum' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    node_order = list(G.nodes())
-    n = len(node_order)
-    idx = {node: i for i, node in enumerate(node_order)}
-    weights = {node: G.nodes[node].get('weight', 0.0) for node in node_order}
-    result = np.zeros(n, dtype=float)
-    for v in node_order:
-        s = 0.0
-        for u in G.neighbors(v):
-            s += weights.get(u, 0.0)
-        result[idx[v]] = s
-    return result
-******************************
-⚠️ Skipping feature 'avg_neighbor_weight' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    m = len(nodes)
-    weights = {n: G.nodes[n]['weight'] for n in nodes}
-    feat = np.zeros(m, dtype=float)
-    for i, v in enumerate(nodes):
-        s = 0.0
-        cnt = 0
-        for nb in G.neighbors(v):
-            s += weights[nb]
-            cnt += 1
-        feat[i] = s / cnt if cnt > 0 else 0.0
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_degree_sum' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    deg = dict(G.degree())
-    nodes = list(G.nodes())
-    feature = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        s = 0.0
-        for u in G.neighbors(v):
-            s += deg.get(u, 0)
-        feature[i] = s
-    return feature
-******************************
-⚠️ Skipping feature 'neighbor_degree_std' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    deg = dict(G.degree())
-    out = np.empty(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        neigh = G.neighbors(v)
-        dvals = [deg[u] for u in neigh]
-        if len(dvals) == 0:
-            out[i] = 0.0
-        else:
-            out[i] = float(np.std(dvals, ddof=0))
-    return out
-******************************
-⚠️ Skipping feature 'clustering_coefficient' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    node_order = list(G.nodes())
-    n = len(node_order)
-    if n == 0:
-        return np.zeros((0,), dtype=float)
-    clusters = nx.clustering(G, weight=None)
-    out = np.empty(n, dtype=float)
-    for i, v in enumerate(node_order):
-        out[i] = clusters.get(v, 0.0)
-    return out
-******************************
-⚠️ Skipping feature 'neighbor_weight_variance' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    result = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        nbrs = list(G.neighbors(v))
-        if not nbrs:
-            result[i] = 0.0
-            continue
-        weights = np.array([G.nodes[n].get('weight', 0.0) for n in nbrs], dtype=float)
-        result[i] = float(np.var(weights, ddof=0))
-    return result
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 31/999 [00:00<00:03, 309.39it/s][A
-  6%|▋         | 63/999 [00:00<00:02, 314.81it/s][A
- 10%|▉         | 98/999 [00:00<00:02, 330.70it/s][A
- 14%|█▎        | 135/999 [00:00<00:02, 344.43it/s][A
- 17%|█▋        | 172/999 [00:00<00:02, 350.36it/s][A
- 21%|██        | 209/999 [00:00<00:02, 355.04it/s][A
- 25%|██▍       | 246/999 [00:00<00:02, 359.42it/s][A
- 28%|██▊       | 283/999 [00:00<00:01, 361.44it/s][A
- 32%|███▏      | 320/999 [00:00<00:01, 358.51it/s][A
- 36%|███▌      | 357/999 [00:01<00:01, 360.08it/s][A
- 39%|███▉      | 394/999 [00:01<00:01, 361.59it/s][A
- 43%|████▎     | 431/999 [00:01<00:01, 362.83it/s][A
- 47%|████▋     | 468/999 [00:01<00:01, 364.90it/s][A
- 51%|█████     | 506/999 [00:01<00:01, 366.42it/s][A
- 54%|█████▍    | 543/999 [00:01<00:01, 366.81it/s][A
- 58%|█████▊    | 580/999 [00:01<00:01, 365.17it/s][A
- 62%|██████▏   | 618/999 [00:01<00:01, 366.82it/s][A
- 66%|██████▌   | 655/999 [00:01<00:00, 363.88it/s][A
- 69%|██████▉   | 692/999 [00:01<00:00, 362.76it/s][A
- 73%|███████▎  | 729/999 [00:02<00:00, 364.37it/s][A
- 77%|███████▋  | 766/999 [00:02<00:00, 365.07it/s][A
- 80%|████████  | 803/999 [00:02<00:00, 362.15it/s][A
- 84%|████████▍ | 840/999 [00:02<00:00, 361.68it/s][A
- 88%|████████▊ | 877/999 [00:02<00:00, 364.04it/s][A
- 91%|█████████▏| 914/999 [00:02<00:00, 362.01it/s][A
- 95%|█████████▌| 951/999 [00:02<00:00, 364.13it/s][A
- 99%|█████████▉| 988/999 [00:02<00:00, 364.33it/s][A100%|██████████| 999/999 [00:02<00:00, 359.95it/s]
-
-Extracting features: 100%|██████████| 10/10 [02:16<00:00, 17.05s/feature][AExtracting features: 100%|██████████| 10/10 [02:16<00:00, 13.66s/feature]
-⚠️ Skipping feature 'average_out_neighbor_weight' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    weights = {n: G.nodes[n].get('weight', 0.0) for n in nodes}
-    is_directed = G.is_directed()
-    feature = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        if is_directed:
-            neighbors = G.successors(v)
-        else:
-            neighbors = G.neighbors(v)
-        total = 0.0
-        count = 0
-        for u in neighbors:
-            total += weights[u]
-            count += 1
-        feature[i] = total / count if count > 0 else 0.0
-    return feature
-******************************
-⚠️ Skipping feature 'max_out_neighbor_weight' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    weight = {n: d.get('weight', 0) for n, d in G.nodes(data=True)}
-    nodes = list(G.nodes())
-    out_vals = []
-    if G.is_directed():
-        for v in nodes:
-            max_w = max((weight[u] for u in G.successors(v)), default=np.nan)
-            out_vals.append(max_w)
-    else:
-        for v in nodes:
-            max_w = max((weight[u] for u in G.neighbors(v)), default=np.nan)
-            out_vals.append(max_w)
-    return np.asarray(out_vals, dtype=float)
-******************************
-⚠️ Skipping feature 'directed_clustering_coefficient' due to error: module 'networkx' has no attribute 'directed_clustering'
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    dcc = nx.directed_clustering(G)
-    nodes = list(G.nodes())
-    return np.array([dcc.get(n, 0.0) for n in nodes], dtype=float)
-******************************
-⚠️ Skipping feature 'average_out_neighbor_out_degree' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    if not G.is_directed():
-        G = G.to_directed()
-    out_deg = dict(G.out_degree())
-    nodes = list(G.nodes())
-    result = np.empty(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        nb_dict = G.adj[v]
-        if not nb_dict:
-            result[i] = 0.0
-        else:
-            total = 0.0
-            for u in nb_dict:
-                total += out_deg.get(u, 0)
-            result[i] = total / len(nb_dict)
-    return result
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  8%|▊         | 79/999 [00:00<00:01, 782.81it/s][A
- 17%|█▋        | 166/999 [00:00<00:01, 830.05it/s][A
- 25%|██▌       | 254/999 [00:00<00:00, 850.79it/s][A
- 34%|███▍      | 342/999 [00:00<00:00, 860.18it/s][A
- 43%|████▎     | 429/999 [00:00<00:00, 856.69it/s][A
- 52%|█████▏    | 517/999 [00:00<00:00, 861.51it/s][A
- 60%|██████    | 604/999 [00:00<00:00, 860.84it/s][A
- 69%|██████▉   | 691/999 [00:00<00:00, 859.77it/s][A
- 78%|███████▊  | 779/999 [00:00<00:00, 863.07it/s][A
- 87%|████████▋ | 866/999 [00:01<00:00, 854.02it/s][A
- 95%|█████████▌| 952/999 [00:01<00:00, 833.57it/s][A100%|██████████| 999/999 [00:01<00:00, 846.94it/s]
-Objective value: 103.0092
-Objective value: 298.0
-Objective value pruned: 280.0
-Ratio 0.9395973154362416
-queries ratio 1.0
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio', 'node_weight', 'degree', 'normalized_degree', 'normalized_degree_by_max', 'local_clustering_coefficient', 'mean_neighbor_degree', 'mean_neighbor_weight', 'k_core_number', 'max_neighbor_degree']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:09<01:24,  9.41s/feature][A
-Extracting features:  20%|██        | 2/10 [00:31<02:14, 16.80s/feature][A 67%|██████▋   | 2/3 [21:06<11:04, 664.79s/it]
-Extracting features:  30%|███       | 3/10 [00:42<01:38, 14.11s/feature][A
-Extracting features:  40%|████      | 4/10 [00:49<01:08, 11.49s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:56<00:49,  9.87s/feature][AObjective value pruned: 103.8757
-Ratio 1.0084118700077274
-queries ratio 0.017335333880094686
-Explaining GNN predictions
-
-Beam Search Depth 3
-Proposed features: ['weight_value', 'degree_to_weight_ratio', 'out_degree', 'in_degree', 'normalized_weight', 'degree_weight_product', 'degree_weight_product_norm', 'neighbor_average_weight', 'neighbor_out_degree_average', 'pagerank_score']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  60%|██████    | 6/10 [01:14<00:50, 12.51s/feature][A
-Extracting features:  10%|█         | 1/10 [00:12<01:52, 12.53s/feature][A
-Extracting features:  20%|██        | 2/10 [00:23<01:34, 11.75s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:34<00:45, 15.12s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:50<00:30, 15.17s/feature][A
-Extracting features:  30%|███       | 3/10 [00:43<01:46, 15.24s/feature][A
-Extracting features:  40%|████      | 4/10 [00:48<01:07, 11.32s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:01<00:13, 13.81s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:55<00:48,  9.74s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:13<00:00, 13.52s/feature][AExtracting features: 100%|██████████| 10/10 [02:13<00:00, 13.39s/feature]
-⚠️ Skipping feature 'local_clustering_coefficient' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    if G.number_of_nodes() == 0:
-        return np.array([], dtype=float)
-    if G.is_directed():
-        UG = G.to_undirected(reciprocal=False)
-        clusters = nx.clustering(UG, weight=None)
-        return np.array([clusters[n] for n in G.nodes()], dtype=float)
-    else:
-        clusters = nx.clustering(G, weight=None)
-        return np.array([clusters[n] for n in G.nodes()], dtype=float)
-******************************
-⚠️ Skipping feature 'mean_neighbor_degree' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    deg = {n: G.degree(n) for n in nodes}
-    out = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        d = deg[v]
-        if d == 0:
-            out[i] = 0.0
-        else:
-            s = 0.0
-            for u in G.neighbors(v):
-                s += deg[u]
-            out[i] = s / d
-    return out
-******************************
-⚠️ Skipping feature 'mean_neighbor_weight' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    weights = {n: G.nodes[n].get('weight', 0.0) for n in nodes}
-    feature = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        neigh = list(G.neighbors(v))
-        d = len(neigh)
-        if d == 0:
-            feature[i] = 0.0
-        else:
-            s = 0.0
-            for u in neigh:
-                s += weights[u]
-            feature[i] = s / d
-    return feature
-******************************
-⚠️ Skipping feature 'k_core_number' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    core_num = nx.core_number(G)
-    nodes = list(G.nodes())
-    return np.array([core_num[n] for n in nodes], dtype=int)
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 31/999 [00:00<00:03, 304.33it/s][A
-  6%|▋         | 63/999 [00:00<00:03, 309.35it/s][A
- 10%|▉         | 99/999 [00:00<00:02, 331.21it/s][A
- 14%|█▎        | 135/999 [00:00<00:02, 339.56it/s][A
- 17%|█▋        | 171/999 [00:00<00:02, 345.26it/s][A
- 21%|██        | 208/999 [00:00<00:02, 351.00it/s][A
- 25%|██▍       | 245/999 [00:00<00:02, 356.01it/s][A
- 28%|██▊       | 282/999 [00:00<00:01, 360.35it/s][A
- 32%|███▏      | 319/999 [00:00<00:01, 359.09it/s][A
- 36%|███▌      | 356/999 [00:01<00:01, 361.56it/s][A
- 39%|███▉      | 393/999 [00:01<00:01, 361.07it/s][A
- 43%|████▎     | 430/999 [00:01<00:01, 363.01it/s][A
- 47%|████▋     | 467/999 [00:01<00:01, 363.35it/s][A
- 51%|█████     | 505/999 [00:01<00:01, 366.13it/s][A
- 54%|█████▍    | 542/999 [00:01<00:01, 366.53it/s][A
- 58%|█████▊    | 579/999 [00:01<00:01, 367.31it/s][A
- 62%|██████▏   | 616/999 [00:01<00:01, 367.74it/s][A
- 65%|██████▌   | 653/999 [00:01<00:00, 368.01it/s][A
- 69%|██████▉   | 690/999 [00:01<00:00, 367.72it/s][A
- 73%|███████▎  | 727/999 [00:02<00:00, 367.79it/s][A
-Extracting features:  60%|██████    | 6/10 [01:05<00:39,  9.90s/feature][A
- 76%|███████▋  | 764/999 [00:02<00:00, 366.55it/s][A
- 80%|████████  | 801/999 [00:02<00:00, 365.72it/s][A
- 84%|████████▍ | 838/999 [00:02<00:00, 360.89it/s][A
- 88%|████████▊ | 875/999 [00:02<00:00, 358.92it/s][A
- 91%|█████████▏| 913/999 [00:02<00:00, 362.61it/s][A
- 95%|█████████▌| 951/999 [00:02<00:00, 365.02it/s][A
- 99%|█████████▉| 988/999 [00:02<00:00, 365.75it/s][A100%|██████████| 999/999 [00:02<00:00, 359.88it/s]
-
-Extracting features:  70%|███████   | 7/10 [01:17<00:31, 10.53s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:33<00:24, 12.35s/feature][A
-Extracting features:  90%|█████████ | 9/10 [01:42<00:11, 11.35s/feature][AObjective value: 298.0
-Objective value pruned: 286.0
-Ratio 0.959731543624161
-queries ratio 1.0
-Explaining GNN predictions
-Proposed features: ['degree', 'normalized_degree', 'node_weight', 'degree_to_weight_ratio', 'weight_to_degree_ratio', 'neighbor_degree_mean', 'neighbor_degree_std', 'neighbor_weight_sum', 'clustering_coefficient', 'neighbor_degree_weight_mean']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:12<01:53, 12.59s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:00<00:00, 13.17s/feature][AExtracting features: 100%|██████████| 10/10 [02:00<00:00, 12.01s/feature]
-⚠️ Skipping feature 'weight_value' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-import numpy as np
-
-def extract_feature(G):
-    n = G.number_of_nodes()
-    if n == 0:
-        return np.array([], dtype=float)
-    try:
-        b = budget
-    except NameError:
-        b = 0
-    alpha = 0
-    factor = b / n
-    nodes = list(G.nodes())
-    out_deg = dict(G.out_degree())
-    vals = [factor * (out_deg.get(v, 0) - alpha) for v in nodes]
-    return np.asarray(vals, dtype=float)
-******************************
-⚠️ Skipping feature 'neighbor_average_weight' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    feat = np.zeros(n, dtype=float)
-    wmap = {v: G.nodes[v].get('weight', 0.0) for v in nodes}
-    if G.is_directed():
-        for i, v in enumerate(nodes):
-            deg = 0
-            s = 0.0
-            for u in G.successors(v):
-                deg += 1
-                s += wmap.get(u, 0.0)
-            feat[i] = 0.0 if deg == 0 else s / deg
-    else:
-        for i, v in enumerate(nodes):
-            deg = 0
-            s = 0.0
-            for u in G.neighbors(v):
-                deg += 1
-                s += wmap.get(u, 0.0)
-            feat[i] = 0.0 if deg == 0 else s / deg
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_out_degree_average' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    out_deg = dict(G.out_degree())
-    nodes = list(G.nodes())
-    feat = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        od_v = out_deg[v]
-        if od_v == 0:
-            feat[i] = 0.0
-        else:
-            total = 0
-            for u in G.successors(v):
-                total += out_deg.get(u, 0)
-            feat[i] = total / od_v
-    return feat
-******************************
-⚠️ Skipping feature 'pagerank_score' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    d = 0.85
-    pr = nx.pagerank(G, alpha=d, weight='weight')
-    order = list(G.nodes())
-    return np.array([pr.get(n, 0.0) for n in order], dtype=float)
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  8%|▊         | 81/999 [00:00<00:01, 806.83it/s][A
- 16%|█▋        | 163/999 [00:00<00:01, 813.29it/s][A
- 25%|██▍       | 249/999 [00:00<00:00, 831.76it/s][A
- 34%|███▎      | 336/999 [00:00<00:00, 844.91it/s][A
- 42%|████▏     | 421/999 [00:00<00:00, 837.75it/s][A
- 51%|█████     | 506/999 [00:00<00:00, 839.13it/s][A
- 59%|█████▉    | 594/999 [00:00<00:00, 849.69it/s][A
- 68%|██████▊   | 679/999 [00:00<00:00, 846.85it/s][A
- 77%|███████▋  | 766/999 [00:00<00:00, 851.05it/s][A
- 85%|████████▌ | 852/999 [00:01<00:00, 845.96it/s][A
- 94%|█████████▍| 938/999 [00:01<00:00, 849.97it/s][A100%|██████████| 999/999 [00:01<00:00, 843.00it/s]
-Objective value: 103.0092
-
-Extracting features:  20%|██        | 2/10 [00:23<01:34, 11.87s/feature][A
-Extracting features:  30%|███       | 3/10 [00:48<02:04, 17.79s/feature][A
-Extracting features:  40%|████      | 4/10 [01:01<01:34, 15.80s/feature][A
-Extracting features:  50%|█████     | 5/10 [01:10<01:07, 13.44s/feature][AObjective value pruned: 104.0332
-Ratio 1.0099408596513708
-queries ratio 0.016759576292820808
-Explaining GNN predictions
-Proposed features: ['node_weight', 'degree_to_weight_ratio', 'out_degree', 'in_degree', 'out_neighbor_weight_sum', 'avg_out_neighbor_weight', 'out_to_in_degree_ratio', 'weight_times_out_degree', 'normalized_node_weight', 'weight_difference_with_neighbor_mean']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  60%|██████    | 6/10 [01:27<00:58, 14.54s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:43<00:45, 15.14s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:56<00:28, 14.28s/feature][A
-Extracting features:  10%|█         | 1/10 [00:36<05:31, 36.86s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:12<00:14, 14.85s/feature][A
-Extracting features:  20%|██        | 2/10 [00:47<02:53, 21.67s/feature][A
-Extracting features:  30%|███       | 3/10 [00:58<01:57, 16.72s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:25<00:00, 14.39s/feature][AExtracting features: 100%|██████████| 10/10 [02:25<00:00, 14.57s/feature]
-⚠️ Skipping feature 'neighbor_degree_mean' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    deg_map = dict(G.degree())
-    nodes = list(G.nodes())
-    feat = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        s = 0.0
-        k = 0
-        for u in G.neighbors(v):
-            k += 1
-            s += deg_map.get(u, 0)
-        feat[i] = 0.0 if k == 0 else s / k
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_degree_std' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    deg = dict(G.degree())
-    nodes = list(G.nodes())
-    out = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        neigh = list(G.neighbors(v))
-        if not neigh:
-            out[i] = 0.0
-        else:
-            neigh_degs = [deg[u] for u in neigh]
-            out[i] = float(np.std(neigh_degs, ddof=0))
-    return out
-******************************
-⚠️ Skipping feature 'neighbor_weight_sum' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    out = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        s = 0.0
-        for u in G.neighbors(v):
-            s += G.nodes[u]['weight']
-        out[i] = s
-    return out
-******************************
-⚠️ Skipping feature 'clustering_coefficient' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    order = list(G.nodes())
-    clustering = nx.clustering(G, weight=None)
-    return np.array([clustering[n] for n in order], dtype=float)
-******************************
-⚠️ Skipping feature 'neighbor_degree_weight_mean' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    deg = dict(G.degree())
-    val = {}
-    for n in nodes:
-        w = G.nodes[n].get('weight', 0.0)
-        val[n] = deg[n] * w
-    feats = []
-    for v in nodes:
-        total = 0.0
-        count = 0
-        for u in G.neighbors(v):
-            total += val[u]
-            count += 1
-        if count == 0:
-            feats.append(0.0)
-        else:
-            feats.append(total / count)
-    return np.asarray(feats, dtype=float)
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 31/999 [00:00<00:03, 305.23it/s][A
-  6%|▋         | 63/999 [00:00<00:03, 309.66it/s][A
-  9%|▉         | 94/999 [00:00<00:02, 309.35it/s][A
- 13%|█▎        | 131/999 [00:00<00:02, 332.80it/s][A
- 17%|█▋        | 169/999 [00:00<00:02, 346.75it/s][A
- 21%|██        | 205/999 [00:00<00:02, 348.74it/s][A
- 24%|██▍       | 242/999 [00:00<00:02, 353.33it/s][A
- 28%|██▊       | 279/999 [00:00<00:02, 358.32it/s][A
- 32%|███▏      | 316/999 [00:00<00:01, 361.45it/s][A
- 35%|███▌      | 353/999 [00:01<00:01, 362.92it/s][A
- 39%|███▉      | 390/999 [00:01<00:01, 362.17it/s][A
- 43%|████▎     | 427/999 [00:01<00:01, 364.08it/s][A
- 46%|████▋     | 464/999 [00:01<00:01, 365.83it/s][A
- 50%|█████     | 501/999 [00:01<00:01, 362.72it/s][A
- 54%|█████▍    | 538/999 [00:01<00:01, 361.99it/s][A
- 58%|█████▊    | 575/999 [00:01<00:01, 362.81it/s][A
- 61%|██████▏   | 612/999 [00:01<00:01, 360.90it/s][A
- 65%|██████▍   | 649/999 [00:01<00:00, 362.04it/s][A
- 69%|██████▊   | 686/999 [00:01<00:00, 362.70it/s][A
- 72%|███████▏  | 723/999 [00:02<00:00, 364.57it/s][A
- 76%|███████▌  | 760/999 [00:02<00:00, 365.47it/s][A
- 80%|███████▉  | 797/999 [00:02<00:00, 359.34it/s][A
- 83%|████████▎ | 834/999 [00:02<00:00, 361.68it/s][A
- 87%|████████▋ | 871/999 [00:02<00:00, 363.75it/s][A
- 91%|█████████ | 909/999 [00:02<00:00, 365.79it/s][A
- 95%|█████████▍| 946/999 [00:02<00:00, 366.76it/s][A
- 98%|█████████▊| 983/999 [00:02<00:00, 366.15it/s][A100%|██████████| 999/999 [00:02<00:00, 357.91it/s]
-
-Extracting features:  40%|████      | 4/10 [01:09<01:26, 14.48s/feature][AObjective value: 298.0
-Objective value pruned: 280.0
-Ratio 0.9395973154362416
-queries ratio 1.0
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio', 'weight_to_degree_ratio', 'node_weight', 'degree', 'normalized_degree', 'sum_neighbor_weights', 'avg_neighbor_degree', 'clustering_coefficient', 'max_neighbor_weight', 'neighbor_weight_stddev']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  50%|█████     | 5/10 [01:23<01:10, 14.13s/feature][A
-Extracting features:  10%|█         | 1/10 [00:08<01:15,  8.40s/feature][A
-Extracting features:  20%|██        | 2/10 [00:18<01:17,  9.63s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:44<01:05, 16.38s/feature][A
-Extracting features:  70%|███████   | 7/10 [02:01<00:49, 16.62s/feature][A
-Extracting features:  80%|████████  | 8/10 [02:12<00:29, 14.91s/feature][A
-Extracting features:  30%|███       | 3/10 [00:52<02:23, 20.49s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:21<00:13, 13.07s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:40<00:00, 15.04s/feature][AExtracting features: 100%|██████████| 10/10 [02:40<00:00, 16.09s/feature]
-⚠️ Skipping feature 'avg_out_neighbor_weight' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    if n == 0:
-        return np.zeros(0, dtype=float)
-    weights = {nid: G.nodes[nid].get('weight', 0.0) for nid in nodes}
-    deg_map = dict(G.out_degree()) if G.is_directed() else dict(G.degree())
-    feature = np.zeros(n, dtype=float)
-    neigh_iter = G.successors if G.is_directed() else G.neighbors
-    for idx, v in enumerate(nodes):
-        deg = deg_map.get(v, 0)
-        s = 0.0
-        for u in neigh_iter(v):
-            s += weights.get(u, 0.0)
-        feature[idx] = s / max(1, deg)
-    return feature
-******************************
-⚠️ Skipping feature 'weight_difference_with_neighbor_mean' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    weights = {}
-    for v, data in G.nodes(data=True):
-        weights[v] = data.get('weight', 0.0)
-    feature = np.empty(n, dtype=float)
-    if G.is_directed():
-        get_out = lambda x: G.successors(x)
-    else:
-        get_out = lambda x: G.neighbors(x)
-    for i, v in enumerate(nodes):
-        wv = weights.get(v, 0.0)
-        total = 0.0
-        cnt = 0
-        for u in get_out(v):
-            wu = weights.get(u, 0.0)
-            total += wu
-            cnt += 1
-        avg = total / cnt if cnt > 0 else 0.0
-        feature[i] = wv - avg
-    return feature
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  8%|▊         | 81/999 [00:00<00:01, 803.98it/s][A
- 16%|█▌        | 162/999 [00:00<00:01, 802.87it/s][A
- 24%|██▍       | 243/999 [00:00<00:00, 801.38it/s][A
- 32%|███▏      | 324/999 [00:00<00:00, 797.54it/s][A
- 41%|████      | 405/999 [00:00<00:00, 800.88it/s][A
- 49%|████▊     | 487/999 [00:00<00:00, 805.33it/s][A
- 57%|█████▋    | 572/999 [00:00<00:00, 817.54it/s][A
- 65%|██████▌   | 654/999 [00:00<00:00, 804.95it/s][A
- 74%|███████▎  | 735/999 [00:00<00:00, 789.64it/s][A
- 82%|████████▏ | 817/999 [00:01<00:00, 798.36it/s][A
- 90%|█████████ | 901/999 [00:01<00:00, 810.64it/s][A
- 98%|█████████▊| 983/999 [00:01<00:00, 807.03it/s][A100%|██████████| 999/999 [00:01<00:00, 803.18it/s]
-Objective value: 103.0092
-
-Extracting features:  40%|████      | 4/10 [01:36<02:58, 29.78s/feature][A
-Extracting features:  50%|█████     | 5/10 [01:48<01:57, 23.45s/feature][A
-Extracting features:  60%|██████    | 6/10 [02:15<01:38, 24.58s/feature][A
-Extracting features:  70%|███████   | 7/10 [02:40<01:14, 24.92s/feature][AObjective value pruned: 103.6891
-Ratio 1.0066003813251632
-queries ratio 0.016292909616819874
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio_out', 'degree_to_weight_ratio_in', 'degree_to_weight_ratio_avg', 'one_step_influence', 'normalized_weight', 'log_weight', 'pagerank_normalized', 'out_degree_normalized_by_max', 'in_degree_normalized_by_max', 'betweenness_centrality_normalized']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  80%|████████  | 8/10 [03:12<00:54, 27.13s/feature][A
-Extracting features:  90%|█████████ | 9/10 [03:32<00:24, 24.93s/feature][A
-Extracting features:  10%|█         | 1/10 [00:38<05:47, 38.65s/feature][A
-Extracting features: 100%|██████████| 10/10 [03:49<00:00, 22.24s/feature][AExtracting features: 100%|██████████| 10/10 [03:49<00:00, 22.91s/feature]
-⚠️ Skipping feature 'avg_neighbor_degree' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    deg = dict(G.degree())
-    sum_nei_deg = {v: 0 for v in nodes}
-    for u, v in G.edges():
-        du = deg[u]
-        dv = deg[v]
-        sum_nei_deg[u] += dv
-        sum_nei_deg[v] += du
-    feat = np.zeros(n, dtype=float)
-    for i, v in enumerate(nodes):
-        d = deg[v]
-        feat[i] = sum_nei_deg[v] / d if d > 0 else 0.0
-    return feat
-******************************
-⚠️ Skipping feature 'clustering_coefficient' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    if G.is_multigraph():
-        UG = nx.Graph()
-        UG.add_nodes_from(G.nodes())
-        UG.add_edges_from(G.edges())
-    else:
-        UG = G
-    cc = nx.clustering(UG, weight=None)
-    order = list(G.nodes())
-    return np.array([cc[n] for n in order], dtype=float)
-******************************
-⚠️ Skipping feature 'neighbor_weight_stddev' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    weights = {}
-    for n in G:
-        weights[n] = G.nodes[n].get('weight', 0.0)
-    nodes = list(G.nodes())
-    result = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        neigh = G.neighbors(v)
-        wlist = [weights[u] for u in neigh]
-        if len(wlist) <= 1:
-            result[i] = 0.0
-        else:
-            result[i] = float(np.std(np.array(wlist), ddof=0))
-    return result
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 32/999 [00:00<00:03, 310.60it/s][A
-  6%|▋         | 64/999 [00:00<00:02, 313.60it/s][A
- 10%|▉         | 97/999 [00:00<00:02, 320.48it/s][A
- 13%|█▎        | 133/999 [00:00<00:02, 333.18it/s][A
- 17%|█▋        | 170/999 [00:00<00:02, 345.88it/s][A
- 21%|██        | 207/999 [00:00<00:02, 353.77it/s][A
- 24%|██▍       | 244/999 [00:00<00:02, 358.55it/s][A
- 28%|██▊       | 281/999 [00:00<00:01, 362.12it/s][A
- 32%|███▏      | 318/999 [00:00<00:01, 364.25it/s][A
- 36%|███▌      | 355/999 [00:01<00:01, 365.74it/s][A
- 39%|███▉      | 392/999 [00:01<00:01, 366.97it/s][A
- 43%|████▎     | 429/999 [00:01<00:01, 367.11it/s][A
- 47%|████▋     | 466/999 [00:01<00:01, 366.82it/s][A
- 50%|█████     | 503/999 [00:01<00:01, 363.79it/s][A
- 54%|█████▍    | 540/999 [00:01<00:01, 362.58it/s][A
- 58%|█████▊    | 577/999 [00:01<00:01, 364.11it/s][A
- 61%|██████▏   | 614/999 [00:01<00:01, 365.34it/s][A
- 65%|██████▌   | 651/999 [00:01<00:00, 366.31it/s][A
- 69%|██████▉   | 688/999 [00:01<00:00, 367.08it/s][A
- 73%|███████▎  | 725/999 [00:02<00:00, 367.41it/s][A
- 76%|███████▋  | 762/999 [00:02<00:00, 366.06it/s][A
- 80%|███████▉  | 799/999 [00:02<00:00, 364.71it/s][A
- 84%|████████▎ | 836/999 [00:02<00:00, 365.64it/s][A
- 87%|████████▋ | 873/999 [00:02<00:00, 366.11it/s][A
- 91%|█████████ | 910/999 [00:02<00:00, 366.51it/s][A
- 95%|█████████▍| 947/999 [00:02<00:00, 366.92it/s][A
- 98%|█████████▊| 984/999 [00:02<00:00, 367.33it/s][A100%|██████████| 999/999 [00:02<00:00, 361.03it/s]
-
-Extracting features:  20%|██        | 2/10 [01:01<03:55, 29.50s/feature][A
-Extracting features:  30%|███       | 3/10 [01:33<03:32, 30.42s/feature][AObjective value: 298.0
-Objective value pruned: 295.0
-Ratio 0.9899328859060402
-queries ratio 1.0
-Explaining GNN predictions
-Proposed features: ['degree', 'node_weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'neighbor_weight_mean', 'neighbor_weight_std', 'local_clustering_coefficient', 'high_weight_neighbor_fraction', 'avg_neighbor_degree']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  40%|████      | 4/10 [02:19<03:38, 36.48s/feature][A
-Extracting features:  50%|█████     | 5/10 [02:30<02:16, 27.34s/feature][A
-Extracting features:  10%|█         | 1/10 [00:17<02:35, 17.28s/feature][A
-Extracting features:  60%|██████    | 6/10 [02:45<01:32, 23.25s/feature][A
-Extracting features:  20%|██        | 2/10 [00:44<03:07, 23.40s/feature][A
-Extracting features:  30%|███       | 3/10 [00:57<02:08, 18.36s/feature][A
-Extracting features:  70%|███████   | 7/10 [03:20<01:21, 27.04s/feature][A
-Extracting features:  40%|████      | 4/10 [01:10<01:36, 16.14s/feature][A
-Extracting features:  50%|█████     | 5/10 [01:28<01:25, 17.11s/feature][A
-Extracting features:  80%|████████  | 8/10 [03:45<00:53, 26.59s/feature][A
-Extracting features:  90%|█████████ | 9/10 [03:58<00:22, 22.06s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:44<01:06, 16.64s/feature][A
-Extracting features:  70%|███████   | 7/10 [02:00<00:49, 16.40s/feature][A
-Extracting features: 100%|██████████| 10/10 [04:24<00:00, 23.51s/feature][AExtracting features: 100%|██████████| 10/10 [04:24<00:00, 26.48s/feature]
-⚠️ Skipping feature 'one_step_influence' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    n = len(nodes)
-    idx = {node: i for i, node in enumerate(nodes)}
-    feat = np.zeros(n, dtype=float)
-    if n == 0:
-        return feat
-    directed = G.is_directed()
-    if G.is_multigraph():
-        if directed:
-            for u, v, key, data in G.edges(keys=True, data=True):
-                p = data.get('p_vu', data.get('weight', 0.0))
-                feat[idx[u]] += p
-        else:
-            for u, v, key, data in G.edges(keys=True, data=True):
-                p = data.get('p_vu', data.get('weight', 0.0))
-                feat[idx[u]] += p
-                feat[idx[v]] += p
-    else:
-        if directed:
-            for u, v, data in G.edges(data=True):
-                p = data.get('p_vu', data.get('weight', 0.0))
-                feat[idx[u]] += p
-        else:
-            for u, v, data in G.edges(data=True):
-                p = data.get('p_vu', data.get('weight', 0.0))
-                feat[idx[u]] += p
-                feat[idx[v]] += p
-    return feat
-******************************
-⚠️ Skipping feature 'pagerank_normalized' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-
-    if G.number_of_nodes() == 0:
-        return np.array([], dtype=float)
-
-    try:
-        pr_values = nx.pagerank_numpy(G, weight='weight')
-        pr_values = np.asarray(pr_values, dtype=float)
-        max_pr = float(np.max(pr_values)) if pr_values.size > 0 else 0.0
-        if max_pr == 0.0:
-            return np.zeros(G.number_of_nodes(), dtype=float)
-        return pr_values / max_pr
-    except Exception:
-        pr = nx.pagerank(G, weight='weight')
-        max_pr = max(pr.values()) if pr else 0.0
-        if max_pr == 0.0:
-            return np.zeros(G.number_of_nodes(), dtype=float)
-        order = list(G.nodes())
-        return np.array([pr[n] / max_pr for n in order], dtype=float)
-******************************
-⚠️ Skipping feature 'in_degree_normalized_by_max' due to error: 'Graph' object has no attribute 'in_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    if G is None or len(G) == 0:
-        return np.array([], dtype=float)
-    in_deg = dict(G.in_degree())
-    max_in_deg = max(in_deg.values()) if in_deg else 0
-    if max_in_deg == 0:
-        values = [0.0 for _ in G.nodes()]
-    else:
-        values = [in_deg[n] / max_in_deg for n in G.nodes()]
-    return np.asarray(values, dtype=float)
-******************************
-⚠️ Skipping feature 'betweenness_centrality_normalized' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    n = G.number_of_nodes()
-    k = None
-    try:
-        budget_val = int(budget)
-        if budget_val > 0:
-            k = min(budget_val, n)
-    except Exception:
-        k = None
-    bc = nx.betweenness_centrality(G, k=k, normalized=False, weight='weight')
-    max_b = max(bc.values()) if bc else 0.0
-    res = np.zeros(n, dtype=float)
-    i = 0
-    for v in G:
-        val = bc.get(v, 0.0)
-        res[i] = (val / max_b) if max_b != 0 else 0.0
-        i += 1
-    return res
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  9%|▉         | 88/999 [00:00<00:01, 871.70it/s][A
- 18%|█▊        | 176/999 [00:00<00:00, 831.86it/s][A
- 26%|██▌       | 260/999 [00:00<00:00, 815.15it/s][A
- 35%|███▍      | 345/999 [00:00<00:00, 827.76it/s][A
- 43%|████▎     | 428/999 [00:00<00:00, 828.47it/s][A
- 51%|█████▏    | 514/999 [00:00<00:00, 837.08it/s][A
- 60%|██████    | 602/999 [00:00<00:00, 849.06it/s][A
- 69%|██████▉   | 687/999 [00:00<00:00, 838.80it/s][A
- 77%|███████▋  | 771/999 [00:00<00:00, 824.37it/s][A
- 86%|████████▌ | 857/999 [00:01<00:00, 832.48it/s][A
- 94%|█████████▍| 941/999 [00:01<00:00, 831.97it/s][A100%|██████████| 999/999 [00:01<00:00, 835.39it/s]
-Objective value: 103.0092
-
-Extracting features:  80%|████████  | 8/10 [02:28<00:39, 19.96s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:41<00:18, 18.03s/feature][A
-Extracting features: 100%|██████████| 10/10 [03:03<00:00, 19.01s/feature][AExtracting features: 100%|██████████| 10/10 [03:03<00:00, 18.31s/feature]
-⚠️ Skipping feature 'neighbor_weight_sum' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    weights = {v: G.nodes[v]['weight'] for v in nodes}
-    feat = np.zeros(n, dtype=float)
-    for i, v in enumerate(nodes):
-        s = 0.0
-        for u in G.neighbors(v):
-            s += weights[u]
-        feat[i] = s
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_weight_mean' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    idx = {nodes[i]: i for i in range(n)}
-    weights = np.zeros(n, dtype=float)
-    for i, v in enumerate(nodes):
-        weights[i] = G.nodes[v].get('weight', 0.0)
-    result = np.zeros(n, dtype=float)
-    for i, v in enumerate(nodes):
-        deg = G.degree(v)
-        if deg == 0:
-            result[i] = 0.0
-        else:
-            s = 0.0
-            for nb in G.neighbors(v):
-                s += weights[idx[nb]]
-            result[i] = s / deg
-    return result
-******************************
-⚠️ Skipping feature 'neighbor_weight_std' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    n = G.number_of_nodes()
-    nodes_order = list(G.nodes())
-    idx = {nnode: i for i, nnode in enumerate(nodes_order)}
-    weights = np.zeros(n, dtype=float)
-    for nnode in nodes_order:
-        weights[idx[nnode]] = float(G.nodes[nnode].get('weight', 0.0))
-    feat = np.zeros(n, dtype=float)
-    for v in nodes_order:
-        neigh = list(G.neighbors(v))
-        neigh_weights = [weights[idx[u]] for u in neigh]
-        if len(neigh_weights) <= 1:
-            feat[idx[v]] = 0.0
-        else:
-            feat[idx[v]] = float(np.std(neigh_weights, ddof=0))
-    return feat
-******************************
-⚠️ Skipping feature 'local_clustering_coefficient' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    n = len(nodes)
-    neigh = {}
-    for v in nodes:
-        nbrs = set(G.neighbors(v))
-        if v in nbrs:
-            nbrs.discard(v)
-        neigh[v] = nbrs
-
-    result = np.zeros(n, dtype=float)
-    for idx, v in enumerate(nodes):
-        N = list(neigh[v])
-        d = len(N)
-        deg_v = G.degree(v)
-        if d <= 1 or deg_v <= 1:
-            result[idx] = 0.0
-            continue
-
-        count = 0
-        for i in range(d):
-            u = N[i]
-            Nu = neigh[u]
-            for j in range(i + 1, d):
-                w = N[j]
-                if w in Nu:
-                    count += 1
-
-        result[idx] = (2.0 * count) / (deg_v * (deg_v - 1))
-    return result
-******************************
-⚠️ Skipping feature 'high_weight_neighbor_fraction' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    node_order = list(G.nodes())
-    n = len(node_order)
-    feats = np.zeros(n, dtype=float)
-    weights = {v: G.nodes[v].get('weight', 0.0) for v in node_order}
-    for idx, v in enumerate(node_order):
-        deg = G.degree(v)
-        if deg == 0:
-            feats[idx] = 0.0
-        else:
-            w_v = weights[v]
-            cnt = 0
-            for u in G.neighbors(v):
-                if weights.get(u, 0.0) >= w_v:
-                    cnt += 1
-            feats[idx] = cnt / float(deg)
-    return feats
-******************************
-⚠️ Skipping feature 'avg_neighbor_degree' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    deg = dict(G.degree())
-    nodes = list(G.nodes())
-    out = np.empty(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        d_v = deg.get(v, 0)
-        if d_v == 0:
-            out[i] = 0.0
-        else:
-            s = 0.0
-            for u in G.neighbors(v):
-                s += deg.get(u, 0)
-            out[i] = s / d_v
-    return out
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  3%|▎         | 27/999 [00:00<00:03, 267.67it/s][A
-  5%|▌         | 54/999 [00:00<00:03, 264.71it/s][A
-  8%|▊         | 81/999 [00:00<00:03, 264.37it/s][A
- 11%|█         | 109/999 [00:00<00:03, 266.53it/s][A
- 14%|█▎        | 136/999 [00:00<00:03, 266.69it/s][A
- 16%|█▋        | 163/999 [00:00<00:03, 267.16it/s][A
- 19%|█▉        | 190/999 [00:00<00:03, 266.99it/s][A
- 22%|██▏       | 217/999 [00:00<00:02, 267.27it/s][A
- 24%|██▍       | 244/999 [00:00<00:02, 266.57it/s][A
- 27%|██▋       | 271/999 [00:01<00:02, 266.71it/s][A
- 30%|██▉       | 298/999 [00:01<00:02, 265.72it/s][A
- 33%|███▎      | 325/999 [00:01<00:02, 266.07it/s][A
- 35%|███▌      | 352/999 [00:01<00:02, 265.76it/s][A
- 38%|███▊      | 380/999 [00:01<00:02, 267.31it/s][A
- 41%|████      | 407/999 [00:01<00:02, 267.41it/s][A
- 44%|████▎     | 435/999 [00:01<00:02, 268.78it/s][A
- 46%|████▌     | 462/999 [00:01<00:01, 268.54it/s][A
- 49%|████▉     | 489/999 [00:01<00:01, 266.56it/s][A
- 52%|█████▏    | 516/999 [00:01<00:01, 265.97it/s][A
- 54%|█████▍    | 544/999 [00:02<00:01, 268.20it/s][A
- 57%|█████▋    | 571/999 [00:02<00:01, 267.07it/s][A
- 60%|█████▉    | 599/999 [00:02<00:01, 267.88it/s][A
- 63%|██████▎   | 626/999 [00:02<00:01, 267.99it/s][A
- 65%|██████▌   | 653/999 [00:02<00:01, 266.90it/s][A
- 68%|██████▊   | 680/999 [00:02<00:01, 266.29it/s][A
- 71%|███████   | 707/999 [00:02<00:01, 266.77it/s][A
- 73%|███████▎  | 734/999 [00:02<00:00, 266.24it/s][A
- 76%|███████▌  | 761/999 [00:02<00:00, 267.23it/s][A
- 79%|███████▉  | 788/999 [00:02<00:00, 265.99it/s][A
- 82%|████████▏ | 815/999 [00:03<00:00, 265.25it/s][A
- 84%|████████▍ | 842/999 [00:03<00:00, 266.31it/s][A
- 87%|████████▋ | 869/999 [00:03<00:00, 265.62it/s][A
- 90%|████████▉ | 896/999 [00:03<00:00, 264.48it/s][A
- 92%|█████████▏| 923/999 [00:03<00:00, 265.18it/s][A
- 95%|█████████▌| 950/999 [00:03<00:00, 266.54it/s][A
- 98%|█████████▊| 977/999 [00:03<00:00, 267.09it/s][A100%|██████████| 999/999 [00:03<00:00, 266.61it/s]
-Objective value pruned: 103.0331
-Ratio 1.0002320181110036
-queries ratio 0.7828608417413909
-Explaining GNN predictions
-Proposed features: ['out_degree', 'in_degree', 'out_degree_to_weight_ratio', 'in_degree_to_weight_ratio', 'normalized_weight', 'one_step_influence', 'one_step_influence_per_cost', 'neighbor_out_weight_mean', 'neighbor_out_degree_mean', 'pagerank']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:09<01:29,  9.95s/feature][A
-Extracting features:  20%|██        | 2/10 [00:18<01:13,  9.18s/feature][AObjective value: 298.0
-Objective value pruned: 291.0
-Ratio 0.9765100671140939
-queries ratio 1.0
-Explaining GNN predictions
-Proposed features: ['degree', 'normalized_degree', 'node_weight', 'degree_to_weight_ratio', 'neighbor_weight_sum', 'clustering_coefficient', 'average_neighbor_degree', 'neighbor_degree_variance', 'k_core_number', 'triangles_through_vertex']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  30%|███       | 3/10 [00:28<01:07,  9.70s/feature][A
-Extracting features:  40%|████      | 4/10 [00:42<01:08, 11.42s/feature][A
-Extracting features:  10%|█         | 1/10 [00:15<02:17, 15.23s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:51<00:51, 10.26s/feature][A
-Extracting features:  20%|██        | 2/10 [00:25<01:40, 12.60s/feature][A
-Extracting features:  30%|███       | 3/10 [00:40<01:33, 13.39s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:10<00:53, 13.47s/feature][A
-Extracting features:  40%|████      | 4/10 [00:58<01:30, 15.10s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:30<00:46, 15.63s/feature][A
-Extracting features:  50%|█████     | 5/10 [01:10<01:10, 14.20s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:48<00:32, 16.28s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:28<01:01, 15.32s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:06<00:16, 16.86s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:47<00:50, 16.75s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:43<00:00, 23.06s/feature][AExtracting features: 100%|██████████| 10/10 [02:43<00:00, 16.37s/feature]
-⚠️ Skipping feature 'one_step_influence' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    res = np.zeros(len(nodes), dtype=float)
-    directed = G.is_directed()
-    for idx, v in enumerate(nodes):
-        s = 0.0
-        if directed:
-            neigh = G.successors(v)
-        else:
-            neigh = G.neighbors(v)
-        for u in neigh:
-            s += G.nodes[u].get('weight', 0.0)
-        res[idx] = s
-    return res
-******************************
-⚠️ Skipping feature 'neighbor_out_weight_mean' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    weights = {n: G.nodes[n].get('weight', 0.0) for n in G}
-    values = []
-    if G.is_directed():
-        for v in nodes:
-            total = 0.0
-            count = 0
-            for u in G.successors(v):
-                total += weights[u]
-                count += 1
-            values.append(total / count if count > 0 else 0.0)
-    else:
-        for v in nodes:
-            total = 0.0
-            count = 0
-            for u in G.neighbors(v):
-                total += weights[u]
-                count += 1
-            values.append(total / count if count > 0 else 0.0)
-    return np.asarray(values, dtype=float)
-******************************
-⚠️ Skipping feature 'neighbor_out_degree_mean' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    result = np.zeros(len(nodes), dtype=float)
-    if G.is_directed():
-        out_deg = dict(G.out_degree())
-        for i, v in enumerate(nodes):
-            s = 0.0
-            cnt = 0
-            for u in G.successors(v):
-                s += out_deg.get(u, 0)
-                cnt += 1
-            result[i] = (s / cnt) if cnt > 0 else 0.0
-    else:
-        out_deg = dict(G.degree())
-        for i, v in enumerate(nodes):
-            s = 0.0
-            cnt = 0
-            for u in G.neighbors(v):
-                s += out_deg.get(u, 0)
-                cnt += 1
-            result[i] = (s / cnt) if cnt > 0 else 0.0
-    return result
-******************************
-⚠️ Skipping feature 'pagerank' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    d = 0.85
-    nodes = list(G.nodes())
-    n = len(nodes)
-    if n == 0:
-        return np.array([], dtype=float)
-    idx = {node: i for i, node in enumerate(nodes)}
-    out_neighbors = [[] for _ in range(n)]
-    out_sum = np.zeros(n, dtype=float)
-    for u in nodes:
-        i = idx[u]
-        total = 0.0
-        if G.has_node(u):
-            for v, data in G[u].items():
-                w = data.get('weight', 1.0)
-                j = idx[v]
-                out_neighbors[i].append((j, w))
-                total += w
-        out_sum[i] = total
-    weights = np.array([G.nodes[node].get('weight', 1.0) for node in nodes], dtype=float)
-    sum_w = weights.sum()
-    if sum_w > 0:
-        p = weights / sum_w
-    else:
-        p = np.ones(n, dtype=float) / max(1, n)
-    try:
-        max_iters = int(budget)
-    except NameError:
-        max_iters = 100
-    tol = 1e-9
-    PR = p.copy()
-    for _ in range(max_iters):
-        PR_new = (1 - d) * p
-        total_dangling = 0.0
-        for i in range(n):
-            val = PR[i]
-            s = out_sum[i]
-            if s > 0:
-                factor = val / s
-                for (j, w) in out_neighbors[i]:
-                    PR_new[j] += d * factor * w
-            else:
-                total_dangling += val
-        if total_dangling > 0:
-            PR_new += d * total_dangling / n
-        diff = float(np.linalg.norm(PR_new - PR, 2))
-        PR = PR_new
-        if diff < tol:
-            break
-    return PR
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  8%|▊         | 84/999 [00:00<00:01, 836.84it/s][A
- 17%|█▋        | 169/999 [00:00<00:00, 842.42it/s][A
- 25%|██▌       | 254/999 [00:00<00:00, 826.92it/s][A
- 34%|███▎      | 337/999 [00:00<00:00, 819.76it/s][A
- 43%|████▎     | 425/999 [00:00<00:00, 838.48it/s][A
- 51%|█████     | 511/999 [00:00<00:00, 845.59it/s][A
- 60%|█████▉    | 598/999 [00:00<00:00, 850.77it/s][A
- 68%|██████▊   | 684/999 [00:00<00:00, 850.38it/s][A
- 77%|███████▋  | 772/999 [00:00<00:00, 858.34it/s][A
- 86%|████████▌ | 858/999 [00:01<00:00, 854.94it/s][A
- 94%|█████████▍| 944/999 [00:01<00:00, 855.15it/s][A100%|██████████| 999/999 [00:01<00:00, 848.04it/s]
-Objective value: 103.0092
-
-Extracting features:  80%|████████  | 8/10 [02:24<00:46, 23.07s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:37<00:19, 19.97s/feature][A
-Extracting features: 100%|██████████| 10/10 [03:11<00:00, 24.38s/feature][AExtracting features: 100%|██████████| 10/10 [03:11<00:00, 19.18s/feature]
-⚠️ Skipping feature 'node_weight' due to error: name 'budget' is not defined
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    if n == 0:
-        return np.array([], dtype=float)
-    alpha = 0.05
-    beta = budget
-    factor = beta / n
-    degs = np.array([G.degree(v) for v in nodes], dtype=float)
-    w = factor * (degs - alpha)
-    w = np.maximum(w, 1.0)
-    return w
-******************************
-⚠️ Skipping feature 'neighbor_weight_sum' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    weights = {n: float(G.nodes[n].get('weight', 0.0)) for n in nodes}
-    result = np.zeros(len(nodes), dtype=float)
-    for idx, v in enumerate(nodes):
-        s = 0.0
-        for u in G.neighbors(v):
-            s += weights.get(u, 0.0)
-        result[idx] = s
-    return result
-******************************
-⚠️ Skipping feature 'clustering_coefficient' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    cl = nx.clustering(G)
-    arr = np.empty(len(G), dtype=float)
-    for i, v in enumerate(G.nodes()):
-        arr[i] = cl.get(v, 0.0)
-    return arr
-******************************
-⚠️ Skipping feature 'average_neighbor_degree' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    degs = dict(G.degree())
-    feat = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        dv = degs[v]
-        if dv == 0:
-            feat[i] = 0.0
-        else:
-            s = 0.0
-            for u in G.neighbors(v):
-                s += degs[u]
-            feat[i] = s / dv
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_degree_variance' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    deg = dict(G.degree())
-    sum_nei_deg = {v: 0.0 for v in G}
-    sum_nei_deg2 = {v: 0.0 for v in G}
-    for u, w in G.edges():
-        du = deg[u]
-        dw = deg[w]
-        sum_nei_deg[u] += dw
-        sum_nei_deg2[u] += dw * dw
-        sum_nei_deg[w] += du
-        sum_nei_deg2[w] += du * du
-    nodes = list(G.nodes())
-    features = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        dv = deg[v]
-        if dv == 0:
-            features[i] = 0.0
-        else:
-            s = sum_nei_deg[v]
-            s2 = sum_nei_deg2[v]
-            features[i] = (s2 - (s * s) / dv) / dv
-    return features
-******************************
-⚠️ Skipping feature 'k_core_number' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    cores = nx.core_number(G)
-    return np.array([cores[n] for n in G.nodes()], dtype=int)
-******************************
-⚠️ Skipping feature 'triangles_through_vertex' due to error: Input is not a correct NetworkX graph.
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    UG = nx.Graph(G)
-    node_order = list(G.nodes())
-    neigh = {v: set(UG.neighbors(v)) for v in node_order}
-    res = np.zeros(len(node_order), dtype=np.int64)
-    for i, v in enumerate(node_order):
-        Nv = neigh[v]
-        if len(Nv) < 2:
-            res[i] = 0
-            continue
-        s = 0
-        for u in Nv:
-            s += len(Nv & neigh[u])
-        res[i] = s // 2
-    return res
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  4%|▎         | 37/999 [00:00<00:02, 369.03it/s][A
-  7%|▋         | 74/999 [00:00<00:02, 368.59it/s][A
- 11%|█         | 111/999 [00:00<00:02, 368.40it/s][A
- 15%|█▍        | 149/999 [00:00<00:02, 368.15it/s][A
- 19%|█▊        | 186/999 [00:00<00:02, 365.62it/s][A
- 22%|██▏       | 224/999 [00:00<00:02, 367.35it/s][A
- 26%|██▌       | 262/999 [00:00<00:02, 368.23it/s][A
- 30%|███       | 300/999 [00:00<00:01, 368.95it/s][A
- 34%|███▍      | 338/999 [00:00<00:01, 369.32it/s][A
- 38%|███▊      | 376/999 [00:01<00:01, 369.58it/s][A
- 41%|████▏     | 413/999 [00:01<00:01, 368.00it/s][A
- 45%|████▌     | 451/999 [00:01<00:01, 368.76it/s][A
- 49%|████▉     | 489/999 [00:01<00:01, 369.42it/s][A
- 53%|█████▎    | 526/999 [00:01<00:01, 369.28it/s][A
- 56%|█████▋    | 563/999 [00:01<00:01, 369.27it/s][A
- 60%|██████    | 600/999 [00:01<00:01, 365.84it/s][A
- 64%|██████▍   | 637/999 [00:01<00:00, 365.64it/s][A
- 67%|██████▋   | 674/999 [00:01<00:00, 365.99it/s][A
- 71%|███████   | 711/999 [00:01<00:00, 366.35it/s][A
- 75%|███████▍  | 748/999 [00:02<00:00, 366.31it/s][A
- 79%|███████▊  | 785/999 [00:02<00:00, 365.12it/s][A
- 82%|████████▏ | 822/999 [00:02<00:00, 363.77it/s][A
- 86%|████████▌ | 859/999 [00:02<00:00, 363.81it/s][A
- 90%|████████▉ | 897/999 [00:02<00:00, 365.79it/s][A
- 93%|█████████▎| 934/999 [00:02<00:00, 367.01it/s][A
- 97%|█████████▋| 971/999 [00:02<00:00, 367.66it/s][A100%|██████████| 999/999 [00:02<00:00, 367.09it/s]
-100%|██████████| 3/3 [39:54<00:00, 895.69s/it]100%|██████████| 3/3 [39:54<00:00, 798.03s/it]
-Objective value: 298.0
-Objective value pruned: 291.0
-Ratio 0.9765100671140939
-queries ratio 1.0
-Explaining GNN predictions
-
-✅ Beam search finished. Best score = 0.9898
-Best model, data, and history saved in 'Maximum Cut Weighted/HK'.
-Objective value pruned: 102.9428
-Ratio 0.9993553973819814
-queries ratio 0.7542808231679332
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio', 'normalized_weight', 'out_degree', 'in_degree', 'sum_out_edge_probability', 'avg_out_edge_probability', 'neighbor_weight_sum', 'influence_potential_score', 'pagerank_score', 'betweenness_centrality']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:12<01:48, 12.04s/feature][A
-Extracting features:  20%|██        | 2/10 [00:21<01:24, 10.52s/feature][A
-Extracting features:  30%|███       | 3/10 [00:29<01:05,  9.38s/feature][A
-Extracting features:  40%|████      | 4/10 [00:36<00:50,  8.44s/feature][A
-Extracting features:  50%|█████     | 5/10 [01:13<01:34, 18.85s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:36<01:20, 20.21s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:51<00:55, 18.55s/feature][A
-Extracting features:  80%|████████  | 8/10 [02:14<00:39, 19.71s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:36<00:20, 20.67s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:52<00:00, 19.11s/feature][AExtracting features: 100%|██████████| 10/10 [02:52<00:00, 17.24s/feature]
-⚠️ Skipping feature 'in_degree' due to error: 'Graph' object has no attribute 'in_degree'
-******************************
-import numpy as np
-
-def extract_feature(G):
-    return np.array([d for _, d in G.in_degree()], dtype=float)
-******************************
-⚠️ Skipping feature 'sum_out_edge_probability' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    feature = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        if G.is_directed():
-            outs = list(G.successors(v))
-        else:
-            outs = list(G.neighbors(v))
-        if not outs:
-            feature[i] = 0.0
-        else:
-            for u in outs:
-                _ = G.nodes[u].get('weight', 0.0)
-            feature[i] = 1.0
-    return feature
-******************************
-⚠️ Skipping feature 'neighbor_weight_sum' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    node_list = list(G.nodes())
-    n = len(node_list)
-    if n == 0:
-        return np.array([], dtype=float)
-    idx = {node: i for i, node in enumerate(node_list)}
-    weights_arr = np.array([G.nodes[node].get('weight', 0.0) for node in node_list], dtype=float)
-    result = np.zeros(n, dtype=float)
-    if G.is_directed():
-        for v in node_list:
-            total = 0.0
-            for u in G.successors(v):
-                total += weights_arr[idx[u]]
-            result[idx[v]] = total
-    else:
-        for v in node_list:
-            total = 0.0
-            for u in G.neighbors(v):
-                total += weights_arr[idx[u]]
-            result[idx[v]] = total
-    return result
-******************************
-⚠️ Skipping feature 'influence_potential_score' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    if n == 0:
-        return np.zeros(0, dtype=float)
-    idx = {node: i for i, node in enumerate(nodes)}
-    sum_out_prob = np.zeros(n, dtype=float)
-    neighbor_weight_sum = np.zeros(n, dtype=float)
-
-    if G.is_directed():
-        for u in nodes:
-            i = idx[u]
-            for v, data in G[u].items():
-                prob = data.get('prob')
-                if prob is None:
-                    prob = data.get('p')
-                    if prob is None:
-                        prob = data.get('weight', 0.0)
-                sum_out_prob[i] += float(prob)
-                neighbor_weight_sum[i] += float(G.nodes[v].get('weight', 0.0))
-    else:
-        for u in nodes:
-            i = idx[u]
-            for v, data in G[u].items():
-                prob = data.get('prob')
-                if prob is None:
-                    prob = data.get('p')
-                    if prob is None:
-                        prob = data.get('weight', 0.0)
-                sum_out_prob[i] += float(prob)
-                neighbor_weight_sum[i] += float(G.nodes[v].get('weight', 0.0))
-
-    feature = sum_out_prob * neighbor_weight_sum
-    return feature
-******************************
-⚠️ Skipping feature 'pagerank_score' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-
-    total = 0.0
-    weights = {}
-    for n in G:
-        w = G.nodes[n].get('weight', 1.0)
-        weights[n] = w
-        total += w
-
-    personalization = None
-    if total > 0.0:
-        personalization = {n: weights[n] / total for n in G}
-
-    if personalization is not None:
-        pr = nx.pagerank(G, alpha=0.85, personalization=personalization)
-    else:
-        pr = nx.pagerank(G, alpha=0.85)
-
-    return np.asarray([pr[n] for n in G], dtype=float)
-******************************
-⚠️ Skipping feature 'betweenness_centrality' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    n = G.number_of_nodes()
-    if n == 0:
-        return np.asarray([], dtype=float)
-    k = None
-    try:
-        if isinstance(budget, int) and budget > 0:
-            k = min(budget, n)
-    except NameError:
-        k = None
-    centrality = nx.betweenness_centrality(G, k=k, normalized=True, weight='weight')
-    values = [centrality[v] for v in G.nodes()]
-    return np.asarray(values, dtype=float)
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  9%|▉         | 89/999 [00:00<00:01, 884.96it/s][A
- 18%|█▊        | 180/999 [00:00<00:00, 895.72it/s][A
- 27%|██▋       | 270/999 [00:00<00:00, 883.81it/s][A
- 36%|███▌      | 359/999 [00:00<00:00, 885.30it/s][A
- 45%|████▍     | 448/999 [00:00<00:00, 885.29it/s][A
- 54%|█████▍    | 537/999 [00:00<00:00, 885.91it/s][A
- 63%|██████▎   | 626/999 [00:00<00:00, 885.14it/s][A
- 72%|███████▏  | 715/999 [00:00<00:00, 880.07it/s][A
- 80%|████████  | 804/999 [00:00<00:00, 867.25it/s][A
- 89%|████████▉ | 893/999 [00:01<00:00, 872.95it/s][A
- 98%|█████████▊| 983/999 [00:01<00:00, 879.85it/s][A100%|██████████| 999/999 [00:01<00:00, 881.23it/s]
-Objective value: 103.0092
-Objective value pruned: 102.875
-Ratio 0.9986972037449081
-queries ratio 0.765264081713453
-Explaining GNN predictions
-Proposed features: ['degree_to_weight_ratio', 'normalized_weight', 'out_degree_norm', 'in_degree_norm', 'sum_out_edge_probability', 'average_out_edge_probability', 'neighbor_weight_sum', 'pagerank_score', 'katz_centrality', 'local_out_degree_variance']
-
-Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
-Extracting features:  10%|█         | 1/10 [00:08<01:19,  8.80s/feature][A
-Extracting features:  20%|██        | 2/10 [00:16<01:03,  7.92s/feature][A
-Extracting features:  30%|███       | 3/10 [00:25<00:59,  8.51s/feature][A
-Extracting features:  40%|████      | 4/10 [00:34<00:51,  8.64s/feature][A
-Extracting features:  50%|█████     | 5/10 [00:55<01:06, 13.21s/feature][A
-Extracting features:  60%|██████    | 6/10 [01:13<00:59, 14.88s/feature][A
-Extracting features:  70%|███████   | 7/10 [01:25<00:42, 14.03s/feature][A
-Extracting features:  80%|████████  | 8/10 [01:37<00:26, 13.30s/feature][A
-Extracting features:  90%|█████████ | 9/10 [02:00<00:16, 16.15s/feature][A
-Extracting features: 100%|██████████| 10/10 [02:20<00:00, 17.55s/feature][AExtracting features: 100%|██████████| 10/10 [02:20<00:00, 14.07s/feature]
-⚠️ Skipping feature 'degree_to_weight_ratio' due to error: 'Graph' object has no attribute 'out_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    if n == 0:
-        return np.array([], dtype=float)
-    degs = np.fromiter((G.out_degree(v) for v in nodes), dtype=float, count=n)
-    max_out_deg = degs.max() if degs.size > 0 else 0.0
-    if max_out_deg == 0.0:
-        deg_norm = np.zeros_like(degs)
-    else:
-        deg_norm = degs / max_out_deg
-    weights = np.fromiter((float(G.nodes[v].get('weight', 0.0)) for v in nodes), dtype=float, count=n)
-    max_w = weights.max() if weights.size > 0 else 0.0
-    if max_w == 0.0:
-        weight_norm = np.zeros_like(weights)
-    else:
-        weight_norm = weights / max_w
-    denom = deg_norm + weight_norm + 1e-12
-    feature = deg_norm / denom
-    return feature
-******************************
-⚠️ Skipping feature 'in_degree_norm' due to error: 'Graph' object has no attribute 'in_degree'
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    if not nodes:
-        return np.array([], dtype=float)
-    in_deg_map = dict(G.in_degree())
-    max_in_deg = max(in_deg_map.values()) if in_deg_map else 0
-    if max_in_deg == 0:
-        return np.zeros(len(nodes), dtype=float)
-    return np.array([in_deg_map[n] for n in nodes], dtype=float) / float(max_in_deg)
-******************************
-⚠️ Skipping feature 'sum_out_edge_probability' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    node_order = list(G.nodes())
-    weights = {n: G.nodes[n].get('weight', 1.0) for n in node_order}
-    is_directed = G.is_directed()
-    out_neighbors = {}
-    for v in node_order:
-        if is_directed:
-            nbrs = list(G.successors(v))
-        else:
-            nbrs = list(G.neighbors(v))
-        out_neighbors[v] = nbrs
-    feat = np.zeros(len(node_order), dtype=float)
-    for i, v in enumerate(node_order):
-        nbrs = out_neighbors[v]
-        total = sum(weights.get(u, 1.0) for u in nbrs)
-        if total == 0.0:
-            feat[i] = 0.0
-        else:
-            feat[i] = sum((weights.get(u, 1.0) / total) for u in nbrs)
-    return feat
-******************************
-⚠️ Skipping feature 'neighbor_weight_sum' due to error: 
-******************************
-import numpy as np
-
-def extract_feature(G):
-    nodes = list(G.nodes())
-    feature = np.zeros(len(nodes), dtype=float)
-    for i, v in enumerate(nodes):
-        s = 0.0
-        for u in G.neighbors(v):
-            s += G.nodes[u]['weight']
-        feature[i] = s
-    return feature
-******************************
-⚠️ Skipping feature 'pagerank_score' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    import networkx as nx
-    scores = nx.pagerank(G, alpha=0.85, weight=None)
-    order = list(G.nodes())
-    return np.array([scores[n] for n in order], dtype=float)
-******************************
-⚠️ Skipping feature 'katz_centrality' due to error: 
-******************************
-import numpy as np
-import networkx as nx
-
-def extract_feature(G):
-    has_edge_weight = False
-    for _, _, data in G.edges(data=True):
-        if 'weight' in data:
-            has_edge_weight = True
-            break
-    weight_attr = 'weight' if has_edge_weight else None
-    try:
-        centrality = nx.katz_centrality(G, alpha=None, beta=1.0, normalized=True, weight=weight_attr)
-    except TypeError:
-        centrality = nx.katz_centrality(G, alpha=0.1, beta=1.0, normalized=True, weight=weight_attr)
-    nodes = list(G.nodes())
-    return np.array([centrality[n] for n in nodes], dtype=float)
-******************************
-⚠️ Skipping feature 'local_out_degree_variance' due to error: 
-******************************
-def extract_feature(G):
-    import numpy as np
-    nodes = list(G.nodes())
-    n = len(nodes)
-    if G.is_directed():
-        out_deg_all = {u: G.out_degree(u) for u in G.nodes()}
-        feature = np.zeros(n, dtype=float)
-        for idx, v in enumerate(nodes):
-            neigh = G.successors(v)
-            degs = [out_deg_all[u] for u in neigh]
-            if len(degs) == 0:
-                feature[idx] = 0.0
-            else:
-                feature[idx] = float(np.var(np.asarray(degs, dtype=float), ddof=0))
-        return feature
-    else:
-        deg_all = {u: G.degree(u) for u in G.nodes()}
-        feature = np.zeros(n, dtype=float)
-        for idx, v in enumerate(nodes):
-            neigh = G.neighbors(v)
-            degs = [deg_all[u] for u in neigh]
-            if len(degs) == 0:
-                feature[idx] = 0.0
-            else:
-                feature[idx] = float(np.var(np.asarray(degs, dtype=float), ddof=0))
-        return feature
-******************************
-Training GNN
-
-  0%|          | 0/999 [00:00<?, ?it/s][A
-  9%|▊         | 85/999 [00:00<00:01, 849.19it/s][A
- 17%|█▋        | 170/999 [00:00<00:00, 846.93it/s][A
- 26%|██▌       | 256/999 [00:00<00:00, 850.03it/s][A
- 34%|███▍      | 342/999 [00:00<00:00, 838.31it/s][A
- 43%|████▎     | 431/999 [00:00<00:00, 856.58it/s][A
- 52%|█████▏    | 521/999 [00:00<00:00, 869.53it/s][A
- 61%|██████    | 611/999 [00:00<00:00, 877.48it/s][A
- 70%|███████   | 701/999 [00:00<00:00, 882.72it/s][A
- 79%|███████▉  | 791/999 [00:00<00:00, 887.18it/s][A
- 88%|████████▊ | 880/999 [00:01<00:00, 884.01it/s][A
- 97%|█████████▋| 969/999 [00:01<00:00, 885.46it/s][A100%|██████████| 999/999 [00:01<00:00, 872.89it/s]
-Objective value: 103.0092
-100%|██████████| 3/3 [46:22<00:00, 1053.83s/it]100%|██████████| 3/3 [46:22<00:00, 927.62s/it] 
-Objective value pruned: 103.0471
-Ratio 1.0003679283015496
-queries ratio 0.7668395992967216
-Explaining GNN predictions
-
-✅ Beam search finished. Best score = 0.1898
-Best model, data, and history saved in 'Influence Maximization Weighted/HK'.

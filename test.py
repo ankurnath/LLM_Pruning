@@ -185,6 +185,8 @@ def main():
     test_X = []
     best_model_data = load_from_pickle(best_model_data_path)
     # print(f"Best model data: {best_model_data}")
+
+    print(f"Codes for feature extraction: {best_model_data['codes'].keys()}")
     for feature in best_model_data['codes']:
         namespace = {}
         exec(best_model_data['codes'][feature], namespace)
@@ -219,6 +221,8 @@ def main():
         
         probs = torch.softmax(logits, dim=1)[:, 1]  # P(class=1)
 
+    time_taken_to_select = time.time() - start
+
     # print(f"Predicted probabilities for {test_graph.number_of_nodes()} nodes.",probs)
 
     # pick top-k nodes
@@ -226,35 +230,54 @@ def main():
     if problem.endswith("Weighted"):
 
         probs *= mask
-    topk_vals, topk_idx = torch.topk(probs, k)
-    indices = topk_idx.cpu().tolist()
+        pass
 
-    # emb = model.conv1(test_data.x, test_data.edge_index)
-    # probs = probs
-    # selected_idx = mmr_selection_subset(probs, emb, k=k, lambda_div=0.7, top_m=2*k)
-    # indices = np.array(selected_idx)
+    best_k = 500
+    topk_vals, topk_idx = torch.topk(probs, min(5000,test_graph.number_of_nodes()))  # precompute once
+    best_idx = topk_idx[:best_k].cpu().tolist()
 
-    print(f"Selected {len(indices)} nodes out of {test_graph.number_of_nodes()} nodes.")
+    best_obj_val, _, best_solution = heuristic(test_graph, budget=budget, ground_set=best_idx)
 
-    time_taken_to_select = time.time() - start
+    
+
+    for k in [1000, 2000, 5000]:
+        idx = topk_idx[:k].cpu().tolist()
+        obj_val, _, sol = heuristic(test_graph, budget=budget, ground_set=idx)
+
+        if (obj_val - best_obj_val) / best_obj_val > 0.01:
+            best_obj_val, best_solution, best_k, best_idx = obj_val, sol, k, idx
+
+    print(f"Final k={best_k}, obj_val={best_obj_val:.4f}")
+
+    # topk_vals, topk_idx = torch.topk(probs, k)
+    # indices = topk_idx.cpu().tolist()
+
+    # print(f"Selected {len(indices)} nodes out of {test_graph.number_of_nodes()} nodes.")
+
+    # time_taken_to_select = time.time() - start
 
 
-    start = time.time()
-    obj_val, number_of_queries, solution = heuristic(test_graph, budget=budget)
-    time_taken = time.time() - start
+    
 
     # print(solution)
 
     start = time.time()
     obj_val_pruned, number_of_queries_pruned, solution_pruned = heuristic(
-        test_graph, budget=budget, ground_set=indices
+        test_graph, budget=budget, ground_set=best_idx
     )
 
     # print(solution_pruned)
     time_taken_pruned = time.time() - start
 
+
+    start = time.time()
+
+    # save_folder = f"{problem}/{test_dataset}/results"
+    obj_val, number_of_queries, solution = heuristic(test_graph, budget=budget)
+    time_taken = time.time() - start
+
     ratio = obj_val_pruned / obj_val if obj_val != 0 else 0
-    size_reduction = 1 - len(indices) / test_graph.number_of_nodes()
+    size_reduction = 1 - len(best_idx) / test_graph.number_of_nodes()
     time_ratio = time_taken / time_taken_pruned if time_taken_pruned != 0 else 0
 
     print(f"Dataset: {test_dataset}")
@@ -274,7 +297,7 @@ def main():
         'TimeToPrune': time_taken_to_select,
         "Time(Unpruned)": time_taken,
         "Time(Pruned)": time_taken_pruned,
-        "Num Selected Nodes": len(indices)
+        "Num Selected Nodes": len(best_idx)
     })
 
     # ------------------------------
