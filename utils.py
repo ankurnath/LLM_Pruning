@@ -194,7 +194,7 @@ def load_from_pickle(file_path):
     # print(f'Data has been loaded from {file_path}')
     return loaded_data
 
-client = OpenAI(api_key = load_from_pickle('../key.pkl'))
+client = OpenAI(api_key = "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") 
 
 def get_response(client,prompt):
 

@@ -266,3 +266,51 @@ ratio: 1.0022820051501418 Size Reduction: 0.9984142338370784 Time Ratio: 3.19798
 
 [1 rows x 12 columns]
 Data has been saved to Influence Maximization/DBLP/results/DBLP.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 1098104 nodes and 2808367 edges.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Final k=1000, obj_val=8363.4214
+Dataset: YouTube
+ratio: 1.0005106921504157 Size Reduction: 0.9990893394432586 Time Ratio: 1.4565455376529932
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  YouTube            8360.4183  ...   1384.773073                1000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization/YouTube/results/YouTube.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 1694318 nodes and 10984346 edges.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+Final k=5000, obj_val=46360.5126
+Dataset: Skitter
+ratio: 1.0035332475863716 Size Reduction: 0.9970489601125645 Time Ratio: 1.3249087329522713
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Skitter           46204.3194  ...  12138.752189                5000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization/Skitter/results/Skitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 1098104 nodes and 2808367 edges.
+Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
+Final k=5000, obj_val=4055.0247
+Dataset: YouTube
+ratio: 1.0664696266143108 Size Reduction: 0.9954466972162929 Time Ratio: 1.4669346180227092
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  YouTube            3800.4456  ...    562.959339                5000
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization Weighted/YouTube/results/YouTube.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 1694318 nodes and 10984346 edges.
+Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
+Final k=500, obj_val=27865.9988
+Dataset: Skitter
+ratio: 1.0331950641475005 Size Reduction: 0.9997048960112564 Time Ratio: 38.28420809116454
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Skitter            26186.601  ...   6170.141046                 500
+
+[1 rows x 12 columns]
+Data has been saved to Influence Maximization Weighted/Skitter/results/Skitter.pkl

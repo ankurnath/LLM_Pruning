@@ -122,11 +122,11 @@ import torch.nn.functional as F
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--problem", type=str, default="Maximum Cut", help="Problem name")
+    parser.add_argument("--problem", type=str, default="Maximum Coverage", help="Problem name")
     parser.add_argument("--budget", type=int, default=100, help="Budget for the problem")
     parser.add_argument('--base_dataset',type=str, default= 'HK', help="train Dataset to use")
-    parser.add_argument("--train_dataset", type=str, default= 'HK', help="train Dataset to use")
-    parser.add_argument("--test_dataset", type=str, default= 'HK', help="test Dataset to use")
+    parser.add_argument("--train_dataset", type=str, default= 'Facebook', help="train Dataset to use")
+    parser.add_argument("--test_dataset", type=str, default= 'Facebook', help="test Dataset to use")
     parser.add_argument("--k", type=int, default=1000, help="Size of pruned set to use")
     
 
