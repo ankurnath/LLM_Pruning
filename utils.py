@@ -231,15 +231,7 @@ def relabel_graph(graph: nx.Graph):
 
 
 def generate_summary_prompt(cumulative_feedback):
-    """
-    Generate a prompt for summarizing the cumulative feedback from previous iterations.
-
-    Parameters:
-    cumulative_feedback (str): The cumulative feedback string from previous iterations.
-
-    Returns:
-    str: A formatted prompt for summarizing the feedback.
-    """
+    
     return (
         "You are an expert in graph neural networks and combinatorial optimization.\n\n"
         "Summarize the following feedback from previous iterations:\n"
@@ -262,7 +254,7 @@ def generate_llm_prompt(
 
     base_prompt = (
         f"You are an expert in graph neural networks and combinatorial optimization.\n\n"
-        f"For the {problem} problem. The defination of the problem is ({problem_definition}). Propose node-level features {few_shot_examples}. "
+        f"Consider the {problem} problem, defined as ({problem_definition}). Propose node-level features {few_shot_examples}. "
         f"for a GNN binary classifier that predicts nodes likely to be in the optimal solution.\n\n"
         f"The heuristic can only select nodes from the reduced candidate set provided by the GNN. "
         f"The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.\n\n"

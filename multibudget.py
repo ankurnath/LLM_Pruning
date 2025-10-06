@@ -253,6 +253,8 @@ def main():
 
     print(f"Final k={best_k}, obj_val={best_obj_val:.4f}")
 
+    
+
     # topk_vals, topk_idx = torch.topk(probs, k)
     # indices = topk_idx.cpu().tolist()
 

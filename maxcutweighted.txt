@@ -2294,3 +2294,1674 @@ Proposed features: ['degree_to_weight_ratio', 'degree_zscore', 'inverse_weight',
 Extracting features:  10%|█         | 1/10 [00:10<01:35, 10.66s/feature][A
 Extracting features:  20%|██        | 2/10 [00:23<01:34, 11.76s/feature][A
 Extracting features:  30%|███       | 3/10 [00:28<01:00,  8.67s/feature][A
+Extracting features:  40%|████      | 4/10 [537:31:12<1273:13:53, 763938.94s/feature][A
+Extracting features:  50%|█████     | 5/10 [537:31:35<678:25:26, 488465.39s/feature] [A
+Extracting features:  60%|██████    | 6/10 [537:32:03<358:13:05, 322396.26s/feature][A
+Extracting features:  70%|███████   | 7/10 [537:32:21<180:50:09, 217003.30s/feature][ACode for feature 'degree_to_weight_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg_dict = dict(G.degree())
+    degrees = np.fromiter((deg_dict[n] for n in nodes), dtype=float, count=len(nodes))
+    weights = np.fromiter((G.nodes[n].get('weight', 0.0) for n in nodes), dtype=float, count=len(nodes))
+    out = np.zeros_like(degrees, dtype=float)
+    np.divide(degrees, weights, out=out, where=weights != 0)
+    return out
+
+Code for feature 'degree_zscore':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg_dict = dict(G.degree())
+    deg = np.fromiter((deg_dict[n] for n in nodes), dtype=float)
+    if deg.size == 0:
+        return deg
+    mean = deg.mean()
+    std = deg.std()
+    if std == 0.0:
+        return np.zeros_like(deg)
+    return (deg - mean) / std
+
+Code for feature 'inverse_weight':
+import numpy as np
+
+def extract_feature(G):
+    nodes = G.nodes()
+    weights = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=G.number_of_nodes())
+    with np.errstate(divide='ignore', invalid='ignore'):
+        return 1.0 / weights
+
+Code for feature 'external_degree_to_weight_ratio':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    if n == 0:
+        return np.array([], dtype=float)
+
+    H = G if not G.is_directed() else G.to_undirected()
+
+    comm_map = None
+    try:
+        from networkx.algorithms.community import louvain_communities
+        comms = louvain_communities(H, weight='weight', seed=0)
+        comm_map = {}
+        for i, c in enumerate(comms):
+            for u in c:
+                comm_map[u] = i
+    except Exception:
+        try:
+            import community as community_louvain
+            comm_map = community_louvain.best_partition(H, weight='weight', random_state=0)
+        except Exception:
+            from networkx.algorithms.community import greedy_modularity_communities
+            comms = greedy_modularity_communities(H, weight='weight')
+            comm_map = {}
+            for i, c in enumerate(comms):
+                for u in c:
+                    comm_map[u] = i
+
+    degs = dict(G.degree())
+    weights = {u: G.nodes[u].get('weight', 0.0) for u in nodes}
+    ratio = {u: (degs.get(u, 0) / weights[u]) if weights[u] not in (0, 0.0) else 0.0 for u in nodes}
+
+    vals = np.zeros(n, dtype=float)
+    if G.is_directed():
+        for i, v in enumerate(nodes):
+            cv = comm_map.get(v, -1)
+            neighs = set(G.predecessors(v)).union(G.successors(v))
+            s = 0.0
+            c = 0
+            for u in neighs:
+                if comm_map.get(u, -2) != cv:
+                    s += ratio.get(u, 0.0)
+                    c += 1
+            vals[i] = (s / c) if c > 0 else 0.0
+    else:
+        for i, v in enumerate(nodes):
+            cv = comm_map.get(v, -1)
+            s = 0.0
+            c = 0
+            for u in G.neighbors(v):
+                if comm_map.get(u, -2) != cv:
+                    s += ratio.get(u, 0.0)
+                    c += 1
+            vals[i] = (s / c) if c > 0 else 0.0
+
+    return vals
+
+Code for feature 'core_index_to_weight_ratio':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    core = nx.core_number(G)
+    core_arr = np.fromiter((core[n] for n in nodes), dtype=float, count=len(nodes))
+    w_arr = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    return core_arr / w_arr
+
+⚠️ Skipping feature 'core_index_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    core = nx.core_number(G)
+    core_arr = np.fromiter((core[n] for n in nodes), dtype=float, count=len(nodes))
+    w_arr = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    return core_arr / w_arr
+******************************
+Code for feature 'anti_clustering_to_weight_ratio':
+def extract_feature(G):
+    import numpy as np
+    import networkx as nx
+    nodes = list(G.nodes())
+    clust = nx.clustering(G)
+    deg = dict(G.degree())
+    weights = np.fromiter((G.nodes[v]['weight'] for v in nodes), dtype=float, count=len(nodes))
+    clustering = np.fromiter((clust.get(v, 0.0) for v in nodes), dtype=float, count=len(nodes))
+    degrees = np.fromiter((deg.get(v, 0) for v in nodes), dtype=float, count=len(nodes))
+    numer = (1.0 - clustering) * degrees
+    out = np.zeros_like(numer, dtype=float)
+    np.divide(numer, weights, out=out, where=weights != 0)
+    return out
+
+⚠️ Skipping feature 'anti_clustering_to_weight_ratio' due to error: 
+******************************
+def extract_feature(G):
+    import numpy as np
+    import networkx as nx
+    nodes = list(G.nodes())
+    clust = nx.clustering(G)
+    deg = dict(G.degree())
+    weights = np.fromiter((G.nodes[v]['weight'] for v in nodes), dtype=float, count=len(nodes))
+    clustering = np.fromiter((clust.get(v, 0.0) for v in nodes), dtype=float, count=len(nodes))
+    degrees = np.fromiter((deg.get(v, 0) for v in nodes), dtype=float, count=len(nodes))
+    numer = (1.0 - clustering) * degrees
+    out = np.zeros_like(numer, dtype=float)
+    np.divide(numer, weights, out=out, where=weights != 0)
+    return out
+******************************
+Code for feature 'two_hop_expansion_to_weight_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    out = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        n1 = set(G[v])
+        n2 = set()
+        for u in n1:
+            n2.update(G[u])
+        n2.discard(v)
+        n2.difference_update(n1)
+        w = G.nodes[v]['weight']
+        out[i] = (len(n2) / w) if w else 0.0
+    return out
+
+⚠️ Skipping feature 'two_hop_expansion_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    out = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        n1 = set(G[v])
+        n2 = set()
+        for u in n1:
+            n2.update(G[u])
+        n2.discard(v)
+        n2.difference_update(n1)
+        w = G.nodes[v]['weight']
+        out[i] = (len(n2) / w) if w else 0.0
+    return out
+******************************
+Code for feature 'boundary_edge_fraction':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    neigh = {v: set(G.neighbors(v)) for v in nodes}
+    deg = {v: len(neigh[v]) for v in nodes}
+    counts = {v: 0 for v in nodes}
+    thr = 0.1
+    if getattr(G, "is_directed", lambda: False)():
+        cache = {}
+        for v in nodes:
+            Av = neigh[v]
+            for u in Av:
+                key = frozenset((u, v))
+                j = cache.get(key)
+                if j is None:
+                    Au = neigh[u]
+                    inter = len(Av & Au)
+                    union = len(Av) + len(Au) - inter
+                    j = (inter / union) if union else 0.0
+                    cache[key] = j
+                if j < thr:
+                    counts[v] += 1
+    else:
+        for u, v in G.edges():
+            Au = neigh[u]
+            Av = neigh[v]
+            inter = len(Au & Av)
+            union = len(Au) + len(Av) - inter
+            j = (inter / union) if union else 0.0
+            if j < thr:
+                counts[u] += 1
+                counts[v] += 1
+    return np.asarray([counts[v] / max(1, deg[v]) for v in nodes], dtype=float)
+
+⚠️ Skipping feature 'boundary_edge_fraction' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    neigh = {v: set(G.neighbors(v)) for v in nodes}
+    deg = {v: len(neigh[v]) for v in nodes}
+    counts = {v: 0 for v in nodes}
+    thr = 0.1
+    if getattr(G, "is_directed", lambda: False)():
+        cache = {}
+        for v in nodes:
+            Av = neigh[v]
+            for u in Av:
+                key = frozenset((u, v))
+                j = cache.get(key)
+                if j is None:
+                    Au = neigh[u]
+                    inter = len(Av & Au)
+                    union = len(Av) + len(Au) - inter
+                    j = (inter / union) if union else 0.0
+                    cache[key] = j
+                if j < thr:
+                    counts[v] += 1
+    else:
+        for u, v in G.edges():
+            Au = neigh[u]
+            Av = neigh[v]
+            inter = len(Au & Av)
+            union = len(Au) + len(Av) - inter
+            j = (inter / union) if union else 0.0
+            if j < thr:
+                counts[u] += 1
+                counts[v] += 1
+    return np.asarray([counts[v] / max(1, deg[v]) for v in nodes], dtype=float)
+Extracting features:  80%|████████  | 8/10 [537:33:09<82:11:10, 147935.04s/feature] [A
+Extracting features:  90%|█████████ | 9/10 [537:33:25<28:14:53, 101693.30s/feature][A
+Extracting features: 100%|██████████| 10/10 [537:33:40<00:00, 70303.27s/feature]   [AExtracting features: 100%|██████████| 10/10 [537:33:40<00:00, 193522.10s/feature]
+
+******************************
+Code for feature 'neighbor_ratio_gap':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    degs = np.fromiter((G.degree(v) for v in nodes), dtype=float, count=n)
+    weights = np.fromiter((G.nodes[v].get('weight', 1.0) for v in nodes), dtype=float, count=n)
+    with np.errstate(divide='ignore', invalid='ignore'):
+        ratios = degs / weights
+        ratios[~np.isfinite(ratios)] = 0.0
+    ratio_map = {v: ratios[i] for i, v in enumerate(nodes)}
+    feat = np.empty(n, dtype=float)
+    for i, v in enumerate(nodes):
+        if degs[i] == 0:
+            feat[i] = 0.0
+            continue
+        s = 0.0
+        cnt = 0
+        for u in G.neighbors(v):
+            s += ratio_map[u]
+            cnt += 1
+        mean_ngh = s / cnt if cnt else 0.0
+        feat[i] = ratios[i] - mean_ngh
+    return feat
+
+⚠️ Skipping feature 'neighbor_ratio_gap' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    degs = np.fromiter((G.degree(v) for v in nodes), dtype=float, count=n)
+    weights = np.fromiter((G.nodes[v].get('weight', 1.0) for v in nodes), dtype=float, count=n)
+    with np.errstate(divide='ignore', invalid='ignore'):
+        ratios = degs / weights
+        ratios[~np.isfinite(ratios)] = 0.0
+    ratio_map = {v: ratios[i] for i, v in enumerate(nodes)}
+    feat = np.empty(n, dtype=float)
+    for i, v in enumerate(nodes):
+        if degs[i] == 0:
+            feat[i] = 0.0
+            continue
+        s = 0.0
+        cnt = 0
+        for u in G.neighbors(v):
+            s += ratio_map[u]
+            cnt += 1
+        mean_ngh = s / cnt if cnt else 0.0
+        feat[i] = ratios[i] - mean_ngh
+    return feat
+******************************
+Code for feature 'weight_to_budget_ratio':
+import numpy as np
+
+def extract_feature(G):
+    weights = np.fromiter((G.nodes[n]['weight'] for n in G.nodes()), dtype=float, count=G.number_of_nodes())
+    return weights / float(budget)
+
+⚠️ Skipping feature 'weight_to_budget_ratio' due to error: name 'budget' is not defined
+******************************
+import numpy as np
+
+def extract_feature(G):
+    weights = np.fromiter((G.nodes[n]['weight'] for n in G.nodes()), dtype=float, count=G.number_of_nodes())
+    return weights / float(budget)
+******************************
+c_Y 60.62711864406779
+Training GNN
+
+  0%|          | 0/999 [00:00<?, ?it/s][A
+  1%|▏         | 14/999 [00:00<00:07, 137.75it/s][A
+  5%|▍         | 45/999 [00:00<00:04, 237.39it/s][A
+  8%|▊         | 81/999 [00:00<00:03, 291.99it/s][A
+ 12%|█▏        | 118/999 [00:00<00:02, 322.38it/s][A
+ 15%|█▌        | 154/999 [00:00<00:02, 334.19it/s][A
+ 19%|█▉        | 191/999 [00:00<00:02, 343.32it/s][A
+ 23%|██▎       | 228/999 [00:00<00:02, 351.86it/s][A
+ 27%|██▋       | 266/999 [00:00<00:02, 357.98it/s][A
+ 30%|███       | 303/999 [00:00<00:01, 361.55it/s][A
+ 34%|███▍      | 340/999 [00:01<00:01, 363.04it/s][A
+ 38%|███▊      | 377/999 [00:01<00:01, 364.75it/s][A
+ 41%|████▏     | 414/999 [00:01<00:01, 365.27it/s][A
+ 45%|████▌     | 451/999 [00:01<00:01, 360.60it/s][A
+ 49%|████▉     | 488/999 [00:01<00:01, 358.77it/s][A
+ 52%|█████▏    | 524/999 [00:01<00:01, 358.13it/s][A
+ 56%|█████▌    | 560/999 [00:01<00:01, 356.16it/s][A
+ 60%|█████▉    | 596/999 [00:01<00:01, 355.67it/s][A
+ 63%|██████▎   | 633/999 [00:01<00:01, 359.51it/s][A
+ 67%|██████▋   | 670/999 [00:01<00:00, 361.46it/s][A
+ 71%|███████   | 707/999 [00:02<00:00, 363.82it/s][A
+ 74%|███████▍  | 744/999 [00:02<00:00, 365.27it/s][A
+ 78%|███████▊  | 781/999 [00:02<00:00, 363.64it/s][A
+ 82%|████████▏ | 818/999 [00:02<00:00, 365.19it/s][A
+ 86%|████████▌ | 855/999 [00:02<00:00, 363.75it/s][A
+ 89%|████████▉ | 892/999 [00:02<00:00, 363.57it/s][A
+ 93%|█████████▎| 929/999 [00:02<00:00, 360.20it/s][A
+ 97%|█████████▋| 966/999 [00:02<00:00, 362.27it/s][A100%|██████████| 999/999 [00:02<00:00, 352.13it/s]
+ 70%|███████   | 7/10 [538:05:40<527:24:54, 632898.29s/it]c_Y 95.20338983050847
+Objective value: 298.0
+c_Y 1.3389830508474576
+Objective value pruned: 278.0
+Ratio 0.9328859060402684
+queries ratio 1.0
+Explaining GNN predictions
+Feature Space Search Iteration 8 for problem: Maximum Cut Weighted
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut Weighted problem (The problem is defined over an undirected graph G = (V, E), where each node v ∈ V has an associated weight w(v) > 0. The weight of each node is defined as w(v) = (β / |V|) * (|N(v)| - α), where N(v) is the set of neighbors of v, α = 1/20, and β is a normalizing factor ensuring w(v) ≥ 1. Given a budget k, the task is to select a subset S ⊆ V such that the total weight ∑_{v ∈ S} w(v) ≤ k, while maximizing the cut value, i.e., the number of edges crossing between S and V \ S. Formally, the objective is:
+f(S) = |{ (u, v) ∈ E : u ∈ S, v ∈ V \ S }|.), propose up to ten node-level features. Degree to weight ratio must be included.. for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Feedback from previous iterations:
+Key outcomes
+- Solution ratio averaged ~0.94; best runs were Iteration 4 (0.9866) and Iteration 6 (0.9832). Others clustered ~0.93–0.94; worst was Iteration 2 (0.8893).
+- Size reduction was consistently extreme and stable at ~99.85–99.92% across all runs.
+
+Feature importance trends
+- Dominant signal: degree_to_weight_ratio was consistently the top feature, peaking in Iteration 6 (0.55).
+- Supporting signals:
+  - degree_zscore became a key contributor from Iteration 4 onward (0.22–0.28).
+  - inverse_weight was a steady secondary cue (~0.15–0.17), favoring lighter nodes.
+  - external_degree_to_weight_ratio added value in several runs (notably Iterations 4 and 7).
+- Early/ephemeral features: raw degree and normalized_degree mattered only early; node_weight, assortativity_gap, and external_edge_fraction were inconsistent/weak.
+
+Insights
+- The model prioritizes nodes with high connectivity per unit weight and high standardized degree—i.e., lightweight, well-connected nodes.
+- Incorporating external connectivity normalized by weight helps, especially near cut/boundary regions.
+- Best performance aligns with the trio: degree_to_weight_ratio + degree_zscore + inverse_weight; external_degree_to_weight_ratio can further help but is not solely decisive.
+
+Recommendations
+- Prioritize: degree_to_weight_ratio (internal and external), degree_zscore, inverse_weight.
+- Deprioritize unless domain-specific: raw/normalized degree, node_weight, assortativity metrics, external_edge_fraction.
+- Validate via ablations around the Iteration 4/6 feature mix and test robustness across graph regimes.
+
+Refinement rules:
+1) Keep high-importance features.
+2) Adjust or normalize medium-importance features.
+3) Remove or replace low-importance features.
+4) Add new features inspired by important patterns.
+5) Ensure all features are distinct and non-redundant.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Proposed features: ['degree_to_weight_ratio', 'degree_zscore', 'inverse_weight', 'external_degree_to_weight_ratio', 'nontriangle_degree_to_weight_ratio', 'kcore_index_to_weight_ratio', 'two_hop_expansion_to_weight_ratio', 'neighbor_degree_to_weight_mean', 'pagerank_to_weight_ratio', 'leverage_over_weight']
+
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
+Extracting features:  10%|█         | 1/10 [00:10<01:34, 10.55s/feature][A
+Extracting features:  20%|██        | 2/10 [00:19<01:17,  9.70s/feature][A
+Extracting features:  30%|███       | 3/10 [00:28<01:03,  9.09s/feature][A
+Extracting features:  40%|████      | 4/10 [01:38<03:21, 33.50s/feature][A
+Extracting features:  50%|█████     | 5/10 [01:54<02:14, 26.96s/feature][A
+Extracting features:  60%|██████    | 6/10 [02:17<01:42, 25.71s/feature][A
+Extracting features:  70%|███████   | 7/10 [02:43<01:17, 25.74s/feature][ACode for feature 'degree_to_weight_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg_view = G.degree()
+    deg = np.fromiter((deg_view[n] for n in nodes), dtype=float, count=len(nodes))
+    w = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    out = np.empty_like(deg, dtype=float)
+    np.divide(deg, w, out=out, where=w != 0)
+    out[w == 0] = np.inf
+    return out
+
+Code for feature 'degree_zscore':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    if n == 0:
+        return np.array([], dtype=float)
+    deg = np.fromiter((G.degree(v) for v in nodes), dtype=float, count=n)
+    mean = deg.mean()
+    std = deg.std()
+    if std == 0.0:
+        return np.zeros(n, dtype=float)
+    return (deg - mean) / std
+
+Code for feature 'inverse_weight':
+import numpy as np
+
+def extract_feature(G):
+    w = np.fromiter((G.nodes[n]['weight'] for n in G.nodes()), dtype=float, count=G.number_of_nodes())
+    with np.errstate(divide='ignore', invalid='ignore'):
+        return 1.0 / w
+
+Code for feature 'external_degree_to_weight_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    idx = {n: i for i, n in enumerate(nodes)}
+    if G.is_directed():
+        neighbors = {n: set(G.predecessors(n)) | set(G.successors(n)) for n in nodes}
+    else:
+        neighbors = {n: set(G.neighbors(n)) for n in nodes}
+    jaccard_map = {}
+    jaccards = []
+    for u in nodes:
+        Nu = neighbors[u]
+        iu = idx[u]
+        for v in Nu:
+            iv = idx[v]
+            if iu < iv:
+                Nv = neighbors[v]
+                inter = len(Nu & Nv)
+                union = len(Nu) + len(Nv) - inter
+                j = (inter / union) if union else 0.0
+                jaccard_map[(u, v)] = j
+                jaccards.append(j)
+    tau = float(np.median(jaccards)) if jaccards else 0.0
+    result = np.empty(len(nodes), dtype=float)
+    for v in nodes:
+        iv = idx[v]
+        Nv = neighbors[v]
+        cnt = 0
+        for u in Nv:
+            key = (u, v) if idx[u] < iv else (v, u)
+            j = jaccard_map.get(key, 0.0)
+            if j < tau:
+                cnt += 1
+        w = G.nodes[v]['weight']
+        result[iv] = np.inf if w == 0 else cnt / w
+    return result
+
+⚠️ Skipping feature 'external_degree_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    idx = {n: i for i, n in enumerate(nodes)}
+    if G.is_directed():
+        neighbors = {n: set(G.predecessors(n)) | set(G.successors(n)) for n in nodes}
+    else:
+        neighbors = {n: set(G.neighbors(n)) for n in nodes}
+    jaccard_map = {}
+    jaccards = []
+    for u in nodes:
+        Nu = neighbors[u]
+        iu = idx[u]
+        for v in Nu:
+            iv = idx[v]
+            if iu < iv:
+                Nv = neighbors[v]
+                inter = len(Nu & Nv)
+                union = len(Nu) + len(Nv) - inter
+                j = (inter / union) if union else 0.0
+                jaccard_map[(u, v)] = j
+                jaccards.append(j)
+    tau = float(np.median(jaccards)) if jaccards else 0.0
+    result = np.empty(len(nodes), dtype=float)
+    for v in nodes:
+        iv = idx[v]
+        Nv = neighbors[v]
+        cnt = 0
+        for u in Nv:
+            key = (u, v) if idx[u] < iv else (v, u)
+            j = jaccard_map.get(key, 0.0)
+            if j < tau:
+                cnt += 1
+        w = G.nodes[v]['weight']
+        result[iv] = np.inf if w == 0 else cnt / w
+    return result
+******************************
+Code for feature 'nontriangle_degree_to_weight_ratio':
+def extract_feature(G):
+    import numpy as np
+    import networkx as nx
+    nodes = list(G.nodes())
+    n = len(nodes)
+    if n == 0:
+        return np.array([], dtype=float)
+    degs = np.fromiter((G.degree(v) for v in nodes), dtype=float, count=n)
+    clust = nx.clustering(G)
+    clust_arr = np.fromiter((clust.get(v, 0.0) for v in nodes), dtype=float, count=n)
+    weights = np.fromiter((G.nodes[v].get('weight', 0.0) for v in nodes), dtype=float, count=n)
+    num = degs * (1.0 - clust_arr)
+    out = np.empty_like(num)
+    np.divide(num, weights, out=out, where=weights != 0)
+    return out
+
+⚠️ Skipping feature 'nontriangle_degree_to_weight_ratio' due to error: 
+******************************
+def extract_feature(G):
+    import numpy as np
+    import networkx as nx
+    nodes = list(G.nodes())
+    n = len(nodes)
+    if n == 0:
+        return np.array([], dtype=float)
+    degs = np.fromiter((G.degree(v) for v in nodes), dtype=float, count=n)
+    clust = nx.clustering(G)
+    clust_arr = np.fromiter((clust.get(v, 0.0) for v in nodes), dtype=float, count=n)
+    weights = np.fromiter((G.nodes[v].get('weight', 0.0) for v in nodes), dtype=float, count=n)
+    num = degs * (1.0 - clust_arr)
+    out = np.empty_like(num)
+    np.divide(num, weights, out=out, where=weights != 0)
+    return out
+******************************
+Code for feature 'kcore_index_to_weight_ratio':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    core = nx.core_number(G)
+    nodes = list(G.nodes())
+    res = np.empty(len(nodes), dtype=float)
+    nattrs = G.nodes
+    for i, v in enumerate(nodes):
+        w = nattrs[v].get('weight', None)
+        if w is None or w == 0:
+            res[i] = 0.0
+        else:
+            res[i] = core.get(v, 0) / w
+    return res
+
+⚠️ Skipping feature 'kcore_index_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    core = nx.core_number(G)
+    nodes = list(G.nodes())
+    res = np.empty(len(nodes), dtype=float)
+    nattrs = G.nodes
+    for i, v in enumerate(nodes):
+        w = nattrs[v].get('weight', None)
+        if w is None or w == 0:
+            res[i] = 0.0
+        else:
+            res[i] = core.get(v, 0) / w
+    return res
+******************************
+Code for feature 'two_hop_expansion_to_weight_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    adj = {v: set(G.neighbors(v)) for v in nodes}
+    out = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        nbrs = adj[v]
+        two_hop = set()
+        for u in nbrs:
+            two_hop.update(adj.get(u, ()))
+        two_hop.difference_update(nbrs)
+        two_hop.discard(v)
+        w = G.nodes[v]['weight']
+        out[i] = len(two_hop) / w if w != 0 else np.inf
+    return out
+
+⚠️ Skipping feature 'two_hop_expansion_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    adj = {v: set(G.neighbors(v)) for v in nodes}
+    out = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        nbrs = adj[v]
+        two_hop = set()
+        for u in nbrs:
+            two_hop.update(adj.get(u, ()))
+        two_hop.difference_update(nbrs)
+        two_hop.discard(v)
+        w = G.nodes[v]['weight']
+        out[i] = len(two_hop) / w if w != 0 else np.inf
+    return out
+******************************
+Code for feature 'neighbor_degree_to_weight_mean':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    idx = {u: i for i, u in enumerate(nodes)}
+    deg = np.fromiter((G.degree(u) for u in nodes), dtype=float, count=n)
+    w = np.fromiter((G.nodes[u].get('weight', 0.0) for u in nodes), dtype=float, count=n)
+    deg_over_w = np.zeros(n, dtype=float)
+    np.divide(deg, w, out=deg_over_w, where=w != 0)
+    feat = np.zeros(n, dtype=float)
+    for i, v in enumerate(nodes):
+        nbrs = G[v]
+        c = len(nbrs)
+        if c:
+            s = 0.0
+            for u in nbrs:
+                s += deg_over_w[idx[u]]
+            feat[i] = s / c
+    return feat
+
+⚠️ Skipping feature 'neighbor_degree_to_weight_mean' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    idx = {u: i for i, u in enumerate(nodes)}
+    deg = np.fromiter((G.degree(u) for u in nodes), dtype=float, count=n)
+    w = np.fromiter((G.nodes[u].get('weight', 0.0) for u in nodes), dtype=float, count=n)
+    deg_over_w = np.zeros(n, dtype=float)
+    np.divide(deg, w, out=deg_over_w, where=w != 0)
+    feat = np.zeros(n, dtype=float)
+    for i, v in enumerate(nodes):
+        nbrs = G[v]
+        c = len(nbrs)
+        if c:
+            s = 0.0
+            for u in nbrs:
+                s += deg_over_w[idx[u]]
+            feat[i] = s / c
+    return feat
+Extracting features:  80%|████████  | 8/10 [03:11<00:53, 26.61s/feature][A
+Extracting features:  90%|█████████ | 9/10 [03:28<00:23, 23.52s/feature][A
+Extracting features: 100%|██████████| 10/10 [03:49<00:00, 22.66s/feature][AExtracting features: 100%|██████████| 10/10 [03:49<00:00, 22.93s/feature]
+
+******************************
+Code for feature 'pagerank_to_weight_ratio':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    pr = nx.pagerank(G, alpha=0.85, weight=None)
+    nodes = list(G.nodes())
+    weights = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    pr_vals = np.fromiter((pr[n] for n in nodes), dtype=float, count=len(nodes))
+    return pr_vals / weights
+
+⚠️ Skipping feature 'pagerank_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    pr = nx.pagerank(G, alpha=0.85, weight=None)
+    nodes = list(G.nodes())
+    weights = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    pr_vals = np.fromiter((pr[n] for n in nodes), dtype=float, count=len(nodes))
+    return pr_vals / weights
+******************************
+Code for feature 'leverage_over_weight':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg_map = dict(G.degree())
+    deg_arr = np.array([deg_map[v] for v in nodes], dtype=float)
+    means = np.empty(len(nodes), dtype=float)
+    adj = G.adj
+    for i, v in enumerate(nodes):
+        nbrs = adj[v]
+        if len(nbrs) == 0:
+            means[i] = 0.0
+        else:
+            s = 0
+            for u in nbrs:
+                s += deg_map[u]
+            means[i] = s / len(nbrs)
+    denom = deg_arr + means
+    num = deg_arr - means
+    ratio = np.zeros_like(deg_arr, dtype=float)
+    mask = denom != 0
+    ratio[mask] = num[mask] / denom[mask]
+    w = np.array([G.nodes[v].get('weight', 0.0) for v in nodes], dtype=float)
+    feature = np.zeros_like(ratio)
+    wmask = w != 0
+    feature[wmask] = ratio[wmask] / w[wmask]
+    return feature
+
+⚠️ Skipping feature 'leverage_over_weight' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg_map = dict(G.degree())
+    deg_arr = np.array([deg_map[v] for v in nodes], dtype=float)
+    means = np.empty(len(nodes), dtype=float)
+    adj = G.adj
+    for i, v in enumerate(nodes):
+        nbrs = adj[v]
+        if len(nbrs) == 0:
+            means[i] = 0.0
+        else:
+            s = 0
+            for u in nbrs:
+                s += deg_map[u]
+            means[i] = s / len(nbrs)
+    denom = deg_arr + means
+    num = deg_arr - means
+    ratio = np.zeros_like(deg_arr, dtype=float)
+    mask = denom != 0
+    ratio[mask] = num[mask] / denom[mask]
+    w = np.array([G.nodes[v].get('weight', 0.0) for v in nodes], dtype=float)
+    feature = np.zeros_like(ratio)
+    wmask = w != 0
+    feature[wmask] = ratio[wmask] / w[wmask]
+    return feature
+******************************
+c_Y 60.62711864406779
+Training GNN
+
+  0%|          | 0/999 [00:00<?, ?it/s][A
+  3%|▎         | 31/999 [00:00<00:03, 305.16it/s][A
+  6%|▋         | 63/999 [00:00<00:03, 308.40it/s][A
+ 10%|▉         | 97/999 [00:00<00:02, 320.85it/s][A
+ 13%|█▎        | 134/999 [00:00<00:02, 336.79it/s][A
+ 17%|█▋        | 171/999 [00:00<00:02, 347.00it/s][A
+ 21%|██        | 208/999 [00:00<00:02, 352.29it/s][A
+ 25%|██▍       | 246/999 [00:00<00:02, 358.18it/s][A
+ 28%|██▊       | 283/999 [00:00<00:01, 361.12it/s][A
+ 32%|███▏      | 320/999 [00:00<00:01, 355.77it/s][A
+ 36%|███▌      | 357/999 [00:01<00:01, 359.19it/s][A
+ 39%|███▉      | 394/999 [00:01<00:01, 359.97it/s][A
+ 43%|████▎     | 431/999 [00:01<00:01, 360.92it/s][A
+ 47%|████▋     | 468/999 [00:01<00:01, 358.80it/s][A
+ 51%|█████     | 505/999 [00:01<00:01, 361.37it/s][A
+ 54%|█████▍    | 542/999 [00:01<00:01, 363.62it/s][A
+ 58%|█████▊    | 579/999 [00:01<00:01, 362.03it/s][A
+ 62%|██████▏   | 616/999 [00:01<00:01, 359.43it/s][A
+ 65%|██████▌   | 653/999 [00:01<00:00, 360.58it/s][A
+ 69%|██████▉   | 690/999 [00:01<00:00, 359.21it/s][A
+ 73%|███████▎  | 727/999 [00:02<00:00, 361.79it/s][A
+ 76%|███████▋  | 764/999 [00:02<00:00, 363.02it/s][A
+ 80%|████████  | 801/999 [00:02<00:00, 364.76it/s][A
+ 84%|████████▍ | 838/999 [00:02<00:00, 360.54it/s][A
+ 88%|████████▊ | 875/999 [00:02<00:00, 362.46it/s][A
+ 91%|█████████▏| 912/999 [00:02<00:00, 364.38it/s][A
+ 95%|█████████▍| 949/999 [00:02<00:00, 365.28it/s][A
+ 99%|█████████▊| 986/999 [00:02<00:00, 366.49it/s][A100%|██████████| 999/999 [00:02<00:00, 357.93it/s]
+ 80%|████████  | 8/10 [538:10:57<239:43:48, 431514.49s/it]c_Y 95.20338983050847
+Objective value: 298.0
+c_Y 0.0
+Objective value pruned: 294.0
+Ratio 0.9865771812080537
+queries ratio 1.0
+Explaining GNN predictions
+Feature Space Search Iteration 9 for problem: Maximum Cut Weighted
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut Weighted problem (The problem is defined over an undirected graph G = (V, E), where each node v ∈ V has an associated weight w(v) > 0. The weight of each node is defined as w(v) = (β / |V|) * (|N(v)| - α), where N(v) is the set of neighbors of v, α = 1/20, and β is a normalizing factor ensuring w(v) ≥ 1. Given a budget k, the task is to select a subset S ⊆ V such that the total weight ∑_{v ∈ S} w(v) ≤ k, while maximizing the cut value, i.e., the number of edges crossing between S and V \ S. Formally, the objective is:
+f(S) = |{ (u, v) ∈ E : u ∈ S, v ∈ V \ S }|.), propose up to ten node-level features. Degree to weight ratio must be included.. for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Feedback from previous iterations:
+Key performance
+- Solution quality (ratio): 0.889–0.987, avg ≈ 0.948, median ≈ 0.940. Best in iterations 4 and 8 (~0.987); worst in iteration 2 (~0.889).
+- Size reduction: consistently extreme and stable at ~0.9985–0.9992 (≈99.85–99.92% reduction).
+
+Feature importance trends
+- Dominant signal: degree_to_weight_ratio throughout (≈0.26–0.55), increasingly central from iteration 4 onward.
+- Secondary signals: degree_zscore (≈0.22–0.29) emerges as the consistent #2 after iteration 4; inverse_weight remains steadily useful (≈0.15–0.29).
+- Contextual/structural: external_degree_to_weight_ratio contributes meaningfully in several runs (iterations 3, 4, 5, 7; up to ≈0.33).
+- Early-only features: raw degree, normalized_degree, and node_weight matter initially but are supplanted by ratio/standardized variants.
+- Occasional signals: degree_assortativity_gap notable only in iteration 2; external_edge_fraction briefly appears in iteration 3.
+
+Insights
+- The model converges toward cost-normalized connectivity (degree_to_weight_ratio) and standardized centrality (degree_zscore) as the most predictive signals, with inverse_weight as a complementary cost cue.
+- External/boundary-aware connectivity (external_degree_to_weight_ratio) is intermittently important, suggesting value in modeling local neighborhood context.
+- Extreme pruning is achievable with minimal loss in solution quality, but guarding against occasional dips (e.g., iteration 2) may require stabilizers or calibration around assortativity shifts.
+
+Refinement rules:
+1) Keep high-importance features.
+2) Adjust or normalize medium-importance features.
+3) Remove or replace low-importance features.
+4) Add new features inspired by important patterns.
+5) Ensure all features are distinct and non-redundant.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Proposed features: ['degree_to_weight_ratio', 'degree_zscore', 'inverse_weight', 'community_external_degree_to_weight_ratio', 'external_edge_fraction', 'degree_assortativity_gap', 'neighbor_degree_to_weight_mean', 'clustering_complement', 'two_hop_expansion_to_weight_ratio', 'core_number_to_weight_ratio']
+
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
+Extracting features:  10%|█         | 1/10 [00:10<01:35, 10.56s/feature][A
+Extracting features:  20%|██        | 2/10 [00:20<01:23, 10.48s/feature][A
+Extracting features:  30%|███       | 3/10 [00:29<01:08,  9.74s/feature][A
+Extracting features:  40%|████      | 4/10 [01:09<02:09, 21.54s/feature][A
+Extracting features:  50%|█████     | 5/10 [01:56<02:34, 30.84s/feature][A
+Extracting features:  60%|██████    | 6/10 [02:17<01:49, 27.29s/feature][ACode for feature 'degree_to_weight_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    degs = dict(G.degree())
+    w = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float)
+    d = np.fromiter((degs[n] for n in nodes), dtype=float)
+    out = np.empty_like(w, dtype=float)
+    np.divide(d, w, out=out, where=w != 0)
+    out[w == 0] = 0.0
+    return out
+
+Code for feature 'degree_zscore':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg = np.fromiter((G.degree(n) for n in nodes), dtype=float, count=len(nodes))
+    if deg.size == 0:
+        return deg
+    mean_deg = deg.mean()
+    std_deg = deg.std()
+    if std_deg == 0.0:
+        return np.zeros_like(deg, dtype=float)
+    return (deg - mean_deg) / std_deg
+
+Code for feature 'inverse_weight':
+import numpy as np
+
+def extract_feature(G):
+    nodes = G.nodes()
+    weights = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=G.number_of_nodes())
+    with np.errstate(divide='ignore', invalid='ignore'):
+        return 1.0 / weights
+
+Code for feature 'community_external_degree_to_weight_ratio':
+import numpy as np
+import networkx as nx
+from networkx.algorithms.community import louvain_communities
+
+def extract_feature(G):
+    H = nx.Graph()
+    H.add_nodes_from(G.nodes())
+    H.add_edges_from(G.edges())
+    communities = louvain_communities(H, weight=None, seed=0)
+    comm_id = {}
+    for cid, nodes in enumerate(communities):
+        for u in nodes:
+            comm_id[u] = cid
+    idx = {u: i for i, u in enumerate(G.nodes())}
+    ext_deg = np.zeros(len(idx), dtype=float)
+    for u in H.nodes():
+        cu = comm_id[u]
+        c = 0
+        for v in H.neighbors(u):
+            if comm_id[v] != cu:
+                c += 1
+        ext_deg[idx[u]] = c
+    weights = np.array([G.nodes[u].get('weight', 0.0) for u in G.nodes()], dtype=float)
+    with np.errstate(divide='ignore', invalid='ignore'):
+        feat = ext_deg / weights
+    feat[~np.isfinite(feat)] = 0.0
+    return feat
+
+⚠️ Skipping feature 'community_external_degree_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+from networkx.algorithms.community import louvain_communities
+
+def extract_feature(G):
+    H = nx.Graph()
+    H.add_nodes_from(G.nodes())
+    H.add_edges_from(G.edges())
+    communities = louvain_communities(H, weight=None, seed=0)
+    comm_id = {}
+    for cid, nodes in enumerate(communities):
+        for u in nodes:
+            comm_id[u] = cid
+    idx = {u: i for i, u in enumerate(G.nodes())}
+    ext_deg = np.zeros(len(idx), dtype=float)
+    for u in H.nodes():
+        cu = comm_id[u]
+        c = 0
+        for v in H.neighbors(u):
+            if comm_id[v] != cu:
+                c += 1
+        ext_deg[idx[u]] = c
+    weights = np.array([G.nodes[u].get('weight', 0.0) for u in G.nodes()], dtype=float)
+    with np.errstate(divide='ignore', invalid='ignore'):
+        feat = ext_deg / weights
+    feat[~np.isfinite(feat)] = 0.0
+    return feat
+******************************
+Code for feature 'external_edge_fraction':
+import numpy as np
+import networkx as nx
+from networkx.algorithms.community import asyn_lpa_communities
+
+def extract_feature(G):
+    if G.number_of_nodes() == 0:
+        return np.array([], dtype=float)
+    communities = list(asyn_lpa_communities(G, weight='weight', seed=0))
+    node_to_comm = {}
+    for cid, comm in enumerate(communities):
+        for u in comm:
+            node_to_comm[u] = cid
+    nodes = list(G.nodes())
+    idx = {u: i for i, u in enumerate(nodes)}
+    deg = np.zeros(len(nodes), dtype=float)
+    ext = np.zeros(len(nodes), dtype=float)
+    if G.is_multigraph():
+        for u, v, k, data in G.edges(keys=True, data=True):
+            w = data.get('weight', 1.0)
+            iu = idx[u]
+            iv = idx[v]
+            deg[iu] += w
+            deg[iv] += w
+            if node_to_comm.get(u, -1) != node_to_comm.get(v, -1):
+                ext[iu] += w
+                ext[iv] += w
+    else:
+        for u, v, data in G.edges(data=True):
+            w = data.get('weight', 1.0)
+            iu = idx[u]
+            iv = idx[v]
+            deg[iu] += w
+            deg[iv] += w
+            if node_to_comm.get(u, -1) != node_to_comm.get(v, -1):
+                ext[iu] += w
+                ext[iv] += w
+    out = np.zeros(len(nodes), dtype=float)
+    nz = deg > 0
+    out[nz] = ext[nz] / deg[nz]
+    return out
+
+⚠️ Skipping feature 'external_edge_fraction' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+from networkx.algorithms.community import asyn_lpa_communities
+
+def extract_feature(G):
+    if G.number_of_nodes() == 0:
+        return np.array([], dtype=float)
+    communities = list(asyn_lpa_communities(G, weight='weight', seed=0))
+    node_to_comm = {}
+    for cid, comm in enumerate(communities):
+        for u in comm:
+            node_to_comm[u] = cid
+    nodes = list(G.nodes())
+    idx = {u: i for i, u in enumerate(nodes)}
+    deg = np.zeros(len(nodes), dtype=float)
+    ext = np.zeros(len(nodes), dtype=float)
+    if G.is_multigraph():
+        for u, v, k, data in G.edges(keys=True, data=True):
+            w = data.get('weight', 1.0)
+            iu = idx[u]
+            iv = idx[v]
+            deg[iu] += w
+            deg[iv] += w
+            if node_to_comm.get(u, -1) != node_to_comm.get(v, -1):
+                ext[iu] += w
+                ext[iv] += w
+    else:
+        for u, v, data in G.edges(data=True):
+            w = data.get('weight', 1.0)
+            iu = idx[u]
+            iv = idx[v]
+            deg[iu] += w
+            deg[iv] += w
+            if node_to_comm.get(u, -1) != node_to_comm.get(v, -1):
+                ext[iu] += w
+                ext[iv] += w
+    out = np.zeros(len(nodes), dtype=float)
+    nz = deg > 0
+    out[nz] = ext[nz] / deg[nz]
+    return out
+******************************
+Code for feature 'degree_assortativity_gap':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    idx = {n: i for i, n in enumerate(nodes)}
+    deg_dict = dict(G.degree())
+    deg = np.fromiter((deg_dict[n] for n in nodes), dtype=float, count=len(nodes))
+    nbr_sum = np.zeros(len(nodes), dtype=float)
+    for v in nodes:
+        i = idx[v]
+        for u in G.neighbors(v):
+            nbr_sum[i] += deg_dict.get(u, 0)
+    out = np.zeros(len(nodes), dtype=float)
+    nz = deg > 0
+    out[nz] = deg[nz] - nbr_sum[nz] / deg[nz]
+    return out
+
+⚠️ Skipping feature 'degree_assortativity_gap' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    idx = {n: i for i, n in enumerate(nodes)}
+    deg_dict = dict(G.degree())
+    deg = np.fromiter((deg_dict[n] for n in nodes), dtype=float, count=len(nodes))
+    nbr_sum = np.zeros(len(nodes), dtype=float)
+    for v in nodes:
+        i = idx[v]
+        for u in G.neighbors(v):
+            nbr_sum[i] += deg_dict.get(u, 0)
+    out = np.zeros(len(nodes), dtype=float)
+    nz = deg > 0
+    out[nz] = deg[nz] - nbr_sum[nz] / deg[nz]
+    return out
+******************************
+Code for feature 'neighbor_degree_to_weight_mean':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg = dict(G.degree())
+    weights = {n: G.nodes[n]['weight'] for n in nodes}
+    out = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        dv = deg.get(v, 0)
+        if dv == 0:
+            out[i] = 0.0
+            continue
+        s = 0.0
+        for u in G[v]:
+            wu = weights[u]
+            if wu == 0:
+                s = np.inf
+                break
+            s += deg[u] / wu
+        out[i] = s / dv
+    return out
+
+⚠️ Skipping feature 'neighbor_degree_to_weight_mean' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg = dict(G.degree())
+    weights = {n: G.nodes[n]['weight'] for n in nodes}
+    out = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        dv = deg.get(v, 0)
+        if dv == 0:
+            out[i] = 0.0
+            continue
+        s = 0.0
+        for u in G[v]:
+            wu = weights[u]
+            if wu == 0:
+                s = np.inf
+                break
+            s += deg[u] / wu
+        out[i] = s / dv
+    return out
+Extracting features:  70%|███████   | 7/10 [02:40<01:17, 25.88s/feature][A
+Extracting features:  80%|████████  | 8/10 [03:00<00:48, 24.24s/feature][A
+Extracting features:  90%|█████████ | 9/10 [03:26<00:24, 24.80s/feature][A
+Extracting features: 100%|██████████| 10/10 [03:52<00:00, 25.11s/feature][AExtracting features: 100%|██████████| 10/10 [03:52<00:00, 23.27s/feature]
+
+******************************
+Code for feature 'clustering_complement':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    c = nx.clustering(G)
+    return np.array([1.0 - c.get(n, 0.0) for n in nodes], dtype=float)
+
+⚠️ Skipping feature 'clustering_complement' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    c = nx.clustering(G)
+    return np.array([1.0 - c.get(n, 0.0) for n in nodes], dtype=float)
+******************************
+Code for feature 'two_hop_expansion_to_weight_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    neighbor_sets = {u: set(G[u]) for u in nodes}
+    weights = np.array([G.nodes[u]['weight'] for u in nodes], dtype=float)
+    out = np.empty(len(nodes), dtype=float)
+    for i, u in enumerate(nodes):
+        n1 = neighbor_sets[u]
+        twohop = set()
+        for w in n1:
+            twohop.update(neighbor_sets.get(w, ()))
+        twohop.discard(u)
+        twohop -= n1
+        c = len(twohop)
+        w = weights[i]
+        out[i] = c / w if w != 0 else 0.0
+    return out
+
+⚠️ Skipping feature 'two_hop_expansion_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    neighbor_sets = {u: set(G[u]) for u in nodes}
+    weights = np.array([G.nodes[u]['weight'] for u in nodes], dtype=float)
+    out = np.empty(len(nodes), dtype=float)
+    for i, u in enumerate(nodes):
+        n1 = neighbor_sets[u]
+        twohop = set()
+        for w in n1:
+            twohop.update(neighbor_sets.get(w, ()))
+        twohop.discard(u)
+        twohop -= n1
+        c = len(twohop)
+        w = weights[i]
+        out[i] = c / w if w != 0 else 0.0
+    return out
+******************************
+Code for feature 'core_number_to_weight_ratio':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    cnum = nx.core_number(G)
+    weights = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    core_vals = np.fromiter((cnum[n] for n in nodes), dtype=float, count=len(nodes))
+    out = np.empty_like(core_vals)
+    np.divide(core_vals, weights, out=out, where=weights != 0)
+    out[weights == 0] = np.inf
+    return out
+
+⚠️ Skipping feature 'core_number_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    cnum = nx.core_number(G)
+    weights = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    core_vals = np.fromiter((cnum[n] for n in nodes), dtype=float, count=len(nodes))
+    out = np.empty_like(core_vals)
+    np.divide(core_vals, weights, out=out, where=weights != 0)
+    out[weights == 0] = np.inf
+    return out
+******************************
+c_Y 60.62711864406779
+Training GNN
+
+  0%|          | 0/999 [00:00<?, ?it/s][A
+  3%|▎         | 31/999 [00:00<00:03, 309.97it/s][A
+  6%|▌         | 62/999 [00:00<00:03, 304.69it/s][A
+  9%|▉         | 93/999 [00:00<00:03, 298.62it/s][A
+ 13%|█▎        | 130/999 [00:00<00:02, 325.35it/s][A
+ 17%|█▋        | 167/999 [00:00<00:02, 340.85it/s][A
+ 20%|██        | 204/999 [00:00<00:02, 350.38it/s][A
+ 24%|██▍       | 241/999 [00:00<00:02, 354.20it/s][A
+ 28%|██▊       | 277/999 [00:00<00:02, 354.77it/s][A
+ 31%|███▏      | 314/999 [00:00<00:01, 356.56it/s][A
+ 35%|███▌      | 350/999 [00:01<00:01, 356.48it/s][A
+ 39%|███▉      | 388/999 [00:01<00:01, 361.30it/s][A
+ 43%|████▎     | 425/999 [00:01<00:01, 361.73it/s][A
+ 46%|████▌     | 462/999 [00:01<00:01, 360.30it/s][A
+ 50%|████▉     | 499/999 [00:01<00:01, 362.47it/s][A
+ 54%|█████▎    | 536/999 [00:01<00:01, 360.30it/s][A
+ 57%|█████▋    | 573/999 [00:01<00:01, 360.62it/s][A
+ 61%|██████    | 610/999 [00:01<00:01, 359.29it/s][A
+ 65%|██████▍   | 647/999 [00:01<00:00, 360.80it/s][A
+ 68%|██████▊   | 684/999 [00:01<00:00, 361.72it/s][A
+ 72%|███████▏  | 721/999 [00:02<00:00, 359.83it/s][A
+ 76%|███████▌  | 758/999 [00:02<00:00, 360.49it/s][A
+ 80%|███████▉  | 795/999 [00:02<00:00, 358.20it/s][A
+ 83%|████████▎ | 832/999 [00:02<00:00, 359.60it/s][A
+ 87%|████████▋ | 868/999 [00:02<00:00, 359.25it/s][A
+ 90%|█████████ | 904/999 [00:02<00:00, 353.83it/s][A
+ 94%|█████████▍| 940/999 [00:02<00:00, 354.42it/s][A
+ 98%|█████████▊| 976/999 [00:02<00:00, 353.88it/s][A100%|██████████| 999/999 [00:02<00:00, 352.98it/s]
+ 90%|█████████ | 9/10 [538:16:30<82:25:20, 296720.63s/it] c_Y 95.20338983050847
+Objective value: 298.0
+c_Y 0.0
+Objective value pruned: 294.0
+Ratio 0.9865771812080537
+queries ratio 1.0
+Explaining GNN predictions
+Feature Space Search Iteration 10 for problem: Maximum Cut Weighted
+LLM Prompt:
+You are an expert in graph neural networks and combinatorial optimization.
+
+For the Maximum Cut Weighted problem (The problem is defined over an undirected graph G = (V, E), where each node v ∈ V has an associated weight w(v) > 0. The weight of each node is defined as w(v) = (β / |V|) * (|N(v)| - α), where N(v) is the set of neighbors of v, α = 1/20, and β is a normalizing factor ensuring w(v) ≥ 1. Given a budget k, the task is to select a subset S ⊆ V such that the total weight ∑_{v ∈ S} w(v) ≤ k, while maximizing the cut value, i.e., the number of edges crossing between S and V \ S. Formally, the objective is:
+f(S) = |{ (u, v) ∈ E : u ∈ S, v ∈ V \ S }|.), propose up to ten node-level features. Degree to weight ratio must be included.. for a GNN binary classifier that predicts nodes likely to be in the optimal solution.
+
+The heuristic can only select nodes from the reduced candidate set provided by the GNN. The goal is to shrink the candidate set while ensuring the heuristic still achieves the same objective value.
+
+Feedback from previous iterations:
+- Performance trend: Ratio improved from ~0.89–0.94 (iters 1–3) to ~0.98–0.99, stabilizing at ~0.9866 in the last iterations. Minor oscillations but clear convergence.  
+- Pruning behavior: Size reduction remained extremely high and stable (≈99.85–99.92%) throughout, with a slight easing (0.9992 → ~0.9985–0.9987) as ratio improved.
+- Dominant features:
+  - degree_to_weight_ratio was consistently the top driver (≈0.26–0.55), indicating the policy prioritizes high-degree, low-weight nodes.
+  - inverse_weight and degree_zscore emerged as stable, secondary features from iter4 onward.
+- Features that faded or were situational:
+  - Raw degree, normalized_degree, and node_weight were relevant early but were replaced by degree_zscore and inverse_weight.
+  - external_degree_to_weight_ratio was intermittently important; helpful in some runs (e.g., iter4,7) but not essential for peak performance (iters 8–9 reached top ratios without it).
+  - degree_assortativity_gap and external_edge_fraction provided occasional, limited signal.
+- Key insight: A compact feature set—degree_to_weight_ratio + inverse_weight + degree_zscore—captures most of the performance, with external connectivity features acting as optional tie-breakers rather than core predictors.
+
+Refinement rules:
+1) Keep high-importance features.
+2) Adjust or normalize medium-importance features.
+3) Remove or replace low-importance features.
+4) Add new features inspired by important patterns.
+5) Ensure all features are distinct and non-redundant.
+
+Return the output as a JSON array of objects with keys:
+- "feature": feature name in snake_case
+- "definition": one-line definition of how to compute it
+- "reason": 1–2 sentences on why it is useful
+
+Do not include any text outside the JSON array.
+
+Proposed features: ['degree_to_weight_ratio', 'inverse_weight', 'degree_zscore', 'pagerank_to_weight_ratio', 'two_hop_expansion_ratio', 'one_minus_clustering', 'dtw_advantage_over_neighbors', 'bridging_score', 'cost_fraction_of_budget', 'core_number_to_weight_ratio']
+
+Extracting features:   0%|          | 0/10 [00:00<?, ?feature/s][A
+Extracting features:  10%|█         | 1/10 [00:08<01:16,  8.50s/feature][A
+Extracting features:  20%|██        | 2/10 [00:16<01:03,  7.92s/feature][A
+Extracting features:  30%|███       | 3/10 [00:26<01:04,  9.15s/feature][A
+Extracting features:  40%|████      | 4/10 [00:53<01:36, 16.08s/feature][A
+Extracting features:  50%|█████     | 5/10 [01:08<01:19, 15.80s/feature][A
+Extracting features:  60%|██████    | 6/10 [01:26<01:05, 16.34s/feature][A
+Extracting features:  70%|███████   | 7/10 [02:12<01:18, 26.20s/feature][ACode for feature 'degree_to_weight_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    deg_map = dict(G.degree())
+    degs = np.fromiter((deg_map[n] for n in nodes), dtype=float, count=len(nodes))
+    weights = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    return np.divide(degs, weights, out=np.zeros_like(degs), where=weights!=0)
+
+Code for feature 'inverse_weight':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    w = np.fromiter((G.nodes[n]['weight'] for n in nodes), dtype=float, count=len(nodes))
+    inv = np.empty_like(w, dtype=float)
+    np.divide(1.0, w, out=inv)
+    return inv
+
+Code for feature 'degree_zscore':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    degs = np.fromiter((G.degree(n) for n in nodes), dtype=float, count=len(nodes))
+    if degs.size == 0:
+        return degs
+    mean = degs.mean()
+    std = degs.std()
+    if std == 0:
+        return np.zeros_like(degs, dtype=float)
+    return (degs - mean) / std
+
+Code for feature 'pagerank_to_weight_ratio':
+def extract_feature(G):
+    import numpy as np
+    import networkx as nx
+    nodes = list(G.nodes())
+    if not nodes:
+        return np.array([], dtype=float)
+    pr = nx.pagerank(G, alpha=0.85, weight='weight')
+    pr_arr = np.fromiter((pr.get(n, 0.0) for n in nodes), dtype=float, count=len(nodes))
+    w = np.fromiter((G.nodes[n].get('weight', 0.0) for n in nodes), dtype=float, count=len(nodes))
+    out = np.empty_like(pr_arr)
+    np.divide(pr_arr, w, out=out, where=w != 0)
+    out[w == 0] = np.inf
+    return out
+
+⚠️ Skipping feature 'pagerank_to_weight_ratio' due to error: 
+******************************
+def extract_feature(G):
+    import numpy as np
+    import networkx as nx
+    nodes = list(G.nodes())
+    if not nodes:
+        return np.array([], dtype=float)
+    pr = nx.pagerank(G, alpha=0.85, weight='weight')
+    pr_arr = np.fromiter((pr.get(n, 0.0) for n in nodes), dtype=float, count=len(nodes))
+    w = np.fromiter((G.nodes[n].get('weight', 0.0) for n in nodes), dtype=float, count=len(nodes))
+    out = np.empty_like(pr_arr)
+    np.divide(pr_arr, w, out=out, where=w != 0)
+    out[w == 0] = np.inf
+    return out
+******************************
+Code for feature 'two_hop_expansion_ratio':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    neighbors = {v: set(G.neighbors(v)) for v in nodes}
+    out = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        twohop = set()
+        for u in neighbors[v]:
+            twohop.update(neighbors[u])
+        twohop.difference_update(neighbors[v])
+        twohop.discard(v)
+        deg = len(neighbors[v])
+        out[i] = len(twohop) / (deg if deg > 0 else 1)
+    return out
+
+⚠️ Skipping feature 'two_hop_expansion_ratio' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    neighbors = {v: set(G.neighbors(v)) for v in nodes}
+    out = np.empty(len(nodes), dtype=float)
+    for i, v in enumerate(nodes):
+        twohop = set()
+        for u in neighbors[v]:
+            twohop.update(neighbors[u])
+        twohop.difference_update(neighbors[v])
+        twohop.discard(v)
+        deg = len(neighbors[v])
+        out[i] = len(twohop) / (deg if deg > 0 else 1)
+    return out
+******************************
+Code for feature 'one_minus_clustering':
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    c = nx.clustering(G, weight='weight')
+    return np.fromiter((1.0 - c[n] for n in nodes), dtype=float, count=len(nodes))
+
+⚠️ Skipping feature 'one_minus_clustering' due to error: 
+******************************
+import numpy as np
+import networkx as nx
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    c = nx.clustering(G, weight='weight')
+    return np.fromiter((1.0 - c[n] for n in nodes), dtype=float, count=len(nodes))
+******************************
+Code for feature 'dtw_advantage_over_neighbors':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    idx = {node: i for i, node in enumerate(nodes)}
+    deg = np.fromiter((G.degree(node) for node in nodes), dtype=float, count=n)
+    w = np.fromiter((G.nodes[node]['weight'] for node in nodes), dtype=float, count=n)
+    r = np.divide(deg, w, out=np.zeros_like(deg), where=w != 0)
+    sum_neighbor_r = np.zeros(n, dtype=float)
+    if G.is_directed():
+        neighbor_count = np.zeros(n, dtype=float)
+        for v in nodes:
+            i = idx[v]
+            neigh = set(G.successors(v))
+            neigh.update(G.predecessors(v))
+            neighbor_count[i] = float(len(neigh))
+            s = 0.0
+            for u in neigh:
+                s += r[idx[u]]
+            sum_neighbor_r[i] = s
+        mean_neighbor_r = np.divide(sum_neighbor_r, neighbor_count, out=np.zeros_like(sum_neighbor_r), where=neighbor_count > 0)
+    else:
+        for u, v in G.edges():
+            iu = idx[u]
+            iv = idx[v]
+            sum_neighbor_r[iu] += r[iv]
+            sum_neighbor_r[iv] += r[iu]
+        mean_neighbor_r = np.divide(sum_neighbor_r, deg, out=np.zeros_like(sum_neighbor_r), where=deg > 0)
+    return r - mean_neighbor_r
+
+⚠️ Skipping feature 'dtw_advantage_over_neighbors' due to error: 
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    n = len(nodes)
+    idx = {node: i for i, node in enumerate(nodes)}
+    deg = np.fromiter((G.degree(node) for node in nodes), dtype=float, count=n)
+    w = np.fromiter((G.nodes[node]['weight'] for node in nodes), dtype=float, count=n)
+    r = np.divide(deg, w, out=np.zeros_like(deg), where=w != 0)
+    sum_neighbor_r = np.zeros(n, dtype=float)
+    if G.is_directed():
+        neighbor_count = np.zeros(n, dtype=float)
+        for v in nodes:
+            i = idx[v]
+            neigh = set(G.successors(v))
+            neigh.update(G.predecessors(v))
+            neighbor_count[i] = float(len(neigh))
+            s = 0.0
+            for u in neigh:
+                s += r[idx[u]]
+            sum_neighbor_r[i] = s
+        mean_neighbor_r = np.divide(sum_neighbor_r, neighbor_count, out=np.zeros_like(sum_neighbor_r), where=neighbor_count > 0)
+    else:
+        for u, v in G.edges():
+            iu = idx[u]
+            iv = idx[v]
+            sum_neighbor_r[iu] += r[iv]
+            sum_neighbor_r[iv] += r[iu]
+        mean_neighbor_r = np.divide(sum_neighbor_r, deg, out=np.zeros_like(sum_neighbor_r), where=deg > 0)
+    return r - mean_neighbor_r
+******************************
+Code for feature 'bridging_score':
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    idx = {n: i for i, n in enumerate(nodes)}
+    n = len(nodes)
+    Ns = [None] * n
+    deg = np.zeros(n, dtype=float)
+    for i, v in enumerate(nodes):
+        s = set(G.neighbors(v))
+        Ns[i] = s
+        deg[i] = len(s)
+    sumj = np.zeros(n, dtype=float)
+    if G.is_directed():
+        for i, v in enumerate(nodes):
+            a = Ns[i]
+            if not a:
+                continue
+            for u in a:
+                j = idx.get(u)
+                if j is None:
+                    continue
+                b = Ns[j]
+                if len(a) < len(b):
+                    inter = sum(1 for x in a if x in b)
+                else:
+                    inter = sum(1 for x in b if x in a)
+                union_size = len(a) + len(b) - inter
+                jacc = inter / union_size if union_size else 0.0
+                sumj[i] += jacc
+    else:
+        for u, v in G.edges():
+            iu = idx[u]
+            iv = idx[v]
+            a = Ns[iu]
+            b = Ns[iv]
+            if len(a) < len(b):
+                inter = sum(1 for x in a if x in b)
+            else:
+                inter = sum(1 for x in b if x in a)
+            union_size = len(a) + len(b) - inter
+            jacc = inter / union_size if union_size else 0.0
+            sumj[iu] += jacc
+            sumj[iv] += jacc
+    meanj = np.divide(sumj, deg, out=np.zeros_like(sumj), where=deg > 0)
+    return 1.0 - meanj
+
+⚠️ Skipping feature 'bridging_score' due to error: 
+Extracting features:  80%|████████  | 8/10 [02:49<00:59, 29.66s/feature][A
+Extracting features:  90%|█████████ | 9/10 [03:04<00:24, 24.92s/feature][A
+Extracting features: 100%|██████████| 10/10 [03:24<00:00, 23.48s/feature][AExtracting features: 100%|██████████| 10/10 [03:24<00:00, 20.43s/feature]
+
+******************************
+import numpy as np
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    idx = {n: i for i, n in enumerate(nodes)}
+    n = len(nodes)
+    Ns = [None] * n
+    deg = np.zeros(n, dtype=float)
+    for i, v in enumerate(nodes):
+        s = set(G.neighbors(v))
+        Ns[i] = s
+        deg[i] = len(s)
+    sumj = np.zeros(n, dtype=float)
+    if G.is_directed():
+        for i, v in enumerate(nodes):
+            a = Ns[i]
+            if not a:
+                continue
+            for u in a:
+                j = idx.get(u)
+                if j is None:
+                    continue
+                b = Ns[j]
+                if len(a) < len(b):
+                    inter = sum(1 for x in a if x in b)
+                else:
+                    inter = sum(1 for x in b if x in a)
+                union_size = len(a) + len(b) - inter
+                jacc = inter / union_size if union_size else 0.0
+                sumj[i] += jacc
+    else:
+        for u, v in G.edges():
+            iu = idx[u]
+            iv = idx[v]
+            a = Ns[iu]
+            b = Ns[iv]
+            if len(a) < len(b):
+                inter = sum(1 for x in a if x in b)
+            else:
+                inter = sum(1 for x in b if x in a)
+            union_size = len(a) + len(b) - inter
+            jacc = inter / union_size if union_size else 0.0
+            sumj[iu] += jacc
+            sumj[iv] += jacc
+    meanj = np.divide(sumj, deg, out=np.zeros_like(sumj), where=deg > 0)
+    return 1.0 - meanj
+******************************
+Code for feature 'cost_fraction_of_budget':
+import numpy as np
+
+def extract_feature(G):
+    inv_budget = 1.0 / budget
+    return np.fromiter((G.nodes[n]['weight'] for n in G.nodes()), dtype=float) * inv_budget
+
+⚠️ Skipping feature 'cost_fraction_of_budget' due to error: name 'budget' is not defined
+******************************
+import numpy as np
+
+def extract_feature(G):
+    inv_budget = 1.0 / budget
+    return np.fromiter((G.nodes[n]['weight'] for n in G.nodes()), dtype=float) * inv_budget
+******************************
+Code for feature 'core_number_to_weight_ratio':
+import numpy as np
+from networkx.algorithms.core import core_number
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    c = core_number(G)
+    cores = np.fromiter((float(c[n]) for n in nodes), dtype=float, count=len(nodes))
+    weights = np.fromiter((float(G.nodes[n]['weight']) for n in nodes), dtype=float, count=len(nodes))
+    with np.errstate(divide='ignore', invalid='ignore'):
+        return cores / weights
+
+⚠️ Skipping feature 'core_number_to_weight_ratio' due to error: 
+******************************
+import numpy as np
+from networkx.algorithms.core import core_number
+
+def extract_feature(G):
+    nodes = list(G.nodes())
+    c = core_number(G)
+    cores = np.fromiter((float(c[n]) for n in nodes), dtype=float, count=len(nodes))
+    weights = np.fromiter((float(G.nodes[n]['weight']) for n in nodes), dtype=float, count=len(nodes))
+    with np.errstate(divide='ignore', invalid='ignore'):
+        return cores / weights
+******************************
+c_Y 60.62711864406779
+Training GNN
+
+  0%|          | 0/999 [00:00<?, ?it/s][A
+  3%|▎         | 28/999 [00:00<00:03, 277.69it/s][A
+  6%|▌         | 59/999 [00:00<00:03, 296.04it/s][A
+  9%|▉         | 93/999 [00:00<00:02, 315.36it/s][A
+ 13%|█▎        | 128/999 [00:00<00:02, 328.99it/s][A
+ 16%|█▋        | 163/999 [00:00<00:02, 335.16it/s][A
+ 20%|██        | 200/999 [00:00<00:02, 344.80it/s][A
+ 24%|██▎       | 237/999 [00:00<00:02, 352.77it/s][A
+ 27%|██▋       | 273/999 [00:00<00:02, 353.70it/s][A
+ 31%|███       | 309/999 [00:00<00:01, 353.23it/s][A
+ 35%|███▍      | 345/999 [00:01<00:01, 353.98it/s][A
+ 38%|███▊      | 382/999 [00:01<00:01, 358.12it/s][A
+ 42%|████▏     | 419/999 [00:01<00:01, 360.88it/s][A
+ 46%|████▌     | 456/999 [00:01<00:01, 362.57it/s][A
+ 49%|████▉     | 493/999 [00:01<00:01, 364.53it/s][A
+ 53%|█████▎    | 530/999 [00:01<00:01, 365.70it/s][A
+ 57%|█████▋    | 567/999 [00:01<00:01, 364.07it/s][A
+ 60%|██████    | 604/999 [00:01<00:01, 362.67it/s][A
+ 64%|██████▍   | 641/999 [00:01<00:00, 362.28it/s][A
+ 68%|██████▊   | 678/999 [00:01<00:00, 362.04it/s][A
+ 72%|███████▏  | 715/999 [00:02<00:00, 363.98it/s][A
+ 75%|███████▌  | 752/999 [00:02<00:00, 364.17it/s][A
+ 79%|███████▉  | 789/999 [00:02<00:00, 363.28it/s][A
+ 83%|████████▎ | 826/999 [00:02<00:00, 365.25it/s][A
+ 86%|████████▋ | 863/999 [00:02<00:00, 364.12it/s][A
+ 90%|█████████ | 900/999 [00:02<00:00, 365.19it/s][A
+ 94%|█████████▍| 937/999 [00:02<00:00, 361.13it/s][A
+ 97%|█████████▋| 974/999 [00:02<00:00, 361.87it/s][A100%|██████████| 999/999 [00:02<00:00, 355.82it/s]
+100%|██████████| 10/10 [538:21:24<00:00, 205207.47s/it]  100%|██████████| 10/10 [538:21:24<00:00, 193808.43s/it]
+c_Y 95.20338983050847
+Objective value: 298.0
+c_Y 82.6779661016949
+Objective value pruned: 293.0
+Ratio 0.9832214765100671
+queries ratio 1.0
+Explaining GNN predictions
+Best model, data, and history saved in 'Maximum Cut Weighted/HK'.
