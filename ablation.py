@@ -84,7 +84,7 @@ def beam_search_feature_generation(problem, budget, dataset, depth = 1, beam_siz
     # -----------------------------
     # Beam Search Setup
     # -----------------------------
-    save_folder = f"{problem}/{dataset}"
+    save_folder = f"simple_feedback/{problem}/{dataset}"
     os.makedirs(save_folder, exist_ok=True)
 
     model_save_path = os.path.join(save_folder, "best_model.pth")
@@ -98,8 +98,8 @@ def beam_search_feature_generation(problem, budget, dataset, depth = 1, beam_siz
     history_records = []
 
     # -----------------------------
-    # Iterative Beam Search
-    # -----------------------------
+        # Iterative Beam Search
+            # -----------------------------
     for depth in tqdm(range(depth)):
         print(f"\nBeam Search Depth {depth+1}")
 
@@ -123,7 +123,7 @@ def beam_search_feature_generation(problem, budget, dataset, depth = 1, beam_siz
                 problem_definition=problem_definitions[problem],
                 explainer_feedback=summary
             )
-            for _ in range(expansion_factor):   # 🔑 expand multiple children per node
+            for _ in range(expansion_factor):   
                 
                 proposed_features = get_response(client, node_feature_prompt)
 
@@ -233,9 +233,9 @@ def main():
     parser.add_argument("--problem", type=str, default="Influence Maximization Weighted", help="Problem name")
     parser.add_argument("--budget", type=int, default=100, help="Budget for the problem")
     parser.add_argument("--dataset", type=str, default='HK', help="Dataset to use")
-    parser.add_argument("--depth", type=int, default=3, help="Number of feature search depth")
-    parser.add_argument("--beam_size", type=int, default=3, help="Beam size for pruning")
-    parser.add_argument("--expansion_factor", type=int, default=2, help="Number of children expanded per node")
+    parser.add_argument("--depth", type=int, default=1, help="Number of feature search depth")
+    parser.add_argument("--beam_size", type=int, default=1, help="Beam size for pruning")
+    parser.add_argument("--expansion_factor", type=int, default=1, help="Number of children expanded per node")
 
     args = parser.parse_args()
 

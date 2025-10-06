@@ -247,11 +247,7 @@ def generate_llm_prompt(
         explainer_feedback=None,
     ):
 
-    if problem.endswith('Weighted'):
-        few_shot_examples = "(Degree to weight ratio must be included)" 
-    else:
-        few_shot_examples = "(Degree must be included)"
-
+    few_shot_examples = ""
     base_prompt = (
         f"You are an expert in graph neural networks and combinatorial optimization.\n\n"
         f"Consider the {problem} problem, defined as ({problem_definition}). Propose node-level features {few_shot_examples}. "
