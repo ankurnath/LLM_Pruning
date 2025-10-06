@@ -6,9 +6,9 @@
 # SIZE CONSTRAINT EXPERIMENTS
 
 # MAXCOV_SIZE
-python ablation_finetune.py --problem "Maximum Coverage" --dataset Facebook
-python ablation_finetune.py --problem "Maximum Coverage" --dataset Wiki
-python ablation_finetune.py --problem "Maximum Coverage" --dataset Deezer
+python ablation_finetune.py --problem "Maximum Coverage" --dataset Facebook 
+python ablation_finetune.py --problem "Maximum Coverage" --dataset Wiki 
+python ablation_finetune.py --problem "Maximum Coverage" --dataset Deezer   
 python ablation_finetune.py --problem "Maximum Coverage" --dataset Slashdot
 python ablation_finetune.py --problem "Maximum Coverage" --dataset Twitter
 python ablation_finetune.py --problem "Maximum Coverage" --dataset DBLP
@@ -65,8 +65,8 @@ python ablation_test.py --problem "Influence Maximization" --train_dataset Deeze
 python ablation_test.py --problem "Influence Maximization" --train_dataset Slashdot --test_dataset Slashdot --k 500 
 python ablation_test.py --problem "Influence Maximization" --train_dataset Twitter --test_dataset Twitter --k 1000 
 python ablation_test.py --problem "Influence Maximization" --train_dataset DBLP --test_dataset DBLP    --k 5000 
-# python ablation_test.py --problem "Influence Maximization" --train_dataset YouTube --test_dataset YouTube --k 5000 
-# python ablation_test.py --problem "Influence Maximization" --train_dataset Skitter --test_dataset Skitter --k 5000
+python ablation_test.py --problem "Influence Maximization" --train_dataset YouTube --test_dataset YouTube --k 5000 
+python ablation_test.py --problem "Influence Maximization" --train_dataset Skitter --test_dataset Skitter --k 5000
 
 
 
