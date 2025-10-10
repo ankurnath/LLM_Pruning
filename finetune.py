@@ -43,7 +43,7 @@ def main():
 
     
 
-    train_graph = load_from_pickle(f'../snap_dataset/train/{dataset}')
+    train_graph = load_from_pickle(f'data/train/{dataset}')
 
     print(f'Loaded test graph with {train_graph.number_of_nodes()} nodes and {train_graph.number_of_edges()} edges.')
 

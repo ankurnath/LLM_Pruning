@@ -18,7 +18,7 @@ import numpy as np
 
 # ==== CONFIG ====
 dataset_name = "ER"   # name of saved file
-save_root = "../snap_dataset"
+save_root = "data"
 splits = [
     "train",
     "val", 

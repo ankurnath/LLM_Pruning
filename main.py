@@ -67,9 +67,9 @@ def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, e
     # -----------------------------
     # Load graphs
     # -----------------------------
-    train_graph = load_from_pickle(f'../snap_dataset/train/{dataset}')
-    val_graph   = load_from_pickle(f'../snap_dataset/val/{dataset}')
-    test_graph  = load_from_pickle(f'../snap_dataset/test/{dataset}')
+    train_graph = load_from_pickle(f'data/train/{dataset}')
+    val_graph   = load_from_pickle(f'data/val/{dataset}')
+    test_graph  = load_from_pickle(f'data/test/{dataset}')
 
     if problem in ["Maximum Coverage Weighted", "Influence Maximization Weighted", "Maximum Cut Weighted"]:
         train_graph = assign_normalized_degree_weights(train_graph)
