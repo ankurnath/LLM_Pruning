@@ -157,7 +157,7 @@ def main():
 
     print(results)
     # results_folder = f"{problem}/{train_dataset}/results"
-    results_folder = f"/home/grads/a/anath/Results/{problem}/{test_dataset}"
+    results_folder = f"runtime/{problem}/{test_dataset}"
     os.makedirs(results_folder, exist_ok=True)
 
     # results_path_pkl = os.path.join(results_folder, f"{test_dataset}.pkl")

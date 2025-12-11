@@ -48,7 +48,14 @@ class Node:
 # -----------------------------
 # Beam Search Feature Exploration
 # -----------------------------
-def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, expansion_factor):
+def beam_search_feature_generation(problem, 
+                                   budget, 
+                                   dataset, 
+                                   depth, 
+                                   beam_size, 
+                                   expansion_factor,
+                                   feature_importance,
+                                   ):
 
     heuristic_map = {
         "Maximum Coverage": greedy_max_cover,
@@ -57,7 +64,6 @@ def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, e
         "Influence Maximization Weighted": knapsack_im_greedy,
         "Maximum Cut": maxcut_greedy,
         "Maximum Cut Weighted": DLA,
-        # "Maximum Cut Negative": standard_greedy
     }
 
     if problem not in heuristic_map:
@@ -76,15 +82,18 @@ def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, e
         val_graph   = assign_normalized_degree_weights(val_graph)
         test_graph  = assign_normalized_degree_weights(test_graph)
 
-    # if problem == 'Maximum Cut Negative':
-    #     train_graph = assign_random_edge_weights(train_graph)
-    #     val_graph   = assign_random_edge_weights(val_graph)
-    #     test_graph  = assign_random_edge_weights(test_graph)
 
     # -----------------------------
     # Beam Search Setup
     # -----------------------------
-    save_folder = f"{problem}/{dataset}"
+
+    print(f"Starting beam search for problem '{problem}' on dataset '{dataset}'")
+    experiment_name = f"depth{depth}_beam{beam_size}_expansion{expansion_factor}_featimp{feature_importance}"
+
+    print(f"Experiment: {experiment_name}")
+
+    return
+    save_folder = f"{problem}/{experiment_name}/{dataset}"
     os.makedirs(save_folder, exist_ok=True)
 
     model_save_path = os.path.join(save_folder, "best_model.pth")
@@ -121,7 +130,7 @@ def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, e
             node_feature_prompt = generate_llm_prompt(
                 problem=problem,
                 problem_definition=problem_definitions[problem],
-                explainer_feedback=summary
+                explainer_feedback=summary,
             )
             for _ in range(expansion_factor):   # 🔑 expand multiple children per node
                 
@@ -161,12 +170,17 @@ def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, e
                     val_graph=val_graph,
                     codes=codes,
                     heuristic=heuristic,
-                    budget=budget
+                    budget=budget,
+                    feature_importance = feature_importance,
                 )
 
+                
                 feedback += falied_features
 
                 score = ratio * size_reduction
+
+                
+                
 
                 # 6. Create child node
                 child_node = Node(
@@ -221,7 +235,7 @@ def beam_search_feature_generation(problem, budget, dataset, depth, beam_size, e
     with open(history_path, "wb") as f:
         pickle.dump(history_records, f)
 
-    print(f"\n✅ Beam search finished. Best score = {best_score:.4f}")
+    print(f" Beam search finished. Best score = {best_score:.4f}")
     print(f"Best model, data, and history saved in '{save_folder}'.")
 
 
@@ -236,6 +250,8 @@ def main():
     parser.add_argument("--depth", type=int, default=3, help="Number of feature search depth")
     parser.add_argument("--beam_size", type=int, default=3, help="Beam size for pruning")
     parser.add_argument("--expansion_factor", type=int, default=2, help="Number of children expanded per node")
+    parser.add_argument("--feature_importance", type=bool, default=True, help="Feature importance feedback to LLM")
+    
 
     args = parser.parse_args()
 
@@ -245,7 +261,9 @@ def main():
         dataset=args.dataset,
         depth=args.depth,
         beam_size=args.beam_size,
-        expansion_factor=args.expansion_factor
+        expansion_factor=args.expansion_factor,
+        feature_importance=args.feature_importance,
+        
     )
 
 

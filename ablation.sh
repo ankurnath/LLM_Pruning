@@ -6,23 +6,24 @@
 # SIZE CONSTRAINT EXPERIMENTS
 
 # MAXCOV_SIZE
-python ablation_finetune.py --problem "Maximum Coverage" --dataset Facebook 
-python ablation_finetune.py --problem "Maximum Coverage" --dataset Wiki 
-python ablation_finetune.py --problem "Maximum Coverage" --dataset Deezer   
-python ablation_finetune.py --problem "Maximum Coverage" --dataset Slashdot
-python ablation_finetune.py --problem "Maximum Coverage" --dataset Twitter
-python ablation_finetune.py --problem "Maximum Coverage" --dataset DBLP
-python ablation_finetune.py --problem "Maximum Coverage" --dataset YouTube
-python ablation_finetune.py --problem "Maximum Coverage" --dataset Skitter
+python ablation_finetune.py --problem "Maximum Coverage" --dataset Facebook &
+python ablation_finetune.py --problem "Maximum Coverage" --dataset Wiki &
+python ablation_finetune.py --problem "Maximum Coverage" --dataset Deezer &   
+python ablation_finetune.py --problem "Maximum Coverage" --dataset Slashdot &
+python ablation_finetune.py --problem "Maximum Coverage" --dataset Twitter &
+python ablation_finetune.py --problem "Maximum Coverage" --dataset DBLP &
+python ablation_finetune.py --problem "Maximum Coverage" --dataset YouTube &
+python ablation_finetune.py --problem "Maximum Coverage" --dataset Skitter &
+wait
 
-python ablation_test.py --problem "Maximum Coverage" --train_dataset Facebook --test_dataset Facebook --k 500 & 
-python ablation_test.py --problem "Maximum Coverage" --train_dataset Wiki --test_dataset Wiki --k 500 &
-python ablation_test.py --problem "Maximum Coverage" --train_dataset Deezer --test_dataset Deezer --k 500 & 
-python ablation_test.py --problem "Maximum Coverage" --train_dataset Slashdot --test_dataset Slashdot --k 500 & 
-python ablation_test.py --problem "Maximum Coverage" --train_dataset Twitter --test_dataset Twitter --k 1000 &
-python ablation_test.py --problem "Maximum Coverage" --train_dataset DBLP --test_dataset DBLP    --k 5000 &
-python ablation_test.py --problem "Maximum Coverage" --train_dataset YouTube --test_dataset YouTube --k 5000 & 
-python ablation_test.py --problem "Maximum Coverage" --train_dataset Skitter --test_dataset Skitter --k 5000 &
+python ablation_test.py --problem "Maximum Coverage" --train_dataset Facebook --test_dataset Facebook  & 
+python ablation_test.py --problem "Maximum Coverage" --train_dataset Wiki --test_dataset Wiki  &
+python ablation_test.py --problem "Maximum Coverage" --train_dataset Deezer --test_dataset Deezer  & 
+python ablation_test.py --problem "Maximum Coverage" --train_dataset Slashdot --test_dataset Slashdot  & 
+python ablation_test.py --problem "Maximum Coverage" --train_dataset Twitter --test_dataset Twitter  &
+python ablation_test.py --problem "Maximum Coverage" --train_dataset DBLP --test_dataset DBLP   &
+python ablation_test.py --problem "Maximum Coverage" --train_dataset YouTube --test_dataset YouTube  & 
+python ablation_test.py --problem "Maximum Coverage" --train_dataset Skitter --test_dataset Skitter  &
 wait
 
 MAXCUT_SIZE
@@ -38,14 +39,14 @@ wait
 
 
 
-python ablation_test.py --problem "Maximum Cut" --train_dataset Facebook --test_dataset Facebook --k 500 &
-python ablation_test.py --problem "Maximum Cut" --train_dataset Wiki --test_dataset Wiki --k 500 &
-python ablation_test.py --problem "Maximum Cut" --train_dataset Deezer --test_dataset Deezer --k 500 & 
-python ablation_test.py --problem "Maximum Cut" --train_dataset Slashdot --test_dataset Slashdot --k 500 & 
-python ablation_test.py --problem "Maximum Cut" --train_dataset Twitter --test_dataset Twitter --k 1000  &
-python ablation_test.py --problem "Maximum Cut" --train_dataset DBLP --test_dataset DBLP    --k 5000 &
-python ablation_test.py --problem "Maximum Cut" --train_dataset YouTube --test_dataset YouTube --k 5000 & 
-python ablation_test.py --problem "Maximum Cut" --train_dataset Skitter --test_dataset Skitter --k 5000 &
+python ablation_test.py --problem "Maximum Cut" --train_dataset Facebook --test_dataset Facebook  &
+python ablation_test.py --problem "Maximum Cut" --train_dataset Wiki --test_dataset Wiki  &
+python ablation_test.py --problem "Maximum Cut" --train_dataset Deezer --test_dataset Deezer  & 
+python ablation_test.py --problem "Maximum Cut" --train_dataset Slashdot --test_dataset Slashdot  & 
+python ablation_test.py --problem "Maximum Cut" --train_dataset Twitter --test_dataset Twitter   &
+python ablation_test.py --problem "Maximum Cut" --train_dataset DBLP --test_dataset DBLP     &
+python ablation_test.py --problem "Maximum Cut" --train_dataset YouTube --test_dataset YouTube  & 
+python ablation_test.py --problem "Maximum Cut" --train_dataset Skitter --test_dataset Skitter  &
 wait
 
 # IM_SIZE
@@ -59,14 +60,14 @@ python ablation_finetune.py --problem "Influence Maximization" --dataset YouTube
 python ablation_finetune.py --problem "Influence Maximization" --dataset Skitter
 
 
-python ablation_test.py --problem "Influence Maximization" --train_dataset Facebook --test_dataset Facebook --k 500 
-python ablation_test.py --problem "Influence Maximization" --train_dataset Wiki --test_dataset Wiki --k 500 
-python ablation_test.py --problem "Influence Maximization" --train_dataset Deezer --test_dataset Deezer --k 500 
-python ablation_test.py --problem "Influence Maximization" --train_dataset Slashdot --test_dataset Slashdot --k 500 
-python ablation_test.py --problem "Influence Maximization" --train_dataset Twitter --test_dataset Twitter --k 1000 
-python ablation_test.py --problem "Influence Maximization" --train_dataset DBLP --test_dataset DBLP    --k 5000 
-python ablation_test.py --problem "Influence Maximization" --train_dataset YouTube --test_dataset YouTube --k 5000 
-python ablation_test.py --problem "Influence Maximization" --train_dataset Skitter --test_dataset Skitter --k 5000
+python ablation_test.py --problem "Influence Maximization" --train_dataset Facebook --test_dataset Facebook  
+python ablation_test.py --problem "Influence Maximization" --train_dataset Wiki --test_dataset Wiki 
+python ablation_test.py --problem "Influence Maximization" --train_dataset Deezer --test_dataset Deezer  
+python ablation_test.py --problem "Influence Maximization" --train_dataset Slashdot --test_dataset Slashdot  
+python ablation_test.py --problem "Influence Maximization" --train_dataset Twitter --test_dataset Twitter  
+python ablation_test.py --problem "Influence Maximization" --train_dataset DBLP --test_dataset DBLP    
+python ablation_test.py --problem "Influence Maximization" --train_dataset YouTube --test_dataset YouTube 
+python ablation_test.py --problem "Influence Maximization" --train_dataset Skitter --test_dataset Skitter 
 
 
 

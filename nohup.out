@@ -1,573 +1,2887 @@
+/home/anath/LLM_Pruning/utils.py:107: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:108: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a subset of nodes \( S \subseteq V \) such that:\n"
+/home/anath/LLM_Pruning/utils.py:123: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:124: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:125: SyntaxWarning: invalid escape sequence '\('
+  "such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:132: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
+/home/anath/LLM_Pruning/utils.py:133: SyntaxWarning: invalid escape sequence '\('
+  "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
+/home/anath/LLM_Pruning/utils.py:134: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:135: SyntaxWarning: invalid escape sequence '\('
+  "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:138: SyntaxWarning: invalid escape sequence '\i'
+  "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
+/home/anath/LLM_Pruning/utils.py:155: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a directed graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:156: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
+/home/anath/LLM_Pruning/utils.py:159: SyntaxWarning: invalid escape sequence '\('
+  "with a given probability \( p_{uv} \) on edge \( (u, v) \).\n"
+/home/anath/LLM_Pruning/utils.py:107: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:162: SyntaxWarning: invalid escape sequence '\m'
+  "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
+/home/anath/LLM_Pruning/utils.py:108: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a subset of nodes \( S \subseteq V \) such that:\n"
+/home/anath/LLM_Pruning/utils.py:123: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:124: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:125: SyntaxWarning: invalid escape sequence '\('
+  "such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:132: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
+/home/anath/LLM_Pruning/utils.py:133: SyntaxWarning: invalid escape sequence '\('
+  "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
+/home/anath/LLM_Pruning/utils.py:134: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:135: SyntaxWarning: invalid escape sequence '\('
+  "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:138: SyntaxWarning: invalid escape sequence '\i'
+  "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
+/home/anath/LLM_Pruning/utils.py:155: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a directed graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:156: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
+/home/anath/LLM_Pruning/utils.py:159: SyntaxWarning: invalid escape sequence '\('
+  "with a given probability \( p_{uv} \) on edge \( (u, v) \).\n"
+/home/anath/LLM_Pruning/utils.py:162: SyntaxWarning: invalid escape sequence '\m'
+  "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
+/home/anath/LLM_Pruning/utils.py:107: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:108: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a subset of nodes \( S \subseteq V \) such that:\n"
+/home/anath/LLM_Pruning/utils.py:123: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:124: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:125: SyntaxWarning: invalid escape sequence '\('
+  "such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:132: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
+/home/anath/LLM_Pruning/utils.py:133: SyntaxWarning: invalid escape sequence '\('
+  "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
+/home/anath/LLM_Pruning/utils.py:134: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:135: SyntaxWarning: invalid escape sequence '\('
+  "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:138: SyntaxWarning: invalid escape sequence '\i'
+  "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
+/home/anath/LLM_Pruning/utils.py:155: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a directed graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:107: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:156: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
+/home/anath/LLM_Pruning/utils.py:107: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:159: SyntaxWarning: invalid escape sequence '\('
+  "with a given probability \( p_{uv} \) on edge \( (u, v) \).\n"
+/home/anath/LLM_Pruning/utils.py:108: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a subset of nodes \( S \subseteq V \) such that:\n"
+/home/anath/LLM_Pruning/utils.py:162: SyntaxWarning: invalid escape sequence '\m'
+  "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
+/home/anath/LLM_Pruning/utils.py:108: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a subset of nodes \( S \subseteq V \) such that:\n"
+/home/anath/LLM_Pruning/utils.py:123: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:124: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:123: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:125: SyntaxWarning: invalid escape sequence '\('
+  "such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:124: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:132: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
+/home/anath/LLM_Pruning/utils.py:125: SyntaxWarning: invalid escape sequence '\('
+  "such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:133: SyntaxWarning: invalid escape sequence '\('
+  "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
+/home/anath/LLM_Pruning/utils.py:132: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
+/home/anath/LLM_Pruning/utils.py:134: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:133: SyntaxWarning: invalid escape sequence '\('
+  "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
+/home/anath/LLM_Pruning/utils.py:135: SyntaxWarning: invalid escape sequence '\('
+  "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:134: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:138: SyntaxWarning: invalid escape sequence '\i'
+  "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
+/home/anath/LLM_Pruning/utils.py:135: SyntaxWarning: invalid escape sequence '\('
+  "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:138: SyntaxWarning: invalid escape sequence '\i'
+  "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
+/home/anath/LLM_Pruning/utils.py:155: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a directed graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:156: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
+/home/anath/LLM_Pruning/utils.py:155: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a directed graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:159: SyntaxWarning: invalid escape sequence '\('
+  "with a given probability \( p_{uv} \) on edge \( (u, v) \).\n"
+/home/anath/LLM_Pruning/utils.py:156: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
+/home/anath/LLM_Pruning/utils.py:162: SyntaxWarning: invalid escape sequence '\m'
+  "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
+/home/anath/LLM_Pruning/utils.py:159: SyntaxWarning: invalid escape sequence '\('
+  "with a given probability \( p_{uv} \) on edge \( (u, v) \).\n"
+/home/anath/LLM_Pruning/utils.py:162: SyntaxWarning: invalid escape sequence '\m'
+  "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
+/home/anath/LLM_Pruning/utils.py:107: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:107: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:108: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a subset of nodes \( S \subseteq V \) such that:\n"
+/home/anath/LLM_Pruning/utils.py:108: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a subset of nodes \( S \subseteq V \) such that:\n"
+/home/anath/LLM_Pruning/utils.py:123: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:124: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:123: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:125: SyntaxWarning: invalid escape sequence '\('
+  "such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:124: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:125: SyntaxWarning: invalid escape sequence '\('
+  "such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:132: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
+/home/anath/LLM_Pruning/utils.py:132: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
+/home/anath/LLM_Pruning/utils.py:133: SyntaxWarning: invalid escape sequence '\('
+  "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
+/home/anath/LLM_Pruning/utils.py:133: SyntaxWarning: invalid escape sequence '\('
+  "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
+/home/anath/LLM_Pruning/utils.py:134: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:134: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:135: SyntaxWarning: invalid escape sequence '\('
+  "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:135: SyntaxWarning: invalid escape sequence '\('
+  "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:138: SyntaxWarning: invalid escape sequence '\i'
+  "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
+/home/anath/LLM_Pruning/utils.py:138: SyntaxWarning: invalid escape sequence '\i'
+  "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
+/home/anath/LLM_Pruning/utils.py:155: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a directed graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:155: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a directed graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:156: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
+/home/anath/LLM_Pruning/utils.py:156: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
+/home/anath/LLM_Pruning/utils.py:159: SyntaxWarning: invalid escape sequence '\('
+  "with a given probability \( p_{uv} \) on edge \( (u, v) \).\n"
+/home/anath/LLM_Pruning/utils.py:159: SyntaxWarning: invalid escape sequence '\('
+  "with a given probability \( p_{uv} \) on edge \( (u, v) \).\n"
+/home/anath/LLM_Pruning/utils.py:162: SyntaxWarning: invalid escape sequence '\m'
+  "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
+/home/anath/LLM_Pruning/utils.py:162: SyntaxWarning: invalid escape sequence '\m'
+  "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
+/home/anath/LLM_Pruning/utils.py:107: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:108: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a subset of nodes \( S \subseteq V \) such that:\n"
+/home/anath/LLM_Pruning/utils.py:123: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:124: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:125: SyntaxWarning: invalid escape sequence '\('
+  "such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:132: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
+/home/anath/LLM_Pruning/utils.py:133: SyntaxWarning: invalid escape sequence '\('
+  "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
+/home/anath/LLM_Pruning/utils.py:134: SyntaxWarning: invalid escape sequence '\('
+  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
+/home/anath/LLM_Pruning/utils.py:135: SyntaxWarning: invalid escape sequence '\('
+  "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
+/home/anath/LLM_Pruning/utils.py:138: SyntaxWarning: invalid escape sequence '\i'
+  "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
+/home/anath/LLM_Pruning/utils.py:155: SyntaxWarning: invalid escape sequence '\('
+  "The problem is defined over a directed graph \( G = (V, E) \).\n"
+/home/anath/LLM_Pruning/utils.py:156: SyntaxWarning: invalid escape sequence '\('
+  "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
+/home/anath/LLM_Pruning/utils.py:159: SyntaxWarning: invalid escape sequence '\('
+  "with a given probability \( p_{uv} \) on edge \( (u, v) \).\n"
+/home/anath/LLM_Pruning/utils.py:162: SyntaxWarning: invalid escape sequence '\m'
+  "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 3847 nodes and 26470 edges.
+Train graph has 3771 nodes and 21176 edges.
+Validation graph has 2859 nodes and 5294 edges.
+Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Training GNN
+New best model saved with C=0.24184566428003185, ratio=1.0, size_reduction=0.24184566428003185
+New best model saved with C=0.24211084592946164, ratio=1.0, size_reduction=0.24211084592946164
+New best model saved with C=0.2940864492177141, ratio=1.0, size_reduction=0.2940864492177141
+New best model saved with C=0.2946168125165739, ratio=1.0, size_reduction=0.2946168125165739
+New best model saved with C=0.3081410766374967, ratio=1.0, size_reduction=0.3081410766374967
+New best model saved with C=0.3160965261203925, ratio=1.0, size_reduction=0.3160965261203925
+New best model saved with C=0.32166534075841957, ratio=1.0, size_reduction=0.32166534075841957
+New best model saved with C=0.33386369663219306, ratio=1.0, size_reduction=0.33386369663219306
+New best model saved with C=0.3513656854945638, ratio=1.0, size_reduction=0.3513656854945638
+New best model saved with C=0.3768231238398303, ratio=1.0, size_reduction=0.3768231238398303
+New best model saved with C=0.39565102094935034, ratio=1.0, size_reduction=0.39565102094935034
+New best model saved with C=0.4134181914611509, ratio=1.0, size_reduction=0.4134181914611509
+New best model saved with C=0.4208432776451869, ratio=1.0, size_reduction=0.4208432776451869
+New best model saved with C=0.4322460885706709, ratio=1.0, size_reduction=0.4322460885706709
+New best model saved with C=0.4484221691858923, ratio=1.0, size_reduction=0.4484221691858923
+New best model saved with C=0.456642800318218, ratio=1.0, size_reduction=0.456642800318218
+New best model saved with C=0.4738796075311589, ratio=1.0, size_reduction=0.4738796075311589
+New best model saved with C=0.49854150092813576, ratio=1.0, size_reduction=0.49854150092813576
+New best model saved with C=0.5088835852559003, ratio=1.0, size_reduction=0.5088835852559003
+New best model saved with C=0.5155131264916468, ratio=1.0, size_reduction=0.5155131264916468
+New best model saved with C=0.5205515778308141, ratio=1.0, size_reduction=0.5205515778308141
+New best model saved with C=0.5338106603023071, ratio=1.0, size_reduction=0.5338106603023071
+New best model saved with C=0.5505171042163882, ratio=1.0, size_reduction=0.5505171042163882
+New best model saved with C=0.5645717316361708, ratio=1.0, size_reduction=0.5645717316361708
+New best model saved with C=0.5730575444179262, ratio=1.0, size_reduction=0.5730575444179262
+New best model saved with C=0.5982498011137629, ratio=1.0, size_reduction=0.5982498011137629
+New best model saved with C=0.6088570670909573, ratio=1.0, size_reduction=0.6088570670909573
+New best model saved with C=0.6184036064704322, ratio=1.0, size_reduction=0.6184036064704322
+New best model saved with C=0.6252664027239611, ratio=0.9991015274034142, size_reduction=0.6258286926544683
+New best model saved with C=0.6315864462394835, ratio=0.9982030548068284, size_reduction=0.6327234155396446
+New best model saved with C=0.6387334848180527, ratio=0.9982030548068284, size_reduction=0.6398833200742509
+New best model saved with C=0.650266623113023, ratio=0.9964061096136568, size_reduction=0.6526120392468842
+New best model saved with C=0.6531731378851657, ratio=0.9964061096136568, size_reduction=0.6555290373906126
+New best model saved with C=0.6584577101981525, ratio=0.9964061096136568, size_reduction=0.6608326703792098
+New best model saved with C=0.6618238255109512, ratio=0.995507637017071, size_reduction=0.6648103951206576
+New best model saved with C=0.6665015535641915, ratio=0.9946091644204852, size_reduction=0.6701140281092548
+New best model saved with C=0.6705802998863746, ratio=0.9901168014375562, size_reduction=0.677273932643861
+New best model saved with C=0.675831516017043, ratio=0.9901168014375562, size_reduction=0.6825775656324582
+New best model saved with C=0.678194563275844, ratio=0.9901168014375562, size_reduction=0.684964200477327
+New best model saved with C=0.6813452929542451, ratio=0.9901168014375562, size_reduction=0.6881463802704852
+New best model saved with C=0.6848262488375967, ratio=0.9883198562443846, size_reduction=0.6929196499602228
+New best model saved with C=0.694153828705997, ratio=0.9874213836477987, size_reduction=0.7029965526385574
+New best model saved with C=0.6996525953611558, ratio=0.9874213836477987, size_reduction=0.7085653672765845
+New best model saved with C=0.700699979485948, ratio=0.9874213836477987, size_reduction=0.709626093874304
+New best model saved with C=0.7058377845967344, ratio=0.9847259658580413, size_reduction=0.7167859984089101
+New best model saved with C=0.7061987461411068, ratio=0.9874213836477987, size_reduction=0.715194908512331
+New best model saved with C=0.7127448969210576, ratio=0.9874213836477987, size_reduction=0.7218244497480775
+New best model saved with C=0.7140619896057371, ratio=0.9820305480682839, size_reduction=0.7271280827366746
+New best model saved with C=0.7158849049694279, ratio=0.9820305480682839, size_reduction=0.7289843542826837
+New best model saved with C=0.7197911521773368, ratio=0.9820305480682839, size_reduction=0.7329620790241316
+New best model saved with C=0.7244786488268272, ratio=0.9820305480682839, size_reduction=0.7377353487138689
+New best model saved with C=0.7283848960347362, ratio=0.9820305480682839, size_reduction=0.7417130734553169
+Loaded test graph with 4891 nodes and 30228 edges.
+Train graph has 4563 nodes and 24182 edges.
+Validation graph has 2985 nodes and 6046 edges.
+Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Training GNN
+New best model saved with C=0.3458251150558843, ratio=1.0, size_reduction=0.3458251150558843
+New best model saved with C=0.3607275914968223, ratio=1.0, size_reduction=0.3607275914968223
+New best model saved with C=0.3642340565417489, ratio=1.0, size_reduction=0.3642340565417489
+New best model saved with C=0.36467236467236464, ratio=1.0, size_reduction=0.36467236467236464
+New best model saved with C=0.36489151873767256, ratio=1.0, size_reduction=0.36489151873767256
+New best model saved with C=0.3668639053254438, ratio=1.0, size_reduction=0.3668639053254438
+New best model saved with C=0.368836291913215, ratio=1.0, size_reduction=0.368836291913215
+New best model saved with C=0.3747534516765286, ratio=1.0, size_reduction=0.3747534516765286
+New best model saved with C=0.38045145737453434, ratio=1.0, size_reduction=0.38045145737453434
+New best model saved with C=0.3942581634889327, ratio=1.0, size_reduction=0.3942581634889327
+New best model saved with C=0.4192417269340346, ratio=1.0, size_reduction=0.4192417269340346
+New best model saved with C=0.4422529037913653, ratio=1.0, size_reduction=0.4422529037913653
+New best model saved with C=0.52465483234714, ratio=1.0, size_reduction=0.52465483234714
+New best model saved with C=0.5546789392943239, ratio=1.0, size_reduction=0.5546789392943239
+New best model saved with C=0.5654174884944116, ratio=1.0, size_reduction=0.5654174884944116
+New best model saved with C=0.5772518080210388, ratio=1.0, size_reduction=0.5772518080210388
+New best model saved with C=0.5790050405435021, ratio=1.0, size_reduction=0.5790050405435021
+New best model saved with C=0.579443348674118, ratio=1.0, size_reduction=0.579443348674118
+New best model saved with C=0.5809774271312733, ratio=1.0, size_reduction=0.5809774271312733
+New best model saved with C=0.5820731974578128, ratio=1.0, size_reduction=0.5820731974578128
+New best model saved with C=0.5851413543721236, ratio=1.0, size_reduction=0.5851413543721236
+New best model saved with C=0.5912776682007451, ratio=1.0, size_reduction=0.5912776682007451
+New best model saved with C=0.5947841332456717, ratio=1.0, size_reduction=0.5947841332456717
+New best model saved with C=0.6035502958579881, ratio=1.0, size_reduction=0.6035502958579881
+New best model saved with C=0.6166995397764629, ratio=1.0, size_reduction=0.6166995397764629
+New best model saved with C=0.631163708086785, ratio=1.0, size_reduction=0.631163708086785
+New best model saved with C=0.6535174227481919, ratio=1.0, size_reduction=0.6535174227481919
+New best model saved with C=0.6627218934911243, ratio=1.0, size_reduction=0.6627218934911243
+New best model saved with C=0.6723646723646723, ratio=1.0, size_reduction=0.6723646723646723
+New best model saved with C=0.6763094455402148, ratio=1.0, size_reduction=0.6763094455402148
+New best model saved with C=0.6820074512382205, ratio=1.0, size_reduction=0.6820074512382205
+New best model saved with C=0.6835415296953758, ratio=1.0, size_reduction=0.6835415296953758
+New best model saved with C=0.6872671488056104, ratio=1.0, size_reduction=0.6872671488056104
+New best model saved with C=0.6958141573526189, ratio=1.0, size_reduction=0.6958141573526189
+New best model saved with C=0.7010738549200088, ratio=1.0, size_reduction=0.7010738549200088
+New best model saved with C=0.7047994740302432, ratio=1.0, size_reduction=0.7047994740302432
+New best model saved with C=0.7148805610344071, ratio=1.0, size_reduction=0.7148805610344071
+New best model saved with C=0.722770107385492, ratio=1.0, size_reduction=0.722770107385492
+New best model saved with C=0.7282489590181898, ratio=1.0, size_reduction=0.7282489590181898
+New best model saved with C=0.7359193513039667, ratio=1.0, size_reduction=0.7359193513039667
+New best model saved with C=0.7396449704142012, ratio=1.0, size_reduction=0.7396449704142012
+New best model saved with C=0.7488494411571335, ratio=1.0, size_reduction=0.7488494411571335
+New best model saved with C=0.7530133683979838, ratio=1.0, size_reduction=0.7530133683979838
+New best model saved with C=0.7602454525531448, ratio=1.0, size_reduction=0.7602454525531448
+New best model saved with C=0.7661626123164584, ratio=1.0, size_reduction=0.7661626123164584
+New best model saved with C=0.767477536708306, ratio=1.0, size_reduction=0.767477536708306
+New best model saved with C=0.774709620863467, ratio=1.0, size_reduction=0.774709620863467
+New best model saved with C=0.7823800131492439, ratio=1.0, size_reduction=0.7823800131492439
+New best model saved with C=0.7828183212798597, ratio=1.0, size_reduction=0.7828183212798597
+New best model saved with C=0.7885163269778654, ratio=1.0, size_reduction=0.7885163269778654
+New best model saved with C=0.7918036379574841, ratio=1.0, size_reduction=0.7918036379574841
+New best model saved with C=0.7939951786105632, ratio=1.0, size_reduction=0.7939951786105632
+New best model saved with C=0.8003506465044927, ratio=1.0, size_reduction=0.8003506465044927
+New best model saved with C=0.8007889546351085, ratio=1.0, size_reduction=0.8007889546351085
+New best model saved with C=0.8064869603331142, ratio=1.0, size_reduction=0.8064869603331142
+Loaded test graph with 63004 nodes and 41994 edges.
+Train graph has 52698 nodes and 33595 edges.
+Validation graph has 15598 nodes and 8399 edges.
+Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Training GNN
+New best model saved with C=0.7040115374397511, ratio=1.0, size_reduction=0.7040115374397511
+New best model saved with C=0.9824471516945614, ratio=1.0, size_reduction=0.9824471516945614
+New best model saved with C=0.9885384644578542, ratio=1.0, size_reduction=0.9885384644578542
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+Loaded test graph with 55827 nodes and 134229 edges.
+Train graph has 51894 nodes and 107383 edges.
+Validation graph has 27523 nodes and 26846 edges.
+Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Training GNN
+New best model saved with C=0.46963040043164916, ratio=1.0, size_reduction=0.46963040043164916
+New best model saved with C=0.5703356842794929, ratio=1.0, size_reduction=0.5703356842794929
+New best model saved with C=0.6605580606621189, ratio=1.0, size_reduction=0.6605580606621189
+Loaded test graph with 47546 nodes and 140566 edges.
+Train graph has 43007 nodes and 112452 edges.
+Validation graph has 20910 nodes and 28114 edges.
+Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Training GNN
+New best model saved with C=0.5138000790568977, ratio=1.0, size_reduction=0.5138000790568977
+New best model saved with C=0.5138233310856373, ratio=1.0, size_reduction=0.5138233310856373
+New best model saved with C=0.5138698351431162, ratio=1.0, size_reduction=0.5138698351431162
+New best model saved with C=0.5774408817169299, ratio=1.0, size_reduction=0.5774408817169299
+New best model saved with C=0.5778826702629805, ratio=1.0, size_reduction=0.5778826702629805
+New best model saved with C=0.5797195805334016, ratio=1.0, size_reduction=0.5797195805334016
+New best model saved with C=0.5831608807868487, ratio=1.0, size_reduction=0.5831608807868487
+New best model saved with C=0.6013904713186226, ratio=1.0, size_reduction=0.6013904713186226
+New best model saved with C=0.6305950194154439, ratio=1.0, size_reduction=0.6305950194154439
+New best model saved with C=0.6799590764294184, ratio=1.0, size_reduction=0.6799590764294184
+New best model saved with C=0.7509242681423954, ratio=1.0, size_reduction=0.7509242681423954
+New best model saved with C=0.7989862115469575, ratio=1.0, size_reduction=0.7989862115469575
+New best model saved with C=0.8209128746483131, ratio=1.0, size_reduction=0.8209128746483131
+New best model saved with C=0.8385611644615993, ratio=1.0, size_reduction=0.8385611644615993
+New best model saved with C=0.8563489664473225, ratio=1.0, size_reduction=0.8563489664473225
+New best model saved with C=0.8803683121352338, ratio=1.0, size_reduction=0.8803683121352338
+New best model saved with C=0.8936917246029716, ratio=1.0, size_reduction=0.8936917246029716
+New best model saved with C=0.9070616411281884, ratio=1.0, size_reduction=0.9070616411281884
+New best model saved with C=0.9185946473829841, ratio=1.0, size_reduction=0.9185946473829841
+New best model saved with C=0.9295696049480318, ratio=1.0, size_reduction=0.9295696049480318
+New best model saved with C=0.9363359453112284, ratio=1.0, size_reduction=0.9363359453112284
+New best model saved with C=0.9430092775594671, ratio=1.0, size_reduction=0.9430092775594671
+New best model saved with C=0.9492175692329156, ratio=1.0, size_reduction=0.9492175692329156
+New best model saved with C=0.955286348733927, ratio=1.0, size_reduction=0.955286348733927
+New best model saved with C=0.9588439091310716, ratio=1.0, size_reduction=0.9588439091310716
+New best model saved with C=0.9619596809821657, ratio=1.0, size_reduction=0.9619596809821657
+New best model saved with C=0.964447648057293, ratio=1.0, size_reduction=0.964447648057293
+New best model saved with C=0.9679354523682191, ratio=1.0, size_reduction=0.9679354523682191
+New best model saved with C=0.97072569581696, ratio=1.0, size_reduction=0.97072569581696
+New best model saved with C=0.9717487850814983, ratio=1.0, size_reduction=0.9717487850814983
+New best model saved with C=0.9750040691050295, ratio=1.0, size_reduction=0.9750040691050295
+New best model saved with C=0.9767712232892319, ratio=1.0, size_reduction=0.9767712232892319
+New best model saved with C=0.9777245564675517, ratio=1.0, size_reduction=0.9777245564675517
+New best model saved with C=0.9797707349966285, ratio=1.0, size_reduction=0.9797707349966285
+New best model saved with C=0.9813286209221754, ratio=1.0, size_reduction=0.9813286209221754
+New best model saved with C=0.9825377264166298, ratio=1.0, size_reduction=0.9825377264166298
+New best model saved with C=0.9836305717673867, ratio=1.0, size_reduction=0.9836305717673867
+New best model saved with C=0.9844211407445299, ratio=1.0, size_reduction=0.9844211407445299
+New best model saved with C=0.9852117097216733, ratio=1.0, size_reduction=0.9852117097216733
+New best model saved with C=0.9867928476759598, ratio=1.0, size_reduction=0.9867928476759598
+New best model saved with C=0.9868393517334387, ratio=1.0, size_reduction=0.9868393517334387
+New best model saved with C=0.9872578882507499, ratio=1.0, size_reduction=0.9872578882507499
+New best model saved with C=0.9880484572278931, ratio=1.0, size_reduction=0.9880484572278931
+New best model saved with C=0.9895830911247007, ratio=1.0, size_reduction=0.9895830911247007
+New best model saved with C=0.9896993512683981, ratio=1.0, size_reduction=0.9896993512683981
+New best model saved with C=0.990885204734113, ratio=1.0, size_reduction=0.990885204734113
+New best model saved with C=0.9911409770502476, ratio=1.0, size_reduction=0.9911409770502476
+New best model saved with C=0.9915827655962983, ratio=1.0, size_reduction=0.9915827655962983
+New best model saved with C=0.9919082939986514, ratio=1.0, size_reduction=0.9919082939986514
+New best model saved with C=0.9925826028320971, ratio=1.0, size_reduction=0.9925826028320971
+New best model saved with C=0.9928576245014801, ratio=0.9985460889793545, size_reduction=0.9943032529588206
+All elements are already covered.
+Loaded test graph with 147604 nodes and 110952 edges.
+Train graph has 122456 nodes and 88761 edges.
+Validation graph has 36009 nodes and 22191 edges.
+Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Training GNN
+New best model saved with C=0.706588488926635, ratio=1.0, size_reduction=0.706588488926635
+New best model saved with C=0.8940599072319854, ratio=1.0, size_reduction=0.8940599072319854
+New best model saved with C=0.9260305742470765, ratio=1.0, size_reduction=0.9260305742470765
+New best model saved with C=0.9462827464558698, ratio=1.0, size_reduction=0.9462827464558698
+New best model saved with C=0.9659551185732018, ratio=1.0, size_reduction=0.9659551185732018
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+Loaded test graph with 48870 nodes and 149460 edges.
+Train graph has 46977 nodes and 119568 edges.
+Validation graph has 29697 nodes and 29892 edges.
+Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Training GNN
+New best model saved with C=0.3678395810715882, ratio=1.0, size_reduction=0.3678395810715882
+New best model saved with C=0.368605913532154, ratio=1.0, size_reduction=0.368605913532154
+New best model saved with C=0.3901483704791706, ratio=1.0, size_reduction=0.3901483704791706
+New best model saved with C=0.5296335885088158, ratio=0.9312297734627831, size_reduction=0.5687464078165911
+Loaded test graph with 185193 nodes and 179257 edges.
+Train graph has 156282 nodes and 143405 edges.
+Validation graph has 50823 nodes and 35852 edges.
+Calculating features for training graph: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Training GNN
+New best model saved with C=0.6769173673231722, ratio=1.0, size_reduction=0.6769173673231722
+New best model saved with C=0.677013347666398, ratio=1.0, size_reduction=0.677013347666398
+New best model saved with C=0.6770389424245915, ratio=1.0, size_reduction=0.6770389424245915
+New best model saved with C=0.8362255410092013, ratio=1.0, size_reduction=0.8362255410092013
+New best model saved with C=0.8671568062860726, ratio=1.0, size_reduction=0.8671568062860726
+New best model saved with C=0.8906911864450161, ratio=1.0, size_reduction=0.8906911864450161
+New best model saved with C=0.9522913707272751, ratio=1.0, size_reduction=0.9522913707272751
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+All elements are already covered.
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 4002 nodes and 61764 edges.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Initial k=500, obj_val=3060.0000
+k=1000, obj_val=3188.0000, best_obj_val=3060.0000
+k=2000, obj_val=3268.0000, best_obj_val=3188.0000
+k=4002, obj_val=3776.0000, best_obj_val=3268.0000
+Final k=4002, obj_val=3776.0000
+Dataset: Facebook
+ratio: 1.0002649006622517 Size Reduction: 0.0 Time Ratio: 0.857594378083942
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Facebook                 3775  ...      0.028363                4002
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Coverage/Facebook/results/Facebook.pkl
+Loaded test graph with 6358 nodes and 70534 edges.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Initial k=500, obj_val=239.0000
+k=1000, obj_val=322.0000, best_obj_val=239.0000
+k=2000, obj_val=435.0000, best_obj_val=322.0000
+k=5000, obj_val=2094.0000, best_obj_val=435.0000
+Final k=5000, obj_val=2094.0000
+Dataset: Wiki
+ratio: 0.5061638868745467 Size Reduction: 0.21358917898710283 Time Ratio: 1.460728508354255
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    Wiki                 4137  ...      0.022032                5000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Coverage/Wiki/results/Wiki.pkl
+Loaded test graph with 53511 nodes and 348742 edges.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Initial k=500, obj_val=7547.0000
+k=1000, obj_val=7754.0000, best_obj_val=7547.0000
+k=2000, obj_val=7911.0000, best_obj_val=7754.0000
+k=5000, obj_val=8092.0000, best_obj_val=7911.0000
+Final k=5000, obj_val=8092.0000
+Dataset: Deezer
+ratio: 0.9916666666666667 Size Reduction: 0.9065612677767187 Time Ratio: 4.645767039622254
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Deezer                 8160  ...      0.037163                5000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Coverage/Deezer/results/Deezer.pkl
+Loaded test graph with 67640 nodes and 327988 edges.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Initial k=500, obj_val=394.0000
+k=1000, obj_val=405.0000, best_obj_val=394.0000
+k=2000, obj_val=433.0000, best_obj_val=405.0000
+k=5000, obj_val=730.0000, best_obj_val=433.0000
+Final k=5000, obj_val=730.0000
+Dataset: Slashdot
+ratio: 0.03663739021329988 Size Reduction: 0.9260792430514488 Time Ratio: 15.923267826739387
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Slashdot                19925  ...      0.016524                5000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Coverage/Slashdot/results/Slashdot.pkl
+Loaded test graph with 315305 nodes and 1007872 edges.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Initial k=500, obj_val=6704.0000
+k=1000, obj_val=8473.0000, best_obj_val=6704.0000
+k=2000, obj_val=10163.0000, best_obj_val=8473.0000
+k=5000, obj_val=12192.0000, best_obj_val=10163.0000
+Final k=5000, obj_val=12192.0000
+Dataset: DBLP
+ratio: 0.8672025037342628 Size Reduction: 0.9841423383707838 Time Ratio: 25.244011174409827
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    DBLP                14059  ...      0.036954                5000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Coverage/DBLP/results/DBLP.pkl
+Loaded test graph with 80712 nodes and 1208067 edges.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Initial k=500, obj_val=598.0000
+k=1000, obj_val=809.0000, best_obj_val=598.0000
+k=2000, obj_val=1255.0000, best_obj_val=809.0000
+k=5000, obj_val=2210.0000, best_obj_val=1255.0000
+Final k=5000, obj_val=2210.0000
+Dataset: Twitter
+ratio: 0.056939685157035014 Size Reduction: 0.9380513430468828 Time Ratio: 23.0062275676832
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Twitter                38813  ...      0.020061                5000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Coverage/Twitter/results/Twitter.pkl
+Loaded test graph with 1098104 nodes and 2808367 edges.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Initial k=500, obj_val=5295.0000
+k=1000, obj_val=5468.0000, best_obj_val=5295.0000
+k=2000, obj_val=5506.0000, best_obj_val=5468.0000
+Final k=1000, obj_val=5468.0000
+Dataset: YouTube
+ratio: 0.028146828848955304 Size Reduction: 0.9990893394432586 Time Ratio: 514.624867291534
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  YouTube               194267  ...       0.00786                1000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Coverage/YouTube/results/YouTube.pkl
+Loaded test graph with 1694318 nodes and 10984346 edges.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'neighbor_degree_sum', 'domination_potential'])
+Initial k=500, obj_val=226547.0000
+k=1000, obj_val=317228.0000, best_obj_val=226547.0000
+k=2000, obj_val=383453.0000, best_obj_val=317228.0000
+k=5000, obj_val=439791.0000, best_obj_val=383453.0000
+Final k=5000, obj_val=439791.0000
+Dataset: Skitter
+ratio: 0.9781436686253664 Size Reduction: 0.9970489601125645 Time Ratio: 4.73415260702368
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Skitter               449618  ...      1.607939                5000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Coverage/Skitter/results/Skitter.pkl
+./ablation.sh: 29: MAXCUT_SIZE: not found
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 3847 nodes and 26470 edges.
+Train graph has 3771 nodes and 21176 edges.
+Validation graph has 2859 nodes and 5294 edges.
+Calculating features for training graph: dict_keys(['degree', 'weighted_degree'])
+Training GNN
+New best model saved with C=0.2938212675682843, ratio=1.0, size_reduction=0.2938212675682843
+New best model saved with C=0.35905595332802975, ratio=1.0, size_reduction=0.35905595332802975
+New best model saved with C=0.48634314505436227, ratio=1.0, size_reduction=0.48634314505436227
+New best model saved with C=0.618668788119862, ratio=1.0, size_reduction=0.618668788119862
+New best model saved with C=0.7109520021214533, ratio=1.0, size_reduction=0.7109520021214533
+New best model saved with C=0.7677008750994432, ratio=1.0, size_reduction=0.7677008750994432
+New best model saved with C=0.8210023866348449, ratio=0.9971014492753624, size_reduction=0.8233890214797136
+New best model saved with C=0.8448687350835321, ratio=0.9833333333333333, size_reduction=0.8591885441527446
+New best model saved with C=0.8476110592277449, ratio=0.9630434782608696, size_reduction=0.8801378944577035
+New best model saved with C=0.8557331119643042, ratio=0.9485507246376812, size_reduction=0.9021479713603818
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 4891 nodes and 30228 edges.
+Train graph has 4563 nodes and 24182 edges.
+Validation graph has 2985 nodes and 6046 edges.
+Calculating features for training graph: dict_keys(['degree', 'weighted_degree'])
+Training GNN
+New best model saved with C=0.3607275914968223, ratio=1.0, size_reduction=0.3607275914968223
+New best model saved with C=0.37584922200306814, ratio=1.0, size_reduction=0.37584922200306814
+New best model saved with C=0.4218715757177296, ratio=1.0, size_reduction=0.4218715757177296
+New best model saved with C=0.4941924172693404, ratio=1.0, size_reduction=0.4941924172693404
+New best model saved with C=0.6081525312294542, ratio=1.0, size_reduction=0.6081525312294542
+New best model saved with C=0.6929651545036161, ratio=1.0, size_reduction=0.6929651545036161
+New best model saved with C=0.7679158448389217, ratio=1.0, size_reduction=0.7679158448389217
+New best model saved with C=0.8152531229454306, ratio=1.0, size_reduction=0.8152531229454306
+New best model saved with C=0.8577690116151655, ratio=1.0, size_reduction=0.8577690116151655
+New best model saved with C=0.9127766820074512, ratio=1.0, size_reduction=0.9127766820074512
+New best model saved with C=0.9404861991299944, ratio=0.9980089596814335, size_reduction=0.9423624808240193
+New best model saved with C=0.9485950086325321, ratio=0.9925335988053758, size_reduction=0.9557308788078018
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 48870 nodes and 149460 edges.
+Train graph has 46977 nodes and 119568 edges.
+Validation graph has 29697 nodes and 29892 edges.
+Calculating features for training graph: dict_keys(['degree', 'weighted_degree'])
+Training GNN
+New best model saved with C=0.3678395810715882, ratio=1.0, size_reduction=0.3678395810715882
+New best model saved with C=0.46976179832684084, ratio=1.0, size_reduction=0.46976179832684084
+New best model saved with C=0.6464652915256401, ratio=1.0, size_reduction=0.6464652915256401
+New best model saved with C=0.7681844306788428, ratio=1.0, size_reduction=0.7681844306788428
+New best model saved with C=0.874002171275305, ratio=1.0, size_reduction=0.874002171275305
+New best model saved with C=0.9388211252314963, ratio=1.0, size_reduction=0.9388211252314963
+New best model saved with C=0.9699427379355855, ratio=1.0, size_reduction=0.9699427379355855
+New best model saved with C=0.9837921152041627, ratio=0.9974662162162162, size_reduction=0.9862911637609895
+New best model saved with C=0.9864985683045584, ratio=0.9932432432432432, size_reduction=0.9932094429188751
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 47546 nodes and 140566 edges.
+Train graph has 43007 nodes and 112452 edges.
+Validation graph has 20910 nodes and 28114 edges.
+Calculating features for training graph: dict_keys(['degree', 'weighted_degree'])
+Training GNN
+New best model saved with C=0.5845792545399586, ratio=1.0, size_reduction=0.5845792545399586
+New best model saved with C=0.6411514404631804, ratio=1.0, size_reduction=0.6411514404631804
+New best model saved with C=0.7471109354291161, ratio=1.0, size_reduction=0.7471109354291161
+New best model saved with C=0.8369102704210942, ratio=1.0, size_reduction=0.8369102704210942
+New best model saved with C=0.9052014788290278, ratio=1.0, size_reduction=0.9052014788290278
+New best model saved with C=0.9431022856744251, ratio=1.0, size_reduction=0.9431022856744251
+New best model saved with C=0.9723765898574651, ratio=1.0, size_reduction=0.9723765898574651
+New best model saved with C=0.9847234171181436, ratio=1.0, size_reduction=0.9847234171181436
+New best model saved with C=0.9917660797926505, ratio=0.9997394476289734, size_reduction=0.9920245541423489
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 55827 nodes and 134229 edges.
+Train graph has 51894 nodes and 107383 edges.
+Validation graph has 27523 nodes and 26846 edges.
+Calculating features for training graph: dict_keys(['degree', 'weighted_degree'])
+Training GNN
+New best model saved with C=0.46963040043164916, ratio=1.0, size_reduction=0.46963040043164916
+New best model saved with C=0.5703356842794929, ratio=1.0, size_reduction=0.5703356842794929
+New best model saved with C=0.7265387135314294, ratio=1.0, size_reduction=0.7265387135314294
+New best model saved with C=0.8337380043935715, ratio=1.0, size_reduction=0.8337380043935715
+New best model saved with C=0.8979458126180291, ratio=1.0, size_reduction=0.8979458126180291
+New best model saved with C=0.9431533510617798, ratio=1.0, size_reduction=0.9431533510617798
+New best model saved with C=0.9670674837168074, ratio=1.0, size_reduction=0.9670674837168074
+New best model saved with C=0.9804216287046672, ratio=1.0, size_reduction=0.9804216287046672
+New best model saved with C=0.9887270204647937, ratio=1.0, size_reduction=0.9887270204647937
+New best model saved with C=0.9941611747022777, ratio=1.0, size_reduction=0.9941611747022777
+New best model saved with C=0.9946715436038088, ratio=0.998365345320801, size_reduction=0.9963001503063939
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 63004 nodes and 41994 edges.
+Train graph has 52698 nodes and 33595 edges.
+Validation graph has 15598 nodes and 8399 edges.
+Calculating features for training graph: dict_keys(['degree', 'weighted_degree'])
+Training GNN
+New best model saved with C=0.7040115374397511, ratio=1.0, size_reduction=0.7040115374397511
+New best model saved with C=0.9448176401381456, ratio=1.0, size_reduction=0.9448176401381456
+New best model saved with C=0.9699039811757562, ratio=1.0, size_reduction=0.9699039811757562
+New best model saved with C=0.9859387453034271, ratio=1.0, size_reduction=0.9859387453034271
+New best model saved with C=0.989696003643402, ratio=1.0, size_reduction=0.989696003643402
+New best model saved with C=0.99248548332005, ratio=1.0, size_reduction=0.99248548332005
+New best model saved with C=0.9935481422444875, ratio=1.0, size_reduction=0.9935481422444875
+New best model saved with C=0.9942312801244829, ratio=1.0, size_reduction=0.9942312801244829
+New best model saved with C=0.9950662264222551, ratio=1.0, size_reduction=0.9950662264222551
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 185193 nodes and 179257 edges.
+Train graph has 156282 nodes and 143405 edges.
+Validation graph has 50823 nodes and 35852 edges.
+Calculating features for training graph: dict_keys(['degree', 'weighted_degree'])
+Training GNN
+New best model saved with C=0.6747994010826583, ratio=1.0, size_reduction=0.6747994010826583
+New best model saved with C=0.8590368692491778, ratio=1.0, size_reduction=0.8590368692491778
+New best model saved with C=0.9200483740929858, ratio=1.0, size_reduction=0.9200483740929858
+New best model saved with C=0.9511907961249536, ratio=1.0, size_reduction=0.9511907961249536
+New best model saved with C=0.9698877669853214, ratio=1.0, size_reduction=0.9698877669853214
+New best model saved with C=0.9807399444593747, ratio=1.0, size_reduction=0.9807399444593747
+New best model saved with C=0.9862684122291755, ratio=1.0, size_reduction=0.9862684122291755
+New best model saved with C=0.9893269858333014, ratio=1.0, size_reduction=0.9893269858333014
+New best model saved with C=0.9920400302018146, ratio=1.0, size_reduction=0.9920400302018146
+New best model saved with C=0.9924047555060723, ratio=1.0, size_reduction=0.9924047555060723
+New best model saved with C=0.9930766179086523, ratio=1.0, size_reduction=0.9930766179086523
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 147604 nodes and 110952 edges.
+Train graph has 122456 nodes and 88761 edges.
+Validation graph has 36009 nodes and 22191 edges.
+Calculating features for training graph: dict_keys(['degree', 'weighted_degree'])
+Training GNN
+New best model saved with C=0.7059433592474031, ratio=1.0, size_reduction=0.7059433592474031
+New best model saved with C=0.8940599072319854, ratio=1.0, size_reduction=0.8940599072319854
+New best model saved with C=0.9403704187626576, ratio=1.0, size_reduction=0.9403704187626576
+New best model saved with C=0.9648363493826354, ratio=1.0, size_reduction=0.9648363493826354
+New best model saved with C=0.9700137192134317, ratio=1.0, size_reduction=0.9700137192134317
+New best model saved with C=0.9781227542954204, ratio=1.0, size_reduction=0.9781227542954204
+New best model saved with C=0.9832756255308029, ratio=1.0, size_reduction=0.9832756255308029
+New best model saved with C=0.9863461161560071, ratio=1.0, size_reduction=0.9863461161560071
+New best model saved with C=0.9899392434833736, ratio=1.0, size_reduction=0.9899392434833736
+New best model saved with C=0.9925687593911282, ratio=1.0, size_reduction=0.9925687593911282
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 4002 nodes and 61764 edges.
+Codes for feature extraction: dict_keys(['degree', 'weighted_degree'])
+Initial k=500, obj_val=12998.0000
+k=1000, obj_val=13399.0000, best_obj_val=12998.0000
+k=2000, obj_val=13399.0000, best_obj_val=13399.0000
+Final k=1000, obj_val=13399.0000
+Dataset: Facebook
+ratio: 1.0003733014782739 Size Reduction: 0.7501249375312344 Time Ratio: 2.542419894787183
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Facebook                13394  ...      0.004985                1000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Cut/Facebook/results/Facebook.pkl
+Loaded test graph with 6358 nodes and 70534 edges.
+Codes for feature extraction: dict_keys(['degree', 'weighted_degree'])
+Initial k=500, obj_val=21827.0000
+k=1000, obj_val=21827.0000, best_obj_val=21827.0000
+Final k=500, obj_val=21827.0000
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 5.591315292636878
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    Wiki                21827  ...      0.003788                 500
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Cut/Wiki/results/Wiki.pkl
+Loaded test graph with 67640 nodes and 327988 edges.
+Codes for feature extraction: dict_keys(['degree', 'weighted_degree'])
+Initial k=500, obj_val=44443.0000
+k=1000, obj_val=44443.0000, best_obj_val=44443.0000
+Final k=500, obj_val=44443.0000
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 32.30810488676996
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Slashdot                44443  ...      0.006401                 500
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Cut/Slashdot/results/Slashdot.pkl
+Loaded test graph with 53511 nodes and 348742 edges.
+Codes for feature extraction: dict_keys(['degree', 'weighted_degree'])
+Initial k=500, obj_val=11417.0000
+k=1000, obj_val=11418.0000, best_obj_val=11417.0000
+Final k=500, obj_val=11417.0000
+Dataset: Deezer
+ratio: 0.9999124189875634 Size Reduction: 0.9906561267776719 Time Ratio: 42.65736135289729
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Deezer                11418  ...      0.003835                 500
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Cut/Deezer/results/Deezer.pkl
+Loaded test graph with 80712 nodes and 1208067 edges.
+Codes for feature extraction: dict_keys(['degree', 'weighted_degree'])
+Initial k=500, obj_val=104660.0000
+k=1000, obj_val=104660.0000, best_obj_val=104660.0000
+Final k=500, obj_val=104660.0000
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9938051343046883 Time Ratio: 28.78637979808466
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Twitter               104660  ...      0.009187                 500
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Cut/Twitter/results/Twitter.pkl
+Loaded test graph with 315305 nodes and 1007872 edges.
+Codes for feature extraction: dict_keys(['degree', 'weighted_degree'])
+Initial k=500, obj_val=10779.0000
+k=1000, obj_val=12901.0000, best_obj_val=10779.0000
+k=2000, obj_val=15221.0000, best_obj_val=12901.0000
+k=5000, obj_val=16419.0000, best_obj_val=15221.0000
+Final k=5000, obj_val=16419.0000
+Dataset: DBLP
+ratio: 0.9951512212861385 Size Reduction: 0.9841423383707838 Time Ratio: 31.51176047825945
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    DBLP                16499  ...      0.029193                5000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Cut/DBLP/results/DBLP.pkl
+Loaded test graph with 1098104 nodes and 2808367 edges.
+Codes for feature extraction: dict_keys(['degree', 'weighted_degree'])
+Initial k=500, obj_val=310290.0000
+k=1000, obj_val=314552.0000, best_obj_val=310290.0000
+k=2000, obj_val=314552.0000, best_obj_val=314552.0000
+Final k=1000, obj_val=314552.0000
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 31.391682813013183
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  YouTube               314552  ...      0.108162                1000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Cut/YouTube/results/YouTube.pkl
+Loaded test graph with 1694318 nodes and 10984346 edges.
+Codes for feature extraction: dict_keys(['degree', 'weighted_degree'])
+Initial k=500, obj_val=1144512.0000
+k=1000, obj_val=1361695.0000, best_obj_val=1144512.0000
+k=2000, obj_val=1395057.0000, best_obj_val=1361695.0000
+k=5000, obj_val=1397253.0000, best_obj_val=1395057.0000
+Final k=2000, obj_val=1395057.0000
+Dataset: Skitter
+ratio: 0.9984283447593242 Size Reduction: 0.9988195840450258 Time Ratio: 23.85434030311643
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Skitter              1397253  ...      0.248301                2000
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Maximum Cut/Skitter/results/Skitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 3847 nodes and 26470 edges.
+Train graph has 3771 nodes and 21176 edges.
+Validation graph has 2859 nodes and 5294 edges.
+Calculating features for training graph: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Training GNN
+New best model saved with C=0.8975450668086545, ratio=1.0213163690209524, size_reduction=0.8788119862105542
+New best model saved with C=0.9776027476096808, ratio=0.9781215073590094, size_reduction=0.9994696367011403
+New best model saved with C=0.9825922481468664, ratio=0.983113655548377, size_reduction=0.9994696367011403
+New best model saved with C=0.9834387570231924, ratio=0.98396061362018, size_reduction=0.9994696367011403
+New best model saved with C=0.9887177795520249, ratio=0.989767652426516, size_reduction=0.9989392734022806
+New best model saved with C=0.9890684946731625, ratio=0.9903816498705512, size_reduction=0.9986740917528507
+New best model saved with C=0.9994747534277926, ratio=1.001599600099975, size_reduction=0.9978785468045611
+New best model saved with C=1.0007336164988088, ratio=1.0033944344102652, size_reduction=0.9973481835057014
+New best model saved with C=1.0018006635970282, ratio=1.0049987503124218, size_reduction=0.9968178202068417
+New best model saved with C=1.0044916773988684, ratio=1.0098475381154712, size_reduction=0.9946963670114028
+New best model saved with C=1.0055019327829664, ratio=1.0119422974445067, size_reduction=0.9936356404136834
+New best model saved with C=1.0071844479652017, ratio=1.0130948394976729, size_reduction=0.994166003712543
+New best model saved with C=1.0117774514582731, ratio=1.0215295232795576, size_reduction=0.9904534606205251
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 4891 nodes and 30228 edges.
+Train graph has 4563 nodes and 24182 edges.
+Validation graph has 2985 nodes and 6046 edges.
+Calculating features for training graph: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Training GNN
+New best model saved with C=0.8886118825493786, ratio=1.010148485319585, size_reduction=0.8796844181459567
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 48870 nodes and 149460 edges.
+Train graph has 46977 nodes and 119568 edges.
+Validation graph has 29697 nodes and 29892 edges.
+Calculating features for training graph: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Training GNN
+New best model saved with C=0.28803743654060426, ratio=0.2880435681277241, size_reduction=0.9999787129872065
+New best model saved with C=0.28805980762487476, ratio=0.28806593968821825, size_reduction=0.9999787129872065
+New best model saved with C=0.28807245215076677, ratio=0.28807858448328016, size_reduction=0.9999787129872065
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 47546 nodes and 140566 edges.
+Train graph has 43007 nodes and 112452 edges.
+Validation graph has 20910 nodes and 28114 edges.
+Calculating features for training graph: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Training GNN
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 4002 nodes and 61764 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
 k=1000, obj_val=3683.0000, best_obj_val=3494.0000
 k=2000, obj_val=3762.0000, best_obj_val=3683.0000
 k=5000, obj_val=3772.0000, best_obj_val=3762.0000
 Final k=2000, obj_val=3762.0000
+Budget: 1
 Dataset: Facebook
-ratio: 0.9965562913907284 Size Reduction: 0.5002498750624688 Time Ratio: 1.4616455895235743
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Facebook                 3775  ...      0.010614                2000
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.3841553183658446
+Budget: 10
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.3265660353965842
+Budget: 25
+Dataset: Facebook
+ratio: 0.998162890385793 Size Reduction: 0.5002498750624688 Time Ratio: 1.35806418590367
+Budget: 50
+Dataset: Facebook
+ratio: 0.9974497024652876 Size Reduction: 0.5002498750624688 Time Ratio: 1.3736004837061901
+Budget: 75
+Dataset: Facebook
+ratio: 0.9959305480195334 Size Reduction: 0.5002498750624688 Time Ratio: 1.454031333588078
+Budget: 100
+Dataset: Facebook
+ratio: 0.9965562913907284 Size Reduction: 0.5002498750624688 Time Ratio: 1.4908801439795105
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Facebook                  733  ...         0.50025        0.500250
+1  Facebook                 2889  ...         0.50025        0.500250
+2  Facebook                 3266  ...         0.50025        0.499331
+3  Facebook                 3529  ...         0.50025        0.498974
+4  Facebook                 3686  ...         0.50025        0.498214
+5  Facebook                 3775  ...         0.50025        0.498527
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage/Facebook/results/Facebook.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage/Facebook/results/Facebook.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+New best model saved with C=0.9982605911587034, ratio=1.0170854337486048, size_reduction=0.981491385123352
 Loaded test graph with 6358 nodes and 70534 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
 k=1000, obj_val=4137.0000, best_obj_val=4132.0000
 Final k=500, obj_val=4132.0000
+Budget: 1
 Dataset: Wiki
-ratio: 0.9987913947304811 Size Reduction: 0.9213589178987103 Time Ratio: 1.953004891684137
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    Wiki                 4137  ...      0.010918                 500
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 1.6206793086893903
+Budget: 10
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 1.4428452063286703
+Budget: 25
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 1.595793302863539
+Budget: 50
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 1.790041067761807
+Budget: 75
+Dataset: Wiki
+ratio: 0.999742334449884 Size Reduction: 0.9213589178987103 Time Ratio: 2.0778093968279236
+Budget: 100
+Dataset: Wiki
+ratio: 0.9987913947304811 Size Reduction: 0.9213589178987103 Time Ratio: 2.2986223815814304
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    Wiki                  737  ...        0.921359        0.921359
+1    Wiki                 2213  ...        0.921359        0.921359
+2    Wiki                 2943  ...        0.921359        0.921359
+3    Wiki                 3525  ...        0.921359        0.921359
+4    Wiki                 3881  ...        0.921359        0.921122
+5    Wiki                 4137  ...        0.921359        0.920245
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage/Wiki/results/Wiki.pkl
-Loaded test graph with 67640 nodes and 327988 edges.
-Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
-k=1000, obj_val=19853.0000, best_obj_val=19753.0000
-Final k=500, obj_val=19753.0000
-Dataset: Slashdot
-ratio: 0.9913676286072773 Size Reduction: 0.9926079243051449 Time Ratio: 4.6830658383430555
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Slashdot                19925  ...      0.042753                 500
-
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage/Slashdot/results/Slashdot.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage/Wiki/results/Wiki.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 53511 nodes and 348742 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
 k=1000, obj_val=8103.0000, best_obj_val=7981.0000
 k=2000, obj_val=8161.0000, best_obj_val=8103.0000
 Final k=1000, obj_val=8103.0000
+Budget: 1
 Dataset: Deezer
-ratio: 0.993014705882353 Size Reduction: 0.9813122535553438 Time Ratio: 6.47738333314067
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Deezer                 8160  ...      0.020625                1000
+ratio: 1.0 Size Reduction: 0.9813122535553438 Time Ratio: 30.207
+Budget: 10
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9813122535553438 Time Ratio: 7.2
+Budget: 25
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9813122535553438 Time Ratio: 7.213434079351854
+Budget: 50
+Dataset: Deezer
+ratio: 0.9971852129855507 Size Reduction: 0.9813122535553438 Time Ratio: 8.29927797833935
+Budget: 75
+Dataset: Deezer
+ratio: 0.9962071480671043 Size Reduction: 0.9813122535553438 Time Ratio: 7.605553330663462
+Budget: 100
+Dataset: Deezer
+ratio: 0.993014705882353 Size Reduction: 0.9813122535553438 Time Ratio: 9.636541611219164
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Deezer                  295  ...        0.981312        0.981312
+1  Deezer                 1800  ...        0.981312        0.981312
+2  Deezer                 3371  ...        0.981312        0.981312
+3  Deezer                 5329  ...        0.981312        0.978550
+4  Deezer                 6855  ...        0.981312        0.977590
+5  Deezer                 8160  ...        0.981312        0.974457
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage/Deezer/results/Deezer.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage/Deezer/results/Deezer.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 67640 nodes and 327988 edges.
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
+k=1000, obj_val=19853.0000, best_obj_val=19753.0000
+Final k=500, obj_val=19753.0000
+Budget: 1
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 7.934745098039215
+Budget: 10
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 3.563086397391777
+Budget: 25
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 3.8598230641674554
+Budget: 50
+Dataset: Slashdot
+ratio: 0.9992348890589136 Size Reduction: 0.9926079243051449 Time Ratio: 4.619657793357165
+Budget: 75
+Dataset: Slashdot
+ratio: 0.9963396372913316 Size Reduction: 0.9926079243051449 Time Ratio: 4.814616349333029
+Budget: 100
+Dataset: Slashdot
+ratio: 0.9913676286072773 Size Reduction: 0.9926079243051449 Time Ratio: 5.5452733066427
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Slashdot                 1770  ...        0.992608        0.992608
+1  Slashdot                 8436  ...        0.992608        0.992608
+2  Slashdot                12245  ...        0.992608        0.992608
+3  Slashdot                15684  ...        0.992608        0.991848
+4  Slashdot                18031  ...        0.992608        0.988975
+5  Slashdot                19925  ...        0.992608        0.984039
+
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage/Slashdot/results/Slashdot.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 80712 nodes and 1208067 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
 k=1000, obj_val=36382.0000, best_obj_val=34896.0000
 k=2000, obj_val=36980.0000, best_obj_val=36382.0000
 k=5000, obj_val=38169.0000, best_obj_val=36980.0000
 Final k=5000, obj_val=38169.0000
+Budget: 1
 Dataset: Twitter
-ratio: 0.9834076211578595 Size Reduction: 0.9380513430468828 Time Ratio: 2.0345092069785418
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Twitter                38813  ...      0.161639                5000
+ratio: 1.0 Size Reduction: 0.9380513430468828 Time Ratio: 2.7325004109814235
+Budget: 10
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9380513430468828 Time Ratio: 1.5895996844080127
+Budget: 25
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9380513430468828 Time Ratio: 1.699283608152983
+Budget: 50
+Dataset: Twitter
+ratio: 0.9993066561014263 Size Reduction: 0.9380513430468828 Time Ratio: 1.8917094387541726
+Budget: 75
+Dataset: Twitter
+ratio: 0.9960683024824222 Size Reduction: 0.9380513430468828 Time Ratio: 2.0700896742006925
+Budget: 100
+Dataset: Twitter
+ratio: 0.9834076211578595 Size Reduction: 0.9380513430468828 Time Ratio: 2.2920941919273266
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Twitter                 3021  ...        0.938051        0.938051
+1  Twitter                16228  ...        0.938051        0.938051
+2  Twitter                23884  ...        0.938051        0.938051
+3  Twitter                30288  ...        0.938051        0.937401
+4  Twitter                34845  ...        0.938051        0.934363
+5  Twitter                38813  ...        0.938051        0.922487
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage/Twitter/results/Twitter.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage/Twitter/results/Twitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 55827 nodes and 134229 edges.
+Train graph has 51894 nodes and 107383 edges.
+Validation graph has 27523 nodes and 26846 edges.
+Calculating features for training graph: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Training GNN
 Loaded test graph with 315305 nodes and 1007872 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
 k=1000, obj_val=11498.0000, best_obj_val=9868.0000
 k=2000, obj_val=13286.0000, best_obj_val=11498.0000
 k=5000, obj_val=14059.0000, best_obj_val=13286.0000
 Final k=5000, obj_val=14059.0000
+Budget: 1
 Dataset: DBLP
-ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 12.871996942995864
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    DBLP                14059  ...      0.053034                5000
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 41.991041032073106
+Budget: 10
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 17.078438892541456
+Budget: 25
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 17.386959766456684
+Budget: 50
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 15.990088419851682
+Budget: 75
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 17.470784190150354
+Budget: 100
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 18.549138284293175
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    DBLP                  331  ...        0.984142        0.984142
+1    DBLP                 2391  ...        0.984142        0.984142
+2    DBLP                 5031  ...        0.984142        0.984142
+3    DBLP                 8497  ...        0.984142        0.984142
+4    DBLP                11455  ...        0.984142        0.984142
+5    DBLP                14059  ...        0.984142        0.984142
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage/DBLP/results/DBLP.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage/DBLP/results/DBLP.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+New best model saved with C=0.956388222504027, ratio=0.9581977453591779, size_reduction=0.9981115350522218
 Loaded test graph with 1098104 nodes and 2808367 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
 k=1000, obj_val=194126.0000, best_obj_val=189961.0000
 k=2000, obj_val=194267.0000, best_obj_val=194126.0000
 Final k=1000, obj_val=194126.0000
+Budget: 1
 Dataset: YouTube
-ratio: 0.9992741947937632 Size Reduction: 0.9990893394432586 Time Ratio: 7.489542526458324
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  YouTube               194267  ...      0.396871                1000
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 6.966840335812395
+Budget: 10
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 4.974806564856273
+Budget: 25
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 5.76747927596173
+Budget: 50
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 6.774724374850203
+Budget: 75
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 7.650409658258997
+Budget: 100
+Dataset: YouTube
+ratio: 0.9992741947937632 Size Reduction: 0.9990893394432586 Time Ratio: 9.078183534605119
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  YouTube                27052  ...        0.999089        0.999089
+1  YouTube                83275  ...        0.999089        0.999089
+2  YouTube               115441  ...        0.999089        0.999089
+3  YouTube               149364  ...        0.999089        0.999089
+4  YouTube               174767  ...        0.999089        0.999089
+5  YouTube               194267  ...        0.999089        0.998364
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage/YouTube/results/YouTube.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage/YouTube/results/YouTube.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 63004 nodes and 41994 edges.
+Train graph has 52698 nodes and 33595 edges.
+Validation graph has 15598 nodes and 8399 edges.
+Calculating features for training graph: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Training GNN
+New best model saved with C=0.7581592171989833, ratio=0.9986371332721461, size_reduction=0.7591938973016054
+New best model saved with C=0.7583356684501561, ratio=0.9988695524891603, size_reduction=0.7591938973016054
+New best model saved with C=0.7583521872906914, ratio=0.9988913108839447, size_reduction=0.7591938973016054
+New best model saved with C=0.7583754638387186, ratio=0.9989219704402317, size_reduction=0.7591938973016054
+New best model saved with C=0.7583972386739696, ratio=0.9989506519606292, size_reduction=0.7591938973016054
 Loaded test graph with 1694318 nodes and 10984346 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size'])
 k=1000, obj_val=415979.0000, best_obj_val=345470.0000
 k=2000, obj_val=442609.0000, best_obj_val=415979.0000
 k=5000, obj_val=447710.0000, best_obj_val=442609.0000
 Final k=5000, obj_val=447710.0000
+Budget: 1
 Dataset: Skitter
-ratio: 0.9957563976531189 Size Reduction: 0.9970489601125645 Time Ratio: 4.236409439258906
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Skitter               449618  ...       1.38717                5000
+ratio: 1.0 Size Reduction: 0.9970489601125645 Time Ratio: 5.95734919600903
+Budget: 10
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9970489601125645 Time Ratio: 3.6109722620559674
+Budget: 25
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9970489601125645 Time Ratio: 3.5560226633733514
+Budget: 50
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9970489601125645 Time Ratio: 3.5858947862691086
+Budget: 75
+Dataset: Skitter
+ratio: 0.9974446932788201 Size Reduction: 0.9970489601125645 Time Ratio: 4.200826594842921
+Budget: 100
+Dataset: Skitter
+ratio: 0.9957563976531189 Size Reduction: 0.9970489601125645 Time Ratio: 5.054650970464032
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Skitter                35081  ...        0.997049        0.997049
+1  Skitter               174013  ...        0.997049        0.997049
+2  Skitter               276557  ...        0.997049        0.997049
+3  Skitter               362250  ...        0.997049        0.997049
+4  Skitter               414823  ...        0.997049        0.994501
+5  Skitter               449618  ...        0.997049        0.992818
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage/Skitter/results/Skitter.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage/Skitter/results/Skitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 4002 nodes and 61764 edges.
 Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
 k=1000, obj_val=13399.0000, best_obj_val=12998.0000
 k=2000, obj_val=13399.0000, best_obj_val=13399.0000
 Final k=1000, obj_val=13399.0000
+Budget: 1
 Dataset: Facebook
-ratio: 1.0003733014782739 Size Reduction: 0.7501249375312344 Time Ratio: 2.3857334098297955
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Facebook                13394  ...       0.00374                1000
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.8833399920095886
+Budget: 10
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.547764705882353
+Budget: 25
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.315361406270497
+Budget: 50
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.407517309594461
+Budget: 75
+Dataset: Facebook
+ratio: 1.0003571109722347 Size Reduction: 0.7501249375312344 Time Ratio: 2.311299895263587
+Budget: 100
+Dataset: Facebook
+ratio: 1.0003733014782739 Size Reduction: 0.7501249375312344 Time Ratio: 2.4162505250385027
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Facebook                  732  ...        0.750125        0.750125
+1  Facebook                 3313  ...        0.750125        0.750125
+2  Facebook                 5544  ...        0.750125        0.750125
+3  Facebook                 8633  ...        0.750125        0.750125
+4  Facebook                11201  ...        0.750125        0.750393
+5  Facebook                13394  ...        0.750125        0.750405
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut/Facebook/results/Facebook.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut/Facebook/results/Facebook.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 6358 nodes and 70534 edges.
 Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
 k=1000, obj_val=21827.0000, best_obj_val=21827.0000
 Final k=500, obj_val=21827.0000
+Budget: 1
 Dataset: Wiki
-ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 4.904220650186789
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    Wiki                21827  ...         0.003                 500
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 6.610978520286396
+Budget: 10
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 4.504622322435175
+Budget: 25
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 4.093473225235046
+Budget: 50
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 4.752421182773542
+Budget: 75
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 4.995164938002028
+Budget: 100
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 5.089449684552439
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    Wiki                  736  ...        0.921359        0.921359
+1    Wiki                 4746  ...        0.921359        0.921359
+2    Wiki                 8931  ...        0.921359        0.921359
+3    Wiki                14322  ...        0.921359        0.921359
+4    Wiki                18428  ...        0.921359        0.921359
+5    Wiki                21827  ...        0.921359        0.921359
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut/Wiki/results/Wiki.pkl
-Loaded test graph with 67640 nodes and 327988 edges.
-Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
-k=1000, obj_val=44443.0000, best_obj_val=44443.0000
-Final k=500, obj_val=44443.0000
-Dataset: Slashdot
-ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 27.46260474237832
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Slashdot                44443  ...      0.005349                 500
-
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut/Slashdot/results/Slashdot.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut/Wiki/results/Wiki.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 53511 nodes and 348742 edges.
 Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
 k=1000, obj_val=11418.0000, best_obj_val=11417.0000
 Final k=500, obj_val=11417.0000
+Budget: 1
 Dataset: Deezer
-ratio: 0.9999124189875634 Size Reduction: 0.9906561267776719 Time Ratio: 32.06520833333333
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Deezer                11418  ...      0.003433                 500
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 19.34269370774831
+Budget: 10
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 15.953555709983785
+Budget: 25
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 21.273464890313534
+Budget: 50
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 28.704240428159736
+Budget: 75
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 35.85856811634933
+Budget: 100
+Dataset: Deezer
+ratio: 0.9999124189875634 Size Reduction: 0.9906561267776719 Time Ratio: 28.228548414448024
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Deezer                  294  ...        0.990656        0.990656
+1  Deezer                 1939  ...        0.990656        0.990656
+2  Deezer                 3917  ...        0.990656        0.990656
+3  Deezer                 6717  ...        0.990656        0.990656
+4  Deezer                 9170  ...        0.990656        0.990656
+5  Deezer                11418  ...        0.990656        0.990569
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut/Deezer/results/Deezer.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut/Deezer/results/Deezer.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 67640 nodes and 327988 edges.
+Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
+k=1000, obj_val=44443.0000, best_obj_val=44443.0000
+Final k=500, obj_val=44443.0000
+Budget: 1
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 17.286013150029888
+Budget: 10
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 15.110257266956232
+Budget: 25
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 19.00587271237367
+Budget: 50
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 23.858220211161388
+Budget: 75
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 27.59102854553693
+Budget: 100
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9926079243051449 Time Ratio: 31.264635439161335
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Slashdot                 1769  ...        0.992608        0.992608
+1  Slashdot                11464  ...        0.992608        0.992608
+2  Slashdot                19520  ...        0.992608        0.992608
+3  Slashdot                29553  ...        0.992608        0.992608
+4  Slashdot                37545  ...        0.992608        0.992608
+5  Slashdot                44443  ...        0.992608        0.992608
+
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut/Slashdot/results/Slashdot.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 80712 nodes and 1208067 edges.
 Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
 k=1000, obj_val=104660.0000, best_obj_val=104660.0000
 Final k=500, obj_val=104660.0000
+Budget: 1
 Dataset: Twitter
-ratio: 1.0 Size Reduction: 0.9938051343046883 Time Ratio: 23.58735243519013
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Twitter               104660  ...      0.008038                 500
+ratio: 1.0 Size Reduction: 0.9938051343046883 Time Ratio: 22.078349769293403
+Budget: 10
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9938051343046883 Time Ratio: 15.386512104521584
+Budget: 25
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9938051343046883 Time Ratio: 18.341076930601066
+Budget: 50
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9938051343046883 Time Ratio: 21.567301019103628
+Budget: 75
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9938051343046883 Time Ratio: 24.438731995347865
+Budget: 100
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9938051343046883 Time Ratio: 26.605189824875367
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Twitter                 3020  ...        0.993805        0.993805
+1  Twitter                23216  ...        0.993805        0.993805
+2  Twitter                43068  ...        0.993805        0.993805
+3  Twitter                68238  ...        0.993805        0.993805
+4  Twitter                88036  ...        0.993805        0.993805
+5  Twitter               104660  ...        0.993805        0.993805
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut/Twitter/results/Twitter.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut/Twitter/results/Twitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 315305 nodes and 1007872 edges.
 Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
 k=1000, obj_val=13196.0000, best_obj_val=11272.0000
 k=2000, obj_val=15422.0000, best_obj_val=13196.0000
 k=5000, obj_val=16467.0000, best_obj_val=15422.0000
 Final k=5000, obj_val=16467.0000
+Budget: 1
 Dataset: DBLP
-ratio: 0.9980604885144554 Size Reduction: 0.9841423383707838 Time Ratio: 25.20037749181791
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    DBLP                16499  ...      0.025642                5000
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 14.272811762300414
+Budget: 10
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 14.36439932859084
+Budget: 25
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9841423383707838 Time Ratio: 18.624423553238366
+Budget: 50
+Dataset: DBLP
+ratio: 0.9984330930742714 Size Reduction: 0.9841423383707838 Time Ratio: 23.058063538781163
+Budget: 75
+Dataset: DBLP
+ratio: 0.9979475484606614 Size Reduction: 0.9841423383707838 Time Ratio: 26.557050301036444
+Budget: 100
+Dataset: DBLP
+ratio: 0.9980604885144554 Size Reduction: 0.9841423383707838 Time Ratio: 29.351450936853876
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    DBLP                  330  ...        0.984142        0.984142
+1    DBLP                 2504  ...        0.984142        0.984142
+2    DBLP                 5446  ...        0.984142        0.984142
+3    DBLP                 9573  ...        0.984142        0.982600
+4    DBLP                13155  ...        0.984142        0.982122
+5    DBLP                16499  ...        0.984142        0.982234
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut/DBLP/results/DBLP.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut/DBLP/results/DBLP.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 1098104 nodes and 2808367 edges.
 Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
 k=1000, obj_val=314552.0000, best_obj_val=310290.0000
 k=2000, obj_val=314552.0000, best_obj_val=314552.0000
 Final k=1000, obj_val=314552.0000
+Budget: 1
 Dataset: YouTube
-ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 28.780132011298782
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  YouTube               314552  ...      0.082717                1000
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 8.456137157085266
+Budget: 10
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 11.60572169569672
+Budget: 25
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 16.497802298569507
+Budget: 50
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 23.449177868936285
+Budget: 75
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 30.336560875512998
+Budget: 100
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9990893394432586 Time Ratio: 36.01291970935184
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  YouTube                27051  ...        0.999089        0.999089
+1  YouTube               101501  ...        0.999089        0.999089
+2  YouTube               155204  ...        0.999089        0.999089
+3  YouTube               218503  ...        0.999089        0.999089
+4  YouTube               269960  ...        0.999089        0.999089
+5  YouTube               314552  ...        0.999089        0.999089
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut/YouTube/results/YouTube.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut/YouTube/results/YouTube.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 185193 nodes and 179257 edges.
+Train graph has 156282 nodes and 143405 edges.
+Validation graph has 50823 nodes and 35852 edges.
+Calculating features for training graph: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Training GNN
 Loaded test graph with 1694318 nodes and 10984346 edges.
 Codes for feature extraction: dict_keys(['degree', 'random_cut_expectation'])
 k=1000, obj_val=1357987.0000, best_obj_val=1140576.0000
 k=2000, obj_val=1392490.0000, best_obj_val=1357987.0000
 k=5000, obj_val=1397253.0000, best_obj_val=1392490.0000
 Final k=2000, obj_val=1392490.0000
+Budget: 1
 Dataset: Skitter
-ratio: 0.9965911685285342 Size Reduction: 0.9988195840450258 Time Ratio: 23.231269102080464
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Skitter              1397253  ...      0.181135                2000
+ratio: 1.0 Size Reduction: 0.9988195840450258 Time Ratio: 9.388868291778664
+Budget: 10
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9988195840450258 Time Ratio: 9.586405733766203
+Budget: 25
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9988195840450258 Time Ratio: 12.405628980881005
+Budget: 50
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9988195840450258 Time Ratio: 16.557459325496268
+Budget: 75
+Dataset: Skitter
+ratio: 0.9993750537128401 Size Reduction: 0.9988195840450258 Time Ratio: 21.516214353858192
+Budget: 100
+Dataset: Skitter
+ratio: 0.9965911685285342 Size Reduction: 0.9988195840450258 Time Ratio: 24.252792783549904
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Skitter                35080  ...         0.99882        0.998820
+1  Skitter               305145  ...         0.99882        0.998820
+2  Skitter               627946  ...         0.99882        0.998820
+3  Skitter               957955  ...         0.99882        0.998820
+4  Skitter              1198503  ...         0.99882        0.998195
+5  Skitter              1397253  ...         0.99882        0.995415
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut/Skitter/results/Skitter.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut/Skitter/results/Skitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 4002 nodes and 61764 edges.
 Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
-k=1000, obj_val=327.0006, best_obj_val=311.8279
-k=2000, obj_val=330.1916, best_obj_val=327.0006
-Final k=1000, obj_val=327.0006
+New best model saved with C=0.9665105753494648, ratio=0.9768426733456536, size_reduction=0.989422966176527
+k=1000, obj_val=328.2322, best_obj_val=311.7161
+k=2000, obj_val=328.1858, best_obj_val=328.2322
+Final k=1000, obj_val=328.2322
+Budget: 1
 Dataset: Facebook
-ratio: 0.9995315797632692 Size Reduction: 0.7501249375312344 Time Ratio: 1.018277641465791
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Facebook             327.6972  ...     15.950213                1000
+ratio: 0.9801880784028283 Size Reduction: 0.7501249375312344 Time Ratio: 1.238083587386233
+Budget: 10
+Dataset: Facebook
+ratio: 0.9910754794667841 Size Reduction: 0.7501249375312344 Time Ratio: 0.9131500765012787
+Budget: 25
+Dataset: Facebook
+ratio: 0.9904743848016319 Size Reduction: 0.7501249375312344 Time Ratio: 1.0432790261000469
+Budget: 50
+Dataset: Facebook
+ratio: 0.9932827355377165 Size Reduction: 0.7501249375312344 Time Ratio: 0.9820201407290836
+Budget: 75
+Dataset: Facebook
+ratio: 1.0035047537902553 Size Reduction: 0.7501249375312344 Time Ratio: 1.0523831633891996
+Budget: 100
+Dataset: Facebook
+ratio: 1.004656046418749 Size Reduction: 0.7501249375312344 Time Ratio: 1.0297243548899702
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Facebook              30.7744  ...        0.750125        0.735264
+1  Facebook             114.3927  ...        0.750125        0.743430
+2  Facebook             174.5819  ...        0.750125        0.742980
+3  Facebook             237.0459  ...        0.750125        0.745086
+4  Facebook             284.4993  ...        0.750125        0.752754
+5  Facebook             326.0062  ...        0.750125        0.753618
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization/Facebook/results/Facebook.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Influence Maximization/Facebook/results/Facebook.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 6358 nodes and 70534 edges.
 Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
-k=1000, obj_val=437.7210, best_obj_val=437.9043
-Final k=500, obj_val=437.9043
+k=1000, obj_val=436.2973, best_obj_val=437.7571
+Final k=500, obj_val=437.7571
+Budget: 1
 Dataset: Wiki
-ratio: 1.0038893480591766 Size Reduction: 0.9213589178987103 Time Ratio: 0.9773923011298596
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    Wiki             436.2942  ...     23.692951                 500
+ratio: 0.9903969842249529 Size Reduction: 0.9213589178987103 Time Ratio: 0.9083753528741901
+Budget: 10
+Dataset: Wiki
+ratio: 1.0181302950068856 Size Reduction: 0.9213589178987103 Time Ratio: 1.0427609384633187
+Budget: 25
+Dataset: Wiki
+ratio: 1.001018416602167 Size Reduction: 0.9213589178987103 Time Ratio: 0.991994269360831
+Budget: 50
+Dataset: Wiki
+ratio: 1.00566969586876 Size Reduction: 0.9213589178987103 Time Ratio: 1.0236529290137346
+Budget: 75
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 147604 nodes and 110952 edges.
+Train graph has 122456 nodes and 88761 edges.
+Validation graph has 36009 nodes and 22191 edges.
+Calculating features for training graph: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Training GNN
+Dataset: Wiki
+ratio: 1.0000152091646817 Size Reduction: 0.9213589178987103 Time Ratio: 1.0214603640473299
+Budget: 100
+New best model saved with C=1.0188929406686535, ratio=1.0273580569509386, size_reduction=0.9917603057424708
+Dataset: Wiki
+ratio: 1.0013860048637913 Size Reduction: 0.9213589178987103 Time Ratio: 0.9902845277660196
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    Wiki              48.1203  ...        0.921359        0.912511
+1    Wiki             167.1622  ...        0.921359        0.938063
+2    Wiki             247.9339  ...        0.921359        0.922297
+3    Wiki             328.0952  ...        0.921359        0.926583
+4    Wiki             387.9240  ...        0.921359        0.921373
+5    Wiki             438.3823  ...        0.921359        0.922636
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization/Wiki/results/Wiki.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Influence Maximization/Wiki/results/Wiki.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 53511 nodes and 348742 edges.
 Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
-k=1000, obj_val=241.6113, best_obj_val=243.6008
-Final k=500, obj_val=243.6008
+k=1000, obj_val=239.7797, best_obj_val=243.0005
+Final k=500, obj_val=243.0005
+Budget: 1
 Dataset: Deezer
-ratio: 0.9759493650510035 Size Reduction: 0.9906561267776719 Time Ratio: 1.4845311528584761
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Deezer             248.4924  ...     10.569396                 500
+ratio: 1.0014592411945789 Size Reduction: 0.9906561267776719 Time Ratio: 4.574615183024829
+Budget: 10
+Dataset: Deezer
+ratio: 1.00875712485991 Size Reduction: 0.9906561267776719 Time Ratio: 3.549334601303649
+Budget: 25
+Dataset: Deezer
+ratio: 0.9737865721706606 Size Reduction: 0.9906561267776719 Time Ratio: 3.194750437509196
+Budget: 50
+New best model saved with C=1.0271487531254788, ratio=1.0275263474094127, size_reduction=0.9996325210687921
+Dataset: Deezer
+ratio: 0.9870046188100446 Size Reduction: 0.9906561267776719 Time Ratio: 2.504958844062337
+Budget: 75
+Dataset: Deezer
+ratio: 0.9783760895312945 Size Reduction: 0.9906561267776719 Time Ratio: 2.136556174044185
+Budget: 100
+New best model saved with C=1.0282105718018204, ratio=1.0286473790118273, size_reduction=0.999575357679493
+Dataset: Deezer
+ratio: 0.9871426106081849 Size Reduction: 0.9906561267776719 Time Ratio: 2.1428090910341537
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Deezer               5.0026  ...        0.990656        0.992102
+1  Deezer              37.3867  ...        0.990656        0.999331
+2  Deezer              80.3138  ...        0.990656        0.964688
+3  Deezer             139.3649  ...        0.990656        0.977782
+4  Deezer             195.5428  ...        0.990656        0.969234
+5  Deezer             247.4297  ...        0.990656        0.977919
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization/Deezer/results/Deezer.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Influence Maximization/Deezer/results/Deezer.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 67640 nodes and 327988 edges.
 Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
-k=1000, obj_val=948.7089, best_obj_val=955.2433
-Final k=500, obj_val=955.2433
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 4002 nodes and 61764 edges.
+Codes for feature extraction: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Initial k=500, obj_val=322.3063
+k=1000, obj_val=330.0680, best_obj_val=322.3063
+k=2000, obj_val=328.1359, best_obj_val=330.0680
+Final k=1000, obj_val=330.0680
+k=1000, obj_val=949.1777, best_obj_val=953.4542
+Final k=500, obj_val=953.4542
+Budget: 1
 Dataset: Slashdot
-ratio: 1.021473495885987 Size Reduction: 0.9926079243051449 Time Ratio: 1.0002167264096717
+ratio: 1.0224824203892562 Size Reduction: 0.9926079243051449 Time Ratio: 1.3930941523144398
+Budget: 10
+Dataset: Facebook
+ratio: 0.9999448683990511 Size Reduction: 0.7501249375312344 Time Ratio: 0.9631653466070976
     Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Slashdot             933.6626  ...     58.366381                 500
+0  Facebook             330.1192  ...       21.2844                1000
 
 [1 rows x 12 columns]
-Data has been saved to Influence Maximization/Slashdot/results/Slashdot.pkl
+Data has been saved to simple_feedback/Influence Maximization/Facebook/results/Facebook.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 6358 nodes and 70534 edges.
+Codes for feature extraction: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Initial k=500, obj_val=441.2218
+Dataset: Slashdot
+ratio: 1.0076066390498255 Size Reduction: 0.9926079243051449 Time Ratio: 1.1146046541029717
+Budget: 25
+k=1000, obj_val=434.5354, best_obj_val=441.2218
+Final k=500, obj_val=441.2218
+Dataset: Wiki
+ratio: 1.0109119608883066 Size Reduction: 0.9213589178987103 Time Ratio: 0.9999639843291376
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    Wiki             436.4935  ...     28.994972                 500
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Influence Maximization/Wiki/results/Wiki.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 53511 nodes and 348742 edges.
+Codes for feature extraction: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Dataset: Slashdot
+ratio: 0.996708637837292 Size Reduction: 0.9926079243051449 Time Ratio: 1.1019474078612976
+Budget: 50
+Initial k=500, obj_val=246.6624
+k=1000, obj_val=241.0351, best_obj_val=246.6624
+Final k=500, obj_val=246.6624
+Dataset: Deezer
+ratio: 0.9946165514383503 Size Reduction: 0.9906561267776719 Time Ratio: 2.1333517495835177
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Deezer             246.6263  ...     14.894917                 500
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Influence Maximization/Deezer/results/Deezer.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 67640 nodes and 327988 edges.
+Codes for feature extraction: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Dataset: Slashdot
+ratio: 1.0067800936931044 Size Reduction: 0.9926079243051449 Time Ratio: 1.1756168298295597
+Budget: 75
+Initial k=500, obj_val=952.9147
+k=1000, obj_val=952.0961, best_obj_val=952.9147
+Final k=500, obj_val=952.9147
+Dataset: Slashdot
+ratio: 1.007852204356333 Size Reduction: 0.9926079243051449 Time Ratio: 1.1153704887556444
+Budget: 100
+Dataset: Slashdot
+ratio: 1.0063239140834985 Size Reduction: 0.9926079243051449 Time Ratio: 1.04808127654935
+    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Slashdot             949.3962  ...     69.561222                 500
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Influence Maximization/Slashdot/results/Slashdot.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Dataset: Slashdot
+ratio: 1.0103697925291208 Size Reduction: 0.9926079243051449 Time Ratio: 1.0361222631220721
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Slashdot              64.6772  ...        0.992608        1.014924
+1  Slashdot             323.4017  ...        0.992608        1.000158
+2  Slashdot             512.9791  ...        0.992608        0.989341
+3  Slashdot             697.2765  ...        0.992608        0.999338
+4  Slashdot             838.1086  ...        0.992608        1.000402
+5  Slashdot             946.3063  ...        0.992608        1.002901
+
+[6 rows x 7 columns]
+Data has been saved to multibudget/Influence Maximization/Slashdot/results/Slashdot.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 80712 nodes and 1208067 edges.
+Codes for feature extraction: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
 Loaded test graph with 80712 nodes and 1208067 edges.
 Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
-k=1000, obj_val=4497.0207, best_obj_val=4441.7353
-k=2000, obj_val=4515.2821, best_obj_val=4497.0207
-Final k=1000, obj_val=4497.0207
+Initial k=500, obj_val=4372.7552
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 4002 nodes and 61764 edges.
+Selected 1000 nodes out of 4002 nodes.
+    Dataset  Feature Extraction Time  TimeToPrune
+0  Facebook                 0.006743     0.271867
+Data has been saved to runtime/Maximum Coverage/Facebook/LLM2Prune
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 4002 nodes and 61764 edges.
+Traceback (most recent call last):
+  File "/home/anath/LLM_Pruning/time_benchmark.py", line 169, in <module>
+    main()
+    ~~~~^^
+  File "/home/anath/LLM_Pruning/time_benchmark.py", line 81, in main
+    test_data = from_networkx(test_graph)
+  File "/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/torch_geometric/utils/convert.py", line 229, in from_networkx
+    G = G.to_directed() if not nx.is_directed(G) else G
+        ~~~~~~~~~~~~~^^
+  File "/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/networkx/classes/graph.py", line 1704, in to_directed
+    G.add_edges_from(
+    ~~~~~~~~~~~~~~~~^
+        (u, v, deepcopy(data))
+        ^^^^^^^^^^^^^^^^^^^^^^
+        for u, nbrs in self._adj.items()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        for v, data in nbrs.items()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/networkx/classes/digraph.py", line 799, in add_edges_from
+    self._pred[v][u] = datadict
+    ~~~~~~~~~~~~~^^^
+KeyboardInterrupt
+k=1000, obj_val=4447.7559, best_obj_val=4372.7552
+k=1000, obj_val=4464.1831, best_obj_val=4443.2898
+Final k=500, obj_val=4443.2898
+Budget: 1
+k=2000, obj_val=4525.9423, best_obj_val=4447.7559
 Dataset: Twitter
-ratio: 0.981666450489138 Size Reduction: 0.9876102686093765 Time Ratio: 1.0878816482884786
+ratio: 0.9997352502030129 Size Reduction: 0.9938051343046883 Time Ratio: 1.080855154147523
+Budget: 10
+k=5000, obj_val=4540.8878, best_obj_val=4525.9423
+Final k=2000, obj_val=4525.9423
+Dataset: Twitter
+ratio: 0.9937201947132387 Size Reduction: 0.9938051343046883 Time Ratio: 1.358708613749497
+Budget: 25
+Dataset: Twitter
+ratio: 0.9892824988850196 Size Reduction: 0.9752205372187531 Time Ratio: 1.1589843982635284
    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Twitter            4542.5628  ...    350.642079                1000
+0  Twitter            4550.9769  ...    579.862544                2000
 
 [1 rows x 12 columns]
-Data has been saved to Influence Maximization/Twitter/results/Twitter.pkl
+Data has been saved to simple_feedback/Influence Maximization/Twitter/results/Twitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 315305 nodes and 1007872 edges.
+Codes for feature extraction: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Initial k=500, obj_val=101.2102
+k=1000, obj_val=101.3954, best_obj_val=101.2102
+Final k=500, obj_val=101.2102
+Dataset: Twitter
+ratio: 0.9869080211051309 Size Reduction: 0.9938051343046883 Time Ratio: 1.2401501697801949
+Budget: 50
+Dataset: DBLP
+ratio: 0.28143948128002044 Size Reduction: 0.9984142338370784 Time Ratio: 66.90132383308082
+  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0    DBLP              359.963  ...      3.437352                 500
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Influence Maximization/DBLP/results/DBLP.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 1098104 nodes and 2808367 edges.
+Codes for feature extraction: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Dataset: Twitter
+ratio: 0.9819466828737977 Size Reduction: 0.9938051343046883 Time Ratio: 1.1741197225676554
+Budget: 75
+Initial k=500, obj_val=8087.1117
+Dataset: Twitter
+ratio: 0.9790497007376595 Size Reduction: 0.9938051343046883 Time Ratio: 1.7504668242603678
+Budget: 100
+k=1000, obj_val=8266.1630, best_obj_val=8087.1117
+Dataset: Twitter
+ratio: 0.9695244929911871 Size Reduction: 0.9938051343046883 Time Ratio: 1.8628763653288223
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Twitter            3943.3458  ...        0.993805        0.993542
+1  Twitter            4071.3205  ...        0.993805        0.987564
+2  Twitter            4190.8103  ...        0.993805        0.980794
+3  Twitter            4315.9603  ...        0.993805        0.975864
+4  Twitter            4443.4592  ...        0.993805        0.972985
+5  Twitter            4549.0728  ...        0.993805        0.963518
+
+[6 rows x 7 columns]
+Data has been saved to multibudget/Influence Maximization/Twitter/results/Twitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 315305 nodes and 1007872 edges.
 Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
-k=1000, obj_val=353.7850, best_obj_val=355.0208
-Final k=500, obj_val=355.0208
+k=1000, obj_val=352.4064, best_obj_val=357.4736
+Final k=500, obj_val=357.4736
+Budget: 1
 Dataset: DBLP
-ratio: 0.9953231980273619 Size Reduction: 0.9984142338370784 Time Ratio: 2.9884147471167104
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    DBLP             357.9369  ...     21.926828                 500
+ratio: 0.94898287344829 Size Reduction: 0.9984142338370784 Time Ratio: 14.561133189669823
+Budget: 10
+Dataset: DBLP
+ratio: 0.9551758094220265 Size Reduction: 0.9984142338370784 Time Ratio: 6.866789425639622
+Budget: 25
+Dataset: DBLP
+ratio: 0.9652989984061502 Size Reduction: 0.9984142338370784 Time Ratio: 5.870640934497387
+Budget: 50
+Dataset: DBLP
+ratio: 0.9847301552896557 Size Reduction: 0.9984142338370784 Time Ratio: 5.61797355382816
+Budget: 75
+Dataset: DBLP
+ratio: 0.990334684889131 Size Reduction: 0.9984142338370784 Time Ratio: 3.566673464088073
+Budget: 100
+Dataset: DBLP
+ratio: 0.9940887134925871 Size Reduction: 0.9984142338370784 Time Ratio: 3.687625337393928
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    DBLP              17.1021  ...        0.998414        0.947478
+1    DBLP              82.1543  ...        0.998414        0.953661
+2    DBLP             140.2265  ...        0.998414        0.963768
+3    DBLP             224.2197  ...        0.998414        0.983169
+4    DBLP             291.7132  ...        0.998414        0.988764
+5    DBLP             359.7694  ...        0.998414        0.992512
+
+[6 rows x 7 columns]
+Data has been saved to multibudget/Influence Maximization/DBLP/results/DBLP.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 1098104 nodes and 2808367 edges.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+k=2000, obj_val=8386.6373, best_obj_val=8266.1630
+k=5000, obj_val=8365.8573, best_obj_val=8386.6373
+Final k=2000, obj_val=8386.6373
+k=1000, obj_val=8351.9962, best_obj_val=8250.2220
+k=2000, obj_val=8390.9686, best_obj_val=8351.9962
+Final k=1000, obj_val=8351.9962
+Budget: 1
+Dataset: YouTube
+ratio: 0.9985155314086936 Size Reduction: 0.9981786788865171 Time Ratio: 1.4128893542270862
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  YouTube            8370.3354  ...   1534.477816                2000
 
 [1 rows x 12 columns]
-Data has been saved to Influence Maximization/DBLP/results/DBLP.pkl
+Data has been saved to simple_feedback/Influence Maximization/YouTube/results/YouTube.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Dataset: YouTube
+ratio: 0.999932888283695 Size Reduction: 0.9990893394432586 Time Ratio: 0.8925137228414293
+Budget: 10
+Loaded test graph with 1694318 nodes and 10984346 edges.
+Codes for feature extraction: dict_keys(['in_degree', 'out_degree', 'average_outgoing_influence_prob', 'reciprocal_edge_ratio', 'fraction_outgoing_to_high_degree_neighbors'])
+Dataset: YouTube
+ratio: 1.003629744926956 Size Reduction: 0.9990893394432586 Time Ratio: 1.5460794213877498
+Budget: 25
+Dataset: YouTube
+ratio: 0.9976497631007966 Size Reduction: 0.9990893394432586 Time Ratio: 1.241444699664605
+Budget: 50
+Dataset: YouTube
+ratio: 1.0081791219389606 Size Reduction: 0.9990893394432586 Time Ratio: 1.3221482461830132
+Budget: 75
+Initial k=500, obj_val=45845.6034
+Dataset: YouTube
+ratio: 1.0013731685121754 Size Reduction: 0.9990893394432586 Time Ratio: 1.9651546608301724
+Budget: 100
+Dataset: YouTube
+ratio: 0.9995359451451482 Size Reduction: 0.9990893394432586 Time Ratio: 1.47187634608809
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  YouTube            7161.1937  ...        0.999089        0.999022
+1  YouTube            7339.7995  ...        0.999089        1.002716
+2  YouTube            7621.9125  ...        0.999089        0.996741
+3  YouTube            7853.2513  ...        0.999089        1.007261
+4  YouTube            8110.1481  ...        0.999089        1.000461
+5  YouTube            8369.0537  ...        0.999089        0.998626
+
+[6 rows x 7 columns]
+Data has been saved to multibudget/Influence Maximization/YouTube/results/YouTube.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 1694318 nodes and 10984346 edges.
+Codes for feature extraction: dict_keys(['degree', 'avg_incoming_activation_prob'])
+k=1000, obj_val=45951.6425, best_obj_val=45845.6034
+Final k=500, obj_val=45845.6034
+k=1000, obj_val=45901.6728, best_obj_val=45826.2601
+Final k=500, obj_val=45826.2601
+Budget: 1
+Dataset: Skitter
+ratio: 0.9929681410106507 Size Reduction: 0.9997048960112564 Time Ratio: 2.282803491098988
+   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
+0  Skitter           46191.5406  ...   7012.745331                 500
+
+[1 rows x 12 columns]
+Data has been saved to simple_feedback/Influence Maximization/Skitter/results/Skitter.pkl
+Dataset: Skitter
+ratio: 1.0001295240509473 Size Reduction: 0.9997048960112564 Time Ratio: 1.0445213385836294
+Budget: 10
+Dataset: Skitter
+ratio: 0.9947912830595219 Size Reduction: 0.9997048960112564 Time Ratio: 1.2684790648351394
+Budget: 25
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 4002 nodes and 61764 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
 k=1000, obj_val=171.0000, best_obj_val=169.0000
 k=2000, obj_val=171.0000, best_obj_val=171.0000
 Final k=1000, obj_val=171.0000
+Budget: 1
 Dataset: Facebook
-ratio: 0.9771428571428571 Size Reduction: 0.7501249375312344 Time Ratio: 3.4996401857949713
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Facebook                  175  ...      0.010933                1000
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.4589448631495436
+Budget: 10
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.4962751212751213
+Budget: 25
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.7290198086086717
+Budget: 50
+Dataset: Facebook
+ratio: 0.99 Size Reduction: 0.7501249375312344 Time Ratio: 2.869503459751223
+Budget: 75
+Dataset: Facebook
+ratio: 0.9712230215827338 Size Reduction: 0.7501249375312344 Time Ratio: 3.2007114472503524
+Budget: 100
+Dataset: Facebook
+ratio: 0.9771428571428571 Size Reduction: 0.7501249375312344 Time Ratio: 3.367698661196286
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Facebook                    2  ...        0.750125        0.750125
+1  Facebook                   20  ...        0.750125        0.750125
+2  Facebook                   50  ...        0.750125        0.750125
+3  Facebook                  100  ...        0.750125        0.742624
+4  Facebook                  139  ...        0.750125        0.728539
+5  Facebook                  175  ...        0.750125        0.732979
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Facebook/results/Facebook.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Facebook/results/Facebook.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 6358 nodes and 70534 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
 k=1000, obj_val=200.0000, best_obj_val=183.0000
 k=2000, obj_val=200.0000, best_obj_val=200.0000
 Final k=1000, obj_val=200.0000
+Budget: 1
 Dataset: Wiki
-ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 4.949439666406047
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    Wiki                  200  ...      0.015552                1000
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 2.7641244824362228
+Budget: 10
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 3.2513296300673677
+Budget: 25
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 3.939607697543469
+Budget: 50
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 4.425175855596681
+Budget: 75
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 4.696475961241745
+Budget: 100
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 5.062129720758795
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    Wiki                    2  ...        0.842718        0.842718
+1    Wiki                   20  ...        0.842718        0.842718
+2    Wiki                   50  ...        0.842718        0.842718
+3    Wiki                  100  ...        0.842718        0.842718
+4    Wiki                  150  ...        0.842718        0.842718
+5    Wiki                  200  ...        0.842718        0.842718
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Wiki/results/Wiki.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Wiki/results/Wiki.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 53511 nodes and 348742 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
 k=1000, obj_val=200.0000, best_obj_val=200.0000
 Final k=500, obj_val=200.0000
+Budget: 1
 Dataset: Deezer
-ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 44.61113157683992
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Deezer                  200  ...      0.014886                 500
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 4.851605608322026
+Budget: 10
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 8.980459562149449
+Budget: 25
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 18.86171546976389
+Budget: 50
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 31.832885736753862
+Budget: 75
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 41.542122503699396
+Budget: 100
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 48.68763169797999
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Deezer                    2  ...        0.990656        0.990656
+1  Deezer                   20  ...        0.990656        0.990656
+2  Deezer                   50  ...        0.990656        0.990656
+3  Deezer                  100  ...        0.990656        0.990656
+4  Deezer                  150  ...        0.990656        0.990656
+5  Deezer                  200  ...        0.990656        0.990656
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Deezer/results/Deezer.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Deezer/results/Deezer.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 67640 nodes and 327988 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
 k=1000, obj_val=181.0000, best_obj_val=152.0000
 k=2000, obj_val=200.0000, best_obj_val=181.0000
 k=5000, obj_val=200.0000, best_obj_val=200.0000
 Final k=2000, obj_val=200.0000
+Budget: 1
 Dataset: Slashdot
-ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 20.919043871729293
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Slashdot                  200  ...      0.041204                2000
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 4.2175345200465815
+Budget: 10
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 7.8717862796528895
+Budget: 25
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 13.116147210240712
+Budget: 50
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 17.318926538801247
+Budget: 75
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 18.635345938155027
+Budget: 100
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 20.709798714748526
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Slashdot                    2  ...        0.970432        0.970432
+1  Slashdot                   20  ...        0.970432        0.970432
+2  Slashdot                   50  ...        0.970432        0.970432
+3  Slashdot                  100  ...        0.970432        0.970432
+4  Slashdot                  150  ...        0.970432        0.970432
+5  Slashdot                  200  ...        0.970432        0.970432
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Slashdot/results/Slashdot.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Slashdot/results/Slashdot.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 80712 nodes and 1208067 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
 k=1000, obj_val=200.0000, best_obj_val=180.0000
 k=2000, obj_val=200.0000, best_obj_val=200.0000
 Final k=1000, obj_val=200.0000
+Budget: 1
 Dataset: Twitter
-ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 36.503404803533634
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Twitter                  200  ...      0.025909                1000
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 4.58670938280755
+Budget: 10
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 8.269356108789145
+Budget: 25
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 15.654625966091967
+Budget: 50
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 25.439646099197475
+Budget: 75
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 32.00012799525744
+Budget: 100
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 37.709976529222565
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Twitter                    2  ...         0.98761         0.98761
+1  Twitter                   20  ...         0.98761         0.98761
+2  Twitter                   50  ...         0.98761         0.98761
+3  Twitter                  100  ...         0.98761         0.98761
+4  Twitter                  150  ...         0.98761         0.98761
+5  Twitter                  200  ...         0.98761         0.98761
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Twitter/results/Twitter.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Twitter/results/Twitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 315305 nodes and 1007872 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
 k=1000, obj_val=200.0000, best_obj_val=200.0000
 Final k=500, obj_val=200.0000
+Budget: 1
 Dataset: DBLP
-ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 73.26319248785147
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    DBLP                  200  ...      0.054411                 500
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 3.999846579751255
+Budget: 10
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 10.23370406962147
+Budget: 25
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 22.644151774910522
+Budget: 50
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 42.5542637081628
+Budget: 75
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 61.12622882765646
+Budget: 100
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 79.0044318717586
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    DBLP                    2  ...        0.998414        0.998414
+1    DBLP                   20  ...        0.998414        0.998414
+2    DBLP                   50  ...        0.998414        0.998414
+3    DBLP                  100  ...        0.998414        0.998414
+4    DBLP                  150  ...        0.998414        0.998414
+5    DBLP                  200  ...        0.998414        0.998414
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/DBLP/results/DBLP.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/DBLP/results/DBLP.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 1098104 nodes and 2808367 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
 k=1000, obj_val=149.0000, best_obj_val=144.0000
 k=2000, obj_val=200.0000, best_obj_val=149.0000
 k=5000, obj_val=200.0000, best_obj_val=200.0000
 Final k=2000, obj_val=200.0000
+Budget: 1
 Dataset: YouTube
-ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 67.39006818415432
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  YouTube                  200  ...      0.208752                2000
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 4.09357089590124
+Budget: 10
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 10.299649371826392
+Budget: 25
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 21.701053746009165
+Budget: 50
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 34.20289247580201
+Budget: 75
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 42.77802979570893
+Budget: 100
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 65.1449230188851
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  YouTube                    2  ...        0.998179        0.998179
+1  YouTube                   20  ...        0.998179        0.998179
+2  YouTube                   50  ...        0.998179        0.998179
+3  YouTube                  100  ...        0.998179        0.998179
+4  YouTube                  150  ...        0.998179        0.998179
+5  YouTube                  200  ...        0.998179        0.998179
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/YouTube/results/YouTube.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/YouTube/results/YouTube.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 1694318 nodes and 10984346 edges.
 Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
 k=1000, obj_val=200.0000, best_obj_val=200.0000
 Final k=500, obj_val=200.0000
+Budget: 1
 Dataset: Skitter
-ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 69.81930872450438
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Skitter                  200  ...      0.297735                 500
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 3.9659255189808813
+Budget: 10
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 9.260485410300525
+Budget: 25
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 20.65045601957916
+Budget: 50
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 40.943334904788074
+Budget: 75
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 57.81683822705717
+Budget: 100
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 64.68333220694505
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Skitter                    2  ...        0.999705        0.999705
+1  Skitter                   20  ...        0.999705        0.999705
+2  Skitter                   50  ...        0.999705        0.999705
+3  Skitter                  100  ...        0.999705        0.999705
+4  Skitter                  150  ...        0.999705        0.999705
+5  Skitter                  200  ...        0.999705        0.999705
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Coverage Weighted/Skitter/results/Skitter.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Skitter/results/Skitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 4002 nodes and 61764 edges.
 Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
 k=1000, obj_val=98.0000, best_obj_val=96.0000
 k=2000, obj_val=100.0000, best_obj_val=98.0000
 k=5000, obj_val=100.0000, best_obj_val=100.0000
 Final k=2000, obj_val=100.0000
+Budget: 1
 Dataset: Facebook
-ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.8785353179318818
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Facebook                100.0  ...      0.059186                2000
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.174047339488712
+Budget: 10
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.1272158338488913
+Budget: 25
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.3011064244952544
+Budget: 50
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.5297745835155379
+Budget: 75
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.7763168990093532
+Budget: 100
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.982499725622836
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Facebook                  1.0  ...         0.50025         0.50025
+1  Facebook                 10.0  ...         0.50025         0.50025
+2  Facebook                 25.0  ...         0.50025         0.50025
+3  Facebook                 50.0  ...         0.50025         0.50025
+4  Facebook                 75.0  ...         0.50025         0.50025
+5  Facebook                100.0  ...         0.50025         0.50025
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut Weighted/Facebook/results/Facebook.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut Weighted/Facebook/results/Facebook.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 6358 nodes and 70534 edges.
 Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
 k=1000, obj_val=100.0000, best_obj_val=100.0000
 Final k=500, obj_val=100.0000
+Budget: 1
 Dataset: Wiki
-ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 4.358043606364172
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    Wiki                100.0  ...      0.034391                 500
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 1.586002260214108
+Budget: 10
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 1.9344022911089351
+Budget: 25
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 2.315910295892698
+Budget: 50
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 3.078781063758012
+Budget: 75
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 3.1013455675140182
+Budget: 100
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 4.100537833619654
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    Wiki                  1.0  ...        0.921359        0.921359
+1    Wiki                 10.0  ...        0.921359        0.921359
+2    Wiki                 25.0  ...        0.921359        0.921359
+3    Wiki                 50.0  ...        0.921359        0.921359
+4    Wiki                 75.0  ...        0.921359        0.921359
+5    Wiki                100.0  ...        0.921359        0.921359
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut Weighted/Wiki/results/Wiki.pkl
-Loaded test graph with 53511 nodes and 348742 edges.
-Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
-k=1000, obj_val=95.0000, best_obj_val=95.0000
-Final k=500, obj_val=95.0000
-Dataset: Deezer
-ratio: 0.95 Size Reduction: 0.9906561267776719 Time Ratio: 6.750013816320311
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Deezer                100.0  ...      0.301985                 500
-
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut Weighted/Deezer/results/Deezer.pkl
-Loaded test graph with 67640 nodes and 327988 edges.
-Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
-k=1000, obj_val=95.0000, best_obj_val=95.0000
-Final k=500, obj_val=95.0000
-Dataset: Slashdot
-ratio: 0.95 Size Reduction: 0.9926079243051449 Time Ratio: 4.821792963039048
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Slashdot                100.0  ...      0.337732                 500
-
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut Weighted/Slashdot/results/Slashdot.pkl
-Loaded test graph with 315305 nodes and 1007872 edges.
-Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
-k=1000, obj_val=95.0000, best_obj_val=95.0000
-Final k=500, obj_val=95.0000
-Dataset: DBLP
-ratio: 0.95 Size Reduction: 0.9984142338370784 Time Ratio: 3.857708856857596
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    DBLP                100.0  ...      2.718707                 500
-
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut Weighted/DBLP/results/DBLP.pkl
-Loaded test graph with 80712 nodes and 1208067 edges.
-Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
-k=1000, obj_val=95.0000, best_obj_val=95.0000
-Final k=500, obj_val=95.0000
-Dataset: Twitter
-ratio: 0.95 Size Reduction: 0.9938051343046883 Time Ratio: 5.108638008626388
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Twitter                100.0  ...      0.631922                 500
-
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut Weighted/Twitter/results/Twitter.pkl
-Loaded test graph with 1098104 nodes and 2808367 edges.
-Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
-k=1000, obj_val=100.0000, best_obj_val=100.0000
-Final k=500, obj_val=100.0000
-Dataset: YouTube
-ratio: 1.0 Size Reduction: 0.9995446697216293 Time Ratio: 4.212492165176801
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  YouTube                100.0  ...      8.981219                 500
-
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut Weighted/YouTube/results/YouTube.pkl
-Loaded test graph with 1694318 nodes and 10984346 edges.
-Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
-k=1000, obj_val=100.0000, best_obj_val=97.0000
-k=2000, obj_val=100.0000, best_obj_val=100.0000
-Final k=1000, obj_val=100.0000
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut Weighted/Wiki/results/Wiki.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Dataset: Skitter
-ratio: 1.0 Size Reduction: 0.9994097920225129 Time Ratio: 4.305029644633138
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Skitter                100.0  ...     20.005291                1000
+ratio: 0.998612303065267 Size Reduction: 0.9997048960112564 Time Ratio: 1.4509143812942804
+Budget: 50
+Dataset: Skitter
+ratio: 0.9959845884721503 Size Reduction: 0.9997048960112564 Time Ratio: 1.7470319936083791
+Budget: 75
+Dataset: Skitter
+ratio: 0.9918816804071511 Size Reduction: 0.9997048960112564 Time Ratio: 2.1244485446933457
+Budget: 100
+Dataset: Skitter
+ratio: 0.9937932119982013 Size Reduction: 0.9997048960112564 Time Ratio: 2.2196931146114256
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Skitter           44188.7044  ...        0.999705        0.999834
+1  Skitter           45300.5227  ...        0.999705        0.994498
+2  Skitter           45457.3318  ...        0.999705        0.998318
+3  Skitter           45787.3617  ...        0.999705        0.995691
+4  Skitter           46098.6779  ...        0.999705        0.991589
+5  Skitter           46128.4645  ...        0.999705        0.993500
 
-[1 rows x 12 columns]
-Data has been saved to Maximum Cut Weighted/Skitter/results/Skitter.pkl
-/home/grads/a/anath/LLM_Pruning/utils.py:107: SyntaxWarning: invalid escape sequence '\('
-  "The problem is defined over a graph \( G = (V, E) \).\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:108: SyntaxWarning: invalid escape sequence '\('
-  "Given a budget \( k \), the objective is to select a subset of nodes \( S \subseteq V \) such that:\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:123: SyntaxWarning: invalid escape sequence '\('
-  "The problem is defined over an undirected graph \( G = (V, E) \).\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:124: SyntaxWarning: invalid escape sequence '\('
-  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:125: SyntaxWarning: invalid escape sequence '\('
-  "such that the number of edges crossing the cut, i.e., with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:132: SyntaxWarning: invalid escape sequence '\('
-  "The problem is defined over an undirected weighted graph \( G = (V, E, w) \), "
-/home/grads/a/anath/LLM_Pruning/utils.py:133: SyntaxWarning: invalid escape sequence '\('
-  "where each edge \( (u, v) \in E \) has an associated weight \( w_{uv} \in \{ -1, +1 \}. \n"
-/home/grads/a/anath/LLM_Pruning/utils.py:134: SyntaxWarning: invalid escape sequence '\('
-  "The goal is to partition the vertex set \( V \) into two disjoint subsets \( S \) and \( V \\setminus S \)\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:135: SyntaxWarning: invalid escape sequence '\('
-  "such that the total weight of edges crossing the cut, i.e., edges with one endpoint in \( S \) and the other in \( V \\setminus S \),\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:138: SyntaxWarning: invalid escape sequence '\i'
-  "f(S) = \\sum_{(u, v) \in E} w_{uv} \\, \\mathbf{1}[u \in S, v \in V \\setminus S].\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:155: SyntaxWarning: invalid escape sequence '\('
-  "The problem is defined over a directed graph \( G = (V, E) \).\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:156: SyntaxWarning: invalid escape sequence '\('
-  "Given a budget \( k \), the objective is to select a seed set of nodes \( S \subseteq V \), with \( |S| \leq k \),\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:159: SyntaxWarning: invalid escape sequence '\('
-  "with a given probability \( p_{uv} \) on edge \( (u, v) \).\n"
-/home/grads/a/anath/LLM_Pruning/utils.py:162: SyntaxWarning: invalid escape sequence '\m'
-  "f(S) = \mathbb{E}[|\text{Influence}(S)|],\n"
+[6 rows x 7 columns]
+Data has been saved to multibudget/Influence Maximization/Skitter/results/Skitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 4002 nodes and 61764 edges.
-Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
-k=1000, obj_val=106.3042, best_obj_val=104.3721
-k=2000, obj_val=105.8613, best_obj_val=106.3042
-Final k=1000, obj_val=106.3042
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+k=1000, obj_val=171.0000, best_obj_val=169.0000
+k=2000, obj_val=171.0000, best_obj_val=171.0000
+Final k=1000, obj_val=171.0000
+Budget: 1
 Dataset: Facebook
-ratio: 1.0014162809086087 Size Reduction: 0.7501249375312344 Time Ratio: 1.3564202369785805
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Facebook             105.9818  ...      1.741639                1000
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.3505455962587685
+Budget: 10
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.5003825554705434
+Budget: 25
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.7501249375312344 Time Ratio: 2.689564680456931
+Budget: 50
+Dataset: Facebook
+ratio: 0.99 Size Reduction: 0.7501249375312344 Time Ratio: 2.9542281611487833
+Budget: 75
+Dataset: Facebook
+ratio: 0.9712230215827338 Size Reduction: 0.7501249375312344 Time Ratio: 3.262936534190256
+Budget: 100
+Dataset: Facebook
+ratio: 0.9771428571428571 Size Reduction: 0.7501249375312344 Time Ratio: 3.41493675968681
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Facebook                    2  ...        0.750125        0.750125
+1  Facebook                   20  ...        0.750125        0.750125
+2  Facebook                   50  ...        0.750125        0.750125
+3  Facebook                  100  ...        0.750125        0.742624
+4  Facebook                  139  ...        0.750125        0.728539
+5  Facebook                  175  ...        0.750125        0.732979
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization Weighted/Facebook/results/Facebook.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Facebook/results/Facebook.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 6358 nodes and 70534 edges.
-Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
-k=1000, obj_val=109.6236, best_obj_val=107.5516
-k=2000, obj_val=112.6318, best_obj_val=109.6236
-k=5000, obj_val=112.9317, best_obj_val=112.6318
-Final k=2000, obj_val=112.6318
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+k=1000, obj_val=200.0000, best_obj_val=183.0000
+k=2000, obj_val=200.0000, best_obj_val=200.0000
+Final k=1000, obj_val=200.0000
+Budget: 1
 Dataset: Wiki
-ratio: 1.0098277472676707 Size Reduction: 0.6854356715948411 Time Ratio: 1.3882219536124425
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    Wiki             112.2943  ...      1.619183                2000
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 2.6973050384064576
+Budget: 10
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 3.317624273724984
+Budget: 25
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 3.8902142086608107
+Budget: 50
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 4.393565127140633
+Budget: 75
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 4.749446323833629
+Budget: 100
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.8427178357974205 Time Ratio: 5.021977291714133
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    Wiki                    2  ...        0.842718        0.842718
+1    Wiki                   20  ...        0.842718        0.842718
+2    Wiki                   50  ...        0.842718        0.842718
+3    Wiki                  100  ...        0.842718        0.842718
+4    Wiki                  150  ...        0.842718        0.842718
+5    Wiki                  200  ...        0.842718        0.842718
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization Weighted/Wiki/results/Wiki.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Wiki/results/Wiki.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 53511 nodes and 348742 edges.
-Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
-k=1000, obj_val=101.4035, best_obj_val=97.4525
-k=2000, obj_val=101.3727, best_obj_val=101.4035
-Final k=1000, obj_val=101.4035
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+k=1000, obj_val=200.0000, best_obj_val=200.0000
+Final k=500, obj_val=200.0000
+Budget: 1
 Dataset: Deezer
-ratio: 0.9922989713806173 Size Reduction: 0.9813122535553438 Time Ratio: 71.5013953618452
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Deezer              99.1426  ...      1.670889                1000
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 7.035370975268315
+Budget: 10
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 9.157170371559264
+Budget: 25
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 18.626557556690646
+Budget: 50
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 35.62259222984002
+Budget: 75
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 25.407435963918722
+Budget: 100
+Dataset: Deezer
+ratio: 1.0 Size Reduction: 0.9906561267776719 Time Ratio: 32.635687577320304
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Deezer                    2  ...        0.990656        0.990656
+1  Deezer                   20  ...        0.990656        0.990656
+2  Deezer                   50  ...        0.990656        0.990656
+3  Deezer                  100  ...        0.990656        0.990656
+4  Deezer                  150  ...        0.990656        0.990656
+5  Deezer                  200  ...        0.990656        0.990656
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization Weighted/Deezer/results/Deezer.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Deezer/results/Deezer.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 67640 nodes and 327988 edges.
-Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
-k=1000, obj_val=114.5508, best_obj_val=106.4077
-k=2000, obj_val=112.5559, best_obj_val=114.5508
-Final k=1000, obj_val=114.5508
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+k=1000, obj_val=181.0000, best_obj_val=152.0000
+k=2000, obj_val=200.0000, best_obj_val=181.0000
+k=5000, obj_val=200.0000, best_obj_val=200.0000
+Final k=2000, obj_val=200.0000
+Budget: 1
 Dataset: Slashdot
-ratio: 1.0066556701328608 Size Reduction: 0.9852158486102898 Time Ratio: 1.6122206862316435
-    Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Slashdot             110.8228  ...      2.320732                1000
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 4.085911602209944
+Budget: 10
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 8.043133719274936
+Budget: 25
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 12.884213824229235
+Budget: 50
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 17.125781808950126
+Budget: 75
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 19.0894612024482
+Budget: 100
+Dataset: Slashdot
+ratio: 1.0 Size Reduction: 0.9704316972205795 Time Ratio: 20.788211305495107
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Slashdot                    2  ...        0.970432        0.970432
+1  Slashdot                   20  ...        0.970432        0.970432
+2  Slashdot                   50  ...        0.970432        0.970432
+3  Slashdot                  100  ...        0.970432        0.970432
+4  Slashdot                  150  ...        0.970432        0.970432
+5  Slashdot                  200  ...        0.970432        0.970432
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization Weighted/Slashdot/results/Slashdot.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Slashdot/results/Slashdot.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 80712 nodes and 1208067 edges.
-Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
-k=1000, obj_val=2138.4975, best_obj_val=2097.0665
-k=2000, obj_val=2180.0480, best_obj_val=2138.4975
-k=5000, obj_val=2219.8248, best_obj_val=2180.0480
-Final k=5000, obj_val=2219.8248
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+k=1000, obj_val=200.0000, best_obj_val=180.0000
+k=2000, obj_val=200.0000, best_obj_val=200.0000
+Final k=1000, obj_val=200.0000
+Budget: 1
 Dataset: Twitter
-ratio: 1.0005174488397814 Size Reduction: 0.9380513430468828 Time Ratio: 3.462443855946487
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Twitter            2262.8324  ...    209.215246                5000
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 5.33460243497038
+Budget: 10
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 8.18708160805699
+Budget: 25
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 15.496043877913769
+Budget: 50
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 25.50751596076936
+Budget: 75
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 31.981657971626248
+Budget: 100
+Dataset: Twitter
+ratio: 1.0 Size Reduction: 0.9876102686093765 Time Ratio: 36.63209320014765
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Twitter                    2  ...         0.98761         0.98761
+1  Twitter                   20  ...         0.98761         0.98761
+2  Twitter                   50  ...         0.98761         0.98761
+3  Twitter                  100  ...         0.98761         0.98761
+4  Twitter                  150  ...         0.98761         0.98761
+5  Twitter                  200  ...         0.98761         0.98761
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization Weighted/Twitter/results/Twitter.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Twitter/results/Twitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 315305 nodes and 1007872 edges.
-Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
-k=1000, obj_val=84.8471, best_obj_val=55.0535
-k=2000, obj_val=95.7705, best_obj_val=84.8471
-k=5000, obj_val=91.3387, best_obj_val=95.7705
-Final k=2000, obj_val=95.7705
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+k=1000, obj_val=200.0000, best_obj_val=200.0000
+Final k=500, obj_val=200.0000
+Budget: 1
 Dataset: DBLP
-ratio: 0.9645770055651446 Size Reduction: 0.9936569353483136 Time Ratio: 1.3295427056570075
-  Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0    DBLP             101.2732  ...      3.844822                2000
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 4.081073179806785
+Budget: 10
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 10.20171321595486
+Budget: 25
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 22.195368436989423
+Budget: 50
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 41.73412380949484
+Budget: 75
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 59.189059853803286
+Budget: 100
+Dataset: DBLP
+ratio: 1.0 Size Reduction: 0.9984142338370784 Time Ratio: 76.05970466852206
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    DBLP                    2  ...        0.998414        0.998414
+1    DBLP                   20  ...        0.998414        0.998414
+2    DBLP                   50  ...        0.998414        0.998414
+3    DBLP                  100  ...        0.998414        0.998414
+4    DBLP                  150  ...        0.998414        0.998414
+5    DBLP                  200  ...        0.998414        0.998414
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization Weighted/DBLP/results/DBLP.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/DBLP/results/DBLP.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 1098104 nodes and 2808367 edges.
-Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
-k=1000, obj_val=3533.8513, best_obj_val=3446.1416
-k=2000, obj_val=3745.5155, best_obj_val=3533.8513
-k=5000, obj_val=3974.4899, best_obj_val=3745.5155
-Final k=5000, obj_val=3974.4899
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+k=1000, obj_val=149.0000, best_obj_val=144.0000
+k=2000, obj_val=200.0000, best_obj_val=149.0000
+k=5000, obj_val=200.0000, best_obj_val=200.0000
+Final k=2000, obj_val=200.0000
+Budget: 1
 Dataset: YouTube
-ratio: 1.0400463323883793 Size Reduction: 0.9954466972162929 Time Ratio: 1.5492759429511538
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  YouTube            3842.4093  ...    470.578736                5000
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 4.047046325949474
+Budget: 10
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 10.65972589225945
+Budget: 25
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 22.073352943156415
+Budget: 50
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 38.182541367936004
+Budget: 75
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 54.417432828127346
+Budget: 100
+Dataset: YouTube
+ratio: 1.0 Size Reduction: 0.9981786788865171 Time Ratio: 64.9615765920605
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  YouTube                    2  ...        0.998179        0.998179
+1  YouTube                   20  ...        0.998179        0.998179
+2  YouTube                   50  ...        0.998179        0.998179
+3  YouTube                  100  ...        0.998179        0.998179
+4  YouTube                  150  ...        0.998179        0.998179
+5  YouTube                  200  ...        0.998179        0.998179
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization Weighted/YouTube/results/YouTube.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/YouTube/results/YouTube.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
 Loaded test graph with 1694318 nodes and 10984346 edges.
-Codes for feature extraction: dict_keys(['degree_to_weight_ratio', 'outgoing_activation_probability_sum', 'in_out_degree_diff'])
-k=1000, obj_val=26779.0130, best_obj_val=27327.1429
-Final k=500, obj_val=27327.1429
+Codes for feature extraction: dict_keys(['degree', 'closed_neighborhood_size', 'degree_to_weight_ratio', 'coverage_per_cost', 'average_neighbor_degree'])
+k=1000, obj_val=200.0000, best_obj_val=200.0000
+Final k=500, obj_val=200.0000
+Budget: 1
 Dataset: Skitter
-ratio: 1.0345346637180122 Size Reduction: 0.9997048960112564 Time Ratio: 59.16195742833605
-   Dataset  Obj Value(Unpruned)  ...  Time(Pruned)  Num Selected Nodes
-0  Skitter           26451.6576  ...   4119.122049                 500
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 4.082632480459466
+Budget: 10
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 9.442790860544516
+Budget: 25
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 21.635944404726388
+Budget: 50
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 41.75670971837804
+Budget: 75
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 60.012622748081824
+Budget: 100
+Dataset: Skitter
+ratio: 1.0 Size Reduction: 0.9997048960112564 Time Ratio: 52.87988127317373
+   Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Skitter                    2  ...        0.999705        0.999705
+1  Skitter                   20  ...        0.999705        0.999705
+2  Skitter                   50  ...        0.999705        0.999705
+3  Skitter                  100  ...        0.999705        0.999705
+4  Skitter                  150  ...        0.999705        0.999705
+5  Skitter                  200  ...        0.999705        0.999705
 
-[1 rows x 12 columns]
-Data has been saved to Influence Maximization Weighted/Skitter/results/Skitter.pkl
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Coverage Weighted/Skitter/results/Skitter.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 4002 nodes and 61764 edges.
+Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
+k=1000, obj_val=98.0000, best_obj_val=96.0000
+k=2000, obj_val=100.0000, best_obj_val=98.0000
+k=5000, obj_val=100.0000, best_obj_val=100.0000
+Final k=2000, obj_val=100.0000
+Budget: 1
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.1816124412257472
+Budget: 10
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.212369113675983
+Budget: 25
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.205867959615428
+Budget: 50
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.5109003976817637
+Budget: 75
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.75951784942345
+Budget: 100
+Dataset: Facebook
+ratio: 1.0 Size Reduction: 0.5002498750624688 Time Ratio: 1.9690550349698959
+    Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0  Facebook                  1.0  ...         0.50025         0.50025
+1  Facebook                 10.0  ...         0.50025         0.50025
+2  Facebook                 25.0  ...         0.50025         0.50025
+3  Facebook                 50.0  ...         0.50025         0.50025
+4  Facebook                 75.0  ...         0.50025         0.50025
+5  Facebook                100.0  ...         0.50025         0.50025
+
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut Weighted/Facebook/results/Facebook.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Loaded test graph with 6358 nodes and 70534 edges.
+Codes for feature extraction: dict_keys(['degree', 'weight', 'degree_to_weight_ratio', 'normalized_degree', 'neighbor_weight_sum', 'clustering_coefficient'])
+k=1000, obj_val=100.0000, best_obj_val=100.0000
+Final k=500, obj_val=100.0000
+Budget: 1
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 1.844387205182487
+Budget: 10
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 1.9601656533417247
+Budget: 25
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 2.0466366772678026
+Budget: 50
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 3.0564657011978262
+Budget: 75
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 3.653551843968798
+Budget: 100
+Dataset: Wiki
+ratio: 1.0 Size Reduction: 0.9213589178987103 Time Ratio: 4.208053767533817
+  Dataset  Obj Value(Unpruned)  ...  Size Reduction  CombinedMetric
+0    Wiki                  1.0  ...        0.921359        0.921359
+1    Wiki                 10.0  ...        0.921359        0.921359
+2    Wiki                 25.0  ...        0.921359        0.921359
+3    Wiki                 50.0  ...        0.921359        0.921359
+4    Wiki                 75.0  ...        0.921359        0.921359
+5    Wiki                100.0  ...        0.921359        0.921359
+
+[6 rows x 7 columns]
+Data has been saved to multibudget/Maximum Cut Weighted/Wiki/results/Wiki.pkl
+/home/anath/anaconda3/envs/llm/lib/python3.13/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(

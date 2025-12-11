@@ -54,53 +54,6 @@ def save_as_pickle(obj, filename):
 
 
 
-# client = None
-# def get_response(client, prompt):
-
-#     url = 'http://127.0.0.1:11015/completions'
-
-#     data = {
-#         'prompt': prompt,
-#         'repeat_prompt': 20,
-#         'system_prompt': '',
-#         'stream': False,
-#         'params': {
-#             'temperature': None,
-#             'top_k': None,
-#             'top_p': None,
-#             'add_special_tokens': False,
-#             'skip_special_tokens': True,
-#         }
-#     }
-
-#     headers = {'Content-Type': 'application/json'}
-
-#     response = requests.post(url, data=json.dumps(data), headers=headers)
-
-#     print(f'time: {time.time()}s')
-
-#     if response.status_code == 200:
-        
-#         # print(f'Response: {response.json()}')
-#         content = response.json()["content"]
-
-        
-#     else:
-#         print('Failed to make the POST request.')
-
-    
-
-#     # print(f'Query time: {durations}')
-
-#     return content
-
-# if __name__ == "__main__":
-#     response = get_response(client, prompt="What is the capital of France?")
-    # print(f"Response: {response}")
-
-# response = get_response(client, prompt = "What is the capital of France?")
-
-
 
 problem_definitions = {
     "Maximum Coverage": (
@@ -191,10 +144,10 @@ def load_from_pickle(file_path):
     """
     with open(file_path, 'rb') as file:
         loaded_data = pickle.load(file)
-    # print(f'Data has been loaded from {file_path}')
+    
     return loaded_data
 
-client = OpenAI(api_key = load_from_pickle('../key.pkl'))
+# client = OpenAI(api_key = load_from_pickle('../key.pkl'))
 
 def get_response(client,prompt):
 
@@ -245,6 +198,7 @@ def generate_llm_prompt(
         problem_definition,
         # heuristic_description,
         explainer_feedback=None,
+        add_feedback=True,
     ):
 
     few_shot_examples = ""
@@ -257,7 +211,7 @@ def generate_llm_prompt(
         # f"Heuristic:\n{heuristic_description}\n\n"
     )
 
-    if explainer_feedback:
+    if add_feedback and explainer_feedback:
         base_prompt += (
             f"Feedback from previous iterations:\n{explainer_feedback}\n\n"
             "Refinement rules:\n"
@@ -600,9 +554,8 @@ def train_test_evaluate_gnn(
                             val_graph,
                             codes,
                             heuristic,
-                            budget=100,
-
-
+                            budget,
+                            feature_importance 
                            ):
 
 
@@ -714,54 +667,79 @@ def train_test_evaluate_gnn(
     ratio = obj_val_pruned / obj_val
     size_reduction = 1 - len(indices) / val_graph.number_of_nodes()
 
-    print('Explaining GNN predictions')
 
-    explainer = Explainer(
-        model=model,
-        algorithm = GNNExplainer(epochs=300),
-        explanation_type='phenomenon',
-        node_mask_type='attributes',
-        model_config=dict(
-            mode='multiclass_classification',
-            task_level='node',
-            return_type='raw',
-        ),
-    )
+    if feature_importance:
+        print('Explaining GNN predictions')
 
-    # Randomly select 100 nodes from indices
-    sampled_indices = random.sample(indices.tolist(), min(100, len(indices)))
-
-
-    feature_importances = []
-
-    for node_index in sampled_indices:
-        explanation = explainer(
-            val_data.x, 
-            val_data.edge_index, 
-            target=val_data.y,
-            index=int(node_index)
-        )
-        feature_importances.append(
-            explanation.node_mask.sum(dim=0).cpu().detach()
+        explainer = Explainer(
+            model=model,
+            algorithm = GNNExplainer(epochs=300),
+            explanation_type='phenomenon',
+            node_mask_type='attributes',
+            model_config=dict(
+                mode='multiclass_classification',
+                task_level='node',
+                return_type='raw',
+            ),
         )
 
-    # Aggregate by mean
-    feature_importances = torch.stack(feature_importances)
-    mean_importance = feature_importances.mean(dim=0)
-                                               
-    # Normalize mean_importance
-    mean_importance = mean_importance / mean_importance.sum()
+        # Randomly select 100 nodes from indices
+        sampled_indices = random.sample(indices.tolist(), min(100, len(indices)))
+
+
+        feature_importances = []
+
+        for node_index in sampled_indices:
+            explanation = explainer(
+                val_data.x, 
+                val_data.edge_index, 
+                target=val_data.y,
+                index=int(node_index)
+            )
+            feature_importances.append(
+                explanation.node_mask.sum(dim=0).cpu().detach()
+            )
+
+        # Aggregate by mean
+        feature_importances = torch.stack(feature_importances)
+        mean_importance = feature_importances.mean(dim=0)
+                                                
+        # Normalize mean_importance
+        mean_importance = mean_importance / mean_importance.sum()
 
     # Create same-line feedback
-    explainer_feedback = ", ".join(
-        f"{feature}: {importance:.4f}" 
-        for feature, importance in zip(codes, mean_importance.tolist())
+
+    score = ratio * size_reduction
+
+    if feature_importance:
+        explainer_feedback = ", ".join(
+            f"{feature}: {importance:.4f}"
+            for feature, importance in zip(codes, mean_importance.tolist())
+        )
+    else:
+        explainer_feedback = ""
+
+    summary_feedback = (
+        f"score={score:.4f} (Higher the better), {explainer_feedback}" 
+        if explainer_feedback 
+        else f"score={score:.4f}"
     )
 
-    # print(explainer_feedback)
+    return model, ratio, size_reduction, summary_feedback
+
+    # score = ratio * size_reduction
+
+    # if feature_importance:
+    #     explainer_feedback = ", ".join(
+    #         f"{feature}: {importance:.4f}" 
+    #         for feature, importance in zip(codes, mean_importance.tolist())
+    #     )
+
+    # else:
+    #     explainer_feedback = ''
 
 
-    return model,ratio,size_reduction, explainer_feedback
+    # return model,ratio,size_reduction, explainer_feedback
 
 
 
