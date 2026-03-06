@@ -28,10 +28,10 @@ import time
 import pandas as pd
 
 import random
-from openai import OpenAI
+# from openai import OpenAI
 import argparse
 
-from key import *
+# from key import *
 
 import time
 
@@ -194,7 +194,7 @@ def load_from_pickle(file_path):
     # print(f'Data has been loaded from {file_path}')
     return loaded_data
 
-client = OpenAI(api_key = load_from_pickle('../key.pkl'))
+# # client = OpenAI(api_key = load_from_pickle('../key.pkl'))
 
 def get_response(client,prompt):
 
