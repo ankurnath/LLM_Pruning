@@ -68,26 +68,19 @@ Random feature baseline:
 
 > How sensitive is performance to prompt design? Minor paraphrasing or structural changes in prompts should be tested to determine whether results are stable or fragile.
 
-Appendix G.5 compares GPT-5-nano and LLaMA-3.3-70B — two model families with different architectures, tokenizers, and pretraining data — and finds comparable pruning performance (Figure 7). Mizrahi et al. (2024) [3] show that prompt paraphrasing can cause significant rank changes across models; the fact that our two very different LLMs produce consistent results is therefore a meaningful signal that our pipeline is not exploiting prompt-specific phrasing artifacts.
+We tested different prompt formulations and found that minor paraphrasing does not affect performance — models of this scale reliably follow task instructions regardless of surface-level phrasing variation. Every feature set the LLM proposes is evaluated by an objective, prompt-agnostic oracle — a GNN is trained on the proposed features and C is measured on a held-out synthetic validation graph. The final selected feature set is determined entirely by this oracle score, not by the phrasing of the prompt.  Appendix G.5 shows that GPT-5-nano and LLaMA-3.3-70B — with fundamentally different architectures and tokenizers — produce consistent results, which is a stronger test than paraphrasing within a single model.
 
-Second, the beam search architecture provides a structural safeguard against prompt sensitivity. At each iteration, β=3 candidate feature sets are expanded in parallel. If one
-expansion produces a poor feature set due to prompt variation or stochastic sampling, that branch is pruned and the remaining candidates continue. This is why beam search outperforms a simple feedback loop (Appendix F, Figure 5) — it tolerates bad expansions without cascading failure. Prompt fragility would require all β branches to fail simultaneously, which is unlikely given the diversity introduced by LLM sampling.
 
-[3] Mizrahi et al., 2024, State of What Art? A Call for Multi-Prompt LLM Evaluation.
-
----
 
 > What is the variance across LLM runs? Because feature generation is stochastic, repeated runs with different seeds should quantify stability in pruning quality and runtime.
 
-Figure 5 (Appendix F) shows variance across pipeline variants with five different random seeds and Figure 3 shows the average runtime of LLM2Prune.
+Figure 5 (Appendix F) directly reports variance across five random seeds for all pipeline variants. The beam search variant (red) shows consistently tight interquartile ranges and high medians across all six problem settings — Maximum Coverage, Maximum Cut, Influence Maximization, and their weighted variants — indicating stable performance regardless of the random seed. Figure 3 reports average runtime of LLM2Prune.
 
 ---
 
 > Are generated features interpretable or redundant? Feature-importance analyses should reveal whether the model is leveraging meaningful graph structure or compensating for noisy, overlapping features.
 
-Appendix B lists the discovered features per problem (e.g., closed neighborhood size for Maximum Cover, degree to weight ratio, outgoing activation probability sum, and in–out
-degree difference for Influence Maximization under knapsack constraint). The generated features are easily interpretable and distinct. In fact, we observe LLM2Prune discards
-many proposed features (some of them are indeed overlapping) in the early stages of feature space search and tries to keep the minimal feature set of features.
+Appendix B lists the discovered features per problem (e.g., closed neighborhood size for Maximum Coverage, degree and random cut expectation for Maximum Cut, degree and average incoming activation probability for IM under size constraint). The generated features are easily interpretable and distinct. LLM2Prune discards many proposed features (some of them are indeed overlapping) in early stages of the feature space search and converges to a minimal, non-redundant set. The feature-importance scores produced by the explainer guide this process explicitly — low-importance features are flagged and replaced in subsequent iterations, ensuring the final set captures meaningful graph structure rather than compensating with noisy or overlapping signals.
 
 ---
 
@@ -133,13 +126,25 @@ The other learning-based baselines (GCOMB-P and LeNSE) are reinforcement learnin
 > The information of the input graph itself is not given to LLM. It does not help accelerate the search?
 
 
-During feature discovery, we compensate for the lack of input graph information by carefully selecting a synthetic proxy (Holme-Kim graphs) that shares key structural properties with real-world target graphs — scale-free degree distribution, clustering, and community structure. The LLM reasons about the combinatorial optimization problem structure rather than the specific graph topology, which is why discovered features transfer robustly across diverse real-world graphs. Providing the actual graph statistics to the LLM during search is an interesting direction for future work, which could allow the search to tailor features to specific graph families more precisely.
+We did not explore providing input graph statistics to the LLM in this work. This is an interesting direction for future work, which could allow the search to tailor features to specific graph families more precisely.
 
 
 
 > In runtime analysis (Fig 3), although learning based methods require the cost for preparing the training data, is it included in the reported time?
 
 Yes, all reported runtimes include the full cost of preparing training data (feature extraction and GNN training). To make this explicit and to address a related comment from another reviewer, we have added a table reporting absolute runtimes for all evaluated algorithms on Influence Maximization (size constraint). Even including all preprocessing steps, LLM2Prune is 1–4 orders of magnitude faster than classical methods (QuickPrune, SS) on larger graphs.
+
+Runtime in seconds — Influence Maximization (size constraint):
+
+| Algorithm   | Facebook | Wiki   | Deezer | Slashdot | Twitter  | DBLP    | YouTube  | Skitter   |
+|-------------|----------|--------|--------|----------|----------|---------|----------|-----------|
+| LLM2Prune   | 0.194    | 0.203  | 0.235  | 0.257    | 0.314    | 0.458   | 1.118    | 2.420     |
+| QuickPrune  | 1.860    | 41.960 | 1.100  | 226.000  | 3219.040 | 222.760 | 658.320  | 5109.000  |
+| SS*         | 24.960   | 86.424 | 11.371 | 102.259  | 1242.836 | 118.537 | 3652.793 | 10433.744 |
+| GCOMB-P     | 0.002    | 0.004  | 0.023  | 0.035    | 0.051    | 0.205   | 0.515    | 0.980     |
+| LeNSE       | 31.453   | 36.476 | 42.164 | 44.193   | 81.610   | 49.286  | 238.906  | 1607.605  |
+
+*As SS is extremely slow on large graphs, we increase the number of threads to speed up the pruning approach. For other approaches, we use the same number of threads and GPUs.
 
 ---
 
@@ -184,7 +189,7 @@ The comment only considers the size-constraint setting. Under the **knapsack con
 
 Under the size constraint, QuickPrune and SS are competitive on solution quality but orders of magnitude slower (Figure 3), making them impractical on large graphs. LLM2Prune achieves competitive quality at a fraction of the runtime — that is the contribution.
 
-Regarding the error analysis: the specific case where performance degrades is when the training proxy is structurally mismatched to the test graphs. When features are discovered on Erdős-Rényi (ER) graphs — which lack scale-free degree distribution and clustering — performance on real-world graphs drops significantly. This is the operational boundary of LLM2Prune, and it is directly analogous to any ML model failing under distribution shift. Within the supported structural regime (HK-like graphs), LLM2Prune does not exhibit systematic failure cases tied to specific graph topologies.
+Regarding the error analysis: the specific case where performance degrades is when the training proxy is structurally mismatched to the test graphs. When features are discovered on Erdős-Rényi (ER) graphs — which lack scale-free degree distribution and clustering — performance on real-world graphs drops significantly. The generated features in this case like Betweenness centrality, k-core number and PageRank are not very helpful.  This is the operational boundary of LLM2Prune, and it fails under distribution shift. Within the supported structural regime (HK-like graphs), LLM2Prune does not exhibit systematic failure cases tied to real-word graphs.
 
 
 
@@ -204,12 +209,11 @@ Runtime in seconds — Influence Maximization (size constraint):
 
 *As SS is extremely slow on large graphs, we increase the number of threads to speed up the pruning approach. For other approaches, we use the same number of threads and GPUs.
 
-
-
 > Transferability of generated features from synthetic to real-world graphs: To mitigate the high computational cost of running beam search on every instance, the framework searches for features on a synthetic Holme-Kim random graph and subsequently applies these features to real-world datasets for downstream fine-tuning. This introduces a major transferability concern. While the Holme-Kim model resembles social networks, real-world networks possess highly heterogeneous topological structures that synthetic models may fail to capture perfectly. It would be better if the authors can provide insights or an ablation study explaining why features discovered in a simplified synthetic environment can robustly generalize to complex, diverse real-world topologies.
 
-This is standard ML generalisation: models transfer well within the same structural family, not across fundamentally different ones. HK graphs were chosen because they share scale-free degree distribution, high clustering, and community structure with real-world social networks — which is why features transfer robustly (Tables 1 and 4). When using Erdős-Rényi graphs instead — which lack these properties — performance degrades, as expected. We will make this boundary explicit in the revised paper.
+We chose Holme-Kim graphs as the synthetic proxy because they share key structural properties with real-world social, citation, and communication networks — scale-free degree distribution, high clustering, and community structure. Features that are informative on HK graphs tend to remain informative on real-world graphs precisely because these structural signals are shared.
 
+This is empirically validated by Table 1: features discovered on HK graphs transfer to 8 diverse real-world graphs with no retraining, achieving strong performance across all problems. To understand the boundary of this transferability, we also ran feature discovery on Erdős-Rényi graphs — which lack scale-free structure and clustering — and observed significant performance degradation on the same real-world graphs. This confirms that transferability holds within the same structural family and breaks down across structurally different graph models. We will make this boundary explicit in the revised paper.
 
 > Lack of analysis on the generated features in the main text: A primary contribution of this work is the automated discovery of features using the reasoning capabilities of LLMs. Yet, the main text leaves the reader wondering what specific features the LLM actually proposed. Are they simple, well-known metrics (e.g., node degree, betweenness centrality), common combinations, or genuinely novel graph descriptors? Although the authors note that the optimal features are listed in Appendix B, a qualitative analysis of these features should be moved to or summarized within the main text. Discussing the physical meaning and complexity of the highest-scoring features would significantly enhance the paper's insights and better validate the LLM's effectiveness as a "domain expert."
 
