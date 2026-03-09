@@ -132,7 +132,7 @@ We did not explore providing input graph statistics to the LLM in this work. Thi
 
 > In runtime analysis (Fig 3), although learning based methods require the cost for preparing the training data, is it included in the reported time?
 
-Yes, all reported runtimes include the full cost of preparing training data (feature extraction and GNN training). To make this explicit and to address a related comment from another reviewer, we have added a table reporting absolute runtimes for all evaluated algorithms on Influence Maximization (size constraint). Even including all preprocessing steps, LLM2Prune is 1–4 orders of magnitude faster than classical methods (QuickPrune, SS) on larger graphs.
+All reported runtimes report the inference time. We have added a table reporting absolute runtimes for all evaluated algorithms on Influence Maximization (size constraint). LLM2Prune is 1–4 orders of magnitude faster than classical methods (QuickPrune, SS) on larger graphs.
 
 Runtime in seconds — Influence Maximization (size constraint):
 
