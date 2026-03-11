@@ -107,6 +107,7 @@ def evaluate(graph, budget, model_data, model, device):
         "Time Full":      time_full,
         "Time Pruned":    time_pruned,
         "Time Ratio":     time_full / time_pruned if time_pruned > 0 else 0,
+        "Inference Time": feat_time + select_time,
         "Obj Full":       obj_full,
         "Obj Pruned":     obj_pruned,
         "Best K":         best_k,
@@ -181,7 +182,7 @@ def main():
             res = evaluate(graph_hk, budget=k, model_data=model_data, model=model, device=device)
             res.update(n=N, budget=k, budget_ratio=k/N)
             all_budget.append(res)
-            print(f"C={res['C']:.4f}  P_r={res['Ratio']:.4f}  P_g={res['Size Reduction']:.4f}")
+            print(f"C={res['C']:.4f}  P_r={res['Ratio']:.4f}  P_g={res['Size Reduction']:.4f}  inference={res['Inference Time']*1000:.2f}ms")
 
         # ------------------------------------------------------------------
         # Experiment 2: Graph density (HK parameter m)
@@ -195,7 +196,7 @@ def main():
             res = evaluate(G, budget=BUDGET_FIX, model_data=model_data, model=model, device=device)
             res.update(n=N, m=m, avg_degree=avg_deg)
             all_density.append(res)
-            print(f"C={res['C']:.4f}  P_r={res['Ratio']:.4f}  P_g={res['Size Reduction']:.4f}")
+            print(f"C={res['C']:.4f}  P_r={res['Ratio']:.4f}  P_g={res['Size Reduction']:.4f}  inference={res['Inference Time']*1000:.2f}ms")
 
     # ------------------------------------------------------------------
     # Save & plot — one curve per n value
