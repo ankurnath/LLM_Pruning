@@ -33,6 +33,7 @@ To provide additional context, we report the fine-tuning time per dataset for Ma
 | Skitter  | 147,604 | 110,952 | 21.9              |
 | YouTube  | 185,193 | 179,257 | 30.5              |
 
+Even when accounting for the fine-tuning time, LLM2Prune remains orders of magnitude faster than both classical and learning-based baselines (see Appendix G.3 for runtime details).
 ---
 
 > Explanations of the classifier should have been provided in more detail in the main methodology section. Because it does not appear until the experimental section, it is difficult for readers without prior background knowledge to understand the role of the classifier in the methods section.
@@ -43,7 +44,7 @@ We have revised the methodology section to include a self-contained description 
 
 > Providing algorithm of the entire procedure would help readers.
 
-We have added a formal algorithm box covering the complete pipeline in the revised methodology section (see Algorithm 1, Section 3, LLM2Prune).
+We have added a formal algorithm covering the complete pipeline in the revised methodology section (see Algorithm 1, Section 3, LLM2Prune).
 
 ---
 

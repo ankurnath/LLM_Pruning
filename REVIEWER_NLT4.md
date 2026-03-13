@@ -70,7 +70,7 @@ Figure 5 (Appendix F) directly reports variance across five random seeds for all
 
 > Are generated features interpretable or redundant? Feature-importance analyses should reveal whether the model is leveraging meaningful graph structure or compensating for noisy, overlapping features.
 
-Appendix B lists the discovered features per problem (e.g., closed neighborhood size for Maximum Coverage, degree and random cut expectation for Maximum Cut, degree and average incoming activation probability for IM under size constraint). The generated features are easily interpretable and distinct. LLM2Prune discards many proposed features during the search, some of which are indeed overlapping, and converges to a minimal, non-redundant set. The feature-importance scores produced by the explainer guide this process explicitly: low-importance features are flagged and replaced in subsequent iterations.
+Appendix B lists the discovered features per problem (e.g., closed neighborhood size for Maximum Coverage, degree and random cut expectation for Maximum Cut, degree and average incoming activation probability for IM under size constraint). The generated features are easily interpretable and distinct. LLM2Prune discards many proposed features during the search, some of which are indeed overlapping, and converges to a non-redundant set. The feature-importance scores produced by the explainer guide this process explicitly: low-importance features are flagged and replaced in subsequent iterations.
 
 ---
 
