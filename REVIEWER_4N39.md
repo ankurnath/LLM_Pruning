@@ -37,13 +37,13 @@ To provide additional context, we report the fine-tuning time per dataset for Ma
 
 > Explanations of the classifier should have been provided in more detail in the main methodology section. Because it does not appear until the experimental section, it is difficult for readers without prior background knowledge to understand the role of the classifier in the methods section.
 
-We agree and will revise the methodology section to include a self-contained description of the classifier.
+We have revised the methodology section to include a self-contained description of the classifier (see Section 3, LLM2Prune).
 
 ---
 
 > Providing algorithm of the entire procedure would help readers.
 
-We agree and will add a formal algorithm box covering the complete pipeline in the revised methodology section.
+We have added a formal algorithm box covering the complete pipeline in the revised methodology section (see Algorithm 1, Section 3, LLM2Prune).
 
 ---
 
@@ -51,7 +51,7 @@ We agree and will add a formal algorithm box covering the complete pipeline in t
 
 During beam search, both the GNN classifier and the metric M are evaluated entirely on synthetic HK graphs. This is intentional: the purpose of beam search is to discover which feature set best characterizes high-value nodes in a structural family resembling real-world graphs, without using any target graph data.
 
-After beam search completes and the best feature set is selected, the classifier is fine-tuned on the actual training graph for a few epochs. The fine-tuned classifier will indeed have a different M value from the one computed during search, since it is now evaluated on a different graph. However, this is not problematic, as the beam search score serves only as a selection criterion among candidate feature sets, not as a prediction of final performance. The fine-tuning step adapts the classifier to the specific graph structure of the deployment domain, and the final performance is what is reported in Tables 1 and 3. We will clarify this two-stage process explicitly in the revised paper.
+After beam search completes and the best feature set is selected, the classifier is fine-tuned on the actual training graph for a few epochs. The fine-tuned classifier will indeed have a different M value from the one computed during search, since it is now evaluated on a different graph. However, this is not problematic, as the beam search score serves only as a selection criterion among candidate feature sets, not as a prediction of final performance. The fine-tuning step adapts the classifier to the specific graph structure of the deployment domain, and the final performance is what is reported in Tables 1 and 3. We have clarified this two-stage process in the revised paper (see Section 3, LLM2Prune).
 
 ---
 
@@ -63,7 +63,7 @@ H_{d,i} is the full ordered path from the root to node (d,i) in the beam search 
 
 > The definitions of metric M should be clarified in the paper. According to the code, C on a validation graph is seemingly used, but not mentioned in the paper.
 
-We will add an explicit definition of metric M and clarification to the paper.
+We have added an explicit definition of metric M and clarification in the revised paper (see Section 3, LLM2Prune).
 
 ---
 
