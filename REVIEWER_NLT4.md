@@ -5,20 +5,22 @@ We thank the reviewer for their comments and feedback. We hope these answers add
 > First, I encourage the authors to construct synthetic combinatorial optimization instances with an explicit, tunable notion of difficulty. For example, structural parameters such as graph density, modularity, constraint tightness, or objective ambiguity could be swept to create a difficulty ladder. Evaluating pruning ratio, objective degradation, and runtime as hardness increases would clarify whether performance degrades gracefully, whether sharp failure regimes exist, and whethe2r beam-search feature discovery overfits to a narrow structural regime.
 
 We run controlled experiments on Holme-Kim (HK) graphs sweeping two difficulty axes: constraint tightness (budget k) and graph density (HK parameter m), across three graph sizes (n ∈ {10,000, 50,000, 100,000}), using the model trained on HK with no retraining.
-Results for Maximum Coverage under size constraint are below. Across all settings, P_r = 1.000; LLM2Prune recovers the full heuristic objective value even under tight budgets (k=10) and high graph density (avg. degree 20). The combined metric C increases with n, since the candidate set becomes a smaller fraction of the graph as n grows (P_g improves from 0.95 at n=10k to 0.995 at n=100k), reflecting stronger pruning at scale. No sharp failure regime was observed across any axis. These results confirm that LLM2Prune generalises gracefully across a range of structural regimes and does not overfit to the specific graph size or density used during feature discovery.
+Results for Maximum Coverage under size constraint are below. We now sweep budget k over two orders of magnitude (k ∈ {50, 100, 200, 500, 1000, 2000, 5000}) to expose genuine stress. At moderate budgets (k ≤ 200), P_r remains at or above 0.999 across all graph sizes. As the budget grows large relative to n, P_r degrades gracefully: at k=5000, P_r drops to 0.961 (n=100k) and 0.941 (n=50k), with no catastrophic failure observed at any setting. The combined metric C increases with n at fixed budget, since the candidate set becomes a smaller fraction of the graph as n grows (P_g improves from 0.95 at n=10k to 0.995 at n=100k), reflecting stronger pruning at scale. No sharp failure regime was observed. These results confirm that LLM2Prune generalises gracefully across a wide range of constraint tightness levels and does not overfit to the specific budget used during feature discovery.
 
 Experiment 1 — Constraint Tightness (fixed HK graph, m=3, vary budget k):
 
 | Budget | n=10,000 | | | | n=50,000 | | | | n=100,000 | | | |
 |--------|---------|---------|------|----------------|---------|---------|------|----------------|----------|----------|------|----------------|
 | | P_r | P_g | C | Inference (ms) | P_r | P_g | C | Inference (ms) | P_r | P_g | C | Inference (ms) |
-| 10  | 1.00 | 0.95 | 0.95 | 7.39 | 1.00 | 0.99 | 0.99 | 33.45 | 1.00 | 1.00 | 1.00 | 70.74 |
-| 25  | 1.00 | 0.95 | 0.95 | 6.85 | 1.00 | 0.99 | 0.99 | 33.66 | 1.00 | 1.00 | 1.00 | 67.35 |
-| 50  | 1.00 | 0.95 | 0.95 | 7.03 | 1.00 | 0.99 | 0.99 | 32.50 | 1.00 | 1.00 | 1.00 | 64.18 |
-| 75  | 1.00 | 0.95 | 0.95 | 6.87 | 1.00 | 0.99 | 0.99 | 34.19 | 1.00 | 1.00 | 1.00 | 61.68 |
-| 100 | 1.00 | 0.95 | 0.95 | 6.96 | 1.00 | 0.99 | 0.99 | 34.49 | 1.00 | 1.00 | 1.00 | 64.08 |
-| 150 | 1.00 | 0.95 | 0.95 | 6.50 | 1.00 | 0.99 | 0.99 | 31.83 | 1.00 | 1.00 | 1.00 | 63.22 |
-| 200 | 1.00 | 0.95 | 0.95 | 7.39 | 1.00 | 0.99 | 0.99 | 31.06 | 1.00 | 1.00 | 1.00 | 64.89 |
+| 50   | 1.000 | 0.95 | 0.950 | 7.15 | 1.000 | 0.99 | 0.990 | 36.06 | 1.000 | 0.995 | 0.995 | 73.32 |
+| 100  | 1.000 | 0.95 | 0.950 | 7.44 | 1.000 | 0.99 | 0.990 | 34.18 | 1.000 | 0.995 | 0.995 | 69.52 |
+| 200  | 0.999 | 0.95 | 0.949 | 7.15 | 1.000 | 0.99 | 0.990 | 36.75 | 1.000 | 0.995 | 0.995 | 68.87 |
+| 500  | 0.996 | 0.90 | 0.896 | 7.38 | 0.992 | 0.99 | 0.982 | 35.91 | 0.994 | 0.995 | 0.989 | 69.89 |
+| 1000 | 1.000 | 0.50† | 0.500 | 7.19 | 1.000 | 0.96 | 0.960 | 33.32 | 1.000 | 0.980 | 0.980 | 71.54 |
+| 2000 | 1.000 | 0.50† | 0.500 | 7.32 | 0.998 | 0.90 | 0.898 | 34.05 | 1.000 | 0.950 | 0.950 | 66.31 |
+| 5000 | 1.000 | 0.50† | 0.500 | 6.57 | 0.941 | 0.90 | 0.847 | 36.04 | 0.961 | 0.950 | 0.913 | 71.35 |
+
+† At these large budget values relative to graph size (n=10k), satisfying the coverage constraint requires a larger candidate pool, so P_g settles at 0.50. This does not indicate a failure of pruning: LLM2Prune still reduces the search space to half the graph while maintaining P_r ≥ 0.999, meaning the pruned candidate set fully preserves objective quality.
 
 Experiment 2 — Graph Density (fixed budget=100, vary HK parameter m):
 

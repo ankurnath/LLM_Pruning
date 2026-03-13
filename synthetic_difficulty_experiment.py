@@ -158,7 +158,7 @@ def main():
     model.eval()
     print(f"Model loaded  features: {list(model_data['codes'].keys())}\n")
 
-    budgets  = [10, 25, 50, 75, 100, 150, 200]
+    budgets  = [50, 100, 200, 500, 1000, 2000, 5000]
     m_values = [2, 4, 6, 8, 10]
 
     all_budget  = []
